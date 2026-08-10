@@ -10,3 +10,5 @@ for reference!
 
 
 Ill add more stuff here when I can think of it ^_^
+
+**NOTE THAT AURORIA IS CURRENTLY UNFINISHED AT THE TIME OF MAKING THIS**
