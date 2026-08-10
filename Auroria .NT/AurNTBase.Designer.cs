@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AurNTBase));
             this.AllTabs = new System.Windows.Forms.TabControl();
             this.PlayTab = new System.Windows.Forms.TabPage();
+            this.JoinBtn = new System.Windows.Forms.Button();
             this.SettingTab = new System.Windows.Forms.TabPage();
+            this.CatalogTab = new System.Windows.Forms.TabPage();
             this.ClientsLabel = new System.Windows.Forms.Label();
             this.MapsTree = new System.Windows.Forms.TreeView();
-            this.CatalogTab = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             // 
             // PlayTab
             // 
-            this.PlayTab.Controls.Add(this.button1);
+            this.PlayTab.Controls.Add(this.JoinBtn);
             this.PlayTab.Location = new System.Drawing.Point(4, 27);
             this.PlayTab.Name = "PlayTab";
             this.PlayTab.Padding = new System.Windows.Forms.Padding(3);
@@ -65,6 +65,23 @@
             this.PlayTab.Text = "Play/Host";
             this.PlayTab.UseVisualStyleBackColor = true;
             this.PlayTab.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // JoinBtn
+            // 
+            this.JoinBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.JoinBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.JoinBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JoinBtn.FlatAppearance.BorderSize = 0;
+            this.JoinBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.JoinBtn.Image = ((System.Drawing.Image)(resources.GetObject("JoinBtn.Image")));
+            this.JoinBtn.Location = new System.Drawing.Point(15, 352);
+            this.JoinBtn.Name = "JoinBtn";
+            this.JoinBtn.Size = new System.Drawing.Size(129, 52);
+            this.JoinBtn.TabIndex = 0;
+            this.JoinBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.JoinBtn.UseMnemonic = false;
+            this.JoinBtn.UseVisualStyleBackColor = false;
+            this.JoinBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // SettingTab
             // 
@@ -75,6 +92,16 @@
             this.SettingTab.TabIndex = 1;
             this.SettingTab.Text = "Settings";
             this.SettingTab.UseVisualStyleBackColor = true;
+            // 
+            // CatalogTab
+            // 
+            this.CatalogTab.Location = new System.Drawing.Point(4, 27);
+            this.CatalogTab.Name = "CatalogTab";
+            this.CatalogTab.Padding = new System.Windows.Forms.Padding(3);
+            this.CatalogTab.Size = new System.Drawing.Size(424, 410);
+            this.CatalogTab.TabIndex = 2;
+            this.CatalogTab.Text = "Catalog";
+            this.CatalogTab.UseVisualStyleBackColor = true;
             // 
             // ClientsLabel
             // 
@@ -95,25 +122,6 @@
             this.MapsTree.Size = new System.Drawing.Size(134, 392);
             this.MapsTree.TabIndex = 2;
             this.MapsTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.MapsTree_AfterSelect);
-            // 
-            // CatalogTab
-            // 
-            this.CatalogTab.Location = new System.Drawing.Point(4, 27);
-            this.CatalogTab.Name = "CatalogTab";
-            this.CatalogTab.Padding = new System.Windows.Forms.Padding(3);
-            this.CatalogTab.Size = new System.Drawing.Size(424, 410);
-            this.CatalogTab.TabIndex = 2;
-            this.CatalogTab.Text = "Catalog";
-            this.CatalogTab.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(6, 354);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 50);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // AurNTBase
             // 
@@ -145,7 +153,7 @@
         private System.Windows.Forms.Label ClientsLabel;
         private System.Windows.Forms.TreeView MapsTree;
         private System.Windows.Forms.TabPage CatalogTab;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button JoinBtn;
     }
 }
 
