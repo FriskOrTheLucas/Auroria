@@ -53,6 +53,13 @@ namespace Auroria.NT
             );
 
             string mapsFolder = "Maps";
+            string ChckMapDirectory = @"Maps";
+
+            if (!Directory.Exists(ChckMapDirectory))
+            {
+                MessageBox.Show("Either the Maps folder doesn't exist or Auroria cannot find it!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             foreach (string folder in Directory.GetDirectories(mapsFolder))
             {
