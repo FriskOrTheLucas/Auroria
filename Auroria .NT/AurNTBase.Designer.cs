@@ -123,7 +123,7 @@
             this.SettingTab.Location = new System.Drawing.Point(4, 34);
             this.SettingTab.Name = "SettingTab";
             this.SettingTab.Padding = new System.Windows.Forms.Padding(3);
-            this.SettingTab.Size = new System.Drawing.Size(495, 382);
+            this.SettingTab.Size = new System.Drawing.Size(495, 387);
             this.SettingTab.TabIndex = 1;
             this.SettingTab.Text = "Settings";
             this.SettingTab.ToolTipText = "Need to adjust something? Here\'s the settings tab.";
@@ -135,7 +135,7 @@
             this.CatalogTab.Location = new System.Drawing.Point(4, 34);
             this.CatalogTab.Name = "CatalogTab";
             this.CatalogTab.Padding = new System.Windows.Forms.Padding(3);
-            this.CatalogTab.Size = new System.Drawing.Size(495, 382);
+            this.CatalogTab.Size = new System.Drawing.Size(495, 387);
             this.CatalogTab.TabIndex = 2;
             this.CatalogTab.Text = "Catalog";
             this.CatalogTab.ToolTipText = "Catalog to get clothes n stuff";
@@ -144,7 +144,7 @@
             // 
             this.CrditTab.Location = new System.Drawing.Point(4, 34);
             this.CrditTab.Name = "CrditTab";
-            this.CrditTab.Size = new System.Drawing.Size(495, 382);
+            this.CrditTab.Size = new System.Drawing.Size(495, 387);
             this.CrditTab.TabIndex = 3;
             this.CrditTab.Text = "Credits";
             this.CrditTab.ToolTipText = "Credits for all the cool people who made Auroria possible.";
@@ -182,15 +182,16 @@
             // MOTD
             // 
             this.MOTD.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.MOTD.BackColor = System.Drawing.Color.LightCyan;
+            this.MOTD.BackColor = System.Drawing.Color.AliceBlue;
             this.MOTD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.MOTD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.MOTD.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MOTD.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MOTD.Location = new System.Drawing.Point(-5, 117);
             this.MOTD.Name = "MOTD";
             this.MOTD.Size = new System.Drawing.Size(768, 47);
-            this.MOTD.TabIndex = 5;
-            this.MOTD.Text = "hallo im teh 9000";
+            this.MOTD.TabIndex = 8;
+            this.MOTD.Text = "insert default text here lmao";
             this.MOTD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MOTD.Click += new System.EventHandler(this.MOTDLabel);
             // 
