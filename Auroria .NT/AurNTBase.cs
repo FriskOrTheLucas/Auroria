@@ -33,7 +33,7 @@ namespace Auroria.NT
             }
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void PlayPage_Click(object sender, EventArgs e)
         {
 
         }
@@ -70,12 +70,12 @@ namespace Auroria.NT
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void MapsLbl_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void MapsList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -85,7 +85,12 @@ namespace Auroria.NT
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void JoinBtn_click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HostBtn_Click(object sender, EventArgs e)
         {
 
         }
