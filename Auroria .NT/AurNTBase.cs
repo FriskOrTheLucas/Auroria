@@ -94,5 +94,10 @@ namespace Auroria.NT
         {
 
         }
+
+        private void MOTDLabel(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -35,10 +35,11 @@
             this.JoinBtn = new System.Windows.Forms.Button();
             this.SettingTab = new System.Windows.Forms.TabPage();
             this.CatalogTab = new System.Windows.Forms.TabPage();
+            this.CrditTab = new System.Windows.Forms.TabPage();
             this.ClientsLabel = new System.Windows.Forms.Label();
             this.MapsTree = new System.Windows.Forms.TreeView();
-            this.CrditTab = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.MOTD = new System.Windows.Forms.Label();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,10 +54,10 @@
             this.AllTabs.Cursor = System.Windows.Forms.Cursors.Default;
             this.AllTabs.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AllTabs.ItemSize = new System.Drawing.Size(69, 30);
-            this.AllTabs.Location = new System.Drawing.Point(12, 194);
+            this.AllTabs.Location = new System.Drawing.Point(12, 189);
             this.AllTabs.Name = "AllTabs";
             this.AllTabs.SelectedIndex = 0;
-            this.AllTabs.Size = new System.Drawing.Size(503, 420);
+            this.AllTabs.Size = new System.Drawing.Size(503, 425);
             this.AllTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AllTabs.TabIndex = 0;
             // 
@@ -69,7 +70,7 @@
             this.PlayTab.Location = new System.Drawing.Point(4, 34);
             this.PlayTab.Name = "PlayTab";
             this.PlayTab.Padding = new System.Windows.Forms.Padding(3);
-            this.PlayTab.Size = new System.Drawing.Size(495, 382);
+            this.PlayTab.Size = new System.Drawing.Size(495, 387);
             this.PlayTab.TabIndex = 0;
             this.PlayTab.Text = "Play/Host";
             this.PlayTab.ToolTipText = "Contains the Play/Host options.";
@@ -79,15 +80,16 @@
             // 
             this.HostBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.HostBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.HostBtn.BackColor = System.Drawing.Color.WhiteSmoke;
             this.HostBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.HostBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HostBtn.FlatAppearance.BorderSize = 0;
             this.HostBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HostBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.HostBtn.Image = ((System.Drawing.Image)(resources.GetObject("HostBtn.Image")));
-            this.HostBtn.Location = new System.Drawing.Point(168, 330);
+            this.HostBtn.Location = new System.Drawing.Point(234, 333);
             this.HostBtn.Name = "HostBtn";
-            this.HostBtn.Size = new System.Drawing.Size(125, 48);
+            this.HostBtn.Size = new System.Drawing.Size(125, 47);
             this.HostBtn.TabIndex = 1;
             this.HostBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.HostBtn.UseMnemonic = false;
@@ -98,15 +100,16 @@
             // 
             this.JoinBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.JoinBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.JoinBtn.BackColor = System.Drawing.Color.WhiteSmoke;
             this.JoinBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.JoinBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JoinBtn.FlatAppearance.BorderSize = 0;
             this.JoinBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.JoinBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.JoinBtn.Image = ((System.Drawing.Image)(resources.GetObject("JoinBtn.Image")));
-            this.JoinBtn.Location = new System.Drawing.Point(37, 330);
+            this.JoinBtn.Location = new System.Drawing.Point(92, 333);
             this.JoinBtn.Name = "JoinBtn";
-            this.JoinBtn.Size = new System.Drawing.Size(125, 48);
+            this.JoinBtn.Size = new System.Drawing.Size(125, 47);
             this.JoinBtn.TabIndex = 0;
             this.JoinBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.JoinBtn.UseMnemonic = false;
@@ -137,26 +140,6 @@
             this.CatalogTab.Text = "Catalog";
             this.CatalogTab.ToolTipText = "Catalog to get clothes n stuff";
             // 
-            // ClientsLabel
-            // 
-            this.ClientsLabel.AutoSize = true;
-            this.ClientsLabel.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientsLabel.Location = new System.Drawing.Point(584, 189);
-            this.ClientsLabel.Name = "ClientsLabel";
-            this.ClientsLabel.Size = new System.Drawing.Size(98, 36);
-            this.ClientsLabel.TabIndex = 1;
-            this.ClientsLabel.Text = "Maps";
-            this.ClientsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ClientsLabel.Click += new System.EventHandler(this.MapsLbl_Click);
-            // 
-            // MapsTree
-            // 
-            this.MapsTree.Location = new System.Drawing.Point(521, 228);
-            this.MapsTree.Name = "MapsTree";
-            this.MapsTree.Size = new System.Drawing.Size(226, 386);
-            this.MapsTree.TabIndex = 2;
-            this.MapsTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.MapsTree_AfterSelect);
-            // 
             // CrditTab
             // 
             this.CrditTab.Location = new System.Drawing.Point(4, 34);
@@ -167,6 +150,26 @@
             this.CrditTab.ToolTipText = "Credits for all the cool people who made Auroria possible.";
             this.CrditTab.UseVisualStyleBackColor = true;
             // 
+            // ClientsLabel
+            // 
+            this.ClientsLabel.AutoSize = true;
+            this.ClientsLabel.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientsLabel.Location = new System.Drawing.Point(586, 175);
+            this.ClientsLabel.Name = "ClientsLabel";
+            this.ClientsLabel.Size = new System.Drawing.Size(98, 36);
+            this.ClientsLabel.TabIndex = 1;
+            this.ClientsLabel.Text = "Maps";
+            this.ClientsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ClientsLabel.Click += new System.EventHandler(this.MapsLbl_Click);
+            // 
+            // MapsTree
+            // 
+            this.MapsTree.Location = new System.Drawing.Point(521, 223);
+            this.MapsTree.Name = "MapsTree";
+            this.MapsTree.Size = new System.Drawing.Size(226, 391);
+            this.MapsTree.TabIndex = 2;
+            this.MapsTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.MapsTree_AfterSelect);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -176,11 +179,27 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // MOTD
+            // 
+            this.MOTD.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.MOTD.BackColor = System.Drawing.Color.LightCyan;
+            this.MOTD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.MOTD.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MOTD.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.MOTD.Location = new System.Drawing.Point(-5, 117);
+            this.MOTD.Name = "MOTD";
+            this.MOTD.Size = new System.Drawing.Size(768, 47);
+            this.MOTD.TabIndex = 5;
+            this.MOTD.Text = "hallo im teh 9000";
+            this.MOTD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MOTD.Click += new System.EventHandler(this.MOTDLabel);
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(762, 626);
+            this.Controls.Add(this.MOTD);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.MapsTree);
             this.Controls.Add(this.ClientsLabel);
@@ -212,6 +231,7 @@
         private System.Windows.Forms.Button HostBtn;
         private System.Windows.Forms.TabPage CrditTab;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label MOTD;
     }
 }
 
