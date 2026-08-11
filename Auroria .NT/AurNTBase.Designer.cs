@@ -38,25 +38,38 @@
             this.CrditTab = new System.Windows.Forms.TabPage();
             this.ClientsLabel = new System.Windows.Forms.Label();
             this.MapsTree = new System.Windows.Forms.TreeView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
+            this.AvtrTab = new System.Windows.Forms.TabPage();
+            this.CatalogTabsOptions = new System.Windows.Forms.TabControl();
+            this.HatTab = new System.Windows.Forms.TabPage();
+            this.ShrtTab = new System.Windows.Forms.TabPage();
+            this.PlayerIDBox = new System.Windows.Forms.TextBox();
+            this.PlayerNameBox = new System.Windows.Forms.TextBox();
+            this.UserNote = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.CatalogTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).BeginInit();
+            this.CatalogTabsOptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // AllTabs
             // 
             this.AllTabs.Controls.Add(this.PlayTab);
-            this.AllTabs.Controls.Add(this.SettingTab);
             this.AllTabs.Controls.Add(this.CatalogTab);
+            this.AllTabs.Controls.Add(this.AvtrTab);
+            this.AllTabs.Controls.Add(this.SettingTab);
             this.AllTabs.Controls.Add(this.CrditTab);
             this.AllTabs.Cursor = System.Windows.Forms.Cursors.Default;
             this.AllTabs.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllTabs.HotTrack = true;
             this.AllTabs.ItemSize = new System.Drawing.Size(69, 30);
             this.AllTabs.Location = new System.Drawing.Point(12, 189);
             this.AllTabs.Name = "AllTabs";
             this.AllTabs.SelectedIndex = 0;
+            this.AllTabs.ShowToolTips = true;
             this.AllTabs.Size = new System.Drawing.Size(503, 425);
             this.AllTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.AllTabs.TabIndex = 0;
@@ -80,17 +93,17 @@
             // 
             this.HostBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.HostBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.HostBtn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.HostBtn.BackColor = System.Drawing.Color.Transparent;
             this.HostBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.HostBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HostBtn.FlatAppearance.BorderSize = 0;
-            this.HostBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HostBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.HostBtn.Image = ((System.Drawing.Image)(resources.GetObject("HostBtn.Image")));
-            this.HostBtn.Location = new System.Drawing.Point(234, 333);
+            this.HostBtn.Location = new System.Drawing.Point(181, 334);
             this.HostBtn.Name = "HostBtn";
             this.HostBtn.Size = new System.Drawing.Size(125, 47);
-            this.HostBtn.TabIndex = 1;
+            this.HostBtn.TabIndex = 8;
+            this.HostBtn.TabStop = false;
             this.HostBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.HostBtn.UseMnemonic = false;
             this.HostBtn.UseVisualStyleBackColor = false;
@@ -100,17 +113,17 @@
             // 
             this.JoinBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.JoinBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.JoinBtn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.JoinBtn.BackColor = System.Drawing.Color.Transparent;
             this.JoinBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.JoinBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JoinBtn.FlatAppearance.BorderSize = 0;
-            this.JoinBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.JoinBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.JoinBtn.Image = ((System.Drawing.Image)(resources.GetObject("JoinBtn.Image")));
-            this.JoinBtn.Location = new System.Drawing.Point(92, 333);
+            this.JoinBtn.Location = new System.Drawing.Point(50, 334);
             this.JoinBtn.Name = "JoinBtn";
             this.JoinBtn.Size = new System.Drawing.Size(125, 47);
-            this.JoinBtn.TabIndex = 0;
+            this.JoinBtn.TabIndex = 9;
+            this.JoinBtn.TabStop = false;
             this.JoinBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.JoinBtn.UseMnemonic = false;
             this.JoinBtn.UseVisualStyleBackColor = false;
@@ -131,6 +144,7 @@
             // CatalogTab
             // 
             this.CatalogTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CatalogTab.Controls.Add(this.CatalogTabsOptions);
             this.CatalogTab.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CatalogTab.Location = new System.Drawing.Point(4, 34);
             this.CatalogTab.Name = "CatalogTab";
@@ -142,13 +156,13 @@
             // 
             // CrditTab
             // 
+            this.CrditTab.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CrditTab.Location = new System.Drawing.Point(4, 34);
             this.CrditTab.Name = "CrditTab";
             this.CrditTab.Size = new System.Drawing.Size(495, 387);
             this.CrditTab.TabIndex = 3;
             this.CrditTab.Text = "Credits";
             this.CrditTab.ToolTipText = "Credits for all the cool people who made Auroria possible.";
-            this.CrditTab.UseVisualStyleBackColor = true;
             // 
             // ClientsLabel
             // 
@@ -170,14 +184,14 @@
             this.MapsTree.TabIndex = 2;
             this.MapsTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.MapsTree_AfterSelect);
             // 
-            // pictureBox1
+            // BackgroundBox
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(763, 115);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.BackgroundBox.Image = ((System.Drawing.Image)(resources.GetObject("BackgroundBox.Image")));
+            this.BackgroundBox.Location = new System.Drawing.Point(0, -1);
+            this.BackgroundBox.Name = "BackgroundBox";
+            this.BackgroundBox.Size = new System.Drawing.Size(763, 115);
+            this.BackgroundBox.TabIndex = 3;
+            this.BackgroundBox.TabStop = false;
             // 
             // MOTD
             // 
@@ -195,13 +209,112 @@
             this.MOTD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MOTD.Click += new System.EventHandler(this.MOTDLabel);
             // 
+            // AvtrTab
+            // 
+            this.AvtrTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.AvtrTab.Location = new System.Drawing.Point(4, 34);
+            this.AvtrTab.Name = "AvtrTab";
+            this.AvtrTab.Size = new System.Drawing.Size(495, 387);
+            this.AvtrTab.TabIndex = 4;
+            this.AvtrTab.Text = "Avatar";
+            // 
+            // CatalogTabsOptions
+            // 
+            this.CatalogTabsOptions.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.CatalogTabsOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CatalogTabsOptions.Controls.Add(this.HatTab);
+            this.CatalogTabsOptions.Controls.Add(this.ShrtTab);
+            this.CatalogTabsOptions.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CatalogTabsOptions.Location = new System.Drawing.Point(6, 6);
+            this.CatalogTabsOptions.Multiline = true;
+            this.CatalogTabsOptions.Name = "CatalogTabsOptions";
+            this.CatalogTabsOptions.SelectedIndex = 0;
+            this.CatalogTabsOptions.Size = new System.Drawing.Size(483, 375);
+            this.CatalogTabsOptions.TabIndex = 0;
+            // 
+            // HatTab
+            // 
+            this.HatTab.Location = new System.Drawing.Point(25, 4);
+            this.HatTab.Name = "HatTab";
+            this.HatTab.Padding = new System.Windows.Forms.Padding(3);
+            this.HatTab.Size = new System.Drawing.Size(454, 367);
+            this.HatTab.TabIndex = 0;
+            this.HatTab.Text = "Hats";
+            this.HatTab.UseVisualStyleBackColor = true;
+            // 
+            // ShrtTab
+            // 
+            this.ShrtTab.Location = new System.Drawing.Point(25, 4);
+            this.ShrtTab.Name = "ShrtTab";
+            this.ShrtTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ShrtTab.Size = new System.Drawing.Size(454, 367);
+            this.ShrtTab.TabIndex = 1;
+            this.ShrtTab.Text = "Shirts";
+            this.ShrtTab.UseVisualStyleBackColor = true;
+            // 
+            // PlayerIDBox
+            // 
+            this.PlayerIDBox.BackColor = System.Drawing.SystemColors.Window;
+            this.PlayerIDBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PlayerIDBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerIDBox.Location = new System.Drawing.Point(16, 23);
+            this.PlayerIDBox.MaxLength = 30;
+            this.PlayerIDBox.Name = "PlayerIDBox";
+            this.PlayerIDBox.Size = new System.Drawing.Size(130, 21);
+            this.PlayerIDBox.TabIndex = 9;
+            this.PlayerIDBox.Text = "123456789";
+            this.PlayerIDBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // PlayerNameBox
+            // 
+            this.PlayerNameBox.BackColor = System.Drawing.SystemColors.Window;
+            this.PlayerNameBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PlayerNameBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerNameBox.Location = new System.Drawing.Point(16, 73);
+            this.PlayerNameBox.MaxLength = 20;
+            this.PlayerNameBox.Name = "PlayerNameBox";
+            this.PlayerNameBox.Size = new System.Drawing.Size(130, 21);
+            this.PlayerNameBox.TabIndex = 10;
+            this.PlayerNameBox.Text = "Username_here";
+            this.PlayerNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // UserNote
+            // 
+            this.UserNote.AutoSize = true;
+            this.UserNote.BackColor = System.Drawing.Color.Transparent;
+            this.UserNote.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNote.Location = new System.Drawing.Point(37, 97);
+            this.UserNote.Name = "UserNote";
+            this.UserNote.Size = new System.Drawing.Size(66, 15);
+            this.UserNote.TabIndex = 11;
+            this.UserNote.Text = "Username";
+            this.UserNote.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(54, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "User ID";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(762, 626);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.UserNote);
+            this.Controls.Add(this.PlayerNameBox);
+            this.Controls.Add(this.PlayerIDBox);
             this.Controls.Add(this.MOTD);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.BackgroundBox);
             this.Controls.Add(this.MapsTree);
             this.Controls.Add(this.ClientsLabel);
             this.Controls.Add(this.AllTabs);
@@ -214,7 +327,9 @@
             this.Load += new System.EventHandler(this.AurNTBase_Load);
             this.AllTabs.ResumeLayout(false);
             this.PlayTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.CatalogTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).EndInit();
+            this.CatalogTabsOptions.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,8 +346,16 @@
         private System.Windows.Forms.Button JoinBtn;
         private System.Windows.Forms.Button HostBtn;
         private System.Windows.Forms.TabPage CrditTab;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox BackgroundBox;
         private System.Windows.Forms.Label MOTD;
+        private System.Windows.Forms.TabControl CatalogTabsOptions;
+        private System.Windows.Forms.TabPage HatTab;
+        private System.Windows.Forms.TabPage ShrtTab;
+        private System.Windows.Forms.TabPage AvtrTab;
+        private System.Windows.Forms.TextBox PlayerIDBox;
+        private System.Windows.Forms.TextBox PlayerNameBox;
+        private System.Windows.Forms.Label UserNote;
+        private System.Windows.Forms.Label label1;
     }
 }
 
