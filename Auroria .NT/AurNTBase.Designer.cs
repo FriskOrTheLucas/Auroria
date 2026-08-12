@@ -33,33 +33,47 @@
             this.PlayTab = new System.Windows.Forms.TabPage();
             this.HostBtn = new System.Windows.Forms.Button();
             this.JoinBtn = new System.Windows.Forms.Button();
-            this.SettingTab = new System.Windows.Forms.TabPage();
+            this.PlyrTab = new System.Windows.Forms.TabPage();
+            this.UserNote = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PlayerIDBox = new System.Windows.Forms.TextBox();
+            this.PlayerNameBox = new System.Windows.Forms.TextBox();
             this.CatalogTab = new System.Windows.Forms.TabPage();
+            this.CatalogTabsOptions = new System.Windows.Forms.TabControl();
+            this.HatTab = new System.Windows.Forms.TabPage();
+            this.ShrtTab = new System.Windows.Forms.TabPage();
+            this.AvtrTab = new System.Windows.Forms.TabPage();
+            this.SettingTab = new System.Windows.Forms.TabPage();
             this.CrditTab = new System.Windows.Forms.TabPage();
             this.ClientsLabel = new System.Windows.Forms.Label();
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
-            this.AvtrTab = new System.Windows.Forms.TabPage();
-            this.CatalogTabsOptions = new System.Windows.Forms.TabControl();
-            this.HatTab = new System.Windows.Forms.TabPage();
-            this.ShrtTab = new System.Windows.Forms.TabPage();
-            this.PlayerIDBox = new System.Windows.Forms.TextBox();
-            this.PlayerNameBox = new System.Windows.Forms.TextBox();
-            this.UserNote = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.PntTab = new System.Windows.Forms.TabPage();
+            this.TshrtTab = new System.Windows.Forms.TabPage();
+            this.PacksTab = new System.Windows.Forms.TabPage();
+            this.SrvrIPbox = new System.Windows.Forms.TextBox();
+            this.ClientList = new System.Windows.Forms.ListBox();
+            this.ClientInfoPanel = new System.Windows.Forms.Panel();
+            this.ClientInfoBox = new System.Windows.Forms.RichTextBox();
+            this.ClientPictureBox = new System.Windows.Forms.PictureBox();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
+            this.PlyrTab.SuspendLayout();
             this.CatalogTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).BeginInit();
             this.CatalogTabsOptions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).BeginInit();
+            this.ClientInfoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // AllTabs
             // 
             this.AllTabs.Controls.Add(this.PlayTab);
+            this.AllTabs.Controls.Add(this.PlyrTab);
             this.AllTabs.Controls.Add(this.CatalogTab);
             this.AllTabs.Controls.Add(this.AvtrTab);
+            this.AllTabs.Controls.Add(this.PacksTab);
             this.AllTabs.Controls.Add(this.SettingTab);
             this.AllTabs.Controls.Add(this.CrditTab);
             this.AllTabs.Cursor = System.Windows.Forms.Cursors.Default;
@@ -77,7 +91,11 @@
             // PlayTab
             // 
             this.PlayTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PlayTab.Controls.Add(this.ClientPictureBox);
+            this.PlayTab.Controls.Add(this.ClientInfoPanel);
+            this.PlayTab.Controls.Add(this.ClientList);
             this.PlayTab.Controls.Add(this.HostBtn);
+            this.PlayTab.Controls.Add(this.SrvrIPbox);
             this.PlayTab.Controls.Add(this.JoinBtn);
             this.PlayTab.Cursor = System.Windows.Forms.Cursors.Default;
             this.PlayTab.Location = new System.Drawing.Point(4, 34);
@@ -99,7 +117,7 @@
             this.HostBtn.FlatAppearance.BorderSize = 0;
             this.HostBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.HostBtn.Image = ((System.Drawing.Image)(resources.GetObject("HostBtn.Image")));
-            this.HostBtn.Location = new System.Drawing.Point(181, 334);
+            this.HostBtn.Location = new System.Drawing.Point(148, 334);
             this.HostBtn.Name = "HostBtn";
             this.HostBtn.Size = new System.Drawing.Size(125, 47);
             this.HostBtn.TabIndex = 8;
@@ -119,7 +137,7 @@
             this.JoinBtn.FlatAppearance.BorderSize = 0;
             this.JoinBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.JoinBtn.Image = ((System.Drawing.Image)(resources.GetObject("JoinBtn.Image")));
-            this.JoinBtn.Location = new System.Drawing.Point(50, 334);
+            this.JoinBtn.Location = new System.Drawing.Point(17, 334);
             this.JoinBtn.Name = "JoinBtn";
             this.JoinBtn.Size = new System.Drawing.Size(125, 47);
             this.JoinBtn.TabIndex = 9;
@@ -129,23 +147,73 @@
             this.JoinBtn.UseVisualStyleBackColor = false;
             this.JoinBtn.Click += new System.EventHandler(this.JoinBtn_click);
             // 
-            // SettingTab
+            // PlyrTab
             // 
-            this.SettingTab.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.SettingTab.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SettingTab.Location = new System.Drawing.Point(4, 34);
-            this.SettingTab.Name = "SettingTab";
-            this.SettingTab.Padding = new System.Windows.Forms.Padding(3);
-            this.SettingTab.Size = new System.Drawing.Size(495, 387);
-            this.SettingTab.TabIndex = 1;
-            this.SettingTab.Text = "Settings";
-            this.SettingTab.ToolTipText = "Need to adjust something? Here\'s the settings tab.";
+            this.PlyrTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PlyrTab.Controls.Add(this.UserNote);
+            this.PlyrTab.Controls.Add(this.label1);
+            this.PlyrTab.Controls.Add(this.PlayerIDBox);
+            this.PlyrTab.Controls.Add(this.PlayerNameBox);
+            this.PlyrTab.Location = new System.Drawing.Point(4, 34);
+            this.PlyrTab.Name = "PlyrTab";
+            this.PlyrTab.Size = new System.Drawing.Size(495, 387);
+            this.PlyrTab.TabIndex = 5;
+            this.PlyrTab.Text = "Player";
+            // 
+            // UserNote
+            // 
+            this.UserNote.AutoSize = true;
+            this.UserNote.BackColor = System.Drawing.Color.Transparent;
+            this.UserNote.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNote.Location = new System.Drawing.Point(149, 5);
+            this.UserNote.Name = "UserNote";
+            this.UserNote.Size = new System.Drawing.Size(66, 15);
+            this.UserNote.TabIndex = 11;
+            this.UserNote.Text = "Username";
+            this.UserNote.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "User ID";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PlayerIDBox
+            // 
+            this.PlayerIDBox.BackColor = System.Drawing.SystemColors.Window;
+            this.PlayerIDBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PlayerIDBox.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerIDBox.Location = new System.Drawing.Point(16, 23);
+            this.PlayerIDBox.MaxLength = 30;
+            this.PlayerIDBox.Name = "PlayerIDBox";
+            this.PlayerIDBox.Size = new System.Drawing.Size(113, 23);
+            this.PlayerIDBox.TabIndex = 9;
+            this.PlayerIDBox.Text = "123456789";
+            // 
+            // PlayerNameBox
+            // 
+            this.PlayerNameBox.BackColor = System.Drawing.SystemColors.Window;
+            this.PlayerNameBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PlayerNameBox.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerNameBox.Location = new System.Drawing.Point(152, 23);
+            this.PlayerNameBox.MaxLength = 20;
+            this.PlayerNameBox.Name = "PlayerNameBox";
+            this.PlayerNameBox.Size = new System.Drawing.Size(118, 23);
+            this.PlayerNameBox.TabIndex = 10;
+            this.PlayerNameBox.Text = "Username";
+            this.PlayerNameBox.TextChanged += new System.EventHandler(this.PlayerNameBox_TextChanged);
             // 
             // CatalogTab
             // 
             this.CatalogTab.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CatalogTab.Controls.Add(this.CatalogTabsOptions);
-            this.CatalogTab.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CatalogTab.Cursor = System.Windows.Forms.Cursors.Default;
             this.CatalogTab.Location = new System.Drawing.Point(4, 34);
             this.CatalogTab.Name = "CatalogTab";
             this.CatalogTab.Padding = new System.Windows.Forms.Padding(3);
@@ -153,6 +221,65 @@
             this.CatalogTab.TabIndex = 2;
             this.CatalogTab.Text = "Catalog";
             this.CatalogTab.ToolTipText = "Catalog to get clothes n stuff";
+            // 
+            // CatalogTabsOptions
+            // 
+            this.CatalogTabsOptions.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.CatalogTabsOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CatalogTabsOptions.Controls.Add(this.HatTab);
+            this.CatalogTabsOptions.Controls.Add(this.TshrtTab);
+            this.CatalogTabsOptions.Controls.Add(this.ShrtTab);
+            this.CatalogTabsOptions.Controls.Add(this.PntTab);
+            this.CatalogTabsOptions.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CatalogTabsOptions.Location = new System.Drawing.Point(6, 6);
+            this.CatalogTabsOptions.Multiline = true;
+            this.CatalogTabsOptions.Name = "CatalogTabsOptions";
+            this.CatalogTabsOptions.SelectedIndex = 0;
+            this.CatalogTabsOptions.Size = new System.Drawing.Size(483, 375);
+            this.CatalogTabsOptions.TabIndex = 0;
+            // 
+            // HatTab
+            // 
+            this.HatTab.Location = new System.Drawing.Point(25, 4);
+            this.HatTab.Name = "HatTab";
+            this.HatTab.Padding = new System.Windows.Forms.Padding(3);
+            this.HatTab.Size = new System.Drawing.Size(454, 367);
+            this.HatTab.TabIndex = 0;
+            this.HatTab.Text = "Hats";
+            this.HatTab.UseVisualStyleBackColor = true;
+            // 
+            // ShrtTab
+            // 
+            this.ShrtTab.Location = new System.Drawing.Point(25, 4);
+            this.ShrtTab.Name = "ShrtTab";
+            this.ShrtTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ShrtTab.Size = new System.Drawing.Size(454, 367);
+            this.ShrtTab.TabIndex = 1;
+            this.ShrtTab.Text = "Shirts";
+            this.ShrtTab.UseVisualStyleBackColor = true;
+            // 
+            // AvtrTab
+            // 
+            this.AvtrTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.AvtrTab.Location = new System.Drawing.Point(4, 34);
+            this.AvtrTab.Name = "AvtrTab";
+            this.AvtrTab.Size = new System.Drawing.Size(495, 387);
+            this.AvtrTab.TabIndex = 4;
+            this.AvtrTab.Text = "Avatar";
+            // 
+            // SettingTab
+            // 
+            this.SettingTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SettingTab.Cursor = System.Windows.Forms.Cursors.Default;
+            this.SettingTab.Location = new System.Drawing.Point(4, 34);
+            this.SettingTab.Name = "SettingTab";
+            this.SettingTab.Padding = new System.Windows.Forms.Padding(3);
+            this.SettingTab.Size = new System.Drawing.Size(495, 387);
+            this.SettingTab.TabIndex = 1;
+            this.SettingTab.Text = "Settings";
+            this.SettingTab.ToolTipText = "Need to adjust something? Here\'s the settings tab.";
             // 
             // CrditTab
             // 
@@ -209,110 +336,98 @@
             this.MOTD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MOTD.Click += new System.EventHandler(this.MOTDLabel);
             // 
-            // AvtrTab
+            // PntTab
             // 
-            this.AvtrTab.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.AvtrTab.Location = new System.Drawing.Point(4, 34);
-            this.AvtrTab.Name = "AvtrTab";
-            this.AvtrTab.Size = new System.Drawing.Size(495, 387);
-            this.AvtrTab.TabIndex = 4;
-            this.AvtrTab.Text = "Avatar";
+            this.PntTab.Location = new System.Drawing.Point(25, 4);
+            this.PntTab.Name = "PntTab";
+            this.PntTab.Size = new System.Drawing.Size(454, 367);
+            this.PntTab.TabIndex = 2;
+            this.PntTab.Text = "Pants";
+            this.PntTab.UseVisualStyleBackColor = true;
             // 
-            // CatalogTabsOptions
+            // TshrtTab
             // 
-            this.CatalogTabsOptions.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.CatalogTabsOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CatalogTabsOptions.Controls.Add(this.HatTab);
-            this.CatalogTabsOptions.Controls.Add(this.ShrtTab);
-            this.CatalogTabsOptions.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CatalogTabsOptions.Location = new System.Drawing.Point(6, 6);
-            this.CatalogTabsOptions.Multiline = true;
-            this.CatalogTabsOptions.Name = "CatalogTabsOptions";
-            this.CatalogTabsOptions.SelectedIndex = 0;
-            this.CatalogTabsOptions.Size = new System.Drawing.Size(483, 375);
-            this.CatalogTabsOptions.TabIndex = 0;
+            this.TshrtTab.Location = new System.Drawing.Point(25, 4);
+            this.TshrtTab.Name = "TshrtTab";
+            this.TshrtTab.Size = new System.Drawing.Size(454, 367);
+            this.TshrtTab.TabIndex = 3;
+            this.TshrtTab.Text = "T-Shirts";
+            this.TshrtTab.UseVisualStyleBackColor = true;
             // 
-            // HatTab
+            // PacksTab
             // 
-            this.HatTab.Location = new System.Drawing.Point(25, 4);
-            this.HatTab.Name = "HatTab";
-            this.HatTab.Padding = new System.Windows.Forms.Padding(3);
-            this.HatTab.Size = new System.Drawing.Size(454, 367);
-            this.HatTab.TabIndex = 0;
-            this.HatTab.Text = "Hats";
-            this.HatTab.UseVisualStyleBackColor = true;
+            this.PacksTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PacksTab.Location = new System.Drawing.Point(4, 34);
+            this.PacksTab.Name = "PacksTab";
+            this.PacksTab.Size = new System.Drawing.Size(495, 387);
+            this.PacksTab.TabIndex = 6;
+            this.PacksTab.Text = "Packs";
             // 
-            // ShrtTab
+            // SrvrIPbox
             // 
-            this.ShrtTab.Location = new System.Drawing.Point(25, 4);
-            this.ShrtTab.Name = "ShrtTab";
-            this.ShrtTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ShrtTab.Size = new System.Drawing.Size(454, 367);
-            this.ShrtTab.TabIndex = 1;
-            this.ShrtTab.Text = "Shirts";
-            this.ShrtTab.UseVisualStyleBackColor = true;
+            this.SrvrIPbox.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.SrvrIPbox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SrvrIPbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SrvrIPbox.Location = new System.Drawing.Point(6, 303);
+            this.SrvrIPbox.Name = "SrvrIPbox";
+            this.SrvrIPbox.Size = new System.Drawing.Size(276, 25);
+            this.SrvrIPbox.TabIndex = 11;
+            this.SrvrIPbox.Text = "localhost:53640";
+            this.SrvrIPbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // PlayerIDBox
+            // ClientList
             // 
-            this.PlayerIDBox.BackColor = System.Drawing.SystemColors.Window;
-            this.PlayerIDBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PlayerIDBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerIDBox.Location = new System.Drawing.Point(16, 23);
-            this.PlayerIDBox.MaxLength = 30;
-            this.PlayerIDBox.Name = "PlayerIDBox";
-            this.PlayerIDBox.Size = new System.Drawing.Size(130, 21);
-            this.PlayerIDBox.TabIndex = 9;
-            this.PlayerIDBox.Text = "123456789";
-            this.PlayerIDBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ClientList.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientList.FormattingEnabled = true;
+            this.ClientList.ItemHeight = 16;
+            this.ClientList.Items.AddRange(new object[] {
+            "2007S",
+            "2007E [NF]",
+            "2007M [NF]",
+            "2007L [NF]",
+            "2008E [NF]"});
+            this.ClientList.Location = new System.Drawing.Point(288, 41);
+            this.ClientList.Name = "ClientList";
+            this.ClientList.Size = new System.Drawing.Size(201, 340);
+            this.ClientList.TabIndex = 12;
+            this.ClientList.SelectedIndexChanged += new System.EventHandler(this.ClientList_SelectedIndexChanged);
             // 
-            // PlayerNameBox
+            // ClientInfoPanel
             // 
-            this.PlayerNameBox.BackColor = System.Drawing.SystemColors.Window;
-            this.PlayerNameBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PlayerNameBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerNameBox.Location = new System.Drawing.Point(16, 73);
-            this.PlayerNameBox.MaxLength = 20;
-            this.PlayerNameBox.Name = "PlayerNameBox";
-            this.PlayerNameBox.Size = new System.Drawing.Size(130, 21);
-            this.PlayerNameBox.TabIndex = 10;
-            this.PlayerNameBox.Text = "Username_here";
-            this.PlayerNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ClientInfoPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ClientInfoPanel.Controls.Add(this.ClientInfoBox);
+            this.ClientInfoPanel.Location = new System.Drawing.Point(6, 208);
+            this.ClientInfoPanel.Name = "ClientInfoPanel";
+            this.ClientInfoPanel.Size = new System.Drawing.Size(276, 76);
+            this.ClientInfoPanel.TabIndex = 13;
             // 
-            // UserNote
+            // ClientInfoBox
             // 
-            this.UserNote.AutoSize = true;
-            this.UserNote.BackColor = System.Drawing.Color.Transparent;
-            this.UserNote.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserNote.Location = new System.Drawing.Point(37, 97);
-            this.UserNote.Name = "UserNote";
-            this.UserNote.Size = new System.Drawing.Size(66, 15);
-            this.UserNote.TabIndex = 11;
-            this.UserNote.Text = "Username";
-            this.UserNote.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ClientInfoBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ClientInfoBox.Location = new System.Drawing.Point(3, 3);
+            this.ClientInfoBox.Name = "ClientInfoBox";
+            this.ClientInfoBox.ReadOnly = true;
+            this.ClientInfoBox.Size = new System.Drawing.Size(266, 66);
+            this.ClientInfoBox.TabIndex = 0;
+            this.ClientInfoBox.Text = "Client Info will be displayed here.";
+            this.ClientInfoBox.TextChanged += new System.EventHandler(this.ClientInfoBox_TextChanged);
             // 
-            // label1
+            // ClientPictureBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(54, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 15);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "User ID";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ClientPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ClientPictureBox.Location = new System.Drawing.Point(6, 41);
+            this.ClientPictureBox.Name = "ClientPictureBox";
+            this.ClientPictureBox.Size = new System.Drawing.Size(275, 158);
+            this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ClientPictureBox.TabIndex = 14;
+            this.ClientPictureBox.TabStop = false;
+            this.ClientPictureBox.Click += new System.EventHandler(this.ClientPictureBox_Click);
             // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(762, 626);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.UserNote);
-            this.Controls.Add(this.PlayerNameBox);
-            this.Controls.Add(this.PlayerIDBox);
             this.Controls.Add(this.MOTD);
             this.Controls.Add(this.BackgroundBox);
             this.Controls.Add(this.MapsTree);
@@ -323,13 +438,18 @@
             this.MaximizeBox = false;
             this.Name = "AurNTBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Auroria .NT 0.1";
+            this.Text = "Auroria .NT 0.1 [Codename:Invidia]";
             this.Load += new System.EventHandler(this.AurNTBase_Load);
             this.AllTabs.ResumeLayout(false);
             this.PlayTab.ResumeLayout(false);
+            this.PlayTab.PerformLayout();
+            this.PlyrTab.ResumeLayout(false);
+            this.PlyrTab.PerformLayout();
             this.CatalogTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).EndInit();
             this.CatalogTabsOptions.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).EndInit();
+            this.ClientInfoPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,6 +476,15 @@
         private System.Windows.Forms.TextBox PlayerNameBox;
         private System.Windows.Forms.Label UserNote;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage PlyrTab;
+        private System.Windows.Forms.TabPage TshrtTab;
+        private System.Windows.Forms.TabPage PntTab;
+        private System.Windows.Forms.TabPage PacksTab;
+        private System.Windows.Forms.ListBox ClientList;
+        private System.Windows.Forms.TextBox SrvrIPbox;
+        private System.Windows.Forms.Panel ClientInfoPanel;
+        private System.Windows.Forms.RichTextBox ClientInfoBox;
+        private System.Windows.Forms.PictureBox ClientPictureBox;
     }
 }
 

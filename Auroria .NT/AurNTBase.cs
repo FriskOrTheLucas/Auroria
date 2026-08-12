@@ -121,5 +121,45 @@ namespace Auroria.NT
         {
 
         }
+
+        private void PlayerNameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClientList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string errThumbnail = "Data\\ClientThmbnl\\ErrOrCstm\\ClientErCstm.png";
+
+            if (ClientList.SelectedItem != null)
+            {
+                string selectedClient = ClientList.SelectedItem.ToString();
+                // Perform actions based on the selected client
+
+                if (selectedClient == "2007S") // <-- Future note to self since im a C# noob: DONT ADD A ; HERE -Lucas
+                {
+                    ClientPictureBox.ImageLocation = "Data\\ClientThmbnl\\2007S\\2007Img.png";
+                    ClientInfoBox.Text = "A recreation of the February 2007 Client!";
+                    MessageBox.Show("Note: 2007S May not be a perfectly accurate recreation!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                else // Remove this when other clients have been officially added to the launcher. This is just a placeholder cuz im a chud..
+                {
+                    ClientPictureBox.ImageLocation = errThumbnail;
+                    ClientInfoBox.Text = "Client is either custom or Non-Functional!";
+                    MessageBox.Show("NF = Non Functional! This Client has NOT been added yet!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void ClientInfoBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClientPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
