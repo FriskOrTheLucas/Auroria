@@ -152,7 +152,8 @@
             "2007L [NF]",
             "2008E [NF]",
             "2008M [NF]",
-            "2008L [NF]"});
+            "2008L [NF]",
+            "2009E [NF]"});
             this.ClientList.Location = new System.Drawing.Point(288, 41);
             this.ClientList.Name = "ClientList";
             this.ClientList.Size = new System.Drawing.Size(201, 340);
