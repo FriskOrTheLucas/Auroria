@@ -57,6 +57,7 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
+            this.DCButton = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
@@ -64,6 +65,7 @@
             this.PlyrTab.SuspendLayout();
             this.CatalogTab.SuspendLayout();
             this.CatalogTabsOptions.SuspendLayout();
+            this.CrditTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -374,6 +376,7 @@
             // CrditTab
             // 
             this.CrditTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CrditTab.Controls.Add(this.DCButton);
             this.CrditTab.Location = new System.Drawing.Point(4, 34);
             this.CrditTab.Name = "CrditTab";
             this.CrditTab.Size = new System.Drawing.Size(495, 387);
@@ -425,6 +428,21 @@
             this.MOTD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MOTD.Click += new System.EventHandler(this.MOTDLabel);
             // 
+            // DCButton
+            // 
+            this.DCButton.BackColor = System.Drawing.Color.SlateBlue;
+            this.DCButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DCButton.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DCButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DCButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DCButton.Location = new System.Drawing.Point(16, 15);
+            this.DCButton.Name = "DCButton";
+            this.DCButton.Size = new System.Drawing.Size(153, 40);
+            this.DCButton.TabIndex = 0;
+            this.DCButton.Text = "Join the Discord!";
+            this.DCButton.UseVisualStyleBackColor = false;
+            this.DCButton.Click += new System.EventHandler(this.DCButton_Click);
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -451,6 +469,7 @@
             this.PlyrTab.PerformLayout();
             this.CatalogTab.ResumeLayout(false);
             this.CatalogTabsOptions.ResumeLayout(false);
+            this.CrditTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -487,6 +506,7 @@
         private System.Windows.Forms.Panel ClientInfoPanel;
         private System.Windows.Forms.RichTextBox ClientInfoBox;
         private System.Windows.Forms.PictureBox ClientPictureBox;
+        private System.Windows.Forms.Button DCButton;
     }
 }
 

@@ -164,5 +164,22 @@ namespace Auroria.NT
         {
 
         }
+
+        private void DCButton_Click(object sender, EventArgs e)
+        {
+            string url = "https://discord.gg/vrwTt9A6zF";
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to open Discord URL: " + ex.Message);
+            }
+        }
     }
 }
