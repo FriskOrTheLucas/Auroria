@@ -58,6 +58,10 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
+            this.HeadsTab = new System.Windows.Forms.TabPage();
+            this.FaceTab = new System.Windows.Forms.TabPage();
+            this.PckgeTab = new System.Windows.Forms.TabPage();
+            this.HatsListView = new System.Windows.Forms.ListView();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
@@ -65,6 +69,7 @@
             this.PlyrTab.SuspendLayout();
             this.CatalogTab.SuspendLayout();
             this.CatalogTabsOptions.SuspendLayout();
+            this.HatTab.SuspendLayout();
             this.CrditTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).BeginInit();
             this.SuspendLayout();
@@ -294,11 +299,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CatalogTabsOptions.Controls.Add(this.HatTab);
+            this.CatalogTabsOptions.Controls.Add(this.HeadsTab);
+            this.CatalogTabsOptions.Controls.Add(this.FaceTab);
             this.CatalogTabsOptions.Controls.Add(this.TshrtTab);
             this.CatalogTabsOptions.Controls.Add(this.ShrtTab);
             this.CatalogTabsOptions.Controls.Add(this.PntTab);
+            this.CatalogTabsOptions.Controls.Add(this.PckgeTab);
             this.CatalogTabsOptions.Cursor = System.Windows.Forms.Cursors.Default;
             this.CatalogTabsOptions.HotTrack = true;
+            this.CatalogTabsOptions.ItemSize = new System.Drawing.Size(68, 30);
             this.CatalogTabsOptions.Location = new System.Drawing.Point(6, 6);
             this.CatalogTabsOptions.Name = "CatalogTabsOptions";
             this.CatalogTabsOptions.SelectedIndex = 0;
@@ -308,38 +317,39 @@
             // 
             // HatTab
             // 
-            this.HatTab.Location = new System.Drawing.Point(4, 23);
+            this.HatTab.Controls.Add(this.HatsListView);
+            this.HatTab.Location = new System.Drawing.Point(4, 34);
             this.HatTab.Name = "HatTab";
             this.HatTab.Padding = new System.Windows.Forms.Padding(3);
-            this.HatTab.Size = new System.Drawing.Size(475, 348);
+            this.HatTab.Size = new System.Drawing.Size(475, 337);
             this.HatTab.TabIndex = 0;
             this.HatTab.Text = "Hats";
             this.HatTab.UseVisualStyleBackColor = true;
             // 
             // TshrtTab
             // 
-            this.TshrtTab.Location = new System.Drawing.Point(4, 23);
+            this.TshrtTab.Location = new System.Drawing.Point(4, 34);
             this.TshrtTab.Name = "TshrtTab";
-            this.TshrtTab.Size = new System.Drawing.Size(475, 348);
+            this.TshrtTab.Size = new System.Drawing.Size(475, 337);
             this.TshrtTab.TabIndex = 3;
             this.TshrtTab.Text = "T-Shirts";
             this.TshrtTab.UseVisualStyleBackColor = true;
             // 
             // ShrtTab
             // 
-            this.ShrtTab.Location = new System.Drawing.Point(4, 23);
+            this.ShrtTab.Location = new System.Drawing.Point(4, 34);
             this.ShrtTab.Name = "ShrtTab";
             this.ShrtTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ShrtTab.Size = new System.Drawing.Size(475, 348);
+            this.ShrtTab.Size = new System.Drawing.Size(475, 337);
             this.ShrtTab.TabIndex = 1;
             this.ShrtTab.Text = "Shirts";
             this.ShrtTab.UseVisualStyleBackColor = true;
             // 
             // PntTab
             // 
-            this.PntTab.Location = new System.Drawing.Point(4, 23);
+            this.PntTab.Location = new System.Drawing.Point(4, 34);
             this.PntTab.Name = "PntTab";
-            this.PntTab.Size = new System.Drawing.Size(475, 348);
+            this.PntTab.Size = new System.Drawing.Size(475, 337);
             this.PntTab.TabIndex = 2;
             this.PntTab.Text = "Pants";
             this.PntTab.UseVisualStyleBackColor = true;
@@ -446,6 +456,42 @@
             this.MOTD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MOTD.Click += new System.EventHandler(this.MOTDLabel);
             // 
+            // HeadsTab
+            // 
+            this.HeadsTab.Location = new System.Drawing.Point(4, 34);
+            this.HeadsTab.Name = "HeadsTab";
+            this.HeadsTab.Size = new System.Drawing.Size(475, 337);
+            this.HeadsTab.TabIndex = 4;
+            this.HeadsTab.Text = "Heads";
+            this.HeadsTab.UseVisualStyleBackColor = true;
+            // 
+            // FaceTab
+            // 
+            this.FaceTab.Location = new System.Drawing.Point(4, 34);
+            this.FaceTab.Name = "FaceTab";
+            this.FaceTab.Size = new System.Drawing.Size(475, 337);
+            this.FaceTab.TabIndex = 5;
+            this.FaceTab.Text = "Faces";
+            this.FaceTab.UseVisualStyleBackColor = true;
+            // 
+            // PckgeTab
+            // 
+            this.PckgeTab.Location = new System.Drawing.Point(4, 34);
+            this.PckgeTab.Name = "PckgeTab";
+            this.PckgeTab.Size = new System.Drawing.Size(475, 337);
+            this.PckgeTab.TabIndex = 6;
+            this.PckgeTab.Text = "Packages";
+            this.PckgeTab.UseVisualStyleBackColor = true;
+            // 
+            // HatsListView
+            // 
+            this.HatsListView.HideSelection = false;
+            this.HatsListView.Location = new System.Drawing.Point(6, 6);
+            this.HatsListView.Name = "HatsListView";
+            this.HatsListView.Size = new System.Drawing.Size(463, 325);
+            this.HatsListView.TabIndex = 0;
+            this.HatsListView.UseCompatibleStateImageBehavior = false;
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -472,6 +518,7 @@
             this.PlyrTab.PerformLayout();
             this.CatalogTab.ResumeLayout(false);
             this.CatalogTabsOptions.ResumeLayout(false);
+            this.HatTab.ResumeLayout(false);
             this.CrditTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).EndInit();
             this.ResumeLayout(false);
@@ -510,6 +557,10 @@
         private System.Windows.Forms.RichTextBox ClientInfoBox;
         private System.Windows.Forms.PictureBox ClientPictureBox;
         private System.Windows.Forms.Button DCButton;
+        private System.Windows.Forms.TabPage HeadsTab;
+        private System.Windows.Forms.TabPage FaceTab;
+        private System.Windows.Forms.TabPage PckgeTab;
+        private System.Windows.Forms.ListView HatsListView;
     }
 }
 
