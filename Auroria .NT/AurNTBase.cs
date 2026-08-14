@@ -150,7 +150,7 @@ namespace Auroria.NT
                 {
                     ClientPictureBox.ImageLocation = errThumbnail;
                     ClientInfoBox.Text = "Client is either custom or Non-Functional!";
-                    MessageBox.Show("NF = Non Functional! This Client has NOT been added yet!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("NF = Non Functional! This Client has NOT been added yet!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
