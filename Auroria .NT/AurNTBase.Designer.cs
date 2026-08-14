@@ -31,7 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AurNTBase));
             this.AllTabs = new System.Windows.Forms.TabControl();
             this.PlayTab = new System.Windows.Forms.TabPage();
+            this.ClientPictureBox = new System.Windows.Forms.PictureBox();
+            this.ClientInfoPanel = new System.Windows.Forms.Panel();
+            this.ClientInfoBox = new System.Windows.Forms.RichTextBox();
+            this.ClientList = new System.Windows.Forms.ListBox();
             this.HostBtn = new System.Windows.Forms.Button();
+            this.SrvrIPbox = new System.Windows.Forms.TextBox();
             this.JoinBtn = new System.Windows.Forms.Button();
             this.PlyrTab = new System.Windows.Forms.TabPage();
             this.UserNote = new System.Windows.Forms.Label();
@@ -41,30 +46,25 @@
             this.CatalogTab = new System.Windows.Forms.TabPage();
             this.CatalogTabsOptions = new System.Windows.Forms.TabControl();
             this.HatTab = new System.Windows.Forms.TabPage();
+            this.TshrtTab = new System.Windows.Forms.TabPage();
             this.ShrtTab = new System.Windows.Forms.TabPage();
-            this.AvtrTab = new System.Windows.Forms.TabPage();
+            this.PntTab = new System.Windows.Forms.TabPage();
+            this.InfoTab = new System.Windows.Forms.TabPage();
+            this.PacksTab = new System.Windows.Forms.TabPage();
             this.SettingTab = new System.Windows.Forms.TabPage();
             this.CrditTab = new System.Windows.Forms.TabPage();
             this.ClientsLabel = new System.Windows.Forms.Label();
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
-            this.PntTab = new System.Windows.Forms.TabPage();
-            this.TshrtTab = new System.Windows.Forms.TabPage();
-            this.PacksTab = new System.Windows.Forms.TabPage();
-            this.SrvrIPbox = new System.Windows.Forms.TextBox();
-            this.ClientList = new System.Windows.Forms.ListBox();
-            this.ClientInfoPanel = new System.Windows.Forms.Panel();
-            this.ClientInfoBox = new System.Windows.Forms.RichTextBox();
-            this.ClientPictureBox = new System.Windows.Forms.PictureBox();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
+            this.ClientInfoPanel.SuspendLayout();
             this.PlyrTab.SuspendLayout();
             this.CatalogTab.SuspendLayout();
             this.CatalogTabsOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).BeginInit();
-            this.ClientInfoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // AllTabs
@@ -72,7 +72,7 @@
             this.AllTabs.Controls.Add(this.PlayTab);
             this.AllTabs.Controls.Add(this.PlyrTab);
             this.AllTabs.Controls.Add(this.CatalogTab);
-            this.AllTabs.Controls.Add(this.AvtrTab);
+            this.AllTabs.Controls.Add(this.InfoTab);
             this.AllTabs.Controls.Add(this.PacksTab);
             this.AllTabs.Controls.Add(this.SettingTab);
             this.AllTabs.Controls.Add(this.CrditTab);
@@ -107,6 +107,54 @@
             this.PlayTab.ToolTipText = "Contains the Play/Host options.";
             this.PlayTab.Click += new System.EventHandler(this.PlayPage_Click);
             // 
+            // ClientPictureBox
+            // 
+            this.ClientPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ClientPictureBox.Location = new System.Drawing.Point(6, 41);
+            this.ClientPictureBox.Name = "ClientPictureBox";
+            this.ClientPictureBox.Size = new System.Drawing.Size(275, 158);
+            this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ClientPictureBox.TabIndex = 14;
+            this.ClientPictureBox.TabStop = false;
+            this.ClientPictureBox.Click += new System.EventHandler(this.ClientPictureBox_Click);
+            // 
+            // ClientInfoPanel
+            // 
+            this.ClientInfoPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ClientInfoPanel.Controls.Add(this.ClientInfoBox);
+            this.ClientInfoPanel.Location = new System.Drawing.Point(6, 208);
+            this.ClientInfoPanel.Name = "ClientInfoPanel";
+            this.ClientInfoPanel.Size = new System.Drawing.Size(276, 76);
+            this.ClientInfoPanel.TabIndex = 13;
+            // 
+            // ClientInfoBox
+            // 
+            this.ClientInfoBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ClientInfoBox.Location = new System.Drawing.Point(3, 3);
+            this.ClientInfoBox.Name = "ClientInfoBox";
+            this.ClientInfoBox.ReadOnly = true;
+            this.ClientInfoBox.Size = new System.Drawing.Size(266, 66);
+            this.ClientInfoBox.TabIndex = 0;
+            this.ClientInfoBox.Text = "Client Info will be displayed here.";
+            this.ClientInfoBox.TextChanged += new System.EventHandler(this.ClientInfoBox_TextChanged);
+            // 
+            // ClientList
+            // 
+            this.ClientList.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientList.FormattingEnabled = true;
+            this.ClientList.ItemHeight = 16;
+            this.ClientList.Items.AddRange(new object[] {
+            "2007S",
+            "2007E [NF]",
+            "2007M [NF]",
+            "2007L [NF]",
+            "2008E [NF]"});
+            this.ClientList.Location = new System.Drawing.Point(288, 41);
+            this.ClientList.Name = "ClientList";
+            this.ClientList.Size = new System.Drawing.Size(201, 340);
+            this.ClientList.TabIndex = 12;
+            this.ClientList.SelectedIndexChanged += new System.EventHandler(this.ClientList_SelectedIndexChanged);
+            // 
             // HostBtn
             // 
             this.HostBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -126,6 +174,18 @@
             this.HostBtn.UseMnemonic = false;
             this.HostBtn.UseVisualStyleBackColor = false;
             this.HostBtn.Click += new System.EventHandler(this.HostBtn_Click);
+            // 
+            // SrvrIPbox
+            // 
+            this.SrvrIPbox.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.SrvrIPbox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SrvrIPbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SrvrIPbox.Location = new System.Drawing.Point(6, 303);
+            this.SrvrIPbox.Name = "SrvrIPbox";
+            this.SrvrIPbox.Size = new System.Drawing.Size(276, 25);
+            this.SrvrIPbox.TabIndex = 11;
+            this.SrvrIPbox.Text = "localhost:53640";
+            this.SrvrIPbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // JoinBtn
             // 
@@ -159,6 +219,7 @@
             this.PlyrTab.Size = new System.Drawing.Size(495, 387);
             this.PlyrTab.TabIndex = 5;
             this.PlyrTab.Text = "Player";
+            this.PlyrTab.ToolTipText = "Adjust things such as your name or ID, and avatar!";
             // 
             // UserNote
             // 
@@ -224,7 +285,6 @@
             // 
             // CatalogTabsOptions
             // 
-            this.CatalogTabsOptions.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.CatalogTabsOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -233,41 +293,71 @@
             this.CatalogTabsOptions.Controls.Add(this.ShrtTab);
             this.CatalogTabsOptions.Controls.Add(this.PntTab);
             this.CatalogTabsOptions.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CatalogTabsOptions.HotTrack = true;
             this.CatalogTabsOptions.Location = new System.Drawing.Point(6, 6);
-            this.CatalogTabsOptions.Multiline = true;
             this.CatalogTabsOptions.Name = "CatalogTabsOptions";
             this.CatalogTabsOptions.SelectedIndex = 0;
             this.CatalogTabsOptions.Size = new System.Drawing.Size(483, 375);
+            this.CatalogTabsOptions.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.CatalogTabsOptions.TabIndex = 0;
             // 
             // HatTab
             // 
-            this.HatTab.Location = new System.Drawing.Point(25, 4);
+            this.HatTab.Location = new System.Drawing.Point(4, 23);
             this.HatTab.Name = "HatTab";
             this.HatTab.Padding = new System.Windows.Forms.Padding(3);
-            this.HatTab.Size = new System.Drawing.Size(454, 367);
+            this.HatTab.Size = new System.Drawing.Size(475, 348);
             this.HatTab.TabIndex = 0;
             this.HatTab.Text = "Hats";
             this.HatTab.UseVisualStyleBackColor = true;
             // 
+            // TshrtTab
+            // 
+            this.TshrtTab.Location = new System.Drawing.Point(4, 23);
+            this.TshrtTab.Name = "TshrtTab";
+            this.TshrtTab.Size = new System.Drawing.Size(475, 348);
+            this.TshrtTab.TabIndex = 3;
+            this.TshrtTab.Text = "T-Shirts";
+            this.TshrtTab.UseVisualStyleBackColor = true;
+            // 
             // ShrtTab
             // 
-            this.ShrtTab.Location = new System.Drawing.Point(25, 4);
+            this.ShrtTab.Location = new System.Drawing.Point(4, 23);
             this.ShrtTab.Name = "ShrtTab";
             this.ShrtTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ShrtTab.Size = new System.Drawing.Size(454, 367);
+            this.ShrtTab.Size = new System.Drawing.Size(475, 348);
             this.ShrtTab.TabIndex = 1;
             this.ShrtTab.Text = "Shirts";
             this.ShrtTab.UseVisualStyleBackColor = true;
             // 
-            // AvtrTab
+            // PntTab
             // 
-            this.AvtrTab.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.AvtrTab.Location = new System.Drawing.Point(4, 34);
-            this.AvtrTab.Name = "AvtrTab";
-            this.AvtrTab.Size = new System.Drawing.Size(495, 387);
-            this.AvtrTab.TabIndex = 4;
-            this.AvtrTab.Text = "Avatar";
+            this.PntTab.Location = new System.Drawing.Point(4, 23);
+            this.PntTab.Name = "PntTab";
+            this.PntTab.Size = new System.Drawing.Size(475, 348);
+            this.PntTab.TabIndex = 2;
+            this.PntTab.Text = "Pants";
+            this.PntTab.UseVisualStyleBackColor = true;
+            // 
+            // InfoTab
+            // 
+            this.InfoTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.InfoTab.Location = new System.Drawing.Point(4, 34);
+            this.InfoTab.Name = "InfoTab";
+            this.InfoTab.Size = new System.Drawing.Size(495, 387);
+            this.InfoTab.TabIndex = 4;
+            this.InfoTab.Text = "Info";
+            this.InfoTab.ToolTipText = "Shows you System Info and Documentation!";
+            // 
+            // PacksTab
+            // 
+            this.PacksTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PacksTab.Location = new System.Drawing.Point(4, 34);
+            this.PacksTab.Name = "PacksTab";
+            this.PacksTab.Size = new System.Drawing.Size(495, 387);
+            this.PacksTab.TabIndex = 6;
+            this.PacksTab.Text = "Packs";
+            this.PacksTab.ToolTipText = "Includes Assetpacks and Clientpacks. Both will be explained in the tab.";
             // 
             // SettingTab
             // 
@@ -313,7 +403,6 @@
             // 
             // BackgroundBox
             // 
-            this.BackgroundBox.Image = ((System.Drawing.Image)(resources.GetObject("BackgroundBox.Image")));
             this.BackgroundBox.Location = new System.Drawing.Point(0, -1);
             this.BackgroundBox.Name = "BackgroundBox";
             this.BackgroundBox.Size = new System.Drawing.Size(763, 115);
@@ -336,93 +425,6 @@
             this.MOTD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MOTD.Click += new System.EventHandler(this.MOTDLabel);
             // 
-            // PntTab
-            // 
-            this.PntTab.Location = new System.Drawing.Point(25, 4);
-            this.PntTab.Name = "PntTab";
-            this.PntTab.Size = new System.Drawing.Size(454, 367);
-            this.PntTab.TabIndex = 2;
-            this.PntTab.Text = "Pants";
-            this.PntTab.UseVisualStyleBackColor = true;
-            // 
-            // TshrtTab
-            // 
-            this.TshrtTab.Location = new System.Drawing.Point(25, 4);
-            this.TshrtTab.Name = "TshrtTab";
-            this.TshrtTab.Size = new System.Drawing.Size(454, 367);
-            this.TshrtTab.TabIndex = 3;
-            this.TshrtTab.Text = "T-Shirts";
-            this.TshrtTab.UseVisualStyleBackColor = true;
-            // 
-            // PacksTab
-            // 
-            this.PacksTab.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.PacksTab.Location = new System.Drawing.Point(4, 34);
-            this.PacksTab.Name = "PacksTab";
-            this.PacksTab.Size = new System.Drawing.Size(495, 387);
-            this.PacksTab.TabIndex = 6;
-            this.PacksTab.Text = "Packs";
-            // 
-            // SrvrIPbox
-            // 
-            this.SrvrIPbox.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.SrvrIPbox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SrvrIPbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SrvrIPbox.Location = new System.Drawing.Point(6, 303);
-            this.SrvrIPbox.Name = "SrvrIPbox";
-            this.SrvrIPbox.Size = new System.Drawing.Size(276, 25);
-            this.SrvrIPbox.TabIndex = 11;
-            this.SrvrIPbox.Text = "localhost:53640";
-            this.SrvrIPbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ClientList
-            // 
-            this.ClientList.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientList.FormattingEnabled = true;
-            this.ClientList.ItemHeight = 16;
-            this.ClientList.Items.AddRange(new object[] {
-            "2007S",
-            "2007E [NF]",
-            "2007M [NF]",
-            "2007L [NF]",
-            "2008E [NF]"});
-            this.ClientList.Location = new System.Drawing.Point(288, 41);
-            this.ClientList.Name = "ClientList";
-            this.ClientList.Size = new System.Drawing.Size(201, 340);
-            this.ClientList.TabIndex = 12;
-            this.ClientList.SelectedIndexChanged += new System.EventHandler(this.ClientList_SelectedIndexChanged);
-            // 
-            // ClientInfoPanel
-            // 
-            this.ClientInfoPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ClientInfoPanel.Controls.Add(this.ClientInfoBox);
-            this.ClientInfoPanel.Location = new System.Drawing.Point(6, 208);
-            this.ClientInfoPanel.Name = "ClientInfoPanel";
-            this.ClientInfoPanel.Size = new System.Drawing.Size(276, 76);
-            this.ClientInfoPanel.TabIndex = 13;
-            // 
-            // ClientInfoBox
-            // 
-            this.ClientInfoBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ClientInfoBox.Location = new System.Drawing.Point(3, 3);
-            this.ClientInfoBox.Name = "ClientInfoBox";
-            this.ClientInfoBox.ReadOnly = true;
-            this.ClientInfoBox.Size = new System.Drawing.Size(266, 66);
-            this.ClientInfoBox.TabIndex = 0;
-            this.ClientInfoBox.Text = "Client Info will be displayed here.";
-            this.ClientInfoBox.TextChanged += new System.EventHandler(this.ClientInfoBox_TextChanged);
-            // 
-            // ClientPictureBox
-            // 
-            this.ClientPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ClientPictureBox.Location = new System.Drawing.Point(6, 41);
-            this.ClientPictureBox.Name = "ClientPictureBox";
-            this.ClientPictureBox.Size = new System.Drawing.Size(275, 158);
-            this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ClientPictureBox.TabIndex = 14;
-            this.ClientPictureBox.TabStop = false;
-            this.ClientPictureBox.Click += new System.EventHandler(this.ClientPictureBox_Click);
-            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -443,13 +445,13 @@
             this.AllTabs.ResumeLayout(false);
             this.PlayTab.ResumeLayout(false);
             this.PlayTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).EndInit();
+            this.ClientInfoPanel.ResumeLayout(false);
             this.PlyrTab.ResumeLayout(false);
             this.PlyrTab.PerformLayout();
             this.CatalogTab.ResumeLayout(false);
             this.CatalogTabsOptions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).EndInit();
-            this.ClientInfoPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -471,7 +473,7 @@
         private System.Windows.Forms.TabControl CatalogTabsOptions;
         private System.Windows.Forms.TabPage HatTab;
         private System.Windows.Forms.TabPage ShrtTab;
-        private System.Windows.Forms.TabPage AvtrTab;
+        private System.Windows.Forms.TabPage InfoTab;
         private System.Windows.Forms.TextBox PlayerIDBox;
         private System.Windows.Forms.TextBox PlayerNameBox;
         private System.Windows.Forms.Label UserNote;

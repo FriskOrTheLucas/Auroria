@@ -71,8 +71,11 @@ namespace Auroria.NT
                 MessageBoxButtons.OK, MessageBoxIcon.Information
             );
 
+            string NrmlBanner = "Data\\Banners\\BannerLongNT.png";
             string mapsFolder = "Maps";
             string ChckMapDirectory = @"Maps";
+
+            BackgroundBox.ImageLocation = NrmlBanner;
 
             if (!Directory.Exists(ChckMapDirectory))
             {
