@@ -400,7 +400,6 @@
             // DCButton
             // 
             this.DCButton.BackColor = System.Drawing.Color.SlateBlue;
-            this.DCButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DCButton.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DCButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DCButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -486,9 +485,9 @@
             // HatsListView
             // 
             this.HatsListView.HideSelection = false;
-            this.HatsListView.Location = new System.Drawing.Point(6, 6);
+            this.HatsListView.Location = new System.Drawing.Point(3, 6);
             this.HatsListView.Name = "HatsListView";
-            this.HatsListView.Size = new System.Drawing.Size(463, 325);
+            this.HatsListView.Size = new System.Drawing.Size(466, 325);
             this.HatsListView.TabIndex = 0;
             this.HatsListView.UseCompatibleStateImageBehavior = false;
             // 
