@@ -53,11 +53,11 @@
             this.PacksTab = new System.Windows.Forms.TabPage();
             this.SettingTab = new System.Windows.Forms.TabPage();
             this.CrditTab = new System.Windows.Forms.TabPage();
+            this.DCButton = new System.Windows.Forms.Button();
             this.ClientsLabel = new System.Windows.Forms.Label();
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
-            this.DCButton = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
@@ -150,7 +150,9 @@
             "2007E [NF]",
             "2007M [NF]",
             "2007L [NF]",
-            "2008E [NF]"});
+            "2008E [NF]",
+            "2008M [NF]",
+            "2008L [NF]"});
             this.ClientList.Location = new System.Drawing.Point(288, 41);
             this.ClientList.Name = "ClientList";
             this.ClientList.Size = new System.Drawing.Size(201, 340);
@@ -384,6 +386,21 @@
             this.CrditTab.Text = "Credits";
             this.CrditTab.ToolTipText = "Credits for all the cool people who made Auroria possible.";
             // 
+            // DCButton
+            // 
+            this.DCButton.BackColor = System.Drawing.Color.SlateBlue;
+            this.DCButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DCButton.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DCButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DCButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DCButton.Location = new System.Drawing.Point(16, 15);
+            this.DCButton.Name = "DCButton";
+            this.DCButton.Size = new System.Drawing.Size(153, 40);
+            this.DCButton.TabIndex = 0;
+            this.DCButton.Text = "Join the Discord!";
+            this.DCButton.UseVisualStyleBackColor = false;
+            this.DCButton.Click += new System.EventHandler(this.DCButton_Click);
+            // 
             // ClientsLabel
             // 
             this.ClientsLabel.AutoSize = true;
@@ -427,21 +444,6 @@
             this.MOTD.Text = "insert default text here lmao";
             this.MOTD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MOTD.Click += new System.EventHandler(this.MOTDLabel);
-            // 
-            // DCButton
-            // 
-            this.DCButton.BackColor = System.Drawing.Color.SlateBlue;
-            this.DCButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DCButton.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DCButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DCButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DCButton.Location = new System.Drawing.Point(16, 15);
-            this.DCButton.Name = "DCButton";
-            this.DCButton.Size = new System.Drawing.Size(153, 40);
-            this.DCButton.TabIndex = 0;
-            this.DCButton.Text = "Join the Discord!";
-            this.DCButton.UseVisualStyleBackColor = false;
-            this.DCButton.Click += new System.EventHandler(this.DCButton_Click);
             // 
             // AurNTBase
             // 
