@@ -142,8 +142,7 @@ namespace Auroria.NT
                 if (selectedClient == "2007S") // <-- Future note to self since im a C# noob: DONT ADD A ; HERE -Lucas
                 {
                     ClientPictureBox.ImageLocation = "Data\\ClientThmbnl\\2007S\\2007Img.png";
-                    ClientInfoBox.Text = "A recreation of the February 2007 Client!";
-                    MessageBox.Show("Note: 2007S May not be a perfectly accurate recreation!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClientInfoBox.Text = "A recreation of the February 2007 Client! [Note: Recreation may not be perfectly accurate!]";
                 }
 
                 else // Remove this when other clients have been officially added to the launcher. This is just a placeholder cuz im a chud..
