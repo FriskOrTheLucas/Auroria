@@ -63,6 +63,7 @@
             this.MOTD = new System.Windows.Forms.Label();
             this.PantsListView = new System.Windows.Forms.ListView();
             this.ShirtsListView = new System.Windows.Forms.ListView();
+            this.CookieWzrd = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
@@ -270,6 +271,7 @@
             // CustmTab
             // 
             this.CustmTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CustmTab.Controls.Add(this.CookieWzrd);
             this.CustmTab.Controls.Add(this.UserNote);
             this.CustmTab.Controls.Add(this.label1);
             this.CustmTab.Controls.Add(this.CatalogTabsOptions);
@@ -322,7 +324,7 @@
             this.HatsListView.HideSelection = false;
             this.HatsListView.Location = new System.Drawing.Point(0, 0);
             this.HatsListView.Name = "HatsListView";
-            this.HatsListView.Size = new System.Drawing.Size(475, 284);
+            this.HatsListView.Size = new System.Drawing.Size(381, 284);
             this.HatsListView.TabIndex = 0;
             this.HatsListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -339,7 +341,7 @@
             // 
             this.FaceTab.Location = new System.Drawing.Point(4, 34);
             this.FaceTab.Name = "FaceTab";
-            this.FaceTab.Size = new System.Drawing.Size(475, 337);
+            this.FaceTab.Size = new System.Drawing.Size(475, 284);
             this.FaceTab.TabIndex = 5;
             this.FaceTab.Text = "Faces";
             this.FaceTab.UseVisualStyleBackColor = true;
@@ -348,7 +350,7 @@
             // 
             this.TshrtTab.Location = new System.Drawing.Point(4, 34);
             this.TshrtTab.Name = "TshrtTab";
-            this.TshrtTab.Size = new System.Drawing.Size(475, 337);
+            this.TshrtTab.Size = new System.Drawing.Size(475, 284);
             this.TshrtTab.TabIndex = 3;
             this.TshrtTab.Text = "T-Shirts";
             this.TshrtTab.UseVisualStyleBackColor = true;
@@ -489,7 +491,7 @@
             this.PantsListView.HideSelection = false;
             this.PantsListView.Location = new System.Drawing.Point(0, 0);
             this.PantsListView.Name = "PantsListView";
-            this.PantsListView.Size = new System.Drawing.Size(475, 284);
+            this.PantsListView.Size = new System.Drawing.Size(381, 284);
             this.PantsListView.TabIndex = 1;
             this.PantsListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -498,9 +500,20 @@
             this.ShirtsListView.HideSelection = false;
             this.ShirtsListView.Location = new System.Drawing.Point(0, 0);
             this.ShirtsListView.Name = "ShirtsListView";
-            this.ShirtsListView.Size = new System.Drawing.Size(475, 284);
+            this.ShirtsListView.Size = new System.Drawing.Size(381, 284);
             this.ShirtsListView.TabIndex = 2;
             this.ShirtsListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // CookieWzrd
+            // 
+            this.CookieWzrd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CookieWzrd.Location = new System.Drawing.Point(309, 12);
+            this.CookieWzrd.Name = "CookieWzrd";
+            this.CookieWzrd.Size = new System.Drawing.Size(152, 41);
+            this.CookieWzrd.TabIndex = 13;
+            this.CookieWzrd.Text = "Cookie Wizard";
+            this.CookieWzrd.UseVisualStyleBackColor = true;
+            this.CookieWzrd.Click += new System.EventHandler(this.CookieWzrd_Click);
             // 
             // AurNTBase
             // 
@@ -573,6 +586,7 @@
         private System.Windows.Forms.ListView HatsListView;
         private System.Windows.Forms.ListView PantsListView;
         private System.Windows.Forms.ListView ShirtsListView;
+        private System.Windows.Forms.Button CookieWzrd;
     }
 }
 

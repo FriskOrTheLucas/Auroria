@@ -181,5 +181,11 @@ namespace Auroria.NT
                 MessageBox.Show("Unable to open Discord URL: " + ex.Message);
             }
         }
+
+        private void CookieWzrd_Click(object sender, EventArgs e)
+        {
+            CookieWizard cookieWizardForm = new CookieWizard();
+            cookieWizardForm.Show();
+        }
     }
 }
