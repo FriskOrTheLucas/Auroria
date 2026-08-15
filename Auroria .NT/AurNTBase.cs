@@ -166,6 +166,7 @@ namespace Auroria.NT
 
         private void DCButton_Click(object sender, EventArgs e)
         {
+            // theres probably WAY better ways to do this but this is just how i did it because uh yeah
             string url = "https://discord.gg/vrwTt9A6zF";
             try
             {

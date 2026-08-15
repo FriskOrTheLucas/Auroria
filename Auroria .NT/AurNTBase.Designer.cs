@@ -38,12 +38,11 @@
             this.HostBtn = new System.Windows.Forms.Button();
             this.SrvrIPbox = new System.Windows.Forms.TextBox();
             this.JoinBtn = new System.Windows.Forms.Button();
-            this.PlyrTab = new System.Windows.Forms.TabPage();
             this.UserNote = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PlayerIDBox = new System.Windows.Forms.TextBox();
             this.PlayerNameBox = new System.Windows.Forms.TextBox();
-            this.CatalogTab = new System.Windows.Forms.TabPage();
+            this.CustmTab = new System.Windows.Forms.TabPage();
             this.CatalogTabsOptions = new System.Windows.Forms.TabControl();
             this.HatTab = new System.Windows.Forms.TabPage();
             this.HatsListView = new System.Windows.Forms.ListView();
@@ -62,16 +61,17 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
-            this.tmptext = new System.Windows.Forms.Label();
+            this.PantsListView = new System.Windows.Forms.ListView();
+            this.ShirtsListView = new System.Windows.Forms.ListView();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
             this.ClientInfoPanel.SuspendLayout();
-            this.PlyrTab.SuspendLayout();
-            this.CatalogTab.SuspendLayout();
+            this.CustmTab.SuspendLayout();
             this.CatalogTabsOptions.SuspendLayout();
             this.HatTab.SuspendLayout();
-            this.PckgeTab.SuspendLayout();
+            this.ShrtTab.SuspendLayout();
+            this.PntTab.SuspendLayout();
             this.CrditTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).BeginInit();
             this.SuspendLayout();
@@ -79,8 +79,7 @@
             // AllTabs
             // 
             this.AllTabs.Controls.Add(this.PlayTab);
-            this.AllTabs.Controls.Add(this.PlyrTab);
-            this.AllTabs.Controls.Add(this.CatalogTab);
+            this.AllTabs.Controls.Add(this.CustmTab);
             this.AllTabs.Controls.Add(this.InfoTab);
             this.AllTabs.Controls.Add(this.PacksTab);
             this.AllTabs.Controls.Add(this.SettingTab);
@@ -88,7 +87,7 @@
             this.AllTabs.Cursor = System.Windows.Forms.Cursors.Default;
             this.AllTabs.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AllTabs.HotTrack = true;
-            this.AllTabs.ItemSize = new System.Drawing.Size(69, 30);
+            this.AllTabs.ItemSize = new System.Drawing.Size(76, 30);
             this.AllTabs.Location = new System.Drawing.Point(12, 189);
             this.AllTabs.Name = "AllTabs";
             this.AllTabs.SelectedIndex = 0;
@@ -219,26 +218,12 @@
             this.JoinBtn.UseVisualStyleBackColor = false;
             this.JoinBtn.Click += new System.EventHandler(this.JoinBtn_click);
             // 
-            // PlyrTab
-            // 
-            this.PlyrTab.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.PlyrTab.Controls.Add(this.UserNote);
-            this.PlyrTab.Controls.Add(this.label1);
-            this.PlyrTab.Controls.Add(this.PlayerIDBox);
-            this.PlyrTab.Controls.Add(this.PlayerNameBox);
-            this.PlyrTab.Location = new System.Drawing.Point(4, 34);
-            this.PlyrTab.Name = "PlyrTab";
-            this.PlyrTab.Size = new System.Drawing.Size(495, 387);
-            this.PlyrTab.TabIndex = 5;
-            this.PlyrTab.Text = "Player";
-            this.PlyrTab.ToolTipText = "Adjust things such as your name or ID, and avatar!";
-            // 
             // UserNote
             // 
             this.UserNote.AutoSize = true;
             this.UserNote.BackColor = System.Drawing.Color.Transparent;
             this.UserNote.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserNote.Location = new System.Drawing.Point(149, 5);
+            this.UserNote.Location = new System.Drawing.Point(141, 12);
             this.UserNote.Name = "UserNote";
             this.UserNote.Size = new System.Drawing.Size(66, 15);
             this.UserNote.TabIndex = 11;
@@ -250,7 +235,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 5);
+            this.label1.Location = new System.Drawing.Point(5, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 15);
             this.label1.TabIndex = 12;
@@ -262,7 +247,7 @@
             this.PlayerIDBox.BackColor = System.Drawing.SystemColors.Window;
             this.PlayerIDBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PlayerIDBox.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerIDBox.Location = new System.Drawing.Point(16, 23);
+            this.PlayerIDBox.Location = new System.Drawing.Point(8, 30);
             this.PlayerIDBox.MaxLength = 30;
             this.PlayerIDBox.Name = "PlayerIDBox";
             this.PlayerIDBox.Size = new System.Drawing.Size(113, 23);
@@ -274,7 +259,7 @@
             this.PlayerNameBox.BackColor = System.Drawing.SystemColors.Window;
             this.PlayerNameBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PlayerNameBox.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerNameBox.Location = new System.Drawing.Point(152, 23);
+            this.PlayerNameBox.Location = new System.Drawing.Point(144, 30);
             this.PlayerNameBox.MaxLength = 20;
             this.PlayerNameBox.Name = "PlayerNameBox";
             this.PlayerNameBox.Size = new System.Drawing.Size(118, 23);
@@ -282,18 +267,22 @@
             this.PlayerNameBox.Text = "Username";
             this.PlayerNameBox.TextChanged += new System.EventHandler(this.PlayerNameBox_TextChanged);
             // 
-            // CatalogTab
+            // CustmTab
             // 
-            this.CatalogTab.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CatalogTab.Controls.Add(this.CatalogTabsOptions);
-            this.CatalogTab.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CatalogTab.Location = new System.Drawing.Point(4, 34);
-            this.CatalogTab.Name = "CatalogTab";
-            this.CatalogTab.Padding = new System.Windows.Forms.Padding(3);
-            this.CatalogTab.Size = new System.Drawing.Size(495, 387);
-            this.CatalogTab.TabIndex = 2;
-            this.CatalogTab.Text = "Catalog";
-            this.CatalogTab.ToolTipText = "Catalog to get clothes n stuff";
+            this.CustmTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CustmTab.Controls.Add(this.UserNote);
+            this.CustmTab.Controls.Add(this.label1);
+            this.CustmTab.Controls.Add(this.CatalogTabsOptions);
+            this.CustmTab.Controls.Add(this.PlayerNameBox);
+            this.CustmTab.Controls.Add(this.PlayerIDBox);
+            this.CustmTab.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CustmTab.Location = new System.Drawing.Point(4, 34);
+            this.CustmTab.Name = "CustmTab";
+            this.CustmTab.Padding = new System.Windows.Forms.Padding(3);
+            this.CustmTab.Size = new System.Drawing.Size(495, 387);
+            this.CustmTab.TabIndex = 2;
+            this.CustmTab.Text = "Customize";
+            this.CustmTab.ToolTipText = "Catalog to get clothes n stuff";
             // 
             // CatalogTabsOptions
             // 
@@ -310,10 +299,10 @@
             this.CatalogTabsOptions.Cursor = System.Windows.Forms.Cursors.Default;
             this.CatalogTabsOptions.HotTrack = true;
             this.CatalogTabsOptions.ItemSize = new System.Drawing.Size(68, 30);
-            this.CatalogTabsOptions.Location = new System.Drawing.Point(6, 6);
+            this.CatalogTabsOptions.Location = new System.Drawing.Point(6, 59);
             this.CatalogTabsOptions.Name = "CatalogTabsOptions";
             this.CatalogTabsOptions.SelectedIndex = 0;
-            this.CatalogTabsOptions.Size = new System.Drawing.Size(483, 375);
+            this.CatalogTabsOptions.Size = new System.Drawing.Size(483, 322);
             this.CatalogTabsOptions.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.CatalogTabsOptions.TabIndex = 0;
             // 
@@ -323,7 +312,7 @@
             this.HatTab.Location = new System.Drawing.Point(4, 34);
             this.HatTab.Name = "HatTab";
             this.HatTab.Padding = new System.Windows.Forms.Padding(3);
-            this.HatTab.Size = new System.Drawing.Size(475, 337);
+            this.HatTab.Size = new System.Drawing.Size(475, 284);
             this.HatTab.TabIndex = 0;
             this.HatTab.Text = "Hats";
             this.HatTab.UseVisualStyleBackColor = true;
@@ -331,9 +320,9 @@
             // HatsListView
             // 
             this.HatsListView.HideSelection = false;
-            this.HatsListView.Location = new System.Drawing.Point(3, 6);
+            this.HatsListView.Location = new System.Drawing.Point(0, 0);
             this.HatsListView.Name = "HatsListView";
-            this.HatsListView.Size = new System.Drawing.Size(466, 325);
+            this.HatsListView.Size = new System.Drawing.Size(475, 284);
             this.HatsListView.TabIndex = 0;
             this.HatsListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -341,7 +330,7 @@
             // 
             this.HeadsTab.Location = new System.Drawing.Point(4, 34);
             this.HeadsTab.Name = "HeadsTab";
-            this.HeadsTab.Size = new System.Drawing.Size(475, 337);
+            this.HeadsTab.Size = new System.Drawing.Size(475, 284);
             this.HeadsTab.TabIndex = 4;
             this.HeadsTab.Text = "Heads";
             this.HeadsTab.UseVisualStyleBackColor = true;
@@ -366,29 +355,30 @@
             // 
             // ShrtTab
             // 
+            this.ShrtTab.Controls.Add(this.ShirtsListView);
             this.ShrtTab.Location = new System.Drawing.Point(4, 34);
             this.ShrtTab.Name = "ShrtTab";
             this.ShrtTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ShrtTab.Size = new System.Drawing.Size(475, 337);
+            this.ShrtTab.Size = new System.Drawing.Size(475, 284);
             this.ShrtTab.TabIndex = 1;
             this.ShrtTab.Text = "Shirts";
             this.ShrtTab.UseVisualStyleBackColor = true;
             // 
             // PntTab
             // 
+            this.PntTab.Controls.Add(this.PantsListView);
             this.PntTab.Location = new System.Drawing.Point(4, 34);
             this.PntTab.Name = "PntTab";
-            this.PntTab.Size = new System.Drawing.Size(475, 337);
+            this.PntTab.Size = new System.Drawing.Size(475, 284);
             this.PntTab.TabIndex = 2;
             this.PntTab.Text = "Pants";
             this.PntTab.UseVisualStyleBackColor = true;
             // 
             // PckgeTab
             // 
-            this.PckgeTab.Controls.Add(this.tmptext);
             this.PckgeTab.Location = new System.Drawing.Point(4, 34);
             this.PckgeTab.Name = "PckgeTab";
-            this.PckgeTab.Size = new System.Drawing.Size(475, 337);
+            this.PckgeTab.Size = new System.Drawing.Size(475, 284);
             this.PckgeTab.TabIndex = 6;
             this.PckgeTab.Text = "Packages";
             this.PckgeTab.UseVisualStyleBackColor = true;
@@ -494,14 +484,23 @@
             this.MOTD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MOTD.Click += new System.EventHandler(this.MOTDLabel);
             // 
-            // tmptext
+            // PantsListView
             // 
-            this.tmptext.AutoSize = true;
-            this.tmptext.Location = new System.Drawing.Point(117, 69);
-            this.tmptext.Name = "tmptext";
-            this.tmptext.Size = new System.Drawing.Size(190, 14);
-            this.tmptext.TabIndex = 0;
-            this.tmptext.Text = "text because this wont load right";
+            this.PantsListView.HideSelection = false;
+            this.PantsListView.Location = new System.Drawing.Point(0, 0);
+            this.PantsListView.Name = "PantsListView";
+            this.PantsListView.Size = new System.Drawing.Size(475, 284);
+            this.PantsListView.TabIndex = 1;
+            this.PantsListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // ShirtsListView
+            // 
+            this.ShirtsListView.HideSelection = false;
+            this.ShirtsListView.Location = new System.Drawing.Point(0, 0);
+            this.ShirtsListView.Name = "ShirtsListView";
+            this.ShirtsListView.Size = new System.Drawing.Size(475, 284);
+            this.ShirtsListView.TabIndex = 2;
+            this.ShirtsListView.UseCompatibleStateImageBehavior = false;
             // 
             // AurNTBase
             // 
@@ -525,13 +524,12 @@
             this.PlayTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).EndInit();
             this.ClientInfoPanel.ResumeLayout(false);
-            this.PlyrTab.ResumeLayout(false);
-            this.PlyrTab.PerformLayout();
-            this.CatalogTab.ResumeLayout(false);
+            this.CustmTab.ResumeLayout(false);
+            this.CustmTab.PerformLayout();
             this.CatalogTabsOptions.ResumeLayout(false);
             this.HatTab.ResumeLayout(false);
-            this.PckgeTab.ResumeLayout(false);
-            this.PckgeTab.PerformLayout();
+            this.ShrtTab.ResumeLayout(false);
+            this.PntTab.ResumeLayout(false);
             this.CrditTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).EndInit();
             this.ResumeLayout(false);
@@ -546,7 +544,7 @@
         private System.Windows.Forms.TabPage SettingTab;
         private System.Windows.Forms.Label ClientsLabel;
         private System.Windows.Forms.TreeView MapsTree;
-        private System.Windows.Forms.TabPage CatalogTab;
+        private System.Windows.Forms.TabPage CustmTab;
         private System.Windows.Forms.Button JoinBtn;
         private System.Windows.Forms.Button HostBtn;
         private System.Windows.Forms.TabPage CrditTab;
@@ -560,7 +558,6 @@
         private System.Windows.Forms.TextBox PlayerNameBox;
         private System.Windows.Forms.Label UserNote;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage PlyrTab;
         private System.Windows.Forms.TabPage TshrtTab;
         private System.Windows.Forms.TabPage PntTab;
         private System.Windows.Forms.TabPage PacksTab;
@@ -574,7 +571,8 @@
         private System.Windows.Forms.TabPage FaceTab;
         private System.Windows.Forms.TabPage PckgeTab;
         private System.Windows.Forms.ListView HatsListView;
-        private System.Windows.Forms.Label tmptext;
+        private System.Windows.Forms.ListView PantsListView;
+        private System.Windows.Forms.ListView ShirtsListView;
     }
 }
 
