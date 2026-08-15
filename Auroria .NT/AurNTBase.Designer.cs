@@ -46,9 +46,13 @@
             this.CatalogTab = new System.Windows.Forms.TabPage();
             this.CatalogTabsOptions = new System.Windows.Forms.TabControl();
             this.HatTab = new System.Windows.Forms.TabPage();
+            this.HatsListView = new System.Windows.Forms.ListView();
+            this.HeadsTab = new System.Windows.Forms.TabPage();
+            this.FaceTab = new System.Windows.Forms.TabPage();
             this.TshrtTab = new System.Windows.Forms.TabPage();
             this.ShrtTab = new System.Windows.Forms.TabPage();
             this.PntTab = new System.Windows.Forms.TabPage();
+            this.PckgeTab = new System.Windows.Forms.TabPage();
             this.InfoTab = new System.Windows.Forms.TabPage();
             this.PacksTab = new System.Windows.Forms.TabPage();
             this.SettingTab = new System.Windows.Forms.TabPage();
@@ -58,10 +62,7 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
-            this.HeadsTab = new System.Windows.Forms.TabPage();
-            this.FaceTab = new System.Windows.Forms.TabPage();
-            this.PckgeTab = new System.Windows.Forms.TabPage();
-            this.HatsListView = new System.Windows.Forms.ListView();
+            this.tmptext = new System.Windows.Forms.Label();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
@@ -70,6 +71,7 @@
             this.CatalogTab.SuspendLayout();
             this.CatalogTabsOptions.SuspendLayout();
             this.HatTab.SuspendLayout();
+            this.PckgeTab.SuspendLayout();
             this.CrditTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).BeginInit();
             this.SuspendLayout();
@@ -326,6 +328,33 @@
             this.HatTab.Text = "Hats";
             this.HatTab.UseVisualStyleBackColor = true;
             // 
+            // HatsListView
+            // 
+            this.HatsListView.HideSelection = false;
+            this.HatsListView.Location = new System.Drawing.Point(3, 6);
+            this.HatsListView.Name = "HatsListView";
+            this.HatsListView.Size = new System.Drawing.Size(466, 325);
+            this.HatsListView.TabIndex = 0;
+            this.HatsListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // HeadsTab
+            // 
+            this.HeadsTab.Location = new System.Drawing.Point(4, 34);
+            this.HeadsTab.Name = "HeadsTab";
+            this.HeadsTab.Size = new System.Drawing.Size(475, 337);
+            this.HeadsTab.TabIndex = 4;
+            this.HeadsTab.Text = "Heads";
+            this.HeadsTab.UseVisualStyleBackColor = true;
+            // 
+            // FaceTab
+            // 
+            this.FaceTab.Location = new System.Drawing.Point(4, 34);
+            this.FaceTab.Name = "FaceTab";
+            this.FaceTab.Size = new System.Drawing.Size(475, 337);
+            this.FaceTab.TabIndex = 5;
+            this.FaceTab.Text = "Faces";
+            this.FaceTab.UseVisualStyleBackColor = true;
+            // 
             // TshrtTab
             // 
             this.TshrtTab.Location = new System.Drawing.Point(4, 34);
@@ -353,6 +382,16 @@
             this.PntTab.TabIndex = 2;
             this.PntTab.Text = "Pants";
             this.PntTab.UseVisualStyleBackColor = true;
+            // 
+            // PckgeTab
+            // 
+            this.PckgeTab.Controls.Add(this.tmptext);
+            this.PckgeTab.Location = new System.Drawing.Point(4, 34);
+            this.PckgeTab.Name = "PckgeTab";
+            this.PckgeTab.Size = new System.Drawing.Size(475, 337);
+            this.PckgeTab.TabIndex = 6;
+            this.PckgeTab.Text = "Packages";
+            this.PckgeTab.UseVisualStyleBackColor = true;
             // 
             // InfoTab
             // 
@@ -455,41 +494,14 @@
             this.MOTD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MOTD.Click += new System.EventHandler(this.MOTDLabel);
             // 
-            // HeadsTab
+            // tmptext
             // 
-            this.HeadsTab.Location = new System.Drawing.Point(4, 34);
-            this.HeadsTab.Name = "HeadsTab";
-            this.HeadsTab.Size = new System.Drawing.Size(475, 337);
-            this.HeadsTab.TabIndex = 4;
-            this.HeadsTab.Text = "Heads";
-            this.HeadsTab.UseVisualStyleBackColor = true;
-            // 
-            // FaceTab
-            // 
-            this.FaceTab.Location = new System.Drawing.Point(4, 34);
-            this.FaceTab.Name = "FaceTab";
-            this.FaceTab.Size = new System.Drawing.Size(475, 337);
-            this.FaceTab.TabIndex = 5;
-            this.FaceTab.Text = "Faces";
-            this.FaceTab.UseVisualStyleBackColor = true;
-            // 
-            // PckgeTab
-            // 
-            this.PckgeTab.Location = new System.Drawing.Point(4, 34);
-            this.PckgeTab.Name = "PckgeTab";
-            this.PckgeTab.Size = new System.Drawing.Size(475, 337);
-            this.PckgeTab.TabIndex = 6;
-            this.PckgeTab.Text = "Packages";
-            this.PckgeTab.UseVisualStyleBackColor = true;
-            // 
-            // HatsListView
-            // 
-            this.HatsListView.HideSelection = false;
-            this.HatsListView.Location = new System.Drawing.Point(3, 6);
-            this.HatsListView.Name = "HatsListView";
-            this.HatsListView.Size = new System.Drawing.Size(466, 325);
-            this.HatsListView.TabIndex = 0;
-            this.HatsListView.UseCompatibleStateImageBehavior = false;
+            this.tmptext.AutoSize = true;
+            this.tmptext.Location = new System.Drawing.Point(117, 69);
+            this.tmptext.Name = "tmptext";
+            this.tmptext.Size = new System.Drawing.Size(190, 14);
+            this.tmptext.TabIndex = 0;
+            this.tmptext.Text = "text because this wont load right";
             // 
             // AurNTBase
             // 
@@ -518,6 +530,8 @@
             this.CatalogTab.ResumeLayout(false);
             this.CatalogTabsOptions.ResumeLayout(false);
             this.HatTab.ResumeLayout(false);
+            this.PckgeTab.ResumeLayout(false);
+            this.PckgeTab.PerformLayout();
             this.CrditTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).EndInit();
             this.ResumeLayout(false);
@@ -560,6 +574,7 @@
         private System.Windows.Forms.TabPage FaceTab;
         private System.Windows.Forms.TabPage PckgeTab;
         private System.Windows.Forms.ListView HatsListView;
+        private System.Windows.Forms.Label tmptext;
     }
 }
 
