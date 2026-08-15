@@ -39,11 +39,10 @@
             this.HostBtn = new System.Windows.Forms.Button();
             this.SrvrIPbox = new System.Windows.Forms.TextBox();
             this.JoinBtn = new System.Windows.Forms.Button();
+            this.CustmTab = new System.Windows.Forms.TabPage();
+            this.CookieWzrd = new System.Windows.Forms.Button();
             this.UserNote = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.PlayerIDBox = new System.Windows.Forms.TextBox();
-            this.PlayerNameBox = new System.Windows.Forms.TextBox();
-            this.CustmTab = new System.Windows.Forms.TabPage();
             this.CatalogTabsOptions = new System.Windows.Forms.TabControl();
             this.HatTab = new System.Windows.Forms.TabPage();
             this.HatsListView = new System.Windows.Forms.ListView();
@@ -51,8 +50,13 @@
             this.FaceTab = new System.Windows.Forms.TabPage();
             this.TshrtTab = new System.Windows.Forms.TabPage();
             this.ShrtTab = new System.Windows.Forms.TabPage();
+            this.ShirtsListView = new System.Windows.Forms.ListView();
+            this.CatalogImageList = new System.Windows.Forms.ImageList(this.components);
             this.PntTab = new System.Windows.Forms.TabPage();
+            this.PantsListView = new System.Windows.Forms.ListView();
             this.PckgeTab = new System.Windows.Forms.TabPage();
+            this.PlayerNameBox = new System.Windows.Forms.TextBox();
+            this.PlayerIDBox = new System.Windows.Forms.TextBox();
             this.InfoTab = new System.Windows.Forms.TabPage();
             this.PacksTab = new System.Windows.Forms.TabPage();
             this.SettingTab = new System.Windows.Forms.TabPage();
@@ -62,10 +66,6 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
-            this.PantsListView = new System.Windows.Forms.ListView();
-            this.ShirtsListView = new System.Windows.Forms.ListView();
-            this.CookieWzrd = new System.Windows.Forms.Button();
-            this.CatalogImageList = new System.Windows.Forms.ImageList(this.components);
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
@@ -221,6 +221,35 @@
             this.JoinBtn.UseVisualStyleBackColor = false;
             this.JoinBtn.Click += new System.EventHandler(this.JoinBtn_click);
             // 
+            // CustmTab
+            // 
+            this.CustmTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CustmTab.Controls.Add(this.CookieWzrd);
+            this.CustmTab.Controls.Add(this.UserNote);
+            this.CustmTab.Controls.Add(this.label1);
+            this.CustmTab.Controls.Add(this.CatalogTabsOptions);
+            this.CustmTab.Controls.Add(this.PlayerNameBox);
+            this.CustmTab.Controls.Add(this.PlayerIDBox);
+            this.CustmTab.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CustmTab.Location = new System.Drawing.Point(4, 34);
+            this.CustmTab.Name = "CustmTab";
+            this.CustmTab.Padding = new System.Windows.Forms.Padding(3);
+            this.CustmTab.Size = new System.Drawing.Size(495, 387);
+            this.CustmTab.TabIndex = 2;
+            this.CustmTab.Text = "Customize";
+            this.CustmTab.ToolTipText = "Catalog to get clothes n stuff";
+            // 
+            // CookieWzrd
+            // 
+            this.CookieWzrd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CookieWzrd.Location = new System.Drawing.Point(309, 12);
+            this.CookieWzrd.Name = "CookieWzrd";
+            this.CookieWzrd.Size = new System.Drawing.Size(152, 41);
+            this.CookieWzrd.TabIndex = 13;
+            this.CookieWzrd.Text = "Cookie Wizard";
+            this.CookieWzrd.UseVisualStyleBackColor = true;
+            this.CookieWzrd.Click += new System.EventHandler(this.CookieWzrd_Click);
+            // 
             // UserNote
             // 
             this.UserNote.AutoSize = true;
@@ -244,49 +273,6 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "User ID";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // PlayerIDBox
-            // 
-            this.PlayerIDBox.BackColor = System.Drawing.SystemColors.Window;
-            this.PlayerIDBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PlayerIDBox.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerIDBox.Location = new System.Drawing.Point(8, 30);
-            this.PlayerIDBox.MaxLength = 30;
-            this.PlayerIDBox.Name = "PlayerIDBox";
-            this.PlayerIDBox.Size = new System.Drawing.Size(113, 23);
-            this.PlayerIDBox.TabIndex = 9;
-            this.PlayerIDBox.Text = "123456789";
-            // 
-            // PlayerNameBox
-            // 
-            this.PlayerNameBox.BackColor = System.Drawing.SystemColors.Window;
-            this.PlayerNameBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PlayerNameBox.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerNameBox.Location = new System.Drawing.Point(144, 30);
-            this.PlayerNameBox.MaxLength = 20;
-            this.PlayerNameBox.Name = "PlayerNameBox";
-            this.PlayerNameBox.Size = new System.Drawing.Size(118, 23);
-            this.PlayerNameBox.TabIndex = 10;
-            this.PlayerNameBox.Text = "Username";
-            this.PlayerNameBox.TextChanged += new System.EventHandler(this.PlayerNameBox_TextChanged);
-            // 
-            // CustmTab
-            // 
-            this.CustmTab.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CustmTab.Controls.Add(this.CookieWzrd);
-            this.CustmTab.Controls.Add(this.UserNote);
-            this.CustmTab.Controls.Add(this.label1);
-            this.CustmTab.Controls.Add(this.CatalogTabsOptions);
-            this.CustmTab.Controls.Add(this.PlayerNameBox);
-            this.CustmTab.Controls.Add(this.PlayerIDBox);
-            this.CustmTab.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CustmTab.Location = new System.Drawing.Point(4, 34);
-            this.CustmTab.Name = "CustmTab";
-            this.CustmTab.Padding = new System.Windows.Forms.Padding(3);
-            this.CustmTab.Size = new System.Drawing.Size(495, 387);
-            this.CustmTab.TabIndex = 2;
-            this.CustmTab.Text = "Customize";
-            this.CustmTab.ToolTipText = "Catalog to get clothes n stuff";
             // 
             // CatalogTabsOptions
             // 
@@ -368,6 +354,24 @@
             this.ShrtTab.Text = "Shirts";
             this.ShrtTab.UseVisualStyleBackColor = true;
             // 
+            // ShirtsListView
+            // 
+            this.ShirtsListView.GridLines = true;
+            this.ShirtsListView.HideSelection = false;
+            this.ShirtsListView.LargeImageList = this.CatalogImageList;
+            this.ShirtsListView.Location = new System.Drawing.Point(0, 0);
+            this.ShirtsListView.Name = "ShirtsListView";
+            this.ShirtsListView.Size = new System.Drawing.Size(381, 284);
+            this.ShirtsListView.TabIndex = 2;
+            this.ShirtsListView.UseCompatibleStateImageBehavior = false;
+            this.ShirtsListView.SelectedIndexChanged += new System.EventHandler(this.ShirtsListView_SelectedIndexChanged);
+            // 
+            // CatalogImageList
+            // 
+            this.CatalogImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.CatalogImageList.ImageSize = new System.Drawing.Size(16, 16);
+            this.CatalogImageList.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // PntTab
             // 
             this.PntTab.Controls.Add(this.PantsListView);
@@ -378,6 +382,15 @@
             this.PntTab.Text = "Pants";
             this.PntTab.UseVisualStyleBackColor = true;
             // 
+            // PantsListView
+            // 
+            this.PantsListView.HideSelection = false;
+            this.PantsListView.Location = new System.Drawing.Point(0, 0);
+            this.PantsListView.Name = "PantsListView";
+            this.PantsListView.Size = new System.Drawing.Size(381, 284);
+            this.PantsListView.TabIndex = 1;
+            this.PantsListView.UseCompatibleStateImageBehavior = false;
+            // 
             // PckgeTab
             // 
             this.PckgeTab.Location = new System.Drawing.Point(4, 34);
@@ -386,6 +399,31 @@
             this.PckgeTab.TabIndex = 6;
             this.PckgeTab.Text = "Packages";
             this.PckgeTab.UseVisualStyleBackColor = true;
+            // 
+            // PlayerNameBox
+            // 
+            this.PlayerNameBox.BackColor = System.Drawing.SystemColors.Window;
+            this.PlayerNameBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PlayerNameBox.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerNameBox.Location = new System.Drawing.Point(144, 30);
+            this.PlayerNameBox.MaxLength = 20;
+            this.PlayerNameBox.Name = "PlayerNameBox";
+            this.PlayerNameBox.Size = new System.Drawing.Size(118, 23);
+            this.PlayerNameBox.TabIndex = 10;
+            this.PlayerNameBox.Text = "Username";
+            this.PlayerNameBox.TextChanged += new System.EventHandler(this.PlayerNameBox_TextChanged);
+            // 
+            // PlayerIDBox
+            // 
+            this.PlayerIDBox.BackColor = System.Drawing.SystemColors.Window;
+            this.PlayerIDBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PlayerIDBox.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerIDBox.Location = new System.Drawing.Point(8, 30);
+            this.PlayerIDBox.MaxLength = 30;
+            this.PlayerIDBox.Name = "PlayerIDBox";
+            this.PlayerIDBox.Size = new System.Drawing.Size(113, 23);
+            this.PlayerIDBox.TabIndex = 9;
+            this.PlayerIDBox.Text = "123456789";
             // 
             // InfoTab
             // 
@@ -487,43 +525,6 @@
             this.MOTD.Text = "insert default text here lmao";
             this.MOTD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MOTD.Click += new System.EventHandler(this.MOTDLabel);
-            // 
-            // PantsListView
-            // 
-            this.PantsListView.HideSelection = false;
-            this.PantsListView.Location = new System.Drawing.Point(0, 0);
-            this.PantsListView.Name = "PantsListView";
-            this.PantsListView.Size = new System.Drawing.Size(381, 284);
-            this.PantsListView.TabIndex = 1;
-            this.PantsListView.UseCompatibleStateImageBehavior = false;
-            // 
-            // ShirtsListView
-            // 
-            this.ShirtsListView.GridLines = true;
-            this.ShirtsListView.HideSelection = false;
-            this.ShirtsListView.LargeImageList = this.CatalogImageList;
-            this.ShirtsListView.Location = new System.Drawing.Point(0, 0);
-            this.ShirtsListView.Name = "ShirtsListView";
-            this.ShirtsListView.Size = new System.Drawing.Size(381, 284);
-            this.ShirtsListView.TabIndex = 2;
-            this.ShirtsListView.UseCompatibleStateImageBehavior = false;
-            // 
-            // CookieWzrd
-            // 
-            this.CookieWzrd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CookieWzrd.Location = new System.Drawing.Point(309, 12);
-            this.CookieWzrd.Name = "CookieWzrd";
-            this.CookieWzrd.Size = new System.Drawing.Size(152, 41);
-            this.CookieWzrd.TabIndex = 13;
-            this.CookieWzrd.Text = "Cookie Wizard";
-            this.CookieWzrd.UseVisualStyleBackColor = true;
-            this.CookieWzrd.Click += new System.EventHandler(this.CookieWzrd_Click);
-            // 
-            // CatalogImageList
-            // 
-            this.CatalogImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.CatalogImageList.ImageSize = new System.Drawing.Size(16, 16);
-            this.CatalogImageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // AurNTBase
             // 
