@@ -78,6 +78,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\CatalogManager.cs" />
+    <Compile Include="Resources\Item.cs" />
     <Compile Include="Resources\SaveSettings.cs" />
     <EmbeddedResource Include="AurNTBase.resx">
       <DependentUpon>AurNTBase.cs</DependentUpon>

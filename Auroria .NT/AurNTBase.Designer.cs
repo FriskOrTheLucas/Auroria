@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AurNTBase));
             this.AllTabs = new System.Windows.Forms.TabControl();
             this.PlayTab = new System.Windows.Forms.TabPage();
@@ -64,6 +65,7 @@
             this.PantsListView = new System.Windows.Forms.ListView();
             this.ShirtsListView = new System.Windows.Forms.ListView();
             this.CookieWzrd = new System.Windows.Forms.Button();
+            this.CatalogImageList = new System.Windows.Forms.ImageList(this.components);
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
@@ -497,7 +499,9 @@
             // 
             // ShirtsListView
             // 
+            this.ShirtsListView.GridLines = true;
             this.ShirtsListView.HideSelection = false;
+            this.ShirtsListView.LargeImageList = this.CatalogImageList;
             this.ShirtsListView.Location = new System.Drawing.Point(0, 0);
             this.ShirtsListView.Name = "ShirtsListView";
             this.ShirtsListView.Size = new System.Drawing.Size(381, 284);
@@ -514,6 +518,12 @@
             this.CookieWzrd.Text = "Cookie Wizard";
             this.CookieWzrd.UseVisualStyleBackColor = true;
             this.CookieWzrd.Click += new System.EventHandler(this.CookieWzrd_Click);
+            // 
+            // CatalogImageList
+            // 
+            this.CatalogImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.CatalogImageList.ImageSize = new System.Drawing.Size(16, 16);
+            this.CatalogImageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // AurNTBase
             // 
@@ -587,6 +597,7 @@
         private System.Windows.Forms.ListView PantsListView;
         private System.Windows.Forms.ListView ShirtsListView;
         private System.Windows.Forms.Button CookieWzrd;
+        private System.Windows.Forms.ImageList CatalogImageList;
     }
 }
 
