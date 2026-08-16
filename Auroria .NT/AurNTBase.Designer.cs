@@ -66,6 +66,7 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
+            this.ShrtInfoTxt = new System.Windows.Forms.RichTextBox();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
@@ -345,6 +346,7 @@
             // 
             // ShrtTab
             // 
+            this.ShrtTab.Controls.Add(this.ShrtInfoTxt);
             this.ShrtTab.Controls.Add(this.ShirtsListView);
             this.ShrtTab.Location = new System.Drawing.Point(4, 34);
             this.ShrtTab.Name = "ShrtTab";
@@ -359,9 +361,9 @@
             this.ShirtsListView.GridLines = true;
             this.ShirtsListView.HideSelection = false;
             this.ShirtsListView.LargeImageList = this.CatalogImageList;
-            this.ShirtsListView.Location = new System.Drawing.Point(0, 0);
+            this.ShirtsListView.Location = new System.Drawing.Point(6, 6);
             this.ShirtsListView.Name = "ShirtsListView";
-            this.ShirtsListView.Size = new System.Drawing.Size(381, 284);
+            this.ShirtsListView.Size = new System.Drawing.Size(375, 192);
             this.ShirtsListView.TabIndex = 2;
             this.ShirtsListView.UseCompatibleStateImageBehavior = false;
             this.ShirtsListView.SelectedIndexChanged += new System.EventHandler(this.ShirtsListView_SelectedIndexChanged);
@@ -526,6 +528,16 @@
             this.MOTD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MOTD.Click += new System.EventHandler(this.MOTDLabel);
             // 
+            // ShrtInfoTxt
+            // 
+            this.ShrtInfoTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.ShrtInfoTxt.Location = new System.Drawing.Point(6, 204);
+            this.ShrtInfoTxt.Name = "ShrtInfoTxt";
+            this.ShrtInfoTxt.ReadOnly = true;
+            this.ShrtInfoTxt.Size = new System.Drawing.Size(375, 74);
+            this.ShrtInfoTxt.TabIndex = 3;
+            this.ShrtInfoTxt.Text = "No Item Selected!";
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -599,6 +611,7 @@
         private System.Windows.Forms.ListView ShirtsListView;
         private System.Windows.Forms.Button CookieWzrd;
         private System.Windows.Forms.ImageList CatalogImageList;
+        private System.Windows.Forms.RichTextBox ShrtInfoTxt;
     }
 }
 
