@@ -50,6 +50,7 @@
             this.FaceTab = new System.Windows.Forms.TabPage();
             this.TshrtTab = new System.Windows.Forms.TabPage();
             this.ShrtTab = new System.Windows.Forms.TabPage();
+            this.ShrtInfoTxt = new System.Windows.Forms.RichTextBox();
             this.ShirtsListView = new System.Windows.Forms.ListView();
             this.ShrtsImgList = new System.Windows.Forms.ImageList(this.components);
             this.PntTab = new System.Windows.Forms.TabPage();
@@ -66,7 +67,7 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
-            this.ShrtInfoTxt = new System.Windows.Forms.RichTextBox();
+            this.HatsInfoTxt = new System.Windows.Forms.RichTextBox();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
@@ -299,6 +300,7 @@
             // 
             // HatTab
             // 
+            this.HatTab.Controls.Add(this.HatsInfoTxt);
             this.HatTab.Controls.Add(this.HatsListView);
             this.HatTab.Location = new System.Drawing.Point(4, 34);
             this.HatTab.Name = "HatTab";
@@ -311,9 +313,9 @@
             // HatsListView
             // 
             this.HatsListView.HideSelection = false;
-            this.HatsListView.Location = new System.Drawing.Point(0, 0);
+            this.HatsListView.Location = new System.Drawing.Point(6, 6);
             this.HatsListView.Name = "HatsListView";
-            this.HatsListView.Size = new System.Drawing.Size(381, 284);
+            this.HatsListView.Size = new System.Drawing.Size(375, 192);
             this.HatsListView.TabIndex = 0;
             this.HatsListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -355,6 +357,17 @@
             this.ShrtTab.TabIndex = 1;
             this.ShrtTab.Text = "Shirts";
             this.ShrtTab.UseVisualStyleBackColor = true;
+            // 
+            // ShrtInfoTxt
+            // 
+            this.ShrtInfoTxt.BackColor = System.Drawing.SystemColors.Control;
+            this.ShrtInfoTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.ShrtInfoTxt.Location = new System.Drawing.Point(6, 204);
+            this.ShrtInfoTxt.Name = "ShrtInfoTxt";
+            this.ShrtInfoTxt.ReadOnly = true;
+            this.ShrtInfoTxt.Size = new System.Drawing.Size(375, 74);
+            this.ShrtInfoTxt.TabIndex = 3;
+            this.ShrtInfoTxt.Text = "No Item Selected!";
             // 
             // ShirtsListView
             // 
@@ -528,15 +541,15 @@
             this.MOTD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MOTD.Click += new System.EventHandler(this.MOTDLabel);
             // 
-            // ShrtInfoTxt
+            // HatsInfoTxt
             // 
-            this.ShrtInfoTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.ShrtInfoTxt.Location = new System.Drawing.Point(6, 204);
-            this.ShrtInfoTxt.Name = "ShrtInfoTxt";
-            this.ShrtInfoTxt.ReadOnly = true;
-            this.ShrtInfoTxt.Size = new System.Drawing.Size(375, 74);
-            this.ShrtInfoTxt.TabIndex = 3;
-            this.ShrtInfoTxt.Text = "No Item Selected!";
+            this.HatsInfoTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.HatsInfoTxt.Location = new System.Drawing.Point(6, 204);
+            this.HatsInfoTxt.Name = "HatsInfoTxt";
+            this.HatsInfoTxt.ReadOnly = true;
+            this.HatsInfoTxt.Size = new System.Drawing.Size(375, 74);
+            this.HatsInfoTxt.TabIndex = 4;
+            this.HatsInfoTxt.Text = "No Item Selected!";
             // 
             // AurNTBase
             // 
@@ -612,6 +625,7 @@
         private System.Windows.Forms.Button CookieWzrd;
         private System.Windows.Forms.ImageList ShrtsImgList;
         private System.Windows.Forms.RichTextBox ShrtInfoTxt;
+        private System.Windows.Forms.RichTextBox HatsInfoTxt;
     }
 }
 
