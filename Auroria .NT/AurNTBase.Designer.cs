@@ -51,7 +51,7 @@
             this.TshrtTab = new System.Windows.Forms.TabPage();
             this.ShrtTab = new System.Windows.Forms.TabPage();
             this.ShirtsListView = new System.Windows.Forms.ListView();
-            this.CatalogImageList = new System.Windows.Forms.ImageList(this.components);
+            this.ShrtsImgList = new System.Windows.Forms.ImageList(this.components);
             this.PntTab = new System.Windows.Forms.TabPage();
             this.PantsListView = new System.Windows.Forms.ListView();
             this.PckgeTab = new System.Windows.Forms.TabPage();
@@ -360,7 +360,7 @@
             // 
             this.ShirtsListView.GridLines = true;
             this.ShirtsListView.HideSelection = false;
-            this.ShirtsListView.LargeImageList = this.CatalogImageList;
+            this.ShirtsListView.LargeImageList = this.ShrtsImgList;
             this.ShirtsListView.Location = new System.Drawing.Point(6, 6);
             this.ShirtsListView.Name = "ShirtsListView";
             this.ShirtsListView.Size = new System.Drawing.Size(375, 192);
@@ -368,11 +368,11 @@
             this.ShirtsListView.UseCompatibleStateImageBehavior = false;
             this.ShirtsListView.SelectedIndexChanged += new System.EventHandler(this.ShirtsListView_SelectedIndexChanged);
             // 
-            // CatalogImageList
+            // ShrtsImgList
             // 
-            this.CatalogImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.CatalogImageList.ImageSize = new System.Drawing.Size(16, 16);
-            this.CatalogImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ShrtsImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.ShrtsImgList.ImageSize = new System.Drawing.Size(64, 64);
+            this.ShrtsImgList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // PntTab
             // 
@@ -610,7 +610,7 @@
         private System.Windows.Forms.ListView PantsListView;
         private System.Windows.Forms.ListView ShirtsListView;
         private System.Windows.Forms.Button CookieWzrd;
-        private System.Windows.Forms.ImageList CatalogImageList;
+        private System.Windows.Forms.ImageList ShrtsImgList;
         private System.Windows.Forms.RichTextBox ShrtInfoTxt;
     }
 }

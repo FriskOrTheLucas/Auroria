@@ -101,8 +101,18 @@ namespace Auroria.NT
                     JObject obj = JObject.Parse(json);
 
                     string ShirtName = (string)obj["Name"];
+                    string id = (string)obj["AssetID"];
+                    string imgPath = Path.Combine(@"Data/Catalog/charshirts", id + ".png");
 
-                    ShirtsListView.Items.Add(ShirtName);
+                    if (File.Exists(imgPath))
+                    {
+                        ShrtsImgList.Images.Add(imgPath, Image.FromFile(imgPath));
+
+                        ListViewItem item = new ListViewItem(ShirtName);
+                        item.ImageKey = imgPath;
+
+                        ShirtsListView.Items.Add(item);
+                    }
                 }
             }
         }
@@ -123,6 +133,7 @@ namespace Auroria.NT
                 {
                     string json = File.ReadAllText(file);
                     JObject obj = JObject.Parse(json);
+
 
                     string ShirtName = (string)obj["Name"];
                     string Description = (string)obj["Desc"];
