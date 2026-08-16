@@ -9,6 +9,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 // Jay Jay if youre reading this then here is the checklist.
 
@@ -75,6 +77,8 @@ namespace Auroria.NT
 
             BackgroundBox.ImageLocation = NrmlBanner;
 
+            LoadCatalogListBoxShirts(ShirtsListView);
+
             //populate the maps tree view with the map stuff.
             if (!Directory.Exists(ChckMapDirectory))
             {
@@ -89,6 +93,23 @@ namespace Auroria.NT
                     MapsTree.Nodes.Add(Path.GetFileName(folder));
 
                 AddFolder(folderNode, folder);
+            }
+        }
+
+
+        public void LoadCatalogListBoxShirts(ListView ShirtsListView)
+        {
+            foreach (var file in Directory.GetFiles(@"Data/Catalog/charshirts"))
+            {
+                if (file.EndsWith(".json"))
+                {
+                    string json = File.ReadAllText(file);
+                    JObject obj = JObject.Parse(json);
+
+                    string ShirtName = (string)obj["Name"];
+
+                    ShirtsListView.Items.Add(ShirtName);
+                }
             }
         }
 
@@ -111,7 +132,7 @@ namespace Auroria.NT
 
         private void JoinBtn_click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void HostBtn_Click(object sender, EventArgs e)
