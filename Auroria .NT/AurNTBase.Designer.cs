@@ -68,6 +68,9 @@
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
             this.HatsInfoTxt = new System.Windows.Forms.RichTextBox();
+            this.HatsImgList = new System.Windows.Forms.ImageList(this.components);
+            this.SaveBtn = new System.Windows.Forms.Button();
+            this.BodyColorBtn = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
@@ -226,6 +229,8 @@
             // CustmTab
             // 
             this.CustmTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CustmTab.Controls.Add(this.BodyColorBtn);
+            this.CustmTab.Controls.Add(this.SaveBtn);
             this.CustmTab.Controls.Add(this.CookieWzrd);
             this.CustmTab.Controls.Add(this.UserNote);
             this.CustmTab.Controls.Add(this.label1);
@@ -243,10 +248,10 @@
             // 
             // CookieWzrd
             // 
-            this.CookieWzrd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CookieWzrd.Location = new System.Drawing.Point(309, 12);
+            this.CookieWzrd.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CookieWzrd.Location = new System.Drawing.Point(409, 12);
             this.CookieWzrd.Name = "CookieWzrd";
-            this.CookieWzrd.Size = new System.Drawing.Size(152, 41);
+            this.CookieWzrd.Size = new System.Drawing.Size(77, 41);
             this.CookieWzrd.TabIndex = 13;
             this.CookieWzrd.Text = "Cookie Wizard";
             this.CookieWzrd.UseVisualStyleBackColor = true;
@@ -257,7 +262,7 @@
             this.UserNote.AutoSize = true;
             this.UserNote.BackColor = System.Drawing.Color.Transparent;
             this.UserNote.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserNote.Location = new System.Drawing.Point(141, 12);
+            this.UserNote.Location = new System.Drawing.Point(125, 12);
             this.UserNote.Name = "UserNote";
             this.UserNote.Size = new System.Drawing.Size(66, 15);
             this.UserNote.TabIndex = 11;
@@ -313,11 +318,13 @@
             // HatsListView
             // 
             this.HatsListView.HideSelection = false;
+            this.HatsListView.LargeImageList = this.HatsImgList;
             this.HatsListView.Location = new System.Drawing.Point(6, 6);
             this.HatsListView.Name = "HatsListView";
             this.HatsListView.Size = new System.Drawing.Size(375, 192);
             this.HatsListView.TabIndex = 0;
             this.HatsListView.UseCompatibleStateImageBehavior = false;
+            this.HatsListView.SelectedIndexChanged += new System.EventHandler(this.HatsListView_SelectedIndexChanged);
             // 
             // HeadsTab
             // 
@@ -383,7 +390,7 @@
             // 
             // ShrtsImgList
             // 
-            this.ShrtsImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.ShrtsImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             this.ShrtsImgList.ImageSize = new System.Drawing.Size(64, 64);
             this.ShrtsImgList.TransparentColor = System.Drawing.Color.Transparent;
             // 
@@ -420,7 +427,7 @@
             this.PlayerNameBox.BackColor = System.Drawing.SystemColors.Window;
             this.PlayerNameBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PlayerNameBox.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerNameBox.Location = new System.Drawing.Point(144, 30);
+            this.PlayerNameBox.Location = new System.Drawing.Point(128, 30);
             this.PlayerNameBox.MaxLength = 20;
             this.PlayerNameBox.Name = "PlayerNameBox";
             this.PlayerNameBox.Size = new System.Drawing.Size(118, 23);
@@ -551,6 +558,34 @@
             this.HatsInfoTxt.TabIndex = 4;
             this.HatsInfoTxt.Text = "No Item Selected!";
             // 
+            // HatsImgList
+            // 
+            this.HatsImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.HatsImgList.ImageSize = new System.Drawing.Size(64, 64);
+            this.HatsImgList.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.Location = new System.Drawing.Point(253, 12);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(72, 41);
+            this.SaveBtn.TabIndex = 14;
+            this.SaveBtn.Text = "Save Data";
+            this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
+            // BodyColorBtn
+            // 
+            this.BodyColorBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BodyColorBtn.Location = new System.Drawing.Point(331, 12);
+            this.BodyColorBtn.Name = "BodyColorBtn";
+            this.BodyColorBtn.Size = new System.Drawing.Size(72, 41);
+            this.BodyColorBtn.TabIndex = 15;
+            this.BodyColorBtn.Text = "Body Colors";
+            this.BodyColorBtn.UseVisualStyleBackColor = true;
+            this.BodyColorBtn.Click += new System.EventHandler(this.BodyColorBtn_Click);
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -626,6 +661,9 @@
         private System.Windows.Forms.ImageList ShrtsImgList;
         private System.Windows.Forms.RichTextBox ShrtInfoTxt;
         private System.Windows.Forms.RichTextBox HatsInfoTxt;
+        private System.Windows.Forms.ImageList HatsImgList;
+        private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Button BodyColorBtn;
     }
 }
 
