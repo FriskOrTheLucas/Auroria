@@ -165,8 +165,15 @@ namespace Auroria.NT
 
             if (!File.Exists(InfoFilePath))
             {
-                MessageBox.Show("PlayerSettings.json file not found!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show("PlayerSettings.json file not found! Auroria will generate one for you.", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                JObject objnw = new JObject
+                {
+                    { "PlayerName", "Username" },
+                    { "UserID", "123456789" }
+                };
+
+                File.WriteAllText("PlayerSettings.json", objnw.ToString());
             }
 
             string json = File.ReadAllText(InfoFilePath);
@@ -185,8 +192,15 @@ namespace Auroria.NT
 
             if (!File.Exists(InfoFilePath))
             {
-                MessageBox.Show("PlayerSettings.json file not found!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show("PlayerSettings.json file not found! Auroria will generate one for you.", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                JObject objnw = new JObject
+                {
+                    { "PlayerName", "" },
+                    { "UserID", "" }
+                };
+
+                File.WriteAllText("PlayerSettings.json", objnw.ToString());
             }
 
             string json = File.ReadAllText(InfoFilePath);
