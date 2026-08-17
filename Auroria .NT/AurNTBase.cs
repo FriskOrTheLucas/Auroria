@@ -233,7 +233,27 @@ namespace Auroria.NT
 
         private void JoinBtn_click(object sender, EventArgs e)
         {
+            if (ClientList.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a client to join!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                string curClient = ClientList.SelectedItem.ToString();
+                string originalDirectory = Directory.GetCurrentDirectory();
 
+                if (curClient == "2007S")
+                {
+                    Directory.SetCurrentDirectory("Clients\\2007S");
+                    Process.Start("Roblox.exe", "-script \"" + Directory.GetCurrentDirectory() + "\\LocalScripts\\joingame.lua");
+                    Directory.SetCurrentDirectory(originalDirectory);
+                }
+                else
+                {
+                    MessageBox.Show("You're trying to join a client that has not been added yet. This will not work, sorry!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void HostBtn_Click(object sender, EventArgs e)
