@@ -278,7 +278,6 @@ namespace Auroria.NT
 
                 if (curClient == "2007S")
                 {
-                    MessageBox.Show(MapsTree.SelectedNode.Tag.ToString());
                     Directory.SetCurrentDirectory("Clients\\2007S");
                     Process.Start("Roblox.exe", "-script \"" + Directory.GetCurrentDirectory() + "\\LocalScripts\\gameserver.lua\" \"" + mapPath + "\"");
                     Directory.SetCurrentDirectory(originalDirectory);
