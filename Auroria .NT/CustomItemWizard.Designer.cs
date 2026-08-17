@@ -1,6 +1,6 @@
 ﻿namespace Auroria.NT
 {
-    partial class BodyColorsWindow
+    partial class CustomItemWizard
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BodyColorsWindow));
             this.SuspendLayout();
             // 
-            // BodyColorsWindow
+            // CustomItemWizard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 376);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "BodyColorsWindow";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Body Colors";
+            this.ClientSize = new System.Drawing.Size(444, 411);
+            this.Name = "CustomItemWizard";
+            this.Text = "CustomItemWizard";
             this.ResumeLayout(false);
 
         }
