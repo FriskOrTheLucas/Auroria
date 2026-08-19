@@ -31,6 +31,7 @@ namespace Auroria.NT
 {
     public partial class AurNTBase : Form
     {
+
         public AurNTBase()
         {   // Gonna be adding a loading screen soon. Which means we may need a bit of a delay here? I will explain
             // if needed. -Lucas

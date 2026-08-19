@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.37530.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auroria .NT", "Auroria .NT\Auroria .NT.csproj", "{A4223268-80FE-4884-AB7D-8EF714526362}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebserverX", "WebserverX\WebserverX.csproj", "{554FD3A8-75D4-4C72-A770-CBB7593EB325}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuroriaWebserverLM", "WebserverX\AuroriaWebserverLM.csproj", "{554FD3A8-75D4-4C72-A770-CBB7593EB325}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Net;
 
 namespace WebserverX
 {
@@ -9,6 +10,9 @@ namespace WebserverX
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("hallo test?");
+            Console.ReadLine();
+
         }
     }
 }
