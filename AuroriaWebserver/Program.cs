@@ -5,11 +5,12 @@ using System.Text;
 
 namespace AuroriaWebserver
 {
-    internal class WebStrt
+    internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hi is this working");
+            Console.WriteLine("hallo test?");
+            Console.ReadLine();
         }
     }
 }
