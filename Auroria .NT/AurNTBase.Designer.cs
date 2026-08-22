@@ -33,19 +33,22 @@
             this.AllTabs = new System.Windows.Forms.TabControl();
             this.PlayTab = new System.Windows.Forms.TabPage();
             this.ClientPictureBox = new System.Windows.Forms.PictureBox();
-            this.ClientInfoPanel = new System.Windows.Forms.Panel();
             this.ClientInfoBox = new System.Windows.Forms.RichTextBox();
             this.ClientList = new System.Windows.Forms.ListBox();
             this.HostBtn = new System.Windows.Forms.Button();
             this.SrvrIPbox = new System.Windows.Forms.TextBox();
             this.JoinBtn = new System.Windows.Forms.Button();
             this.CustmTab = new System.Windows.Forms.TabPage();
+            this.BodyColorBtn = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
             this.CookieWzrd = new System.Windows.Forms.Button();
             this.UserNote = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CatalogTabsOptions = new System.Windows.Forms.TabControl();
             this.HatTab = new System.Windows.Forms.TabPage();
+            this.HatsInfoTxt = new System.Windows.Forms.RichTextBox();
             this.HatsListView = new System.Windows.Forms.ListView();
+            this.HatsImgList = new System.Windows.Forms.ImageList(this.components);
             this.HeadsTab = new System.Windows.Forms.TabPage();
             this.FaceTab = new System.Windows.Forms.TabPage();
             this.TshrtTab = new System.Windows.Forms.TabPage();
@@ -67,14 +70,9 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
-            this.HatsInfoTxt = new System.Windows.Forms.RichTextBox();
-            this.HatsImgList = new System.Windows.Forms.ImageList(this.components);
-            this.SaveBtn = new System.Windows.Forms.Button();
-            this.BodyColorBtn = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
-            this.ClientInfoPanel.SuspendLayout();
             this.CustmTab.SuspendLayout();
             this.CatalogTabsOptions.SuspendLayout();
             this.HatTab.SuspendLayout();
@@ -107,8 +105,8 @@
             // PlayTab
             // 
             this.PlayTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PlayTab.Controls.Add(this.ClientInfoBox);
             this.PlayTab.Controls.Add(this.ClientPictureBox);
-            this.PlayTab.Controls.Add(this.ClientInfoPanel);
             this.PlayTab.Controls.Add(this.ClientList);
             this.PlayTab.Controls.Add(this.HostBtn);
             this.PlayTab.Controls.Add(this.SrvrIPbox);
@@ -134,22 +132,13 @@
             this.ClientPictureBox.TabStop = false;
             this.ClientPictureBox.Click += new System.EventHandler(this.ClientPictureBox_Click);
             // 
-            // ClientInfoPanel
-            // 
-            this.ClientInfoPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ClientInfoPanel.Controls.Add(this.ClientInfoBox);
-            this.ClientInfoPanel.Location = new System.Drawing.Point(6, 208);
-            this.ClientInfoPanel.Name = "ClientInfoPanel";
-            this.ClientInfoPanel.Size = new System.Drawing.Size(276, 76);
-            this.ClientInfoPanel.TabIndex = 13;
-            // 
             // ClientInfoBox
             // 
             this.ClientInfoBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ClientInfoBox.Location = new System.Drawing.Point(3, 3);
+            this.ClientInfoBox.Location = new System.Drawing.Point(6, 205);
             this.ClientInfoBox.Name = "ClientInfoBox";
             this.ClientInfoBox.ReadOnly = true;
-            this.ClientInfoBox.Size = new System.Drawing.Size(266, 66);
+            this.ClientInfoBox.Size = new System.Drawing.Size(275, 82);
             this.ClientInfoBox.TabIndex = 0;
             this.ClientInfoBox.Text = "Client Info will be displayed here.";
             this.ClientInfoBox.TextChanged += new System.EventHandler(this.ClientInfoBox_TextChanged);
@@ -246,6 +235,28 @@
             this.CustmTab.Text = "Customize";
             this.CustmTab.ToolTipText = "Catalog to get clothes n stuff";
             // 
+            // BodyColorBtn
+            // 
+            this.BodyColorBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BodyColorBtn.Location = new System.Drawing.Point(331, 12);
+            this.BodyColorBtn.Name = "BodyColorBtn";
+            this.BodyColorBtn.Size = new System.Drawing.Size(72, 41);
+            this.BodyColorBtn.TabIndex = 15;
+            this.BodyColorBtn.Text = "Body Colors";
+            this.BodyColorBtn.UseVisualStyleBackColor = true;
+            this.BodyColorBtn.Click += new System.EventHandler(this.BodyColorBtn_Click);
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.Location = new System.Drawing.Point(253, 12);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(72, 41);
+            this.SaveBtn.TabIndex = 14;
+            this.SaveBtn.Text = "Save Data";
+            this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
             // CookieWzrd
             // 
             this.CookieWzrd.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -315,6 +326,16 @@
             this.HatTab.Text = "Hats";
             this.HatTab.UseVisualStyleBackColor = true;
             // 
+            // HatsInfoTxt
+            // 
+            this.HatsInfoTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.HatsInfoTxt.Location = new System.Drawing.Point(6, 204);
+            this.HatsInfoTxt.Name = "HatsInfoTxt";
+            this.HatsInfoTxt.ReadOnly = true;
+            this.HatsInfoTxt.Size = new System.Drawing.Size(375, 74);
+            this.HatsInfoTxt.TabIndex = 4;
+            this.HatsInfoTxt.Text = "No Item Selected!";
+            // 
             // HatsListView
             // 
             this.HatsListView.HideSelection = false;
@@ -325,6 +346,12 @@
             this.HatsListView.TabIndex = 0;
             this.HatsListView.UseCompatibleStateImageBehavior = false;
             this.HatsListView.SelectedIndexChanged += new System.EventHandler(this.HatsListView_SelectedIndexChanged);
+            // 
+            // HatsImgList
+            // 
+            this.HatsImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.HatsImgList.ImageSize = new System.Drawing.Size(64, 64);
+            this.HatsImgList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // HeadsTab
             // 
@@ -548,44 +575,6 @@
             this.MOTD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MOTD.Click += new System.EventHandler(this.MOTDLabel);
             // 
-            // HatsInfoTxt
-            // 
-            this.HatsInfoTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.HatsInfoTxt.Location = new System.Drawing.Point(6, 204);
-            this.HatsInfoTxt.Name = "HatsInfoTxt";
-            this.HatsInfoTxt.ReadOnly = true;
-            this.HatsInfoTxt.Size = new System.Drawing.Size(375, 74);
-            this.HatsInfoTxt.TabIndex = 4;
-            this.HatsInfoTxt.Text = "No Item Selected!";
-            // 
-            // HatsImgList
-            // 
-            this.HatsImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.HatsImgList.ImageSize = new System.Drawing.Size(64, 64);
-            this.HatsImgList.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // SaveBtn
-            // 
-            this.SaveBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveBtn.Location = new System.Drawing.Point(253, 12);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(72, 41);
-            this.SaveBtn.TabIndex = 14;
-            this.SaveBtn.Text = "Save Data";
-            this.SaveBtn.UseVisualStyleBackColor = true;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
-            // 
-            // BodyColorBtn
-            // 
-            this.BodyColorBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BodyColorBtn.Location = new System.Drawing.Point(331, 12);
-            this.BodyColorBtn.Name = "BodyColorBtn";
-            this.BodyColorBtn.Size = new System.Drawing.Size(72, 41);
-            this.BodyColorBtn.TabIndex = 15;
-            this.BodyColorBtn.Text = "Body Colors";
-            this.BodyColorBtn.UseVisualStyleBackColor = true;
-            this.BodyColorBtn.Click += new System.EventHandler(this.BodyColorBtn_Click);
-            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -607,7 +596,6 @@
             this.PlayTab.ResumeLayout(false);
             this.PlayTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).EndInit();
-            this.ClientInfoPanel.ResumeLayout(false);
             this.CustmTab.ResumeLayout(false);
             this.CustmTab.PerformLayout();
             this.CatalogTabsOptions.ResumeLayout(false);
@@ -647,7 +635,6 @@
         private System.Windows.Forms.TabPage PacksTab;
         private System.Windows.Forms.ListBox ClientList;
         private System.Windows.Forms.TextBox SrvrIPbox;
-        private System.Windows.Forms.Panel ClientInfoPanel;
         private System.Windows.Forms.RichTextBox ClientInfoBox;
         private System.Windows.Forms.PictureBox ClientPictureBox;
         private System.Windows.Forms.Button DCButton;

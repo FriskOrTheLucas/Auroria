@@ -248,8 +248,8 @@ namespace Auroria.NT
 
                 if (curClient == "2007S")
                 {
-                    Directory.SetCurrentDirectory("Clients\\2007S");
-                    Process.Start("Roblox.exe", "-script \"" + Directory.GetCurrentDirectory() + "\\LocalScripts\\joingame.lua");
+                    Directory.SetCurrentDirectory("Clients\\2007S\\Player");
+                    Process.Start("Roblox.exe", "-script \"" + Directory.GetCurrentDirectory() + "\\..\\Scripts\\joingame.lua");
                     Directory.SetCurrentDirectory(originalDirectory);
                 }
                 else
@@ -281,8 +281,8 @@ namespace Auroria.NT
 
                 if (curClient == "2007S")
                 {
-                    Directory.SetCurrentDirectory("Clients\\2007S");
-                    Process.Start("Roblox.exe", "-script \"" + Directory.GetCurrentDirectory() + "\\LocalScripts\\gameserver.lua\" \"" + mapPath + "\"");
+                    Directory.SetCurrentDirectory("Clients\\2007S\\Player");
+                    Process.Start("Roblox.exe", "-script \"" + Directory.GetCurrentDirectory() + "\\..\\Scripts\\gameserver.lua\" \"" + mapPath + "\"");
                     Directory.SetCurrentDirectory(originalDirectory);
                 }
                 else
@@ -320,7 +320,7 @@ namespace Auroria.NT
 
             if (!File.Exists(clientThumbDir))
             {
-                ClientPictureBox.ImageLocation = errThumbnail; //the shit works
+                ClientPictureBox.ImageLocation = errThumbnail; //the crap works
             }
             else
             {
