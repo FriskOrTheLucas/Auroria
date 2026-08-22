@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AurNTBase));
             this.AllTabs = new System.Windows.Forms.TabControl();
             this.PlayTab = new System.Windows.Forms.TabPage();
-            this.ClientPictureBox = new System.Windows.Forms.PictureBox();
             this.ClientInfoBox = new System.Windows.Forms.RichTextBox();
+            this.ClientPictureBox = new System.Windows.Forms.PictureBox();
             this.ClientList = new System.Windows.Forms.ListBox();
             this.HostBtn = new System.Windows.Forms.Button();
             this.SrvrIPbox = new System.Windows.Forms.TextBox();
@@ -121,17 +121,6 @@
             this.PlayTab.ToolTipText = "Contains the Play/Host options.";
             this.PlayTab.Click += new System.EventHandler(this.PlayPage_Click);
             // 
-            // ClientPictureBox
-            // 
-            this.ClientPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ClientPictureBox.Location = new System.Drawing.Point(6, 41);
-            this.ClientPictureBox.Name = "ClientPictureBox";
-            this.ClientPictureBox.Size = new System.Drawing.Size(275, 158);
-            this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ClientPictureBox.TabIndex = 14;
-            this.ClientPictureBox.TabStop = false;
-            this.ClientPictureBox.Click += new System.EventHandler(this.ClientPictureBox_Click);
-            // 
             // ClientInfoBox
             // 
             this.ClientInfoBox.Cursor = System.Windows.Forms.Cursors.Default;
@@ -143,20 +132,22 @@
             this.ClientInfoBox.Text = "Client Info will be displayed here.";
             this.ClientInfoBox.TextChanged += new System.EventHandler(this.ClientInfoBox_TextChanged);
             // 
+            // ClientPictureBox
+            // 
+            this.ClientPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ClientPictureBox.Location = new System.Drawing.Point(6, 41);
+            this.ClientPictureBox.Name = "ClientPictureBox";
+            this.ClientPictureBox.Size = new System.Drawing.Size(275, 158);
+            this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ClientPictureBox.TabIndex = 14;
+            this.ClientPictureBox.TabStop = false;
+            this.ClientPictureBox.Click += new System.EventHandler(this.ClientPictureBox_Click);
+            // 
             // ClientList
             // 
             this.ClientList.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientList.FormattingEnabled = true;
             this.ClientList.ItemHeight = 16;
-            this.ClientList.Items.AddRange(new object[] {
-            "2007S",
-            "2007E [NF]",
-            "2007M [NF]",
-            "2007L [NF]",
-            "2008E [NF]",
-            "2008M [NF]",
-            "2008L [NF]",
-            "2009E [NF]"});
             this.ClientList.Location = new System.Drawing.Point(288, 41);
             this.ClientList.Name = "ClientList";
             this.ClientList.Size = new System.Drawing.Size(201, 340);

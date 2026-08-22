@@ -57,6 +57,11 @@ namespace Auroria.NT
             }
         }
 
+        private void AddClient(ListBox.ObjectCollection @object, string folderpath)
+        {
+            @object.Add(Path.GetFileName(folderpath));
+        }
+
         private void PlayPage_Click(object sender, EventArgs e)
         {
 
@@ -73,6 +78,7 @@ namespace Auroria.NT
             string NrmlBanner = "Data\\Banners\\BannerLongNT.png";
             string mapsFolder = "Maps";
             string ChckMapDirectory = @"Maps";
+            string ClientsDirectory = "Clients";
 
             BackgroundBox.ImageLocation = NrmlBanner;
 
@@ -94,6 +100,11 @@ namespace Auroria.NT
                     MapsTree.Nodes.Add(Path.GetFileName(folder));
 
                 AddFolder(folderNode, folder);
+            }
+
+            foreach (string folder in Directory.GetDirectories(ClientsDirectory))
+            {
+                AddClient(ClientList.Items, folder);
             }
         }
 
@@ -254,7 +265,7 @@ namespace Auroria.NT
                 }
                 else
                 {
-                    MessageBox.Show("You're trying to join a client that has not been added yet. This will not work, sorry!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Either the client EXE doesn't exist, or the client hasnt been added yet!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -287,7 +298,7 @@ namespace Auroria.NT
                 }
                 else
                 {
-                    MessageBox.Show("You're trying to host a client that has not been added yet. This will not work, sorry!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Either the client EXE doesn't exist, or the client hasnt been added yet!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
