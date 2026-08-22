@@ -16,14 +16,16 @@ using System.Net;
 // Jay Jay if youre reading this then here is the checklist.
 
 //TODO LIST: 
-// 1.- Add all needed tabs to the launcher [not done]
+// 1.- Add all needed tabs to the launcher [done but most tabs r empty]
 // 2.- Add a loading screen [havent even started, oof]
-// 3.- Tidy up the UI and MAYBE optimize the code? [idk why i should optimize it i just feel like its not organized]
+// 3.- Tidy up the UI and MAYBE optimize the code? [semi optimized?]
 
 // 4.- Figure out how to do a Json to catalog. [DONE-Atleast the UI part!!]
 
 // 5.- Add live banner. Basically it grabs the text from https://sites.google.com/view/auroriainfopnl/home?authuser=1 and
 // converts it to the Banner text. [havent even started]
+
+// 6.- Do make the entire webserver (NO.)
 
 // thats just all the stuff we need to do for now, if you have any questions about anything then just ask me on discord. -Lucas
 // Oh and if you struggle on something thats aye okay just let me do it dont worry about it :D
@@ -195,7 +197,7 @@ namespace Auroria.NT
 
             if (!File.Exists(InfoFilePath))
             {
-                MessageBox.Show("PlayerSettings.json file not found! Auroria will generate one for you.", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("PlayerSettings.json file not found! Auroria will generate one for you.", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error); // error but not error because im goated
 
                 JObject objnw = new JObject
                 {
@@ -257,7 +259,7 @@ namespace Auroria.NT
             }
         }
 
-        private void HostBtn_Click(object sender, EventArgs e)
+        private void HostBtn_Click(object sender, EventArgs e) // whys it hardcoded i need to make it SOFT or else ill cry -Lucas
         {
             if (ClientList.SelectedItem == null)
             {
@@ -311,25 +313,33 @@ namespace Auroria.NT
         private void ClientList_SelectedIndexChanged(object sender, EventArgs e)
         {
             string errThumbnail = "Data\\ClientThmbnl\\ErrOrCstm\\ClientErCstm.png";
+            string clientSelectedlst = ClientList.SelectedItem.ToString();
 
-            if (ClientList.SelectedItem != null)
+            string clientThumbDir = "Data\\ClientThmbnl\\" + clientSelectedlst + "\\" + clientSelectedlst + ".png";
+            string clientJsonDir = "Clients\\" + clientSelectedlst + "\\ClientInfo.json";
+
+            if (!File.Exists(clientThumbDir))
             {
-                string selectedClient = ClientList.SelectedItem.ToString();
-                // Perform actions based on the selected client
-
-                if (selectedClient == "2007S") // <-- Future note to self since im a C# noob: DONT ADD A ; HERE -Lucas
-                {
-                    ClientPictureBox.ImageLocation = "Data\\ClientThmbnl\\2007S\\2007Img.png";
-                    ClientInfoBox.Text = "A recreation of the February 2007 Client! [Note: Recreation may not be perfectly accurate!]";
-                }
-
-                else // Remove this when other clients have been officially added to the launcher. This is just a placeholder cuz im a chud..
-                {
-                    ClientPictureBox.ImageLocation = errThumbnail;
-                    ClientInfoBox.Text = "Client is either custom or Non-Functional!";
-                    MessageBox.Show("NF = Non Functional! This Client has NOT been added yet!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                ClientPictureBox.ImageLocation = errThumbnail; //the shit works
             }
+            else
+            {
+                ClientPictureBox.ImageLocation = clientThumbDir;
+            }
+
+            if (!File.Exists(clientJsonDir))
+            {
+                ClientInfoBox.Text = "Error, ClientInfo.Json doesn't exist! Which is needed in order for Auroria to launch the client properly, and to display client info! This can be caused by the client not being added [NF], or the Client folder itself being missing!"; // or maybe you forgot to add ClientInfo.json. ez fix!
+            }
+            else
+            {
+                string json = File.ReadAllText(clientJsonDir);
+                JObject obj = JObject.Parse(json);
+
+                string clientds = (string)obj["ClientDesc"];
+                ClientInfoBox.Text = clientds;
+            }
+
         }
 
         private void ClientInfoBox_TextChanged(object sender, EventArgs e)
@@ -363,7 +373,7 @@ namespace Auroria.NT
         private void CookieWzrd_Click(object sender, EventArgs e)
         {
             CookieWizard cookieWizardForm = new CookieWizard();
-            cookieWizardForm.Show();
+            cookieWizardForm.Show(); // i coulda just made it a box you type into but i like WIZAAAAAARRRRDDSS
         }
     }
 }
