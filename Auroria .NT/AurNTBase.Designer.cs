@@ -70,6 +70,7 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
+            this.RndrBtn = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
@@ -566,11 +567,22 @@
             this.MOTD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MOTD.Click += new System.EventHandler(this.MOTDLabel);
             // 
+            // RndrBtn
+            // 
+            this.RndrBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RndrBtn.Location = new System.Drawing.Point(485, 175);
+            this.RndrBtn.Name = "RndrBtn";
+            this.RndrBtn.Size = new System.Drawing.Size(82, 42);
+            this.RndrBtn.TabIndex = 15;
+            this.RndrBtn.Text = "Render Avatar";
+            this.RndrBtn.UseVisualStyleBackColor = true;
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(762, 626);
+            this.Controls.Add(this.RndrBtn);
             this.Controls.Add(this.MOTD);
             this.Controls.Add(this.BackgroundBox);
             this.Controls.Add(this.MapsTree);
@@ -642,6 +654,7 @@
         private System.Windows.Forms.ImageList HatsImgList;
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button BodyColorBtn;
+        private System.Windows.Forms.Button RndrBtn;
     }
 }
 

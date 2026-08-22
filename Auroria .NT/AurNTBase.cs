@@ -324,6 +324,12 @@ namespace Auroria.NT
         private void ClientList_SelectedIndexChanged(object sender, EventArgs e)
         {
             string errThumbnail = "Data\\ClientThmbnl\\ErrOrCstm\\ClientErCstm.png";
+
+            if (ClientList.SelectedItem == null)
+            {
+                return;
+            }
+
             string clientSelectedlst = ClientList.SelectedItem.ToString();
 
             string clientThumbDir = "Data\\ClientThmbnl\\" + clientSelectedlst + "\\" + clientSelectedlst + ".png";
