@@ -75,7 +75,7 @@ namespace Auroria.NT
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Information
             );
 
-            string NrmlBanner = "Data\\Banners\\BannerLongNT.png";
+            string NrmlBanner = "Data\\Banners\\BannerLong.png";
             string mapsFolder = "Maps";
             string ChckMapDirectory = @"Maps";
             string ClientsDirectory = "Clients";
