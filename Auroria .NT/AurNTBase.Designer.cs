@@ -557,7 +557,7 @@
             // 
             this.MOTD.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.MOTD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(200)))), ((int)(((byte)(236)))));
-            this.MOTD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.MOTD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MOTD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.MOTD.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MOTD.ForeColor = System.Drawing.SystemColors.ControlText;
