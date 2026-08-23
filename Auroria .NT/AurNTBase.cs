@@ -225,6 +225,8 @@ namespace Auroria.NT
             obj["PlayerName"] = PlayerNameBox.Text;
             obj["UserID"] = PlayerIDBox.Text;
 
+            // add W.D Gaster easter egg here later.
+
             File.WriteAllText(InfoFilePath, obj.ToString());
             MessageBox.Show("Player information saved successfully!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
