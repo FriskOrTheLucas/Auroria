@@ -57,6 +57,7 @@
             this.ShirtsListView = new System.Windows.Forms.ListView();
             this.ShrtsImgList = new System.Windows.Forms.ImageList(this.components);
             this.PntTab = new System.Windows.Forms.TabPage();
+            this.PntsInfoTxt = new System.Windows.Forms.RichTextBox();
             this.PantsListView = new System.Windows.Forms.ListView();
             this.PckgeTab = new System.Windows.Forms.TabPage();
             this.PlayerNameBox = new System.Windows.Forms.TextBox();
@@ -71,7 +72,6 @@
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
             this.RndrBtn = new System.Windows.Forms.Button();
-            this.PntsInfoTxt = new System.Windows.Forms.RichTextBox();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
@@ -425,6 +425,17 @@
             this.PntTab.Text = "Pants";
             this.PntTab.UseVisualStyleBackColor = true;
             // 
+            // PntsInfoTxt
+            // 
+            this.PntsInfoTxt.BackColor = System.Drawing.SystemColors.Control;
+            this.PntsInfoTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.PntsInfoTxt.Location = new System.Drawing.Point(6, 204);
+            this.PntsInfoTxt.Name = "PntsInfoTxt";
+            this.PntsInfoTxt.ReadOnly = true;
+            this.PntsInfoTxt.Size = new System.Drawing.Size(375, 74);
+            this.PntsInfoTxt.TabIndex = 4;
+            this.PntsInfoTxt.Text = "No Item Selected!";
+            // 
             // PantsListView
             // 
             this.PantsListView.HideSelection = false;
@@ -556,9 +567,8 @@
             // MOTD
             // 
             this.MOTD.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.MOTD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(200)))), ((int)(((byte)(236)))));
+            this.MOTD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
             this.MOTD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MOTD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.MOTD.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MOTD.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MOTD.Location = new System.Drawing.Point(-5, 108);
@@ -578,17 +588,6 @@
             this.RndrBtn.TabIndex = 15;
             this.RndrBtn.Text = "Render Avatar";
             this.RndrBtn.UseVisualStyleBackColor = true;
-            // 
-            // PntsInfoTxt
-            // 
-            this.PntsInfoTxt.BackColor = System.Drawing.SystemColors.Control;
-            this.PntsInfoTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.PntsInfoTxt.Location = new System.Drawing.Point(6, 204);
-            this.PntsInfoTxt.Name = "PntsInfoTxt";
-            this.PntsInfoTxt.ReadOnly = true;
-            this.PntsInfoTxt.Size = new System.Drawing.Size(375, 74);
-            this.PntsInfoTxt.TabIndex = 4;
-            this.PntsInfoTxt.Text = "No Item Selected!";
             // 
             // AurNTBase
             // 
