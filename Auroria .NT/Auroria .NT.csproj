@@ -128,6 +128,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AurLogo.ico" />
+    <None Include="bin\Debug\Data\Banners\BannerLong.png" />
+    <None Include="bin\Debug\Data\Banners\BannerLongNT.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

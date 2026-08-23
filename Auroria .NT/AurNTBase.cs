@@ -37,6 +37,8 @@ namespace Auroria.NT
         public AurNTBase()
         {   // Gonna be adding a loading screen soon. Which means we may need a bit of a delay here? I will explain
             // if needed. -Lucas
+
+            // future lucas here: this is dumb
             InitializeComponent();
         }
 
@@ -75,16 +77,16 @@ namespace Auroria.NT
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Information
             );
 
-            string NrmlBanner = "Data\\Banners\\BannerLong.png";
             string mapsFolder = "Maps";
             string ChckMapDirectory = @"Maps";
             string ClientsDirectory = "Clients";
 
-            BackgroundBox.ImageLocation = NrmlBanner;
+            BackgroundBox.Image = Properties.Resources.BannerLong;
 
             LoadPlayerInfo();
             LoadCatalogListView(@"Data/Catalog/charshirts", ShirtsListView, ShrtsImgList);
             LoadCatalogListView(@"Data/Catalog/charhats", HatsListView, HatsImgList);
+            LoadCatalogListView(@"Data/Catalog/charpants", PantsListView, PntsImgList);
 
             //populate the maps tree view with the map stuff.
             if (!Directory.Exists(ChckMapDirectory))
@@ -175,6 +177,11 @@ namespace Auroria.NT
             SelectedItemUpd(HatsInfoTxt, HatsListView, @"Data/Catalog/charhats");
         }
 
+        private void PantsListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectedItemUpd(PntsInfoTxt, PantsListView, @"Data/Catalog/charpants");
+        }
+
         public void LoadPlayerInfo()
         {
             string InfoFilePath = "PlayerSettings.json";
@@ -247,7 +254,7 @@ namespace Auroria.NT
             // no.
         }
 
-        private void JoinBtn_click(object sender, EventArgs e)
+        private void JoinBtn_click(object sender, EventArgs e) // im gonna have to redo. ALL. OF. THIS. AND CODE THE ENTIRE WEBSERVER.
         {
             if (ClientList.SelectedItem == null)
             {

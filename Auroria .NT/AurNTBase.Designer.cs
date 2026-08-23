@@ -59,6 +59,7 @@
             this.PntTab = new System.Windows.Forms.TabPage();
             this.PntsInfoTxt = new System.Windows.Forms.RichTextBox();
             this.PantsListView = new System.Windows.Forms.ListView();
+            this.PntsImgList = new System.Windows.Forms.ImageList(this.components);
             this.PckgeTab = new System.Windows.Forms.TabPage();
             this.PlayerNameBox = new System.Windows.Forms.TextBox();
             this.PlayerIDBox = new System.Windows.Forms.TextBox();
@@ -439,11 +440,19 @@
             // PantsListView
             // 
             this.PantsListView.HideSelection = false;
+            this.PantsListView.LargeImageList = this.PntsImgList;
             this.PantsListView.Location = new System.Drawing.Point(6, 6);
             this.PantsListView.Name = "PantsListView";
             this.PantsListView.Size = new System.Drawing.Size(375, 192);
             this.PantsListView.TabIndex = 1;
             this.PantsListView.UseCompatibleStateImageBehavior = false;
+            this.PantsListView.SelectedIndexChanged += new System.EventHandler(this.PantsListView_SelectedIndexChanged);
+            // 
+            // PntsImgList
+            // 
+            this.PntsImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.PntsImgList.ImageSize = new System.Drawing.Size(16, 16);
+            this.PntsImgList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // PckgeTab
             // 
@@ -668,6 +677,7 @@
         private System.Windows.Forms.Button BodyColorBtn;
         private System.Windows.Forms.Button RndrBtn;
         private System.Windows.Forms.RichTextBox PntsInfoTxt;
+        private System.Windows.Forms.ImageList PntsImgList;
     }
 }
 
