@@ -567,6 +567,7 @@
             // 
             // BackgroundBox
             // 
+            this.BackgroundBox.Image = global::Auroria.NT.Properties.Resources.BannerLong;
             this.BackgroundBox.Location = new System.Drawing.Point(0, -1);
             this.BackgroundBox.Name = "BackgroundBox";
             this.BackgroundBox.Size = new System.Drawing.Size(763, 115);
