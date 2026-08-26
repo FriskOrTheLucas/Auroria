@@ -127,10 +127,10 @@
             // ClientInfoBox
             // 
             this.ClientInfoBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ClientInfoBox.Location = new System.Drawing.Point(6, 205);
+            this.ClientInfoBox.Location = new System.Drawing.Point(6, 194);
             this.ClientInfoBox.Name = "ClientInfoBox";
             this.ClientInfoBox.ReadOnly = true;
-            this.ClientInfoBox.Size = new System.Drawing.Size(275, 82);
+            this.ClientInfoBox.Size = new System.Drawing.Size(275, 67);
             this.ClientInfoBox.TabIndex = 0;
             this.ClientInfoBox.Text = "Client Info will be displayed here.";
             this.ClientInfoBox.TextChanged += new System.EventHandler(this.ClientInfoBox_TextChanged);
@@ -138,7 +138,7 @@
             // ClientPictureBox
             // 
             this.ClientPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ClientPictureBox.Location = new System.Drawing.Point(6, 41);
+            this.ClientPictureBox.Location = new System.Drawing.Point(5, 30);
             this.ClientPictureBox.Name = "ClientPictureBox";
             this.ClientPictureBox.Size = new System.Drawing.Size(275, 158);
             this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -151,7 +151,7 @@
             this.ClientList.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientList.FormattingEnabled = true;
             this.ClientList.ItemHeight = 16;
-            this.ClientList.Location = new System.Drawing.Point(288, 41);
+            this.ClientList.Location = new System.Drawing.Point(287, 30);
             this.ClientList.Name = "ClientList";
             this.ClientList.Size = new System.Drawing.Size(201, 340);
             this.ClientList.TabIndex = 12;
@@ -167,7 +167,7 @@
             this.HostBtn.FlatAppearance.BorderSize = 0;
             this.HostBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.HostBtn.Image = ((System.Drawing.Image)(resources.GetObject("HostBtn.Image")));
-            this.HostBtn.Location = new System.Drawing.Point(148, 334);
+            this.HostBtn.Location = new System.Drawing.Point(148, 311);
             this.HostBtn.Name = "HostBtn";
             this.HostBtn.Size = new System.Drawing.Size(125, 47);
             this.HostBtn.TabIndex = 8;
@@ -182,7 +182,7 @@
             this.SrvrIPbox.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.SrvrIPbox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SrvrIPbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SrvrIPbox.Location = new System.Drawing.Point(6, 303);
+            this.SrvrIPbox.Location = new System.Drawing.Point(5, 267);
             this.SrvrIPbox.Name = "SrvrIPbox";
             this.SrvrIPbox.Size = new System.Drawing.Size(276, 25);
             this.SrvrIPbox.TabIndex = 11;
@@ -199,7 +199,7 @@
             this.JoinBtn.FlatAppearance.BorderSize = 0;
             this.JoinBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.JoinBtn.Image = ((System.Drawing.Image)(resources.GetObject("JoinBtn.Image")));
-            this.JoinBtn.Location = new System.Drawing.Point(17, 334);
+            this.JoinBtn.Location = new System.Drawing.Point(17, 311);
             this.JoinBtn.Name = "JoinBtn";
             this.JoinBtn.Size = new System.Drawing.Size(125, 47);
             this.JoinBtn.TabIndex = 9;
