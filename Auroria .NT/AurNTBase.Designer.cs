@@ -73,6 +73,7 @@
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
             this.RndrBtn = new System.Windows.Forms.Button();
+            this.shrtSlot1 = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
@@ -376,6 +377,7 @@
             // 
             // ShrtTab
             // 
+            this.ShrtTab.Controls.Add(this.shrtSlot1);
             this.ShrtTab.Controls.Add(this.ShrtInfoTxt);
             this.ShrtTab.Controls.Add(this.ShirtsListView);
             this.ShrtTab.Location = new System.Drawing.Point(4, 34);
@@ -599,6 +601,20 @@
             this.RndrBtn.Text = "Render Avatar";
             this.RndrBtn.UseVisualStyleBackColor = true;
             // 
+            // shrtSlot1
+            // 
+            this.shrtSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.shrtSlot1.FlatAppearance.BorderSize = 2;
+            this.shrtSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.shrtSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.shrtSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.shrtSlot1.Location = new System.Drawing.Point(399, 22);
+            this.shrtSlot1.Name = "shrtSlot1";
+            this.shrtSlot1.Size = new System.Drawing.Size(60, 60);
+            this.shrtSlot1.TabIndex = 4;
+            this.shrtSlot1.UseVisualStyleBackColor = true;
+            this.shrtSlot1.Click += new System.EventHandler(this.shrtSlot1_Click);
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -679,6 +695,7 @@
         private System.Windows.Forms.Button RndrBtn;
         private System.Windows.Forms.RichTextBox PntsInfoTxt;
         private System.Windows.Forms.ImageList PntsImgList;
+        private System.Windows.Forms.Button shrtSlot1;
     }
 }
 

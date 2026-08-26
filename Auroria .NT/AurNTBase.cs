@@ -403,5 +403,23 @@ namespace Auroria.NT
             CookieWizard cookieWizardForm = new CookieWizard();
             cookieWizardForm.Show(); // i coulda just made it a box you type into but i like WIZAAAAAARRRRDDSS
         }
+
+        private void shrtSlot1_Click(object sender, EventArgs e)
+        {
+            if (ShirtsListView.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = ShirtsListView.SelectedItems[0];
+
+                if (!string.IsNullOrEmpty(selectedItem.ImageKey))
+                {
+                    shrtSlot1.Image = ShirtsListView.LargeImageList.Images[selectedItem.ImageKey];
+                }
+            }
+
+            else
+            {
+                shrtSlot1.Image = null;
+            }
+        }
     }
 }
