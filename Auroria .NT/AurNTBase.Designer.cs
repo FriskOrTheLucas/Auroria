@@ -53,6 +53,7 @@
             this.FaceTab = new System.Windows.Forms.TabPage();
             this.TshrtTab = new System.Windows.Forms.TabPage();
             this.ShrtTab = new System.Windows.Forms.TabPage();
+            this.ShrtSlot1 = new System.Windows.Forms.Button();
             this.ShrtInfoTxt = new System.Windows.Forms.RichTextBox();
             this.ShirtsListView = new System.Windows.Forms.ListView();
             this.ShrtsImgList = new System.Windows.Forms.ImageList(this.components);
@@ -73,7 +74,7 @@
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
             this.RndrBtn = new System.Windows.Forms.Button();
-            this.shrtSlot1 = new System.Windows.Forms.Button();
+            this.HatsSlot1 = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
@@ -311,6 +312,7 @@
             // 
             // HatTab
             // 
+            this.HatTab.Controls.Add(this.HatsSlot1);
             this.HatTab.Controls.Add(this.HatsInfoTxt);
             this.HatTab.Controls.Add(this.HatsListView);
             this.HatTab.Location = new System.Drawing.Point(4, 34);
@@ -377,7 +379,7 @@
             // 
             // ShrtTab
             // 
-            this.ShrtTab.Controls.Add(this.shrtSlot1);
+            this.ShrtTab.Controls.Add(this.ShrtSlot1);
             this.ShrtTab.Controls.Add(this.ShrtInfoTxt);
             this.ShrtTab.Controls.Add(this.ShirtsListView);
             this.ShrtTab.Location = new System.Drawing.Point(4, 34);
@@ -387,6 +389,20 @@
             this.ShrtTab.TabIndex = 1;
             this.ShrtTab.Text = "Shirts";
             this.ShrtTab.UseVisualStyleBackColor = true;
+            // 
+            // ShrtSlot1
+            // 
+            this.ShrtSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ShrtSlot1.FlatAppearance.BorderSize = 2;
+            this.ShrtSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.ShrtSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ShrtSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ShrtSlot1.Location = new System.Drawing.Point(399, 22);
+            this.ShrtSlot1.Name = "ShrtSlot1";
+            this.ShrtSlot1.Size = new System.Drawing.Size(60, 60);
+            this.ShrtSlot1.TabIndex = 4;
+            this.ShrtSlot1.UseVisualStyleBackColor = true;
+            this.ShrtSlot1.Click += new System.EventHandler(this.ShrtSlot1_Click);
             // 
             // ShrtInfoTxt
             // 
@@ -601,19 +617,18 @@
             this.RndrBtn.Text = "Render Avatar";
             this.RndrBtn.UseVisualStyleBackColor = true;
             // 
-            // shrtSlot1
+            // HatsSlot1
             // 
-            this.shrtSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.shrtSlot1.FlatAppearance.BorderSize = 2;
-            this.shrtSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.shrtSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.shrtSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.shrtSlot1.Location = new System.Drawing.Point(399, 22);
-            this.shrtSlot1.Name = "shrtSlot1";
-            this.shrtSlot1.Size = new System.Drawing.Size(60, 60);
-            this.shrtSlot1.TabIndex = 4;
-            this.shrtSlot1.UseVisualStyleBackColor = true;
-            this.shrtSlot1.Click += new System.EventHandler(this.shrtSlot1_Click);
+            this.HatsSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.HatsSlot1.FlatAppearance.BorderSize = 2;
+            this.HatsSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.HatsSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.HatsSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.HatsSlot1.Location = new System.Drawing.Point(399, 22);
+            this.HatsSlot1.Name = "HatsSlot1";
+            this.HatsSlot1.Size = new System.Drawing.Size(60, 60);
+            this.HatsSlot1.TabIndex = 5;
+            this.HatsSlot1.UseVisualStyleBackColor = true;
             // 
             // AurNTBase
             // 
@@ -695,7 +710,8 @@
         private System.Windows.Forms.Button RndrBtn;
         private System.Windows.Forms.RichTextBox PntsInfoTxt;
         private System.Windows.Forms.ImageList PntsImgList;
-        private System.Windows.Forms.Button shrtSlot1;
+        private System.Windows.Forms.Button ShrtSlot1;
+        private System.Windows.Forms.Button HatsSlot1;
     }
 }
 

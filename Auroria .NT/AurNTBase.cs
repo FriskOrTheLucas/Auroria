@@ -139,6 +139,24 @@ namespace Auroria.NT
             }
         }
 
+        public void UpdateBtn(ListView listview, Button button)
+        {
+            if (listview.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listview.SelectedItems[0];
+
+                if (!string.IsNullOrEmpty(selectedItem.ImageKey))
+                {
+                    button.Image = listview.LargeImageList.Images[selectedItem.ImageKey];
+                }
+            }
+
+            else
+            {
+                button.Image = null;
+            }
+        }
+
         public void SelectedItemUpd(RichTextBox txtbox, ListView listview, string directoryPath)
         {
             if (listview.SelectedItems.Count == 0)
@@ -404,22 +422,9 @@ namespace Auroria.NT
             cookieWizardForm.Show(); // i coulda just made it a box you type into but i like WIZAAAAAARRRRDDSS
         }
 
-        private void shrtSlot1_Click(object sender, EventArgs e)
+        private void ShrtSlot1_Click(object sender, EventArgs e)
         {
-            if (ShirtsListView.SelectedItems.Count > 0)
-            {
-                ListViewItem selectedItem = ShirtsListView.SelectedItems[0];
-
-                if (!string.IsNullOrEmpty(selectedItem.ImageKey))
-                {
-                    shrtSlot1.Image = ShirtsListView.LargeImageList.Images[selectedItem.ImageKey];
-                }
-            }
-
-            else
-            {
-                shrtSlot1.Image = null;
-            }
+            UpdateBtn(ShirtsListView, ShrtSlot1);
         }
     }
 }
