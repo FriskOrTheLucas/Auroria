@@ -29,6 +29,8 @@ using System.Net;
 
 // thats just all the stuff we need to do for now, if you have any questions about anything then just ask me on discord. -Lucas
 // Oh and if you struggle on something thats aye okay just let me do it dont worry about it :D
+
+// note to lucas- NEVER TRY TO "organize" THE UI, EVER, AGAIN.
 namespace Auroria.NT
 {
     public partial class AurNTBase : Form
