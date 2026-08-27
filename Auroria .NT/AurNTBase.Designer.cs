@@ -75,6 +75,8 @@
             this.MOTD = new System.Windows.Forms.Label();
             this.RndrBtn = new System.Windows.Forms.Button();
             this.HatsSlot1 = new System.Windows.Forms.Button();
+            this.HatsSlot2 = new System.Windows.Forms.Button();
+            this.HatsSlot3 = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
@@ -312,6 +314,8 @@
             // 
             // HatTab
             // 
+            this.HatTab.Controls.Add(this.HatsSlot3);
+            this.HatTab.Controls.Add(this.HatsSlot2);
             this.HatTab.Controls.Add(this.HatsSlot1);
             this.HatTab.Controls.Add(this.HatsInfoTxt);
             this.HatTab.Controls.Add(this.HatsListView);
@@ -629,6 +633,35 @@
             this.HatsSlot1.Size = new System.Drawing.Size(60, 60);
             this.HatsSlot1.TabIndex = 5;
             this.HatsSlot1.UseVisualStyleBackColor = true;
+            this.HatsSlot1.Click += new System.EventHandler(this.HatsSlot1_Click);
+            // 
+            // HatsSlot2
+            // 
+            this.HatsSlot2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.HatsSlot2.FlatAppearance.BorderSize = 2;
+            this.HatsSlot2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.HatsSlot2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.HatsSlot2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.HatsSlot2.Location = new System.Drawing.Point(399, 88);
+            this.HatsSlot2.Name = "HatsSlot2";
+            this.HatsSlot2.Size = new System.Drawing.Size(60, 60);
+            this.HatsSlot2.TabIndex = 6;
+            this.HatsSlot2.UseVisualStyleBackColor = true;
+            this.HatsSlot2.Click += new System.EventHandler(this.HatsSlot2_Click);
+            // 
+            // HatsSlot3
+            // 
+            this.HatsSlot3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.HatsSlot3.FlatAppearance.BorderSize = 2;
+            this.HatsSlot3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.HatsSlot3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.HatsSlot3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.HatsSlot3.Location = new System.Drawing.Point(399, 154);
+            this.HatsSlot3.Name = "HatsSlot3";
+            this.HatsSlot3.Size = new System.Drawing.Size(60, 60);
+            this.HatsSlot3.TabIndex = 7;
+            this.HatsSlot3.UseVisualStyleBackColor = true;
+            this.HatsSlot3.Click += new System.EventHandler(this.HatsSlot3_Click);
             // 
             // AurNTBase
             // 
@@ -712,6 +745,8 @@
         private System.Windows.Forms.ImageList PntsImgList;
         private System.Windows.Forms.Button ShrtSlot1;
         private System.Windows.Forms.Button HatsSlot1;
+        private System.Windows.Forms.Button HatsSlot3;
+        private System.Windows.Forms.Button HatsSlot2;
     }
 }
 

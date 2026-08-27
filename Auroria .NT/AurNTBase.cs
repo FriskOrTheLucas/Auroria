@@ -35,6 +35,7 @@ namespace Auroria.NT
 {
     public partial class AurNTBase : Form
     {
+        public string InfoFilePath = "PlayerSettings.json";
 
         public AurNTBase()
         {   // Gonna be adding a loading screen soon. Which means we may need a bit of a delay here? I will explain
@@ -134,6 +135,7 @@ namespace Auroria.NT
                         item.ImageKey = imgPath;
 
                         listview.Items.Add(item);
+                        item.Tag = id;
                     }
                 }
             }
@@ -147,7 +149,9 @@ namespace Auroria.NT
 
                 if (!string.IsNullOrEmpty(selectedItem.ImageKey))
                 {
-                    button.Image = listview.LargeImageList.Images[selectedItem.ImageKey];
+                    Image img = listview.LargeImageList.Images[selectedItem.ImageKey];
+                    button.Image = new Bitmap(img, button.ClientSize);
+                    img.Dispose();
                 }
             }
 
@@ -204,8 +208,6 @@ namespace Auroria.NT
 
         public void LoadPlayerInfo()
         {
-            string InfoFilePath = "PlayerSettings.json";
-
             if (!File.Exists(InfoFilePath))
             {
                 MessageBox.Show("PlayerSettings.json file not found! Auroria will generate one for you.", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -227,12 +229,57 @@ namespace Auroria.NT
 
             PlayerNameBox.Text = PlyrName;
             PlayerIDBox.Text = id;
+
+            LoadAvatarItm(HatsSlot1, "HatSlot1", "charhats");
+            LoadAvatarItm(ShrtSlot1, "Shirt", "charshirts");
+        }
+
+        public void SaveLoadedItm(string itemname, string id)
+        {
+            if (!File.Exists(InfoFilePath))
+            {
+                // What??? HOW??? WHEN?? WHY????
+                MessageBox.Show("PlayerSettings.json file not found! Try to reload Auroria as that should fix it.", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+                return;
+            }
+
+            string json = File.ReadAllText(InfoFilePath);
+            JObject obj = JObject.Parse(json);
+
+            obj[itemname] = id;
+
+            File.WriteAllText(InfoFilePath, obj.ToString());
+        }
+
+        public void LoadAvatarItm(Button avtrbtn, string itemtyp, string charfolder)
+        {
+            if (!File.Exists(InfoFilePath))
+            {
+                // AGAIN??? HOW????
+                MessageBox.Show("PlayerSettings.json file not found! Try to reload Auroria as that should fix it.", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+                return;
+            }
+
+            string json = File.ReadAllText(InfoFilePath);
+            JObject obj = JObject.Parse(json);
+
+            string ItemID = (string)obj[itemtyp];
+            string ImagePath = Path.Combine("Data/Catalog/" + charfolder, ItemID + ".png");
+
+            if (!File.Exists(ImagePath))
+            {
+                return;
+            }
+
+            Image img = Image.FromFile(ImagePath);
+            avtrbtn.Image = new Bitmap(img, avtrbtn.ClientSize);
+            img.Dispose();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            string InfoFilePath = "PlayerSettings.json";
-
             if (!File.Exists(InfoFilePath))
             {
                 MessageBox.Show("PlayerSettings.json file not found! Auroria will generate one for you.", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error); // error but not error because im goated
@@ -422,9 +469,47 @@ namespace Auroria.NT
             cookieWizardForm.Show(); // i coulda just made it a box you type into but i like WIZAAAAAARRRRDDSS
         }
 
+        private void HatsSlot1_Click(object sender, EventArgs e)
+        {
+            if (HatsListView.SelectedItems.Count == 0)
+            {
+                UpdateBtn(HatsListView, HatsSlot1);
+                SaveLoadedItm("Shirt", "");
+                return;
+            }
+
+            ListViewItem selectedItem = HatsListView.SelectedItems[0];
+            string id = selectedItem.Tag.ToString();
+
+            UpdateBtn(HatsListView, HatsSlot1);
+            SaveLoadedItm("HatSlot1", id);
+        }
+
+        private void HatsSlot2_Click(object sender, EventArgs e)
+        {
+            UpdateBtn(HatsListView, HatsSlot2);
+        }
+
+        private void HatsSlot3_Click(object sender, EventArgs e)
+        {
+            UpdateBtn(HatsListView, HatsSlot3);
+        }
+
         private void ShrtSlot1_Click(object sender, EventArgs e)
         {
+
+            if (ShirtsListView.SelectedItems.Count == 0)
+            {
+                UpdateBtn(ShirtsListView, ShrtSlot1);
+                SaveLoadedItm("Shirt", "");
+                return;
+            }
+
+            ListViewItem selectedItem = ShirtsListView.SelectedItems[0];
+            string id = selectedItem.Tag.ToString();
+
             UpdateBtn(ShirtsListView, ShrtSlot1);
+            SaveLoadedItm("Shirt", id);
         }
     }
 }
