@@ -232,6 +232,7 @@ namespace Auroria.NT
             // note for future lucas: Dummy, make sure you change the HatSlotButton, the name of the slot in the json, and the actual charfolder! 
             LoadAvatarItm(HatsSlot1, "HatSlot1", "charhats");
             LoadAvatarItm(HatsSlot2, "HatSlot2", "charhats");
+            LoadAvatarItm(HatsSlot3, "HatSlot3", "charhats");
             LoadAvatarItm(ShrtSlot1, "Shirt", "charshirts");
         }
 
@@ -287,8 +288,17 @@ namespace Auroria.NT
 
                 JObject objnw = new JObject
                 {
-                    { "PlayerName", "" },
-                    { "UserID", "" }
+                    { "PlayerName", "Username" },
+                    { "UserID", "123456789" },
+                    { "HatSlot1", "" },
+                    { "HatSlot2", "" },
+                    { "HatSlot3", "" },
+                    { "Head", "" },
+                    { "Face", "" },
+                    { "Shirt", "" },
+                    { "TShirt", "" },
+                    { "Pants", "" },
+                    { "Package", "" }
                 };
 
                 File.WriteAllText("PlayerSettings.json", objnw.ToString());
@@ -504,7 +514,18 @@ namespace Auroria.NT
 
         private void HatsSlot3_Click(object sender, EventArgs e)
         {
+            if (HatsListView.SelectedItems.Count == 0)
+            {
+                UpdateBtn(HatsListView, HatsSlot3);
+                SaveLoadedItm("HatSlot3", "");
+                return;
+            }
+
+            ListViewItem selectedItem = HatsListView.SelectedItems[0];
+            string id = selectedItem.Tag.ToString();
+
             UpdateBtn(HatsListView, HatsSlot3);
+            SaveLoadedItm("HatSlot3", id);
         }
 
         private void ShrtSlot1_Click(object sender, EventArgs e)
