@@ -151,7 +151,6 @@ namespace Auroria.NT
                 {
                     Image img = listview.LargeImageList.Images[selectedItem.ImageKey];
                     button.Image = new Bitmap(img, button.ClientSize);
-                    img.Dispose();
                 }
             }
 
@@ -230,7 +229,9 @@ namespace Auroria.NT
             PlayerNameBox.Text = PlyrName;
             PlayerIDBox.Text = id;
 
+            // note for future lucas: Dummy, make sure you change the HatSlotButton, the name of the slot in the json, and the actual charfolder! 
             LoadAvatarItm(HatsSlot1, "HatSlot1", "charhats");
+            LoadAvatarItm(HatsSlot2, "HatSlot2", "charhats");
             LoadAvatarItm(ShrtSlot1, "Shirt", "charshirts");
         }
 
@@ -474,7 +475,7 @@ namespace Auroria.NT
             if (HatsListView.SelectedItems.Count == 0)
             {
                 UpdateBtn(HatsListView, HatsSlot1);
-                SaveLoadedItm("Shirt", "");
+                SaveLoadedItm("HatSlot1", "");
                 return;
             }
 
@@ -487,7 +488,18 @@ namespace Auroria.NT
 
         private void HatsSlot2_Click(object sender, EventArgs e)
         {
+            if (HatsListView.SelectedItems.Count == 0)
+            {
+                UpdateBtn(HatsListView, HatsSlot2);
+                SaveLoadedItm("HatSlot2", "");
+                return;
+            }
+
+            ListViewItem selectedItem = HatsListView.SelectedItems[0];
+            string id = selectedItem.Tag.ToString();
+
             UpdateBtn(HatsListView, HatsSlot2);
+            SaveLoadedItm("HatSlot2", id);
         }
 
         private void HatsSlot3_Click(object sender, EventArgs e)
