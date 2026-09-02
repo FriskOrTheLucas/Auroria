@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\PathHelper.cs" />
     <Compile Include="Resources\SaveUserSettings.cs" />
     <EmbeddedResource Include="AurNTBase.resx">
       <DependentUpon>AurNTBase.cs</DependentUpon>

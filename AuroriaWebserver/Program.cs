@@ -15,16 +15,18 @@ namespace AuroriaWebserver
             Console.WriteLine("hallo test?");
 
             HttpListener listener = new HttpListener();
-            listener.Prefixes.Add("http://localhost:8080/");
+            listener.Prefixes.Add("http://localhost/");
+            listener.Prefixes.Add("http://roblox.com/");
             listener.Start();
 
-            Console.WriteLine("Http listener started! listening on http://localhost:8080/");
+            Console.WriteLine("Http listener started! listening on http://localhost/");
             Console.WriteLine("Dont worry lucas. you got this.");
 
             while (true)
             {
                 HttpListenerContext context = listener.GetContext();
                 HttpListenerResponse response = context.Response;
+
                 string indexdir = "www\\index.html";
 
                 byte[] buffer = File.ReadAllBytes(indexdir);

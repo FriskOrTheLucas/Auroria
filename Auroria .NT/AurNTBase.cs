@@ -36,6 +36,7 @@ namespace Auroria.NT
     public partial class AurNTBase : Form
     {
         public string InfoFilePath = "PlayerSettings.json";
+        public string SelectedClient = "";
 
         public AurNTBase()
         {   // Gonna be adding a loading screen soon. Which means we may need a bit of a delay here? I will explain
@@ -418,6 +419,7 @@ namespace Auroria.NT
             }
 
             string clientSelectedlst = ClientList.SelectedItem.ToString();
+            SelectedClient = clientSelectedlst;
 
             string clientThumbDir = "Data\\ClientThmbnl\\" + clientSelectedlst + "\\" + clientSelectedlst + ".png";
             string clientJsonDir = "Clients\\" + clientSelectedlst + "\\ClientInfo.json";
