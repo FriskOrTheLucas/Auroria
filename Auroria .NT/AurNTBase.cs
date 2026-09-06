@@ -82,7 +82,6 @@ namespace Auroria.NT
             );
 
             string mapsFolder = "Maps";
-            string ChckMapDirectory = @"Maps";
             string ClientsDirectory = "Clients";
 
             BackgroundBox.Image = Properties.Resources.BannerLong;
@@ -93,7 +92,7 @@ namespace Auroria.NT
             LoadCatalogListView(@"Data/Catalog/charpants", PantsListView, PntsImgList);
 
             //populate the maps tree view with the map stuff.
-            if (!Directory.Exists(ChckMapDirectory))
+            if (!Directory.Exists(mapsFolder))
             {
                 MessageBox.Show("Either the Maps folder doesn't exist or Auroria cannot find it!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // PRAY That it just doesn't exist. If Auroria can't find it, something has gone horribly wrong.
@@ -285,6 +284,7 @@ namespace Auroria.NT
         {
             if (!File.Exists(InfoFilePath))
             {
+                // it literally comes with the launcher?????
                 MessageBox.Show("PlayerSettings.json file not found! Auroria will generate one for you.", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Error); // error but not error because im goated
 
                 JObject objnw = new JObject
@@ -311,7 +311,11 @@ namespace Auroria.NT
             obj["PlayerName"] = PlayerNameBox.Text;
             obj["UserID"] = PlayerIDBox.Text;
 
-            // add W.D Gaster easter egg here later.
+            if (PlayerNameBox.Text == "W.D Gaster")
+            {
+                // oh hell no
+                MessageBox.Show("What the f");
+            }
 
             File.WriteAllText(InfoFilePath, obj.ToString());
             MessageBox.Show("Player information saved successfully!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -448,6 +452,22 @@ namespace Auroria.NT
 
         }
 
+        private void ItemChanged(ListView listview, Button slot, string slotvar)
+        {
+            if (listview.SelectedItems.Count == 0)
+            {
+                UpdateBtn(listview, slot);
+                SaveLoadedItm(slotvar, "");
+                return;
+            }
+
+            ListViewItem selectedItem = listview.SelectedItems[0];
+            string id = selectedItem.Tag.ToString();
+
+            UpdateBtn(listview, slot);
+            SaveLoadedItm(slotvar, id);
+        }
+
         private void ClientInfoBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -479,72 +499,28 @@ namespace Auroria.NT
         private void CookieWzrd_Click(object sender, EventArgs e)
         {
             CookieWizard cookieWizardForm = new CookieWizard();
-            cookieWizardForm.Show(); // i coulda just made it a box you type into but i like WIZAAAAAARRRRDDSS
+            cookieWizardForm.Show(); // todo: remove the cookie wizard form and instead make it so that its a text box you can type into.
+            // not everything needs to be its own window unless its absolutely needed
         }
 
         private void HatsSlot1_Click(object sender, EventArgs e)
         {
-            if (HatsListView.SelectedItems.Count == 0)
-            {
-                UpdateBtn(HatsListView, HatsSlot1);
-                SaveLoadedItm("HatSlot1", "");
-                return;
-            }
-
-            ListViewItem selectedItem = HatsListView.SelectedItems[0];
-            string id = selectedItem.Tag.ToString();
-
-            UpdateBtn(HatsListView, HatsSlot1);
-            SaveLoadedItm("HatSlot1", id);
+            ItemChanged(HatsListView, HatsSlot1, "HatSlot1");
         }
 
         private void HatsSlot2_Click(object sender, EventArgs e)
         {
-            if (HatsListView.SelectedItems.Count == 0)
-            {
-                UpdateBtn(HatsListView, HatsSlot2);
-                SaveLoadedItm("HatSlot2", "");
-                return;
-            }
-
-            ListViewItem selectedItem = HatsListView.SelectedItems[0];
-            string id = selectedItem.Tag.ToString();
-
-            UpdateBtn(HatsListView, HatsSlot2);
-            SaveLoadedItm("HatSlot2", id);
+            ItemChanged(HatsListView, HatsSlot2, "HatSlot2");
         }
 
         private void HatsSlot3_Click(object sender, EventArgs e)
         {
-            if (HatsListView.SelectedItems.Count == 0)
-            {
-                UpdateBtn(HatsListView, HatsSlot3);
-                SaveLoadedItm("HatSlot3", "");
-                return;
-            }
-
-            ListViewItem selectedItem = HatsListView.SelectedItems[0];
-            string id = selectedItem.Tag.ToString();
-
-            UpdateBtn(HatsListView, HatsSlot3);
-            SaveLoadedItm("HatSlot3", id);
+            ItemChanged(HatsListView, HatsSlot3, "HatSlot3");
         }
 
         private void ShrtSlot1_Click(object sender, EventArgs e)
         {
-
-            if (ShirtsListView.SelectedItems.Count == 0)
-            {
-                UpdateBtn(ShirtsListView, ShrtSlot1);
-                SaveLoadedItm("Shirt", "");
-                return;
-            }
-
-            ListViewItem selectedItem = ShirtsListView.SelectedItems[0];
-            string id = selectedItem.Tag.ToString();
-
-            UpdateBtn(ShirtsListView, ShrtSlot1);
-            SaveLoadedItm("Shirt", id);
+            ItemChanged(ShirtsListView, ShrtSlot1, "Shirt");
         }
     }
 }
