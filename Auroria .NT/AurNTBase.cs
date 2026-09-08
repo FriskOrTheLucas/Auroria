@@ -496,13 +496,6 @@ namespace Auroria.NT
             }
         }
 
-        private void CookieWzrd_Click(object sender, EventArgs e)
-        {
-            CookieWizard cookieWizardForm = new CookieWizard();
-            cookieWizardForm.Show(); // todo: remove the cookie wizard form and instead make it so that its a text box you can type into.
-            // not everything needs to be its own window unless its absolutely needed
-        }
-
         private void HatsSlot1_Click(object sender, EventArgs e)
         {
             ItemChanged(HatsListView, HatsSlot1, "HatSlot1");

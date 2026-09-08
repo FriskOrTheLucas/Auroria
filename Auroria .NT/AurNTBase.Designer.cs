@@ -33,12 +33,14 @@
             this.AllTabs = new System.Windows.Forms.TabControl();
             this.PlayTab = new System.Windows.Forms.TabPage();
             this.ClientInfoBox = new System.Windows.Forms.RichTextBox();
+            this.ClientPictureBox = new System.Windows.Forms.PictureBox();
             this.ClientList = new System.Windows.Forms.ListBox();
+            this.HostBtn = new System.Windows.Forms.Button();
             this.SrvrIPbox = new System.Windows.Forms.TextBox();
+            this.JoinBtn = new System.Windows.Forms.Button();
             this.CustmTab = new System.Windows.Forms.TabPage();
             this.BodyColorBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
-            this.CookieWzrd = new System.Windows.Forms.Button();
             this.UserNote = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CatalogTabsOptions = new System.Windows.Forms.TabControl();
@@ -74,11 +76,9 @@
             this.MOTD = new System.Windows.Forms.Label();
             this.RndrBtn = new System.Windows.Forms.Button();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
-            this.ClientPictureBox = new System.Windows.Forms.PictureBox();
-            this.HostBtn = new System.Windows.Forms.Button();
-            this.JoinBtn = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
             this.CustmTab.SuspendLayout();
             this.CatalogTabsOptions.SuspendLayout();
             this.HatTab.SuspendLayout();
@@ -86,7 +86,6 @@
             this.PntTab.SuspendLayout();
             this.CrditTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // AllTabs
@@ -139,6 +138,17 @@
             this.ClientInfoBox.Text = "Client Info will be displayed here.";
             this.ClientInfoBox.TextChanged += new System.EventHandler(this.ClientInfoBox_TextChanged);
             // 
+            // ClientPictureBox
+            // 
+            this.ClientPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ClientPictureBox.Location = new System.Drawing.Point(5, 30);
+            this.ClientPictureBox.Name = "ClientPictureBox";
+            this.ClientPictureBox.Size = new System.Drawing.Size(275, 158);
+            this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ClientPictureBox.TabIndex = 14;
+            this.ClientPictureBox.TabStop = false;
+            this.ClientPictureBox.Click += new System.EventHandler(this.ClientPictureBox_Click);
+            // 
             // ClientList
             // 
             this.ClientList.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,6 +159,26 @@
             this.ClientList.Size = new System.Drawing.Size(201, 340);
             this.ClientList.TabIndex = 12;
             this.ClientList.SelectedIndexChanged += new System.EventHandler(this.ClientList_SelectedIndexChanged);
+            // 
+            // HostBtn
+            // 
+            this.HostBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.HostBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.HostBtn.BackColor = System.Drawing.Color.Transparent;
+            this.HostBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.HostBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HostBtn.FlatAppearance.BorderSize = 0;
+            this.HostBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.HostBtn.Image = ((System.Drawing.Image)(resources.GetObject("HostBtn.Image")));
+            this.HostBtn.Location = new System.Drawing.Point(148, 311);
+            this.HostBtn.Name = "HostBtn";
+            this.HostBtn.Size = new System.Drawing.Size(125, 47);
+            this.HostBtn.TabIndex = 8;
+            this.HostBtn.TabStop = false;
+            this.HostBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.HostBtn.UseMnemonic = false;
+            this.HostBtn.UseVisualStyleBackColor = false;
+            this.HostBtn.Click += new System.EventHandler(this.HostBtn_Click);
             // 
             // SrvrIPbox
             // 
@@ -162,12 +192,31 @@
             this.SrvrIPbox.Text = "localhost:53640";
             this.SrvrIPbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // JoinBtn
+            // 
+            this.JoinBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.JoinBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.JoinBtn.BackColor = System.Drawing.Color.Transparent;
+            this.JoinBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.JoinBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JoinBtn.FlatAppearance.BorderSize = 0;
+            this.JoinBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.JoinBtn.Image = ((System.Drawing.Image)(resources.GetObject("JoinBtn.Image")));
+            this.JoinBtn.Location = new System.Drawing.Point(17, 311);
+            this.JoinBtn.Name = "JoinBtn";
+            this.JoinBtn.Size = new System.Drawing.Size(125, 47);
+            this.JoinBtn.TabIndex = 9;
+            this.JoinBtn.TabStop = false;
+            this.JoinBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.JoinBtn.UseMnemonic = false;
+            this.JoinBtn.UseVisualStyleBackColor = false;
+            this.JoinBtn.Click += new System.EventHandler(this.JoinBtn_click);
+            // 
             // CustmTab
             // 
             this.CustmTab.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CustmTab.Controls.Add(this.BodyColorBtn);
             this.CustmTab.Controls.Add(this.SaveBtn);
-            this.CustmTab.Controls.Add(this.CookieWzrd);
             this.CustmTab.Controls.Add(this.UserNote);
             this.CustmTab.Controls.Add(this.label1);
             this.CustmTab.Controls.Add(this.CatalogTabsOptions);
@@ -203,17 +252,6 @@
             this.SaveBtn.Text = "Save Data";
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
-            // 
-            // CookieWzrd
-            // 
-            this.CookieWzrd.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CookieWzrd.Location = new System.Drawing.Point(409, 12);
-            this.CookieWzrd.Name = "CookieWzrd";
-            this.CookieWzrd.Size = new System.Drawing.Size(77, 41);
-            this.CookieWzrd.TabIndex = 13;
-            this.CookieWzrd.Text = "Cookie Wizard";
-            this.CookieWzrd.UseVisualStyleBackColor = true;
-            this.CookieWzrd.Click += new System.EventHandler(this.CookieWzrd_Click);
             // 
             // UserNote
             // 
@@ -612,57 +650,6 @@
             this.BackgroundBox.TabIndex = 3;
             this.BackgroundBox.TabStop = false;
             // 
-            // ClientPictureBox
-            // 
-            this.ClientPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ClientPictureBox.Location = new System.Drawing.Point(5, 30);
-            this.ClientPictureBox.Name = "ClientPictureBox";
-            this.ClientPictureBox.Size = new System.Drawing.Size(275, 158);
-            this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ClientPictureBox.TabIndex = 14;
-            this.ClientPictureBox.TabStop = false;
-            this.ClientPictureBox.Click += new System.EventHandler(this.ClientPictureBox_Click);
-            // 
-            // HostBtn
-            // 
-            this.HostBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.HostBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.HostBtn.BackColor = System.Drawing.Color.Transparent;
-            this.HostBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.HostBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HostBtn.FlatAppearance.BorderSize = 0;
-            this.HostBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.HostBtn.Image = ((System.Drawing.Image)(resources.GetObject("HostBtn.Image")));
-            this.HostBtn.Location = new System.Drawing.Point(148, 311);
-            this.HostBtn.Name = "HostBtn";
-            this.HostBtn.Size = new System.Drawing.Size(125, 47);
-            this.HostBtn.TabIndex = 8;
-            this.HostBtn.TabStop = false;
-            this.HostBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.HostBtn.UseMnemonic = false;
-            this.HostBtn.UseVisualStyleBackColor = false;
-            this.HostBtn.Click += new System.EventHandler(this.HostBtn_Click);
-            // 
-            // JoinBtn
-            // 
-            this.JoinBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.JoinBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.JoinBtn.BackColor = System.Drawing.Color.Transparent;
-            this.JoinBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.JoinBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JoinBtn.FlatAppearance.BorderSize = 0;
-            this.JoinBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.JoinBtn.Image = ((System.Drawing.Image)(resources.GetObject("JoinBtn.Image")));
-            this.JoinBtn.Location = new System.Drawing.Point(17, 311);
-            this.JoinBtn.Name = "JoinBtn";
-            this.JoinBtn.Size = new System.Drawing.Size(125, 47);
-            this.JoinBtn.TabIndex = 9;
-            this.JoinBtn.TabStop = false;
-            this.JoinBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.JoinBtn.UseMnemonic = false;
-            this.JoinBtn.UseVisualStyleBackColor = false;
-            this.JoinBtn.Click += new System.EventHandler(this.JoinBtn_click);
-            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -684,6 +671,7 @@
             this.AllTabs.ResumeLayout(false);
             this.PlayTab.ResumeLayout(false);
             this.PlayTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).EndInit();
             this.CustmTab.ResumeLayout(false);
             this.CustmTab.PerformLayout();
             this.CatalogTabsOptions.ResumeLayout(false);
@@ -692,7 +680,6 @@
             this.PntTab.ResumeLayout(false);
             this.CrditTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -733,7 +720,6 @@
         private System.Windows.Forms.ListView HatsListView;
         private System.Windows.Forms.ListView PantsListView;
         private System.Windows.Forms.ListView ShirtsListView;
-        private System.Windows.Forms.Button CookieWzrd;
         private System.Windows.Forms.ImageList ShrtsImgList;
         private System.Windows.Forms.RichTextBox ShrtInfoTxt;
         private System.Windows.Forms.RichTextBox HatsInfoTxt;

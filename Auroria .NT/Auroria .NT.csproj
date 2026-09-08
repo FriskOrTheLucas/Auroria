@@ -77,12 +77,6 @@
     <Compile Include="BodyColorsWindow.Designer.cs">
       <DependentUpon>BodyColorsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="CookieWizard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CookieWizard.Designer.cs">
-      <DependentUpon>CookieWizard.cs</DependentUpon>
-    </Compile>
     <Compile Include="CustomItemWizard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,9 +92,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BodyColorsWindow.resx">
       <DependentUpon>BodyColorsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CookieWizard.resx">
-      <DependentUpon>CookieWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomItemWizard.resx">
       <DependentUpon>CustomItemWizard.cs</DependentUpon>
