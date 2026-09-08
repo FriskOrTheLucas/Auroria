@@ -33,11 +33,8 @@
             this.AllTabs = new System.Windows.Forms.TabControl();
             this.PlayTab = new System.Windows.Forms.TabPage();
             this.ClientInfoBox = new System.Windows.Forms.RichTextBox();
-            this.ClientPictureBox = new System.Windows.Forms.PictureBox();
             this.ClientList = new System.Windows.Forms.ListBox();
-            this.HostBtn = new System.Windows.Forms.Button();
             this.SrvrIPbox = new System.Windows.Forms.TextBox();
-            this.JoinBtn = new System.Windows.Forms.Button();
             this.CustmTab = new System.Windows.Forms.TabPage();
             this.BodyColorBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
@@ -46,6 +43,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CatalogTabsOptions = new System.Windows.Forms.TabControl();
             this.HatTab = new System.Windows.Forms.TabPage();
+            this.HatsSlot3 = new System.Windows.Forms.Button();
+            this.HatsSlot2 = new System.Windows.Forms.Button();
+            this.HatsSlot1 = new System.Windows.Forms.Button();
             this.HatsInfoTxt = new System.Windows.Forms.RichTextBox();
             this.HatsListView = new System.Windows.Forms.ListView();
             this.HatsImgList = new System.Windows.Forms.ImageList(this.components);
@@ -71,15 +71,14 @@
             this.DCButton = new System.Windows.Forms.Button();
             this.ClientsLabel = new System.Windows.Forms.Label();
             this.MapsTree = new System.Windows.Forms.TreeView();
-            this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.MOTD = new System.Windows.Forms.Label();
             this.RndrBtn = new System.Windows.Forms.Button();
-            this.HatsSlot1 = new System.Windows.Forms.Button();
-            this.HatsSlot2 = new System.Windows.Forms.Button();
-            this.HatsSlot3 = new System.Windows.Forms.Button();
+            this.BackgroundBox = new System.Windows.Forms.PictureBox();
+            this.ClientPictureBox = new System.Windows.Forms.PictureBox();
+            this.HostBtn = new System.Windows.Forms.Button();
+            this.JoinBtn = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
             this.CustmTab.SuspendLayout();
             this.CatalogTabsOptions.SuspendLayout();
             this.HatTab.SuspendLayout();
@@ -87,6 +86,7 @@
             this.PntTab.SuspendLayout();
             this.CrditTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // AllTabs
@@ -139,17 +139,6 @@
             this.ClientInfoBox.Text = "Client Info will be displayed here.";
             this.ClientInfoBox.TextChanged += new System.EventHandler(this.ClientInfoBox_TextChanged);
             // 
-            // ClientPictureBox
-            // 
-            this.ClientPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ClientPictureBox.Location = new System.Drawing.Point(5, 30);
-            this.ClientPictureBox.Name = "ClientPictureBox";
-            this.ClientPictureBox.Size = new System.Drawing.Size(275, 158);
-            this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ClientPictureBox.TabIndex = 14;
-            this.ClientPictureBox.TabStop = false;
-            this.ClientPictureBox.Click += new System.EventHandler(this.ClientPictureBox_Click);
-            // 
             // ClientList
             // 
             this.ClientList.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,26 +149,6 @@
             this.ClientList.Size = new System.Drawing.Size(201, 340);
             this.ClientList.TabIndex = 12;
             this.ClientList.SelectedIndexChanged += new System.EventHandler(this.ClientList_SelectedIndexChanged);
-            // 
-            // HostBtn
-            // 
-            this.HostBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.HostBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.HostBtn.BackColor = System.Drawing.Color.Transparent;
-            this.HostBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.HostBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HostBtn.FlatAppearance.BorderSize = 0;
-            this.HostBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.HostBtn.Image = ((System.Drawing.Image)(resources.GetObject("HostBtn.Image")));
-            this.HostBtn.Location = new System.Drawing.Point(148, 311);
-            this.HostBtn.Name = "HostBtn";
-            this.HostBtn.Size = new System.Drawing.Size(125, 47);
-            this.HostBtn.TabIndex = 8;
-            this.HostBtn.TabStop = false;
-            this.HostBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.HostBtn.UseMnemonic = false;
-            this.HostBtn.UseVisualStyleBackColor = false;
-            this.HostBtn.Click += new System.EventHandler(this.HostBtn_Click);
             // 
             // SrvrIPbox
             // 
@@ -192,26 +161,6 @@
             this.SrvrIPbox.TabIndex = 11;
             this.SrvrIPbox.Text = "localhost:53640";
             this.SrvrIPbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // JoinBtn
-            // 
-            this.JoinBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.JoinBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.JoinBtn.BackColor = System.Drawing.Color.Transparent;
-            this.JoinBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.JoinBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JoinBtn.FlatAppearance.BorderSize = 0;
-            this.JoinBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.JoinBtn.Image = ((System.Drawing.Image)(resources.GetObject("JoinBtn.Image")));
-            this.JoinBtn.Location = new System.Drawing.Point(17, 311);
-            this.JoinBtn.Name = "JoinBtn";
-            this.JoinBtn.Size = new System.Drawing.Size(125, 47);
-            this.JoinBtn.TabIndex = 9;
-            this.JoinBtn.TabStop = false;
-            this.JoinBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.JoinBtn.UseMnemonic = false;
-            this.JoinBtn.UseVisualStyleBackColor = false;
-            this.JoinBtn.Click += new System.EventHandler(this.JoinBtn_click);
             // 
             // CustmTab
             // 
@@ -326,6 +275,48 @@
             this.HatTab.TabIndex = 0;
             this.HatTab.Text = "Hats";
             this.HatTab.UseVisualStyleBackColor = true;
+            // 
+            // HatsSlot3
+            // 
+            this.HatsSlot3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.HatsSlot3.FlatAppearance.BorderSize = 2;
+            this.HatsSlot3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.HatsSlot3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.HatsSlot3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.HatsSlot3.Location = new System.Drawing.Point(399, 154);
+            this.HatsSlot3.Name = "HatsSlot3";
+            this.HatsSlot3.Size = new System.Drawing.Size(60, 60);
+            this.HatsSlot3.TabIndex = 7;
+            this.HatsSlot3.UseVisualStyleBackColor = true;
+            this.HatsSlot3.Click += new System.EventHandler(this.HatsSlot3_Click);
+            // 
+            // HatsSlot2
+            // 
+            this.HatsSlot2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.HatsSlot2.FlatAppearance.BorderSize = 2;
+            this.HatsSlot2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.HatsSlot2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.HatsSlot2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.HatsSlot2.Location = new System.Drawing.Point(399, 88);
+            this.HatsSlot2.Name = "HatsSlot2";
+            this.HatsSlot2.Size = new System.Drawing.Size(60, 60);
+            this.HatsSlot2.TabIndex = 6;
+            this.HatsSlot2.UseVisualStyleBackColor = true;
+            this.HatsSlot2.Click += new System.EventHandler(this.HatsSlot2_Click);
+            // 
+            // HatsSlot1
+            // 
+            this.HatsSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.HatsSlot1.FlatAppearance.BorderSize = 2;
+            this.HatsSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.HatsSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.HatsSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.HatsSlot1.Location = new System.Drawing.Point(399, 22);
+            this.HatsSlot1.Name = "HatsSlot1";
+            this.HatsSlot1.Size = new System.Drawing.Size(60, 60);
+            this.HatsSlot1.TabIndex = 5;
+            this.HatsSlot1.UseVisualStyleBackColor = true;
+            this.HatsSlot1.Click += new System.EventHandler(this.HatsSlot1_Click);
             // 
             // HatsInfoTxt
             // 
@@ -587,15 +578,6 @@
             this.MapsTree.TabIndex = 2;
             this.MapsTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.MapsTree_AfterSelect);
             // 
-            // BackgroundBox
-            // 
-            this.BackgroundBox.Image = global::Auroria.NT.Properties.Resources.BannerLong;
-            this.BackgroundBox.Location = new System.Drawing.Point(0, -1);
-            this.BackgroundBox.Name = "BackgroundBox";
-            this.BackgroundBox.Size = new System.Drawing.Size(763, 115);
-            this.BackgroundBox.TabIndex = 3;
-            this.BackgroundBox.TabStop = false;
-            // 
             // MOTD
             // 
             this.MOTD.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -621,47 +603,65 @@
             this.RndrBtn.Text = "Render Avatar";
             this.RndrBtn.UseVisualStyleBackColor = true;
             // 
-            // HatsSlot1
+            // BackgroundBox
             // 
-            this.HatsSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.HatsSlot1.FlatAppearance.BorderSize = 2;
-            this.HatsSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.HatsSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.HatsSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.HatsSlot1.Location = new System.Drawing.Point(399, 22);
-            this.HatsSlot1.Name = "HatsSlot1";
-            this.HatsSlot1.Size = new System.Drawing.Size(60, 60);
-            this.HatsSlot1.TabIndex = 5;
-            this.HatsSlot1.UseVisualStyleBackColor = true;
-            this.HatsSlot1.Click += new System.EventHandler(this.HatsSlot1_Click);
+            this.BackgroundBox.Image = global::Auroria.NT.Properties.Resources.BannerLong;
+            this.BackgroundBox.Location = new System.Drawing.Point(0, -1);
+            this.BackgroundBox.Name = "BackgroundBox";
+            this.BackgroundBox.Size = new System.Drawing.Size(763, 115);
+            this.BackgroundBox.TabIndex = 3;
+            this.BackgroundBox.TabStop = false;
             // 
-            // HatsSlot2
+            // ClientPictureBox
             // 
-            this.HatsSlot2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.HatsSlot2.FlatAppearance.BorderSize = 2;
-            this.HatsSlot2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.HatsSlot2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.HatsSlot2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.HatsSlot2.Location = new System.Drawing.Point(399, 88);
-            this.HatsSlot2.Name = "HatsSlot2";
-            this.HatsSlot2.Size = new System.Drawing.Size(60, 60);
-            this.HatsSlot2.TabIndex = 6;
-            this.HatsSlot2.UseVisualStyleBackColor = true;
-            this.HatsSlot2.Click += new System.EventHandler(this.HatsSlot2_Click);
+            this.ClientPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ClientPictureBox.Location = new System.Drawing.Point(5, 30);
+            this.ClientPictureBox.Name = "ClientPictureBox";
+            this.ClientPictureBox.Size = new System.Drawing.Size(275, 158);
+            this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ClientPictureBox.TabIndex = 14;
+            this.ClientPictureBox.TabStop = false;
+            this.ClientPictureBox.Click += new System.EventHandler(this.ClientPictureBox_Click);
             // 
-            // HatsSlot3
+            // HostBtn
             // 
-            this.HatsSlot3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.HatsSlot3.FlatAppearance.BorderSize = 2;
-            this.HatsSlot3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.HatsSlot3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.HatsSlot3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.HatsSlot3.Location = new System.Drawing.Point(399, 154);
-            this.HatsSlot3.Name = "HatsSlot3";
-            this.HatsSlot3.Size = new System.Drawing.Size(60, 60);
-            this.HatsSlot3.TabIndex = 7;
-            this.HatsSlot3.UseVisualStyleBackColor = true;
-            this.HatsSlot3.Click += new System.EventHandler(this.HatsSlot3_Click);
+            this.HostBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.HostBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.HostBtn.BackColor = System.Drawing.Color.Transparent;
+            this.HostBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.HostBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HostBtn.FlatAppearance.BorderSize = 0;
+            this.HostBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.HostBtn.Image = ((System.Drawing.Image)(resources.GetObject("HostBtn.Image")));
+            this.HostBtn.Location = new System.Drawing.Point(148, 311);
+            this.HostBtn.Name = "HostBtn";
+            this.HostBtn.Size = new System.Drawing.Size(125, 47);
+            this.HostBtn.TabIndex = 8;
+            this.HostBtn.TabStop = false;
+            this.HostBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.HostBtn.UseMnemonic = false;
+            this.HostBtn.UseVisualStyleBackColor = false;
+            this.HostBtn.Click += new System.EventHandler(this.HostBtn_Click);
+            // 
+            // JoinBtn
+            // 
+            this.JoinBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.JoinBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.JoinBtn.BackColor = System.Drawing.Color.Transparent;
+            this.JoinBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.JoinBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JoinBtn.FlatAppearance.BorderSize = 0;
+            this.JoinBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.JoinBtn.Image = ((System.Drawing.Image)(resources.GetObject("JoinBtn.Image")));
+            this.JoinBtn.Location = new System.Drawing.Point(17, 311);
+            this.JoinBtn.Name = "JoinBtn";
+            this.JoinBtn.Size = new System.Drawing.Size(125, 47);
+            this.JoinBtn.TabIndex = 9;
+            this.JoinBtn.TabStop = false;
+            this.JoinBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.JoinBtn.UseMnemonic = false;
+            this.JoinBtn.UseVisualStyleBackColor = false;
+            this.JoinBtn.Click += new System.EventHandler(this.JoinBtn_click);
             // 
             // AurNTBase
             // 
@@ -684,7 +684,6 @@
             this.AllTabs.ResumeLayout(false);
             this.PlayTab.ResumeLayout(false);
             this.PlayTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).EndInit();
             this.CustmTab.ResumeLayout(false);
             this.CustmTab.PerformLayout();
             this.CatalogTabsOptions.ResumeLayout(false);
@@ -693,6 +692,7 @@
             this.PntTab.ResumeLayout(false);
             this.CrditTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

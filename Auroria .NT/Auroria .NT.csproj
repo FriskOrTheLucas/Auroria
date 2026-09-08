@@ -129,6 +129,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AurLogo.ico" />
+    <None Include="Launcher Assets\Banners\BannerLong.png" />
+    <None Include="Launcher Assets\Banners\BannerLongNT.png" />
     <None Include="bin\Debug\Data\Banners\BannerLong.png" />
     <None Include="bin\Debug\Data\Banners\BannerLongNT.png" />
   </ItemGroup>

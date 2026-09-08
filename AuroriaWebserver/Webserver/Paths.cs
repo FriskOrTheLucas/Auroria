@@ -13,7 +13,7 @@ namespace AuroriaWebserver.Webserver
         private static string _hostscrpt;
         private static string Client => PathHelper.Client;
 
-        public static string Join => _joinscrpt ?? (_joinscrpt = Path.Combine("Scripts", "join.lua"));
-        public static string HostScript => _hostscrpt ?? (_hostscrpt = Path.Combine("Scripts", "host.lua"));
+        public static string Join => _joinscrpt ?? (_joinscrpt = Path.Combine(Client + "Scripts", "join.lua"));
+        public static string HostScript => _hostscrpt ?? (_hostscrpt = Path.Combine(Client + "Scripts", "host.lua"));
     }
 }

@@ -17,6 +17,7 @@ namespace AuroriaWebserver
             HttpListener listener = new HttpListener();
             listener.Prefixes.Add("http://localhost/");
             listener.Prefixes.Add("http://roblox.com/");
+            listener.Prefixes.Add("http://rbxweb.lol/");
             listener.Start();
 
             Console.WriteLine("Http listener started! listening on http://localhost/");
@@ -25,19 +26,44 @@ namespace AuroriaWebserver
             while (true)
             {
                 HttpListenerContext context = listener.GetContext();
+
+                HttpListenerRequest request = context.Request;
                 HttpListenerResponse response = context.Response;
 
-                string indexdir = "www\\index.html";
+                if (request.Url.AbsolutePath == "/Game/Join.ashx")
+                {
+                    Mains.HandleJoin(request, response);
+                    Console.WriteLine("Join url was called!");
+                }
+                else if (request.Url.AbsolutePath == "/IDE/Start.aspx")
+                {
+                    Console.WriteLine("Start aspx was called and has launched successfully.");
+                    Console.WriteLine("Domain URL");
 
-                byte[] buffer = File.ReadAllBytes(indexdir);
+                    // temporary response so the browser doesn't get index.html
+                    string message = "Start.aspx was called!";
 
-                response.ContentLength64 = buffer.Length;
-                response.ContentType = "text/html";
+                    byte[] buffer = Encoding.UTF8.GetBytes(message);
 
-                System.IO.Stream output = response.OutputStream;
-                output.Write(buffer, 0, buffer.Length);
+                    response.ContentType = "text/plain";
+                    response.ContentLength64 = buffer.Length;
 
-                output.Close();
+                    response.OutputStream.Write(buffer, 0, buffer.Length);
+                    response.OutputStream.Close();
+                }
+                else
+                {
+                    // everything else gets the sht
+                    string indexdir = "www\\index.html";
+
+                    byte[] buffer = File.ReadAllBytes(indexdir);
+
+                    response.ContentLength64 = buffer.Length;
+                    response.ContentType = "text/html";
+
+                    response.OutputStream.Write(buffer, 0, buffer.Length);
+                    response.OutputStream.Close();
+                }
             }
         }
     }
