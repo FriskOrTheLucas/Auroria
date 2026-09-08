@@ -314,7 +314,7 @@ namespace Auroria.NT
             if (PlayerNameBox.Text == "W.D Gaster")
             {
                 // oh hell no
-                MessageBox.Show("What the f");
+                MessageBox.Show("What have you done, "frisk", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
 
             File.WriteAllText(InfoFilePath, obj.ToString());
