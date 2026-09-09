@@ -18,6 +18,7 @@ namespace AuroriaWebserver
             listener.Prefixes.Add("http://localhost/");
             listener.Prefixes.Add("http://roblox.com/");
             listener.Prefixes.Add("http://rbxweb.lol/");
+            listener.Prefixes.Add("http://www.rbxweb.lol/");
             listener.Start();
 
             Console.WriteLine("Http listener started! listening on http://localhost/");

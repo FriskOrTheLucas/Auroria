@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net;
+using System.Security.Principal;
 
 // Jay Jay if youre reading this then here is the checklist.
 
@@ -44,6 +45,12 @@ namespace Auroria.NT
 
             // future lucas here: this is dumb
             InitializeComponent();
+
+            this.FormClosing += (sender, e) => Apache.StopService();
+
+            Apache.WriteHTTPDconf();
+            Apache.Install(); // this sucks but im stupid so it shouldnt matter
+            Apache.StartService();
         }
 
         private void AddFolder(TreeNode parentNode, string folderPath) // Populates the Map Tree view.
@@ -78,7 +85,7 @@ namespace Auroria.NT
             MessageBox.Show(
                 "Hello, Welcome to Auroria .NT! Note that Auroria is a work in progress passion project, and some things may not work as expected!",
                 "Auroria .NT",
-                MessageBoxButtons.OKCancel, MessageBoxIcon.Information
+                MessageBoxButtons.OK, MessageBoxIcon.Information
             );
 
             string mapsFolder = "Maps";
@@ -314,7 +321,7 @@ namespace Auroria.NT
             if (PlayerNameBox.Text == "W.D Gaster")
             {
                 // oh hell no
-                MessageBox.Show("What have you done, "frisk", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show("What have you done", "friskorthelucas", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
 
             File.WriteAllText(InfoFilePath, obj.ToString());
