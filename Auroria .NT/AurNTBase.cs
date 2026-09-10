@@ -60,12 +60,27 @@ namespace Auroria.NT
                 return;
             }
 
-            this.FormClosing += (sender, e) => Apache.StopService();
-
+            hostsfile.RemoveHosts();
+            hostsfile.WriteHosts();
             Apache.WriteHTTPDconf();
             Apache.Install(); // this sucks but im stupid so it shouldnt matter
             Apache.StartService();
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                // do the thing
+                Apache.StopService();
+                hostsfile.RemoveHosts();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to clean hosts file: {ex.Message}");
+            }
+        }
+
 
         private void AddFolder(TreeNode parentNode, string folderPath) // Populates the Map Tree view.
         {

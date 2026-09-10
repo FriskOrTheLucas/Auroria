@@ -667,6 +667,7 @@
             this.Name = "AurNTBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auroria .NT 0.1 [Codename:Invidia]";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.AurNTBase_Load);
             this.AllTabs.ResumeLayout(false);
             this.PlayTab.ResumeLayout(false);
