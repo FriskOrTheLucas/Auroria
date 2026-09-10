@@ -42,9 +42,23 @@ namespace Auroria.NT
         public AurNTBase()
         {   // Gonna be adding a loading screen soon. Which means we may need a bit of a delay here? I will explain
             // if needed. -Lucas
-
             // future lucas here: this is dumb
+
             InitializeComponent();
+
+            if (CheckPorts.IsTcpPortInUse(80))
+            {
+                MessageBox.Show("Port 80 is being used by another program. Check taskmanager for things like httpd or webservers and close them.", "Auroria Webserver", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
+                return;
+            }
+
+            if (CheckPorts.IsTcpPortInUse(443))
+            {
+                MessageBox.Show("Port 443 is being used by another program. Check taskmanager for things like httpd or webservers and close them.", "Auroria Webserver", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
+                return;
+            }
 
             this.FormClosing += (sender, e) => Apache.StopService();
 

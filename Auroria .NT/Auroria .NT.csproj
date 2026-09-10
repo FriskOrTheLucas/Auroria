@@ -80,6 +80,7 @@
     <Compile Include="BodyColorsWindow.Designer.cs">
       <DependentUpon>BodyColorsWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckPorts.cs" />
     <Compile Include="CustomItemWizard.cs">
       <SubType>Form</SubType>
     </Compile>
