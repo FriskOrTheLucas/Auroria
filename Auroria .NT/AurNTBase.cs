@@ -112,11 +112,10 @@ namespace Auroria.NT
 
         private void AurNTBase_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Hello, Welcome to Auroria .NT! Note that Auroria is a work in progress passion project, and some things may not work as expected!",
-                "Auroria .NT",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
+            MessageBox.Show("Hello, Welcome to Auroria! Note that Auroria is a work in progress passion project, and some things may not work as expected!", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            string errThumbnail = "Data\\ClientThmbnl\\ErrOrCstm\\ClientErCstm.png";
+            ClientPictureBox.ImageLocation = errThumbnail;
 
             string mapsFolder = "Maps";
             string ClientsDirectory = "Clients";
@@ -251,7 +250,17 @@ namespace Auroria.NT
                 JObject objnw = new JObject
                 {
                     { "PlayerName", "Username" },
-                    { "UserID", "123456789" }
+                    { "UserID", "123456789" },
+                    { "AssetURL", "" },
+                    { "HatSlot1", "" },
+                    { "HatSlot2", "" },
+                    { "HatSlot3", "" },
+                    { "Head", "" },
+                    { "Face", "" },
+                    { "Shirt", "" },
+                    { "TShirt", "" },
+                    { "Pants", "" },
+                    { "Package", "" }
                 };
 
                 File.WriteAllText("PlayerSettings.json", objnw.ToString());
@@ -262,9 +271,17 @@ namespace Auroria.NT
 
             string PlyrName = (string)obj["PlayerName"];
             string id = (string)obj["UserID"];
+            string AsstUrl = (string)obj["AssetURL"];
 
             PlayerNameBox.Text = PlyrName;
             PlayerIDBox.Text = id;
+            AssetURLBox.Text = AsstUrl;
+
+            if (AssetURLBox.Text == "")
+            {
+                string RevertToDefault = "https://assetdelivery.roblox.com/v1/asset/";
+                AssetURLBox.Text = RevertToDefault;
+            }
 
             // note for future lucas: Dummy, make sure you change the HatSlotButton, the name of the slot in the json, and the actual charfolder! 
             LoadAvatarItm(HatsSlot1, "HatSlot1", "charhats");
@@ -328,6 +345,7 @@ namespace Auroria.NT
                 {
                     { "PlayerName", "Username" },
                     { "UserID", "123456789" },
+                    { "AssetURL", "" },
                     { "HatSlot1", "" },
                     { "HatSlot2", "" },
                     { "HatSlot3", "" },
@@ -355,7 +373,6 @@ namespace Auroria.NT
             }
 
             File.WriteAllText(InfoFilePath, obj.ToString());
-            MessageBox.Show("Player information saved successfully!", "Auroria .NT", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BodyColorBtn_Click(object sender, EventArgs e)
@@ -366,12 +383,21 @@ namespace Auroria.NT
 
         private void PlayerNameBox_TextChanged(object sender, EventArgs e)
         {
-
+   
         }
 
         private void MapsTree_AfterSelect(object sender, TreeViewEventArgs e)
         {
             // no.
+        }
+
+        private void SaveAsstUrl_Click(object sender, EventArgs e)
+        {
+            string json = File.ReadAllText(InfoFilePath);
+            JObject obj = JObject.Parse(json);
+
+            obj["AssetURL"] = AssetURLBox.Text;
+            File.WriteAllText(InfoFilePath, obj.ToString());
         }
 
         private void PlayButtonC_Click(object sender, EventArgs e)
@@ -504,6 +530,11 @@ namespace Auroria.NT
         private void ShrtSlot1_Click(object sender, EventArgs e)
         {
             ItemChanged(ShirtsListView, ShrtSlot1, "Shirt");
+        }
+
+        private void HostingBox_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("It is highly recommended to use the default hosting option on 2015+ as studio hosting can be insecure. And on 2012 its recommended to use player hosting for security.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }
