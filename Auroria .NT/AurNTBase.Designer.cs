@@ -81,6 +81,16 @@
             this.AssetPacksBox = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PacksLabel = new System.Windows.Forms.Label();
+            this.SettingsTabs = new System.Windows.Forms.TabControl();
+            this.LauncherSettings = new System.Windows.Forms.TabPage();
+            this.AssetSettings = new System.Windows.Forms.TabPage();
+            this.AsDelGB = new System.Windows.Forms.GroupBox();
+            this.CookieBox = new System.Windows.Forms.TextBox();
+            this.AssetURLBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.CookieURL = new System.Windows.Forms.Label();
+            this.AstURLLabel = new System.Windows.Forms.Label();
+            this.NoticeCookie = new System.Windows.Forms.Label();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             this.CustmTab.SuspendLayout();
@@ -89,11 +99,15 @@
             this.ShrtTab.SuspendLayout();
             this.PntTab.SuspendLayout();
             this.PacksTab.SuspendLayout();
+            this.SettingTab.SuspendLayout();
             this.CrditTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayButtonC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
+            this.SettingsTabs.SuspendLayout();
+            this.AssetSettings.SuspendLayout();
+            this.AsDelGB.SuspendLayout();
             this.SuspendLayout();
             // 
             // AllTabs
@@ -525,6 +539,7 @@
             // SettingTab
             // 
             this.SettingTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SettingTab.Controls.Add(this.SettingsTabs);
             this.SettingTab.Cursor = System.Windows.Forms.Cursors.Default;
             this.SettingTab.Location = new System.Drawing.Point(4, 34);
             this.SettingTab.Name = "SettingTab";
@@ -701,6 +716,119 @@
     "ymore. \r\n-Client Packs on the other hand are basically client extensions\r\nthat a" +
     "llow you to add more clients.";
             // 
+            // SettingsTabs
+            // 
+            this.SettingsTabs.Controls.Add(this.LauncherSettings);
+            this.SettingsTabs.Controls.Add(this.AssetSettings);
+            this.SettingsTabs.ItemSize = new System.Drawing.Size(79, 25);
+            this.SettingsTabs.Location = new System.Drawing.Point(6, 6);
+            this.SettingsTabs.Name = "SettingsTabs";
+            this.SettingsTabs.SelectedIndex = 0;
+            this.SettingsTabs.Size = new System.Drawing.Size(483, 378);
+            this.SettingsTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.SettingsTabs.TabIndex = 0;
+            // 
+            // LauncherSettings
+            // 
+            this.LauncherSettings.Location = new System.Drawing.Point(4, 29);
+            this.LauncherSettings.Name = "LauncherSettings";
+            this.LauncherSettings.Padding = new System.Windows.Forms.Padding(3);
+            this.LauncherSettings.Size = new System.Drawing.Size(475, 345);
+            this.LauncherSettings.TabIndex = 0;
+            this.LauncherSettings.Text = "Launcher";
+            this.LauncherSettings.UseVisualStyleBackColor = true;
+            // 
+            // AssetSettings
+            // 
+            this.AssetSettings.Controls.Add(this.AsDelGB);
+            this.AssetSettings.Location = new System.Drawing.Point(4, 29);
+            this.AssetSettings.Name = "AssetSettings";
+            this.AssetSettings.Padding = new System.Windows.Forms.Padding(3);
+            this.AssetSettings.Size = new System.Drawing.Size(475, 345);
+            this.AssetSettings.TabIndex = 1;
+            this.AssetSettings.Text = "Assets";
+            this.AssetSettings.UseVisualStyleBackColor = true;
+            // 
+            // AsDelGB
+            // 
+            this.AsDelGB.Controls.Add(this.NoticeCookie);
+            this.AsDelGB.Controls.Add(this.AstURLLabel);
+            this.AsDelGB.Controls.Add(this.CookieURL);
+            this.AsDelGB.Controls.Add(this.button1);
+            this.AsDelGB.Controls.Add(this.AssetURLBox);
+            this.AsDelGB.Controls.Add(this.CookieBox);
+            this.AsDelGB.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AsDelGB.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.AsDelGB.Location = new System.Drawing.Point(6, 6);
+            this.AsDelGB.Name = "AsDelGB";
+            this.AsDelGB.Size = new System.Drawing.Size(463, 158);
+            this.AsDelGB.TabIndex = 0;
+            this.AsDelGB.TabStop = false;
+            this.AsDelGB.Text = "Asset Delivery";
+            // 
+            // CookieBox
+            // 
+            this.CookieBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CookieBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CookieBox.Location = new System.Drawing.Point(6, 54);
+            this.CookieBox.Name = "CookieBox";
+            this.CookieBox.PasswordChar = '*';
+            this.CookieBox.Size = new System.Drawing.Size(346, 26);
+            this.CookieBox.TabIndex = 0;
+            // 
+            // AssetURLBox
+            // 
+            this.AssetURLBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AssetURLBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AssetURLBox.Location = new System.Drawing.Point(6, 113);
+            this.AssetURLBox.Name = "AssetURLBox";
+            this.AssetURLBox.Size = new System.Drawing.Size(441, 26);
+            this.AssetURLBox.TabIndex = 1;
+            this.AssetURLBox.Text = "https://assetdelivery.roblox.com/v1/asset/";
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(359, 54);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 26);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Import";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // CookieURL
+            // 
+            this.CookieURL.AutoSize = true;
+            this.CookieURL.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CookieURL.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CookieURL.Location = new System.Drawing.Point(6, 31);
+            this.CookieURL.Name = "CookieURL";
+            this.CookieURL.Size = new System.Drawing.Size(185, 20);
+            this.CookieURL.TabIndex = 1;
+            this.CookieURL.Text = "ROBLOSECURITY Cookie";
+            // 
+            // AstURLLabel
+            // 
+            this.AstURLLabel.AutoSize = true;
+            this.AstURLLabel.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AstURLLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AstURLLabel.Location = new System.Drawing.Point(6, 90);
+            this.AstURLLabel.Name = "AstURLLabel";
+            this.AstURLLabel.Size = new System.Drawing.Size(142, 20);
+            this.AstURLLabel.TabIndex = 3;
+            this.AstURLLabel.Text = "Asset Delivery URL";
+            // 
+            // NoticeCookie
+            // 
+            this.NoticeCookie.AutoSize = true;
+            this.NoticeCookie.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoticeCookie.ForeColor = System.Drawing.Color.Red;
+            this.NoticeCookie.Location = new System.Drawing.Point(189, 33);
+            this.NoticeCookie.Name = "NoticeCookie";
+            this.NoticeCookie.Size = new System.Drawing.Size(222, 18);
+            this.NoticeCookie.TabIndex = 4;
+            this.NoticeCookie.Text = "(Please get this from a burner acc.)";
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -730,11 +858,16 @@
             this.PntTab.ResumeLayout(false);
             this.PacksTab.ResumeLayout(false);
             this.PacksTab.PerformLayout();
+            this.SettingTab.ResumeLayout(false);
             this.CrditTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayButtonC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).EndInit();
+            this.SettingsTabs.ResumeLayout(false);
+            this.AssetSettings.ResumeLayout(false);
+            this.AsDelGB.ResumeLayout(false);
+            this.AsDelGB.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -793,6 +926,16 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox AssetPacksBox;
         private System.Windows.Forms.Label PacksLabel;
+        private System.Windows.Forms.TabControl SettingsTabs;
+        private System.Windows.Forms.TabPage LauncherSettings;
+        private System.Windows.Forms.TabPage AssetSettings;
+        private System.Windows.Forms.GroupBox AsDelGB;
+        private System.Windows.Forms.Label NoticeCookie;
+        private System.Windows.Forms.Label AstURLLabel;
+        private System.Windows.Forms.Label CookieURL;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox AssetURLBox;
+        private System.Windows.Forms.TextBox CookieBox;
     }
 }
 
