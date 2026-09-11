@@ -127,6 +127,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AurLogo.ico" />
+    <None Include="Launcher Assets\Buttons\AurPlayButtonClicked.png" />
+    <None Include="Launcher Assets\Buttons\AurPlayButton.png" />
+    <None Include="Launcher Assets\Buttons\AurHostButtonClicked.png" />
+    <None Include="Launcher Assets\Buttons\AurHostButton.png" />
     <None Include="Launcher Assets\Banners\BannerLong.png" />
     <None Include="Launcher Assets\Banners\BannerLongNT.png" />
     <None Include="bin\Debug\Data\Banners\BannerLong.png" />

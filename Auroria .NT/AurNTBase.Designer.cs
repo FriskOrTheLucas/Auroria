@@ -33,11 +33,8 @@
             this.AllTabs = new System.Windows.Forms.TabControl();
             this.PlayTab = new System.Windows.Forms.TabPage();
             this.ClientInfoBox = new System.Windows.Forms.RichTextBox();
-            this.ClientPictureBox = new System.Windows.Forms.PictureBox();
             this.ClientList = new System.Windows.Forms.ListBox();
-            this.HostBtn = new System.Windows.Forms.Button();
             this.SrvrIPbox = new System.Windows.Forms.TextBox();
-            this.JoinBtn = new System.Windows.Forms.Button();
             this.CustmTab = new System.Windows.Forms.TabPage();
             this.BodyColorBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
@@ -75,17 +72,28 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.MOTD = new System.Windows.Forms.Label();
             this.RndrBtn = new System.Windows.Forms.Button();
+            this.HostingBox = new System.Windows.Forms.ComboBox();
+            this.hostingtypelabel = new System.Windows.Forms.Label();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
+            this.PlayButtonC = new System.Windows.Forms.PictureBox();
+            this.ClientPictureBox = new System.Windows.Forms.PictureBox();
+            this.HostButtonC = new System.Windows.Forms.PictureBox();
+            this.AssetPacksBox = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.PacksLabel = new System.Windows.Forms.Label();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
             this.CustmTab.SuspendLayout();
             this.CatalogTabsOptions.SuspendLayout();
             this.HatTab.SuspendLayout();
             this.ShrtTab.SuspendLayout();
             this.PntTab.SuspendLayout();
+            this.PacksTab.SuspendLayout();
             this.CrditTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlayButtonC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
             this.SuspendLayout();
             // 
             // AllTabs
@@ -111,12 +119,14 @@
             // PlayTab
             // 
             this.PlayTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PlayTab.Controls.Add(this.HostButtonC);
+            this.PlayTab.Controls.Add(this.PlayButtonC);
+            this.PlayTab.Controls.Add(this.hostingtypelabel);
+            this.PlayTab.Controls.Add(this.HostingBox);
             this.PlayTab.Controls.Add(this.ClientInfoBox);
             this.PlayTab.Controls.Add(this.ClientPictureBox);
             this.PlayTab.Controls.Add(this.ClientList);
-            this.PlayTab.Controls.Add(this.HostBtn);
             this.PlayTab.Controls.Add(this.SrvrIPbox);
-            this.PlayTab.Controls.Add(this.JoinBtn);
             this.PlayTab.Cursor = System.Windows.Forms.Cursors.Default;
             this.PlayTab.Location = new System.Drawing.Point(4, 34);
             this.PlayTab.Name = "PlayTab";
@@ -138,17 +148,6 @@
             this.ClientInfoBox.Text = "Client Info will be displayed here.";
             this.ClientInfoBox.TextChanged += new System.EventHandler(this.ClientInfoBox_TextChanged);
             // 
-            // ClientPictureBox
-            // 
-            this.ClientPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ClientPictureBox.Location = new System.Drawing.Point(5, 30);
-            this.ClientPictureBox.Name = "ClientPictureBox";
-            this.ClientPictureBox.Size = new System.Drawing.Size(275, 158);
-            this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ClientPictureBox.TabIndex = 14;
-            this.ClientPictureBox.TabStop = false;
-            this.ClientPictureBox.Click += new System.EventHandler(this.ClientPictureBox_Click);
-            // 
             // ClientList
             // 
             this.ClientList.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -156,29 +155,9 @@
             this.ClientList.ItemHeight = 16;
             this.ClientList.Location = new System.Drawing.Point(287, 30);
             this.ClientList.Name = "ClientList";
-            this.ClientList.Size = new System.Drawing.Size(201, 340);
+            this.ClientList.Size = new System.Drawing.Size(201, 276);
             this.ClientList.TabIndex = 12;
             this.ClientList.SelectedIndexChanged += new System.EventHandler(this.ClientList_SelectedIndexChanged);
-            // 
-            // HostBtn
-            // 
-            this.HostBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.HostBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.HostBtn.BackColor = System.Drawing.Color.Transparent;
-            this.HostBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.HostBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HostBtn.FlatAppearance.BorderSize = 0;
-            this.HostBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.HostBtn.Image = ((System.Drawing.Image)(resources.GetObject("HostBtn.Image")));
-            this.HostBtn.Location = new System.Drawing.Point(148, 311);
-            this.HostBtn.Name = "HostBtn";
-            this.HostBtn.Size = new System.Drawing.Size(125, 47);
-            this.HostBtn.TabIndex = 8;
-            this.HostBtn.TabStop = false;
-            this.HostBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.HostBtn.UseMnemonic = false;
-            this.HostBtn.UseVisualStyleBackColor = false;
-            this.HostBtn.Click += new System.EventHandler(this.HostBtn_Click);
             // 
             // SrvrIPbox
             // 
@@ -192,29 +171,10 @@
             this.SrvrIPbox.Text = "localhost:53640";
             this.SrvrIPbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // JoinBtn
-            // 
-            this.JoinBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.JoinBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.JoinBtn.BackColor = System.Drawing.Color.Transparent;
-            this.JoinBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.JoinBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JoinBtn.FlatAppearance.BorderSize = 0;
-            this.JoinBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.JoinBtn.Image = ((System.Drawing.Image)(resources.GetObject("JoinBtn.Image")));
-            this.JoinBtn.Location = new System.Drawing.Point(17, 311);
-            this.JoinBtn.Name = "JoinBtn";
-            this.JoinBtn.Size = new System.Drawing.Size(125, 47);
-            this.JoinBtn.TabIndex = 9;
-            this.JoinBtn.TabStop = false;
-            this.JoinBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.JoinBtn.UseMnemonic = false;
-            this.JoinBtn.UseVisualStyleBackColor = false;
-            this.JoinBtn.Click += new System.EventHandler(this.JoinBtn_click);
-            // 
             // CustmTab
             // 
             this.CustmTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CustmTab.Controls.Add(this.RndrBtn);
             this.CustmTab.Controls.Add(this.BodyColorBtn);
             this.CustmTab.Controls.Add(this.SaveBtn);
             this.CustmTab.Controls.Add(this.UserNote);
@@ -244,12 +204,12 @@
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.Location = new System.Drawing.Point(253, 12);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(72, 41);
             this.SaveBtn.TabIndex = 14;
-            this.SaveBtn.Text = "Save Data";
+            this.SaveBtn.Text = "Save Name and ID";
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
@@ -552,6 +512,9 @@
             // PacksTab
             // 
             this.PacksTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PacksTab.Controls.Add(this.PacksLabel);
+            this.PacksTab.Controls.Add(this.groupBox1);
+            this.PacksTab.Controls.Add(this.AssetPacksBox);
             this.PacksTab.Location = new System.Drawing.Point(4, 34);
             this.PacksTab.Name = "PacksTab";
             this.PacksTab.Size = new System.Drawing.Size(495, 387);
@@ -599,10 +562,10 @@
             // ClientsLabel
             // 
             this.ClientsLabel.AutoSize = true;
-            this.ClientsLabel.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientsLabel.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientsLabel.Location = new System.Drawing.Point(586, 175);
             this.ClientsLabel.Name = "ClientsLabel";
-            this.ClientsLabel.Size = new System.Drawing.Size(98, 36);
+            this.ClientsLabel.Size = new System.Drawing.Size(99, 45);
             this.ClientsLabel.TabIndex = 1;
             this.ClientsLabel.Text = "Maps";
             this.ClientsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -634,12 +597,30 @@
             // RndrBtn
             // 
             this.RndrBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RndrBtn.Location = new System.Drawing.Point(485, 175);
+            this.RndrBtn.Location = new System.Drawing.Point(409, 12);
             this.RndrBtn.Name = "RndrBtn";
-            this.RndrBtn.Size = new System.Drawing.Size(82, 42);
+            this.RndrBtn.Size = new System.Drawing.Size(72, 41);
             this.RndrBtn.TabIndex = 15;
             this.RndrBtn.Text = "Render Avatar";
             this.RndrBtn.UseVisualStyleBackColor = true;
+            // 
+            // HostingBox
+            // 
+            this.HostingBox.FormattingEnabled = true;
+            this.HostingBox.Location = new System.Drawing.Point(286, 344);
+            this.HostingBox.Name = "HostingBox";
+            this.HostingBox.Size = new System.Drawing.Size(202, 22);
+            this.HostingBox.TabIndex = 15;
+            // 
+            // hostingtypelabel
+            // 
+            this.hostingtypelabel.AutoSize = true;
+            this.hostingtypelabel.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hostingtypelabel.Location = new System.Drawing.Point(322, 314);
+            this.hostingtypelabel.Name = "hostingtypelabel";
+            this.hostingtypelabel.Size = new System.Drawing.Size(133, 27);
+            this.hostingtypelabel.TabIndex = 16;
+            this.hostingtypelabel.Text = "Hosting Type";
             // 
             // BackgroundBox
             // 
@@ -650,12 +631,81 @@
             this.BackgroundBox.TabIndex = 3;
             this.BackgroundBox.TabStop = false;
             // 
+            // PlayButtonC
+            // 
+            this.PlayButtonC.BackColor = System.Drawing.Color.Transparent;
+            this.PlayButtonC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PlayButtonC.Image = global::Auroria.NT.Properties.Resources.AurPlayButton;
+            this.PlayButtonC.Location = new System.Drawing.Point(6, 298);
+            this.PlayButtonC.Name = "PlayButtonC";
+            this.PlayButtonC.Size = new System.Drawing.Size(130, 40);
+            this.PlayButtonC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PlayButtonC.TabIndex = 17;
+            this.PlayButtonC.TabStop = false;
+            this.PlayButtonC.Click += new System.EventHandler(this.PlayButtonC_Click);
+            // 
+            // ClientPictureBox
+            // 
+            this.ClientPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ClientPictureBox.Location = new System.Drawing.Point(5, 30);
+            this.ClientPictureBox.Name = "ClientPictureBox";
+            this.ClientPictureBox.Size = new System.Drawing.Size(275, 158);
+            this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ClientPictureBox.TabIndex = 14;
+            this.ClientPictureBox.TabStop = false;
+            this.ClientPictureBox.Click += new System.EventHandler(this.ClientPictureBox_Click);
+            // 
+            // HostButtonC
+            // 
+            this.HostButtonC.BackColor = System.Drawing.Color.Transparent;
+            this.HostButtonC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HostButtonC.Image = global::Auroria.NT.Properties.Resources.AurHostButton;
+            this.HostButtonC.Location = new System.Drawing.Point(150, 298);
+            this.HostButtonC.Name = "HostButtonC";
+            this.HostButtonC.Size = new System.Drawing.Size(130, 40);
+            this.HostButtonC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HostButtonC.TabIndex = 18;
+            this.HostButtonC.TabStop = false;
+            this.HostButtonC.Click += new System.EventHandler(this.HostButtonC_Click);
+            // 
+            // AssetPacksBox
+            // 
+            this.AssetPacksBox.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AssetPacksBox.Location = new System.Drawing.Point(12, 121);
+            this.AssetPacksBox.Name = "AssetPacksBox";
+            this.AssetPacksBox.Size = new System.Drawing.Size(226, 250);
+            this.AssetPacksBox.TabIndex = 0;
+            this.AssetPacksBox.TabStop = false;
+            this.AssetPacksBox.Text = "Asset Packs";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(256, 121);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(226, 250);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Client Packs";
+            // 
+            // PacksLabel
+            // 
+            this.PacksLabel.AutoSize = true;
+            this.PacksLabel.BackColor = System.Drawing.Color.Transparent;
+            this.PacksLabel.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PacksLabel.Location = new System.Drawing.Point(8, 9);
+            this.PacksLabel.Name = "PacksLabel";
+            this.PacksLabel.Size = new System.Drawing.Size(437, 80);
+            this.PacksLabel.TabIndex = 2;
+            this.PacksLabel.Text = "-Asset packs are a feature that allow you to load assets that\r\nare unavailable an" +
+    "ymore. \r\n-Client Packs on the other hand are basically client extensions\r\nthat a" +
+    "llow you to add more clients.";
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(762, 626);
-            this.Controls.Add(this.RndrBtn);
             this.Controls.Add(this.MOTD);
             this.Controls.Add(this.BackgroundBox);
             this.Controls.Add(this.MapsTree);
@@ -672,15 +722,19 @@
             this.AllTabs.ResumeLayout(false);
             this.PlayTab.ResumeLayout(false);
             this.PlayTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).EndInit();
             this.CustmTab.ResumeLayout(false);
             this.CustmTab.PerformLayout();
             this.CatalogTabsOptions.ResumeLayout(false);
             this.HatTab.ResumeLayout(false);
             this.ShrtTab.ResumeLayout(false);
             this.PntTab.ResumeLayout(false);
+            this.PacksTab.ResumeLayout(false);
+            this.PacksTab.PerformLayout();
             this.CrditTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlayButtonC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -694,8 +748,6 @@
         private System.Windows.Forms.Label ClientsLabel;
         private System.Windows.Forms.TreeView MapsTree;
         private System.Windows.Forms.TabPage CustmTab;
-        private System.Windows.Forms.Button JoinBtn;
-        private System.Windows.Forms.Button HostBtn;
         private System.Windows.Forms.TabPage CrditTab;
         private System.Windows.Forms.PictureBox BackgroundBox;
         private System.Windows.Forms.Label MOTD;
@@ -734,6 +786,13 @@
         private System.Windows.Forms.Button HatsSlot1;
         private System.Windows.Forms.Button HatsSlot3;
         private System.Windows.Forms.Button HatsSlot2;
+        private System.Windows.Forms.Label hostingtypelabel;
+        private System.Windows.Forms.ComboBox HostingBox;
+        private System.Windows.Forms.PictureBox PlayButtonC;
+        private System.Windows.Forms.PictureBox HostButtonC;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox AssetPacksBox;
+        private System.Windows.Forms.Label PacksLabel;
     }
 }
 
