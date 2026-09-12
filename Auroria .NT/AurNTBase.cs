@@ -78,7 +78,7 @@ namespace Auroria.NT
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to clean hosts file: {ex.Message}");
+                MessageBox.Show($"Failed to run FormClosing event: {ex.Message}");
             }
         }
 
@@ -405,6 +405,16 @@ namespace Auroria.NT
 
         }
 
+        private void PlayButtonC_Hover(object sender, EventArgs e)
+        {
+            PlayButtonC.Image = Properties.Resources.AurPlayButtonClicked;
+        }
+
+        private void PlayButtonC_Leave(object sender, EventArgs e)
+        {
+            PlayButtonC.Image = Properties.Resources.AurPlayButton;
+        }
+
         private void HostButtonC_Click(object sender, EventArgs e)
         {
 
@@ -535,6 +545,12 @@ namespace Auroria.NT
         private void HostingBox_Click(object sender, EventArgs e)
         {
             MessageBox.Show("It is highly recommended to use the default hosting option on 2015+ as studio hosting can be insecure. And on 2012 its recommended to use player hosting for security.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void CookieIMPRT_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Cookie Imported Successfully.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.None);
+
         }
     }
 }

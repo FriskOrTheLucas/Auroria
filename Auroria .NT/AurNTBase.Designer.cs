@@ -84,7 +84,7 @@
             this.NoticeCookie = new System.Windows.Forms.Label();
             this.AstURLLabel = new System.Windows.Forms.Label();
             this.CookieURL = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CookieIMPRT = new System.Windows.Forms.Button();
             this.AssetURLBox = new System.Windows.Forms.TextBox();
             this.CookieBox = new System.Windows.Forms.TextBox();
             this.CrditTab = new System.Windows.Forms.TabPage();
@@ -178,6 +178,8 @@
             this.PlayButtonC.TabIndex = 17;
             this.PlayButtonC.TabStop = false;
             this.PlayButtonC.Click += new System.EventHandler(this.PlayButtonC_Click);
+            this.PlayButtonC.MouseLeave += new System.EventHandler(this.PlayButtonC_Leave);
+            this.PlayButtonC.MouseHover += new System.EventHandler(this.PlayButtonC_Hover);
             // 
             // hostingtypelabel
             // 
@@ -690,7 +692,7 @@
             this.AsDelGB.Controls.Add(this.NoticeCookie);
             this.AsDelGB.Controls.Add(this.AstURLLabel);
             this.AsDelGB.Controls.Add(this.CookieURL);
-            this.AsDelGB.Controls.Add(this.button1);
+            this.AsDelGB.Controls.Add(this.CookieIMPRT);
             this.AsDelGB.Controls.Add(this.AssetURLBox);
             this.AsDelGB.Controls.Add(this.CookieBox);
             this.AsDelGB.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -756,15 +758,16 @@
             this.CookieURL.TabIndex = 1;
             this.CookieURL.Text = "ROBLOSECURITY Cookie";
             // 
-            // button1
+            // CookieIMPRT
             // 
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(369, 54);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 26);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Import";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CookieIMPRT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.CookieIMPRT.Location = new System.Drawing.Point(369, 54);
+            this.CookieIMPRT.Name = "CookieIMPRT";
+            this.CookieIMPRT.Size = new System.Drawing.Size(88, 26);
+            this.CookieIMPRT.TabIndex = 2;
+            this.CookieIMPRT.Text = "Import";
+            this.CookieIMPRT.UseVisualStyleBackColor = true;
+            this.CookieIMPRT.Click += new System.EventHandler(this.CookieIMPRT_Click);
             // 
             // AssetURLBox
             // 
@@ -959,7 +962,7 @@
         private System.Windows.Forms.Label NoticeCookie;
         private System.Windows.Forms.Label AstURLLabel;
         private System.Windows.Forms.Label CookieURL;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CookieIMPRT;
         private System.Windows.Forms.TextBox AssetURLBox;
         private System.Windows.Forms.TextBox CookieBox;
         private System.Windows.Forms.Button SaveAsstUrl;

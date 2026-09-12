@@ -47,7 +47,7 @@ namespace Auroria.NT
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error removing hosts on close: {ex.Message}");
+                MessageBox.Show($"An error occured with the remove hosts: {ex.Message}");
             }
         }
     }
