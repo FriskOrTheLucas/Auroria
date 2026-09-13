@@ -39,6 +39,7 @@ namespace Auroria.NT
     {
         public string InfoFilePath = "PlayerSettings.json";
         public string SelectedClient = "";
+        public string CookieDir = @"webserver\htdocs\personal\donotshare.txt";
 
         public AurNTBase()
         {   // Gonna be adding a loading screen soon. Which means we may need a bit of a delay here? I will explain
@@ -74,6 +75,7 @@ namespace Auroria.NT
             {
                 // do the thing
                 Apache.StopService();
+                Apache.Uninstall();
                 hostsfile.RemoveHosts();
             }
             catch (Exception ex)
@@ -121,6 +123,7 @@ namespace Auroria.NT
             string ClientsDirectory = "Clients";
 
             BackgroundBox.Image = Properties.Resources.BannerLong;
+            CookieBox.Text = File.ReadAllText(CookieDir);
 
             LoadPlayerInfo();
             LoadCatalogListView(@"Data/Catalog/charshirts", ShirtsListView, ShrtsImgList);
@@ -549,6 +552,10 @@ namespace Auroria.NT
 
         private void CookieIMPRT_Click(object sender, EventArgs e)
         {
+            string ROBLOCOOKIE = CookieBox.Text;
+            File.ReadAllText(CookieDir);
+            File.WriteAllText(CookieDir, ROBLOCOOKIE);
+
             MessageBox.Show("Cookie Imported Successfully.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.None);
 
         }

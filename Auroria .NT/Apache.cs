@@ -23,6 +23,11 @@ namespace Auroria.NT
             Process.Start("CMD.exe", "/c cd /d \"" + apachewebdir + "\" && httpd -k install");
         }
 
+        public static void Uninstall()
+        {
+            Process.Start("CMD.exe", "/c cd /d \"" + apachewebdir + "\" && httpd -k uninstall");
+        }
+
         public static void StartService()
         {
             ProcessStartInfo StartInfo = new ProcessStartInfo();
