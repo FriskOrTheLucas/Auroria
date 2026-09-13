@@ -15,10 +15,10 @@ namespace Auroria.NT
             string[] entries =
             {
                 "",
-                "127.0.0.1\troblox.com",
-                "127.0.0.1\twww.roblox.com",
-                "127.0.0.1\tapi.roblox.com",
-                "127.0.0.1\tversioncompatibility.api.roblox.com",
+                "127.0.0.1\trbxweb.lol",
+                "127.0.0.1\twww.rbxweb.lol",
+                "127.0.0.1\tapi.rbxweb.lol",
+                "127.0.0.1\tversioncompatibility.api.rbxweb.lol",
             };
 
             try
@@ -40,7 +40,7 @@ namespace Auroria.NT
                 string[] lines = File.ReadAllLines(HostFile);
 
                 var newLines = lines
-                    .Where(line => line.IndexOf("roblox.com", StringComparison.OrdinalIgnoreCase) < 0)
+                    .Where(line => line.IndexOf("rbxweb.lol", StringComparison.OrdinalIgnoreCase) < 0)
                     .ToList();
 
                 File.WriteAllLines(HostFile, newLines);

@@ -39,7 +39,7 @@ namespace Auroria.NT
     {
         public string InfoFilePath = "PlayerSettings.json";
         public string SelectedClient = "";
-        public string CookieDir = @"webserver\htdocs\personal\donotshare.txt";
+        public string CookieDir = @"data\cookie.txt";
 
         public AurNTBase()
         {   // Gonna be adding a loading screen soon. Which means we may need a bit of a delay here? I will explain
@@ -64,9 +64,6 @@ namespace Auroria.NT
 
             hostsfile.RemoveHosts();
             hostsfile.WriteHosts();
-            Apache.WriteHTTPDconf();
-            Apache.Install(); // this sucks but im stupid so it shouldnt matter
-            Apache.StartService();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -74,8 +71,6 @@ namespace Auroria.NT
             try
             {
                 // do the thing
-                Apache.StopService();
-                Apache.Uninstall();
                 hostsfile.RemoveHosts();
             }
             catch (Exception ex)

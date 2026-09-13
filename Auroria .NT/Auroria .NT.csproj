@@ -87,7 +87,6 @@
     <Compile Include="CustomItemWizard.Designer.cs">
       <DependentUpon>CustomItemWizard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Apache.cs" />
     <Compile Include="hostsfile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
