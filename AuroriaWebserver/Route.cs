@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Net;
+using AuroriaWebserver.Mains;
 
 namespace AuroriaWebserver
 {
@@ -10,7 +11,12 @@ namespace AuroriaWebserver
     {
         public static void HandleRequest(HttpListenerContext context)
         {
-
+            if (context.Request.Url.AbsolutePath == "/Game/Join.ashx")
+            {
+                ScriptsHandler.HandleJoin();
+                context.Response.StatusCode = (int)HttpStatusCode.OK;
+                context.Response.Close();
+            }
         }
     }
 }

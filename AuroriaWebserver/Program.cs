@@ -13,7 +13,15 @@ namespace AuroriaWebserver
         {
             HttpListener Server = new HttpListener();
 
-            Server.Prefixes.Add("http://localhost/");
+            Server.Prefixes.Add("http://rbxweb.lol/");
+            Server.Prefixes.Add("http://www.rbxweb.lol/");
+            Server.Prefixes.Add("http://api.rbxweb.lol/");
+            Server.Prefixes.Add("http://versioncompatibility.api.rbxweb.lol/");
+
+            Server.Prefixes.Add("https://rbxweb.lol/");
+            Server.Prefixes.Add("https://www.rbxweb.lol/");
+            Server.Prefixes.Add("https://api.rbxweb.lol/");
+            Server.Prefixes.Add("https://versioncompatibility.api.rbxweb.lol/");
             Server.Start();
 
             Console.WriteLine("Server started. Listening on http://localhost/");
