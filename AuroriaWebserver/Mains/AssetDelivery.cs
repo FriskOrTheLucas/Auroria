@@ -4,12 +4,19 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Net;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace AuroriaWebserver.Mains
 {
     public static class AssetDelivery
     {
         static string cookie = @"data\cookie.txt";
+        static string InfoFilePath = "PlayerSettings.json";
+
+        static string json = File.ReadAllText(InfoFilePath);
+        static JObject obj = JObject.Parse(json);
+        static string AsstUrl = (string)obj["AssetURL"];
         public static void HandleDelivery(HttpListenerContext context)
         {
             ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
@@ -35,7 +42,7 @@ namespace AuroriaWebserver.Mains
 
             else
             {
-                string url = "https://assetdelivery.roblox.com/v1/asset/?version=" + version + "&id=" + id;
+                string url = AsstUrl + id;
 
                 HttpWebRequest assetReq = (HttpWebRequest)WebRequest.Create(url);
                 assetReq.Headers.Add(HttpRequestHeader.Cookie, ".ROBLOSECURITY=" + cookiecheck);

@@ -561,5 +561,10 @@ namespace Auroria.NT
             MessageBox.Show("Cookie Imported Successfully.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.None);
 
         }
+
+        private void AstURLRevert_Click(object sender, EventArgs e)
+        {
+            AssetURLBox.Text = "https://assetdelivery.roblox.com/v1/asset/";
+        }
     }
 }

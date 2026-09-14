@@ -724,6 +724,7 @@
             this.AstURLRevert.TabIndex = 5;
             this.AstURLRevert.Text = "Revert";
             this.AstURLRevert.UseVisualStyleBackColor = true;
+            this.AstURLRevert.Click += new System.EventHandler(this.AstURLRevert_Click);
             // 
             // NoticeCookie
             // 
