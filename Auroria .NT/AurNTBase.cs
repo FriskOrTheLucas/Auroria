@@ -48,6 +48,13 @@ namespace Auroria.NT
 
             InitializeComponent();
 
+            if (!File.Exists(CookieDir))
+            {
+                MessageBox.Show("The roblosecurity token directory does not exist. Go to YourAuroriaFolder/Data and make a txt file in the folder called 'cookie.txt'", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
+                return;
+            }
+
             if (CheckPorts.IsTcpPortInUse(80))
             {
                 MessageBox.Show("Port 80 is being used by another program. Check taskmanager for things like httpd or webservers and close them.", "Auroria Webserver", MessageBoxButtons.OK, MessageBoxIcon.Error);

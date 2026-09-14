@@ -13,9 +13,14 @@ namespace AuroriaWebserver
         {
             if (context.Request.Url.AbsolutePath == "/Game/Join.ashx")
             {
-                ScriptsHandler.HandleJoin();
+                ScriptsHandler.HandleJoin(context);
                 context.Response.StatusCode = (int)HttpStatusCode.OK;
                 context.Response.Close();
+            }
+
+            else if (context.Request.Url.AbsolutePath == "/asset/")
+            {
+                AssetDelivery.HandleDelivery(context);
             }
         }
     }
