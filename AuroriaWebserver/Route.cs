@@ -11,7 +11,7 @@ namespace AuroriaWebserver
     {
         public static void HandleRequest(HttpListenerContext context)
         {
-            if (context.Request.Url.AbsolutePath == "/Game/Join.ashx")
+            if (context.Request.Url.AbsolutePath == "/Game/Join.ashx" || context.Request.Url.AbsolutePath == "/game/join.ashx")
             {
                 ScriptsHandler.HandleJoin(context);
                 context.Response.StatusCode = (int)HttpStatusCode.OK;
