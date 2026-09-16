@@ -19,8 +19,6 @@ namespace AuroriaWebserver.Mains
         static string AsstUrl = (string)obj["AssetURL"];
         public static void HandleDelivery(HttpListenerContext context)
         {
-            ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
-
             string cookiecheck = File.ReadAllText(cookie);
             HttpListenerResponse response = context.Response;
             HttpListenerRequest request = context.Request;
