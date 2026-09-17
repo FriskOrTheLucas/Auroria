@@ -95,6 +95,7 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.MOTD = new System.Windows.Forms.Label();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
+            this.PntsSlot1 = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -516,6 +517,7 @@
             // 
             // PntTab
             // 
+            this.PntTab.Controls.Add(this.PntsSlot1);
             this.PntTab.Controls.Add(this.PntsInfoTxt);
             this.PntTab.Controls.Add(this.PantsListView);
             this.PntTab.Location = new System.Drawing.Point(4, 34);
@@ -702,7 +704,7 @@
             this.ShowWebserverBool.TabIndex = 0;
             this.ShowWebserverBool.Text = "Show Webserver";
             this.ShowWebserverBool.UseVisualStyleBackColor = true;
-            this.ShowWebserverBool.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.ShowWebserverBool.CheckedChanged += new System.EventHandler(this.ShowWebserv_CheckedChanged);
             // 
             // AssetSettings
             // 
@@ -889,6 +891,20 @@
             this.BackgroundBox.TabIndex = 3;
             this.BackgroundBox.TabStop = false;
             // 
+            // PntsSlot1
+            // 
+            this.PntsSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.PntsSlot1.FlatAppearance.BorderSize = 2;
+            this.PntsSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.PntsSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.PntsSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PntsSlot1.Location = new System.Drawing.Point(399, 77);
+            this.PntsSlot1.Name = "PntsSlot1";
+            this.PntsSlot1.Size = new System.Drawing.Size(60, 60);
+            this.PntsSlot1.TabIndex = 5;
+            this.PntsSlot1.UseVisualStyleBackColor = true;
+            this.PntsSlot1.Click += new System.EventHandler(this.PntsSlot1_Click);
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1003,6 +1019,7 @@
         private System.Windows.Forms.Button AstURLRevert;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox ShowWebserverBool;
+        private System.Windows.Forms.Button PntsSlot1;
     }
 }
 

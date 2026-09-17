@@ -40,6 +40,7 @@ namespace Auroria.NT
         public string InfoFilePath = "PlayerSettings.json";
         public string SelectedClient = "";
         public string CookieDir = @"data\cookie.txt";
+        public bool ShowWebserver = false;
 
         public AurNTBase()
         {   // Gonna be adding a loading screen soon. Which means we may need a bit of a delay here? I will explain
@@ -293,6 +294,7 @@ namespace Auroria.NT
             LoadAvatarItm(HatsSlot2, "HatSlot2", "charhats");
             LoadAvatarItm(HatsSlot3, "HatSlot3", "charhats");
             LoadAvatarItm(ShrtSlot1, "Shirt", "charshirts");
+            LoadAvatarItm(ShrtSlot1, "Pants", "charpants");
         }
 
         public void SaveLoadedItm(string itemname, string id)
@@ -547,6 +549,11 @@ namespace Auroria.NT
             ItemChanged(ShirtsListView, ShrtSlot1, "Shirt");
         }
 
+        private void PntsSlot1_Click(object sender, EventArgs e)
+        {
+            ItemChanged(PantsListView, PntsSlot1, "Pants");
+        }
+
         private void HostingBox_Click(object sender, EventArgs e)
         {
             MessageBox.Show("It is highly recommended to use the default hosting option on 2015+ as studio hosting can be insecure. And on 2012 its recommended to use player hosting for security.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -567,9 +574,16 @@ namespace Auroria.NT
             AssetURLBox.Text = "https://assetdelivery.roblox.com/v1/asset/";
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void ShowWebserv_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (ShowWebserverBool.Checked == true)
+            {
+                ShowWebserver = true;
+            }
+            else
+            {
+                ShowWebserver = false;
+            }
         }
     }
 }
