@@ -124,7 +124,7 @@ namespace Auroria.NT
             string mapsFolder = "Maps";
             string ClientsDirectory = "Clients";
 
-            BackgroundBox.Image = Properties.Resources.BannerLong;
+            BackgroundBox.Image = Properties.Resources.BannerFull;
             CookieBox.Text = File.ReadAllText(CookieDir);
 
             LoadPlayerInfo();
@@ -565,6 +565,11 @@ namespace Auroria.NT
         private void AstURLRevert_Click(object sender, EventArgs e)
         {
             AssetURLBox.Text = "https://assetdelivery.roblox.com/v1/asset/";
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

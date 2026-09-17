@@ -20,7 +20,7 @@ namespace AuroriaWebserver
 
             Server.Start();
 
-            Console.WriteLine("Server started. Listening on http://localhost/");
+            Console.WriteLine("Server started. Listening on Auroria Webserver Domain");
 
             while (true)
             {

@@ -77,6 +77,8 @@
             this.SettingTab = new System.Windows.Forms.TabPage();
             this.SettingsTabs = new System.Windows.Forms.TabControl();
             this.LauncherSettings = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ShowWebserverBool = new System.Windows.Forms.CheckBox();
             this.AssetSettings = new System.Windows.Forms.TabPage();
             this.AsDelGB = new System.Windows.Forms.GroupBox();
             this.SaveAsstUrl = new System.Windows.Forms.Button();
@@ -106,6 +108,8 @@
             this.PacksTab.SuspendLayout();
             this.SettingTab.SuspendLayout();
             this.SettingsTabs.SuspendLayout();
+            this.LauncherSettings.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.AssetSettings.SuspendLayout();
             this.AsDelGB.SuspendLayout();
             this.CrditTab.SuspendLayout();
@@ -235,7 +239,7 @@
             // 
             // SrvrIPbox
             // 
-            this.SrvrIPbox.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.SrvrIPbox.BackColor = System.Drawing.Color.LightSkyBlue;
             this.SrvrIPbox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SrvrIPbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SrvrIPbox.Location = new System.Drawing.Point(5, 267);
@@ -666,6 +670,7 @@
             // 
             // LauncherSettings
             // 
+            this.LauncherSettings.Controls.Add(this.groupBox2);
             this.LauncherSettings.Location = new System.Drawing.Point(4, 29);
             this.LauncherSettings.Name = "LauncherSettings";
             this.LauncherSettings.Padding = new System.Windows.Forms.Padding(3);
@@ -673,6 +678,31 @@
             this.LauncherSettings.TabIndex = 0;
             this.LauncherSettings.Text = "Launcher";
             this.LauncherSettings.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.ShowWebserverBool);
+            this.groupBox2.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox2.Location = new System.Drawing.Point(6, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(463, 158);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Webserver";
+            // 
+            // ShowWebserverBool
+            // 
+            this.ShowWebserverBool.AutoSize = true;
+            this.ShowWebserverBool.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowWebserverBool.ForeColor = System.Drawing.Color.Black;
+            this.ShowWebserverBool.Location = new System.Drawing.Point(16, 23);
+            this.ShowWebserverBool.Name = "ShowWebserverBool";
+            this.ShowWebserverBool.Size = new System.Drawing.Size(145, 24);
+            this.ShowWebserverBool.TabIndex = 0;
+            this.ShowWebserverBool.Text = "Show Webserver";
+            this.ShowWebserverBool.UseVisualStyleBackColor = true;
+            this.ShowWebserverBool.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // AssetSettings
             // 
@@ -706,7 +736,7 @@
             // 
             // SaveAsstUrl
             // 
-            this.SaveAsstUrl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.SaveAsstUrl.ForeColor = System.Drawing.Color.Black;
             this.SaveAsstUrl.Location = new System.Drawing.Point(317, 112);
             this.SaveAsstUrl.Name = "SaveAsstUrl";
             this.SaveAsstUrl.Size = new System.Drawing.Size(67, 27);
@@ -717,7 +747,7 @@
             // 
             // AstURLRevert
             // 
-            this.AstURLRevert.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.AstURLRevert.ForeColor = System.Drawing.Color.Black;
             this.AstURLRevert.Location = new System.Drawing.Point(390, 113);
             this.AstURLRevert.Name = "AstURLRevert";
             this.AstURLRevert.Size = new System.Drawing.Size(67, 26);
@@ -761,7 +791,7 @@
             // 
             // CookieIMPRT
             // 
-            this.CookieIMPRT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.CookieIMPRT.ForeColor = System.Drawing.Color.Black;
             this.CookieIMPRT.Location = new System.Drawing.Point(369, 54);
             this.CookieIMPRT.Name = "CookieIMPRT";
             this.CookieIMPRT.Size = new System.Drawing.Size(88, 26);
@@ -838,7 +868,7 @@
             // MOTD
             // 
             this.MOTD.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.MOTD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.MOTD.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.MOTD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MOTD.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MOTD.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -852,7 +882,7 @@
             // 
             // BackgroundBox
             // 
-            this.BackgroundBox.Image = global::Auroria.NT.Properties.Resources.BannerLong;
+            this.BackgroundBox.Image = global::Auroria.NT.Properties.Resources.BannerFull;
             this.BackgroundBox.Location = new System.Drawing.Point(0, -1);
             this.BackgroundBox.Name = "BackgroundBox";
             this.BackgroundBox.Size = new System.Drawing.Size(763, 115);
@@ -893,6 +923,9 @@
             this.PacksTab.PerformLayout();
             this.SettingTab.ResumeLayout(false);
             this.SettingsTabs.ResumeLayout(false);
+            this.LauncherSettings.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.AssetSettings.ResumeLayout(false);
             this.AsDelGB.ResumeLayout(false);
             this.AsDelGB.PerformLayout();
@@ -968,6 +1001,8 @@
         private System.Windows.Forms.TextBox CookieBox;
         private System.Windows.Forms.Button SaveAsstUrl;
         private System.Windows.Forms.Button AstURLRevert;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox ShowWebserverBool;
     }
 }
 
