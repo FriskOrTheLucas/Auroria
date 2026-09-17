@@ -478,7 +478,7 @@
             this.ShrtSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.ShrtSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ShrtSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ShrtSlot1.Location = new System.Drawing.Point(399, 22);
+            this.ShrtSlot1.Location = new System.Drawing.Point(399, 77);
             this.ShrtSlot1.Name = "ShrtSlot1";
             this.ShrtSlot1.Size = new System.Drawing.Size(60, 60);
             this.ShrtSlot1.TabIndex = 4;
