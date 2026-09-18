@@ -22,6 +22,11 @@ namespace AuroriaWebserver
                 context.Response.Close();
             }
 
+            if (AbsolutePath.Equals("/game/host.ashx"))
+            {
+                ScriptsHandler.HandleHost(context);
+            }
+
             else if (AbsolutePath.Equals("/asset/"))
             {
                 AssetDelivery.HandleDelivery(context);
