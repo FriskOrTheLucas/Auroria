@@ -11,14 +11,18 @@ namespace AuroriaWebserver
     {
         public static void HandleRequest(HttpListenerContext context)
         {
-            if (context.Request.Url.AbsolutePath == "/Game/Join.ashx" || context.Request.Url.AbsolutePath == "/game/join.ashx")
+            string AbsolutePath = context.Request.Url.AbsolutePath.ToLower();
+            // I know thats kinda useless right now but that make the code looks more clean
+            // -creds to rickkkkk for making this -Lucas
+
+            if (AbsolutePath.Equals("/game/join.ashx"))
             {
                 ScriptsHandler.HandleJoin(context);
                 context.Response.StatusCode = (int)HttpStatusCode.OK;
                 context.Response.Close();
             }
 
-            else if (context.Request.Url.AbsolutePath == "/asset/")
+            else if (AbsolutePath.Equals("/asset/"))
             {
                 AssetDelivery.HandleDelivery(context);
             }
