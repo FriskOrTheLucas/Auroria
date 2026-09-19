@@ -1,4 +1,6 @@
 ﻿using Auroria.NT.Resources;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,13 +9,12 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Threading.Tasks;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Security.Principal;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 // Jay Jay if youre reading this then here is the checklist.
 
@@ -22,12 +23,12 @@ using System.Security.Principal;
 // 2.- Add a loading screen [havent even started, oof]
 // 3.- Tidy up the UI and MAYBE optimize the code? [semi optimized?]
 
-// 4.- Figure out how to do a Json to catalog. [DONE-Atleast the UI part!!]
+// 4.- Figure out how to do a Json to catalog. [DONE]
 
 // 5.- Add live banner. Basically it grabs the text from https://sites.google.com/view/auroriainfopnl/home?authuser=1 and
 // converts it to the Banner text. [havent even started]
 
-// 6.- Do make the entire webserver (NO.)
+// 6.- Do make the entire webserver (uhesruighaIEUoaegtuiodtyh)
 
 // thats just all the stuff we need to do for now, if you have any questions about anything then just ask me on discord. -Lucas
 // Oh and if you struggle on something thats aye okay just let me do it dont worry about it :D
@@ -99,6 +100,12 @@ namespace Auroria.NT
             }
 
             foreach (string file in Directory.GetFiles(folderPath, "*.rbxl"))
+            {
+                TreeNode node = parentNode.Nodes.Add(Path.GetFileName(file));
+                node.Tag = Path.GetFullPath(file);
+            }
+
+            foreach (string file in Directory.GetFiles(folderPath, "*.gz"))
             {
                 TreeNode node = parentNode.Nodes.Add(Path.GetFileName(file));
                 node.Tag = Path.GetFullPath(file);
@@ -258,6 +265,8 @@ namespace Auroria.NT
                     { "PlayerName", "Username" },
                     { "UserID", "123456789" },
                     { "AssetURL", "" },
+                    { "ServerIP", "" },
+                    { "Client", "" },
                     { "HatSlot1", "" },
                     { "HatSlot2", "" },
                     { "HatSlot3", "" },
@@ -278,6 +287,10 @@ namespace Auroria.NT
             string PlyrName = (string)obj["PlayerName"];
             string id = (string)obj["UserID"];
             string AsstUrl = (string)obj["AssetURL"];
+
+            obj["ServerIP"] = SrvrIPbox.Text;
+            obj["Client"] = "";
+            File.WriteAllText(InfoFilePath, obj.ToString());
 
             PlayerNameBox.Text = PlyrName;
             PlayerIDBox.Text = id;
@@ -353,6 +366,8 @@ namespace Auroria.NT
                     { "PlayerName", "Username" },
                     { "UserID", "123456789" },
                     { "AssetURL", "" },
+                    { "ServerIP", "" },
+                    { "Client", "" },
                     { "HatSlot1", "" },
                     { "HatSlot2", "" },
                     { "HatSlot3", "" },
@@ -461,6 +476,11 @@ namespace Auroria.NT
             string clientThumbDir = "Data\\ClientThmbnl\\" + clientSelectedlst + "\\" + clientSelectedlst + ".png";
             string clientJsonDir = "Clients\\" + clientSelectedlst + "\\ClientInfo.json";
 
+            string json = File.ReadAllText(InfoFilePath);
+            JObject obj = JObject.Parse(json);
+            obj["Client"] = SelectedClient;
+            File.WriteAllText(InfoFilePath, obj.ToString());
+
             if (!File.Exists(clientThumbDir))
             {
                 ClientPictureBox.ImageLocation = errThumbnail; //the crap works
@@ -476,10 +496,10 @@ namespace Auroria.NT
             }
             else
             {
-                string json = File.ReadAllText(clientJsonDir);
-                JObject obj = JObject.Parse(json);
+                string clientjson = File.ReadAllText(clientJsonDir);
+                JObject obj2 = JObject.Parse(clientjson);
 
-                string clientds = (string)obj["ClientDesc"];
+                string clientds = (string)obj2["ClientDesc"];
                 ClientInfoBox.Text = clientds;
             }
 
@@ -584,6 +604,15 @@ namespace Auroria.NT
             {
                 ShowWebserver = false;
             }
+        }
+
+        private void SrvrIPbox_TextChanged(object sender, EventArgs e)
+        {
+            string json = File.ReadAllText(InfoFilePath);
+            JObject obj = JObject.Parse(json);
+
+            obj["ServerIP"] = SrvrIPbox.Text;
+            File.WriteAllText(InfoFilePath, obj.ToString());
         }
     }
 }

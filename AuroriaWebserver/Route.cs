@@ -22,9 +22,9 @@ namespace AuroriaWebserver
                 context.Response.Close();
             }
 
-            if (AbsolutePath.Equals("/game/host.ashx"))
+            if (AbsolutePath.Equals("/game/gameserver.ashx"))
             {
-                ScriptsHandler.HandleHost(context);
+                ScriptsHandler.HandleGameserver(context);
             }
 
             else if (AbsolutePath.Equals("/asset/"))

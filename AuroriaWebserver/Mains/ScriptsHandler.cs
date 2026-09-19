@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Net;
+using System.IO;
 using AuroriaWebserver.Webserver;
 
 namespace AuroriaWebserver.Mains
@@ -24,23 +25,35 @@ namespace AuroriaWebserver.Mains
             Console.WriteLine("if you see this it means it worked.");
         }
 
-        public static void HandleHost(HttpListenerContext context, ushort gameport = 53640)
+        public static void HandleGameserver(HttpListenerContext context, ushort gameport = 53640)
         {
-            HttpListenerResponse response = context.Response;
+            try
+            {
+                HttpListenerResponse response = context.Response;
 
-            Console.WriteLine("Host URL was called!");
-            string HostScript = Paths.HostScript;
-            HostScript = HostScript.Replace("{port}", gameport.ToString());
-            Console.WriteLine("Rewriting script port..");
+                Console.WriteLine("Host URL was called!");
+                string GameSerScript = Paths.GameSer;
+                string ReadWriteGameServscript = File.ReadAllText(GameSerScript);
+                ReadWriteGameServscript = ReadWriteGameServscript.Replace("{port}", gameport.ToString());
+                Console.WriteLine("Rewriting script port..");
+                Console.WriteLine("Script port rewritten to: " + gameport.ToString());
 
-            string responseString = HostScript;
+                string responseString = ReadWriteGameServscript;
 
-            byte[] buffer = Encoding.UTF8.GetBytes(responseString);
+                byte[] buffer = Encoding.UTF8.GetBytes(responseString);
 
-            response.ContentLength64 = buffer.Length;
-            response.OutputStream.Write(buffer, 0, buffer.Length);
-            response.OutputStream.Close();
-            Console.WriteLine("Done!");
+                response.ContentLength64 = buffer.Length;
+                response.OutputStream.Write(buffer, 0, buffer.Length);
+                response.OutputStream.Close();
+                Console.WriteLine("Done!");
+                Console.WriteLine("result:", responseString);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in HandleHost: " + ex.Message);
+                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                context.Response.Close();
+            }
         }
     }
 }

@@ -63,6 +63,7 @@
             this.ShirtsListView = new System.Windows.Forms.ListView();
             this.ShrtsImgList = new System.Windows.Forms.ImageList(this.components);
             this.PntTab = new System.Windows.Forms.TabPage();
+            this.PntsSlot1 = new System.Windows.Forms.Button();
             this.PntsInfoTxt = new System.Windows.Forms.RichTextBox();
             this.PantsListView = new System.Windows.Forms.ListView();
             this.PntsImgList = new System.Windows.Forms.ImageList(this.components);
@@ -95,7 +96,6 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.MOTD = new System.Windows.Forms.Label();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
-            this.PntsSlot1 = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -249,6 +249,7 @@
             this.SrvrIPbox.TabIndex = 11;
             this.SrvrIPbox.Text = "localhost:53640";
             this.SrvrIPbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SrvrIPbox.TextChanged += new System.EventHandler(this.SrvrIPbox_TextChanged);
             // 
             // CustmTab
             // 
@@ -526,6 +527,20 @@
             this.PntTab.TabIndex = 2;
             this.PntTab.Text = "Pants";
             this.PntTab.UseVisualStyleBackColor = true;
+            // 
+            // PntsSlot1
+            // 
+            this.PntsSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.PntsSlot1.FlatAppearance.BorderSize = 2;
+            this.PntsSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.PntsSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.PntsSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PntsSlot1.Location = new System.Drawing.Point(399, 77);
+            this.PntsSlot1.Name = "PntsSlot1";
+            this.PntsSlot1.Size = new System.Drawing.Size(60, 60);
+            this.PntsSlot1.TabIndex = 5;
+            this.PntsSlot1.UseVisualStyleBackColor = true;
+            this.PntsSlot1.Click += new System.EventHandler(this.PntsSlot1_Click);
             // 
             // PntsInfoTxt
             // 
@@ -890,20 +905,6 @@
             this.BackgroundBox.Size = new System.Drawing.Size(763, 115);
             this.BackgroundBox.TabIndex = 3;
             this.BackgroundBox.TabStop = false;
-            // 
-            // PntsSlot1
-            // 
-            this.PntsSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.PntsSlot1.FlatAppearance.BorderSize = 2;
-            this.PntsSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.PntsSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.PntsSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.PntsSlot1.Location = new System.Drawing.Point(399, 77);
-            this.PntsSlot1.Name = "PntsSlot1";
-            this.PntsSlot1.Size = new System.Drawing.Size(60, 60);
-            this.PntsSlot1.TabIndex = 5;
-            this.PntsSlot1.UseVisualStyleBackColor = true;
-            this.PntsSlot1.Click += new System.EventHandler(this.PntsSlot1_Click);
             // 
             // AurNTBase
             // 
