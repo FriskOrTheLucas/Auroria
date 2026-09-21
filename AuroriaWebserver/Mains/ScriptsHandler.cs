@@ -29,7 +29,11 @@ namespace AuroriaWebserver.Mains
         {
             try
             {
+                HttpListenerRequest request = context.Request;
                 HttpListenerResponse response = context.Response;
+
+                string port = request.QueryString["port"] ?? "53640";
+                gameport = ushort.Parse(port);
 
                 Console.WriteLine("Host URL was called!");
                 string GameSerScript = Paths.GameSer;
