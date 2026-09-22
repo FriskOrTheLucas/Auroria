@@ -96,6 +96,7 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.MOTD = new System.Windows.Forms.Label();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
+            this.SelClientTest = new System.Windows.Forms.Label();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -140,6 +141,7 @@
             // PlayTab
             // 
             this.PlayTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PlayTab.Controls.Add(this.SelClientTest);
             this.PlayTab.Controls.Add(this.HostButtonC);
             this.PlayTab.Controls.Add(this.PlayButtonC);
             this.PlayTab.Controls.Add(this.hostingtypelabel);
@@ -906,6 +908,15 @@
             this.BackgroundBox.TabIndex = 3;
             this.BackgroundBox.TabStop = false;
             // 
+            // SelClientTest
+            // 
+            this.SelClientTest.AutoSize = true;
+            this.SelClientTest.Location = new System.Drawing.Point(98, 352);
+            this.SelClientTest.Name = "SelClientTest";
+            this.SelClientTest.Size = new System.Drawing.Size(159, 14);
+            this.SelClientTest.TabIndex = 19;
+            this.SelClientTest.Text = "test label no client speaking";
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1021,6 +1032,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox ShowWebserverBool;
         private System.Windows.Forms.Button PntsSlot1;
+        private System.Windows.Forms.Label SelClientTest;
     }
 }
 

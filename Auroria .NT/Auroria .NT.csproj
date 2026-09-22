@@ -134,5 +134,11 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AuroriaResources\AuroriaResources.csproj">
+      <Project>{47006e59-86f8-49c0-b1cd-4710e0ac3a2e}</Project>
+      <Name>AuroriaResources</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

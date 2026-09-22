@@ -15,6 +15,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AuroriaResources;
 
 // Jay Jay if youre reading this then here is the checklist.
 

@@ -10,18 +10,6 @@ namespace AuroriaResources
 {
     public static class PathHelper
     {
-        public static string InfoFilePath = "PlayerSettings.json";
-
-        public static string GetClient
-        {
-            get
-            {
-                string json = File.ReadAllText(InfoFilePath);
-                JObject obj = JObject.Parse(json);
-
-                string client = (string)obj["Client"];
-                return client;
-            }
-        }
+        public static string Client;
     }
 }
