@@ -163,7 +163,7 @@
             // SelClientTest
             // 
             this.SelClientTest.AutoSize = true;
-            this.SelClientTest.Location = new System.Drawing.Point(68, 352);
+            this.SelClientTest.Location = new System.Drawing.Point(6, 370);
             this.SelClientTest.Name = "SelClientTest";
             this.SelClientTest.Size = new System.Drawing.Size(159, 14);
             this.SelClientTest.TabIndex = 19;

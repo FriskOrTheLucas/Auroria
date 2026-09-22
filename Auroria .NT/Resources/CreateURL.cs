@@ -9,7 +9,7 @@ namespace Auroria.NT.Resources
     {
         public static string CreateGameServURL(ushort port)
         {
-            string url = "http://rbxweb.lol/game/gameserver.ashx?port=" + port;
+            string url = "http://www.rbxweb.lol/game/gameserver.ashx?port=" + port;
             return url;
 
         }
