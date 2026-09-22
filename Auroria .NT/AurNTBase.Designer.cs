@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AurNTBase));
             this.AllTabs = new System.Windows.Forms.TabControl();
             this.PlayTab = new System.Windows.Forms.TabPage();
+            this.SelClientTest = new System.Windows.Forms.Label();
             this.HostButtonC = new System.Windows.Forms.PictureBox();
             this.PlayButtonC = new System.Windows.Forms.PictureBox();
             this.hostingtypelabel = new System.Windows.Forms.Label();
@@ -96,7 +97,6 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.MOTD = new System.Windows.Forms.Label();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
-            this.SelClientTest = new System.Windows.Forms.Label();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -159,6 +159,15 @@
             this.PlayTab.Text = "Play/Host";
             this.PlayTab.ToolTipText = "Contains the Play/Host options.";
             this.PlayTab.Click += new System.EventHandler(this.PlayPage_Click);
+            // 
+            // SelClientTest
+            // 
+            this.SelClientTest.AutoSize = true;
+            this.SelClientTest.Location = new System.Drawing.Point(68, 352);
+            this.SelClientTest.Name = "SelClientTest";
+            this.SelClientTest.Size = new System.Drawing.Size(159, 14);
+            this.SelClientTest.TabIndex = 19;
+            this.SelClientTest.Text = "test label no client speaking";
             // 
             // HostButtonC
             // 
@@ -907,15 +916,6 @@
             this.BackgroundBox.Size = new System.Drawing.Size(763, 115);
             this.BackgroundBox.TabIndex = 3;
             this.BackgroundBox.TabStop = false;
-            // 
-            // SelClientTest
-            // 
-            this.SelClientTest.AutoSize = true;
-            this.SelClientTest.Location = new System.Drawing.Point(98, 352);
-            this.SelClientTest.Name = "SelClientTest";
-            this.SelClientTest.Size = new System.Drawing.Size(159, 14);
-            this.SelClientTest.TabIndex = 19;
-            this.SelClientTest.Text = "test label no client speaking";
             // 
             // AurNTBase
             // 
