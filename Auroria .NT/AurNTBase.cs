@@ -448,7 +448,7 @@ namespace Auroria.NT
             string createdurl = CreateURL.CreateGameServURL(ushort.Parse(portStr));
             string ClientApp = "Clients\\" + SelectedClient + "\\Player\\Roblox.exe";
 
-            Process.Start(ClientApp, createdurl);
+            Process.Start(ClientApp, "-script \"" + createdurl + "\"");
             SelClientTest.Text = "Client Launched with URL: " + createdurl;
         }
 
