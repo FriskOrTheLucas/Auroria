@@ -17,7 +17,20 @@ namespace AuroriaWebserver.Mains
         static string json = File.ReadAllText(InfoFilePath);
         static JObject obj = JObject.Parse(json);
         static string AsstUrl = (string)obj["AssetURL"];
-        static string MapDirectory = (string)obj["CurrentMap"];
+        private static string MapDirectory
+        {
+            get
+            {
+                string json = File.ReadAllText(InfoFilePath);
+                JObject obj = JObject.Parse(json);
+                string map = (string)obj["CurrentMap"];
+                if (string.IsNullOrWhiteSpace(map))
+                {
+                    throw new Exception("map is either folder or empty");
+                }
+                return map;
+            }
+        }
         public static void HandleDelivery(HttpListenerContext context)
         {
             string cookiecheck = File.ReadAllText(cookie);
@@ -74,7 +87,6 @@ namespace AuroriaWebserver.Mains
                 {
                     // i gotta add notes to this code so then JayJay can understand
                     // + incase someone needs to read it and understand it
-                    // also then i can laugh at funny comments later
 
                     string url = AsstUrl + id + "&version=" + version; //gets the asset url and id (version too for older stuff i think)
                     Console.WriteLine("Requesting asset from: " + url); 
@@ -97,7 +109,7 @@ namespace AuroriaWebserver.Mains
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error occurred while handling asset delivery: " + ex.Message); // frick.
-                    context.Response.StatusCode = (int)HttpStatusCode.InternalServerError; // returns 404
+                    context.Response.StatusCode = (int)HttpStatusCode.InternalServerError; // returns 500 (im an idiot its code 500 not 404)
 
                     string jsonResponse = "{\"message\": \"An error has occurred and Auroria cannot deliver the asset. We are sorry.\"}"; // i cry
                     Console.WriteLine("Sent error code and message.");

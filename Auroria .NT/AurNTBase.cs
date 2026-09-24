@@ -418,6 +418,7 @@ namespace Auroria.NT
 
             if (e.Node.Tag == null)
             {
+                obj["CurrentMap"] = "";
                 return; // I selected a folder and then the entire thing went kaboom. 
             }
 
@@ -459,6 +460,12 @@ namespace Auroria.NT
             string portStr = parts[1];
 
             string createdurl = CreateURL.CreateGameServURL(ushort.Parse(portStr));
+
+            if (SelectedClient == null)
+            {
+                MessageBox.Show("Please select a client before hosting.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             string ClientApp = "Clients\\" + SelectedClient + "\\Player\\Roblox.exe";
 
             Process.Start(ClientApp, "-script \"" + createdurl + "\"");
