@@ -268,6 +268,7 @@ namespace Auroria.NT
                     { "AssetURL", "" },
                     { "ServerIP", "" },
                     { "Client", "" },
+                    { "CurrentMap", "" },
                     { "HatSlot1", "" },
                     { "HatSlot2", "" },
                     { "HatSlot3", "" },
@@ -369,6 +370,7 @@ namespace Auroria.NT
                     { "AssetURL", "" },
                     { "ServerIP", "" },
                     { "Client", "" },
+                    { "CurrentMap", "" },
                     { "HatSlot1", "" },
                     { "HatSlot2", "" },
                     { "HatSlot3", "" },
@@ -411,7 +413,18 @@ namespace Auroria.NT
 
         private void MapsTree_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            // no.
+            string json = File.ReadAllText(InfoFilePath);
+            JObject obj = JObject.Parse(json);
+
+            if (e.Node.Tag == null)
+            {
+                return; // I selected a folder and then the entire thing went kaboom. 
+            }
+
+            string selectedMapPath = e.Node.Tag.ToString();
+
+            obj["CurrentMap"] = selectedMapPath;
+            File.WriteAllText(InfoFilePath, obj.ToString());
         }
 
         private void SaveAsstUrl_Click(object sender, EventArgs e)

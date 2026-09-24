@@ -17,6 +17,7 @@ namespace AuroriaWebserver.Mains
         static string json = File.ReadAllText(InfoFilePath);
         static JObject obj = JObject.Parse(json);
         static string AsstUrl = (string)obj["AssetURL"];
+        static string MapDirectory = (string)obj["CurrentMap"];
         public static void HandleDelivery(HttpListenerContext context)
         {
             string cookiecheck = File.ReadAllText(cookie);
@@ -25,6 +26,32 @@ namespace AuroriaWebserver.Mains
 
             string id = request.QueryString["id"] ?? "1818";
             string version = request.QueryString["version"] ?? "1";
+
+            if (id == "1818")
+            {
+                Console.WriteLine("Map Asset 1818 has been called!");
+                try
+                {
+                    byte[] buffer = File.ReadAllBytes(MapDirectory); // i think this is the way to do it?
+                    response.ContentLength64 = buffer.Length;
+                    response.OutputStream.Write(buffer, 0, buffer.Length);
+                    response.OutputStream.Close();
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error occurred while getting map: " + ex.Message);
+                    context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+
+                    string jsonResponse = "{\"message\": \"An error has occurred while getting the map. We are sorry.\"}"; // fug
+                    Console.WriteLine("Sent error code and message.");
+                    byte[] buffer = Encoding.UTF8.GetBytes(jsonResponse);
+                    response.ContentType = "application/octet-stream";
+                    response.ContentLength64 = buffer.Length;
+                    response.OutputStream.Write(buffer, 0, buffer.Length);
+                    response.OutputStream.Close();
+                }
+            }
 
             if (cookiecheck == null)
             {
