@@ -461,6 +461,12 @@ namespace Auroria.NT
 
             string createdurl = CreateURL.CreateGameServURL(ushort.Parse(portStr));
 
+            if (MapsTree.SelectedNode.Tag == null)
+            {
+                MessageBox.Show("Please select a map before hosting.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             if (SelectedClient == null)
             {
                 MessageBox.Show("Please select a client before hosting.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
