@@ -515,7 +515,7 @@ namespace Auroria.NT
             string clientSelectedlst = ClientList.SelectedItem.ToString();
             SelectedClient = clientSelectedlst;
 
-            string clientThumbDir = "Data\\ClientThmbnl\\" + clientSelectedlst + "\\" + clientSelectedlst + ".png";
+            string clientThumbDir = "Clients\\" + clientSelectedlst + "\\" + "thumbnail.png";
             string clientJsonDir = "Clients\\" + clientSelectedlst + "\\ClientInfo.json";
 
             string json = File.ReadAllText(InfoFilePath);
