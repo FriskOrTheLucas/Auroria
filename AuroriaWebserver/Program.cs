@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.IO;
+using System.Threading;
 
 namespace AuroriaWebserver
 {
     internal class Program
     {
+        static bool ShowConsole = false;
         static void Main()
         {
             HttpListener Server = new HttpListener();
