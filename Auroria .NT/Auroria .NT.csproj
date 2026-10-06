@@ -82,11 +82,12 @@
       <DependentUpon>BodyColorsWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="CheckPorts.cs" />
+    <Compile Include="ClientStuff\ProcessLauncher.cs" />
     <Compile Include="hostsfile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\CreateURL.cs" />
-    <Compile Include="Resources\SaveUserSettings.cs" />
+    <Compile Include="Resources\ProcessTypes.cs" />
     <EmbeddedResource Include="AurNTBase.resx">
       <DependentUpon>AurNTBase.cs</DependentUpon>
     </EmbeddedResource>

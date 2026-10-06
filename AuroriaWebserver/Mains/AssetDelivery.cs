@@ -66,7 +66,7 @@ namespace AuroriaWebserver.Mains
                 }
             }
 
-            if (cookiecheck == null)
+            if (string.IsNullOrWhiteSpace(cookiecheck))
             {
                 Console.WriteLine("No .ROBLOSECURITY token found in cookie.txt");
                 context.Response.StatusCode = (int)HttpStatusCode.NotFound;
