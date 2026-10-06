@@ -97,6 +97,10 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.MOTD = new System.Windows.Forms.Label();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
+            this.TshrtImgList = new System.Windows.Forms.ImageList(this.components);
+            this.TshrtListView = new System.Windows.Forms.ListView();
+            this.TshrtInfoText = new System.Windows.Forms.RichTextBox();
+            this.TshrtSlot1 = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -105,6 +109,7 @@
             this.CustmTab.SuspendLayout();
             this.CatalogTabsOptions.SuspendLayout();
             this.HatTab.SuspendLayout();
+            this.TshrtTab.SuspendLayout();
             this.ShrtTab.SuspendLayout();
             this.PntTab.SuspendLayout();
             this.PacksTab.SuspendLayout();
@@ -251,8 +256,9 @@
             // 
             // SrvrIPbox
             // 
-            this.SrvrIPbox.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.SrvrIPbox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SrvrIPbox.BackColor = System.Drawing.Color.White;
+            this.SrvrIPbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SrvrIPbox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.SrvrIPbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SrvrIPbox.Location = new System.Drawing.Point(5, 267);
             this.SrvrIPbox.Name = "SrvrIPbox";
@@ -464,6 +470,9 @@
             // 
             // TshrtTab
             // 
+            this.TshrtTab.Controls.Add(this.TshrtSlot1);
+            this.TshrtTab.Controls.Add(this.TshrtInfoText);
+            this.TshrtTab.Controls.Add(this.TshrtListView);
             this.TshrtTab.Location = new System.Drawing.Point(4, 34);
             this.TshrtTab.Name = "TshrtTab";
             this.TshrtTab.Size = new System.Drawing.Size(475, 284);
@@ -578,7 +587,7 @@
             // PntsImgList
             // 
             this.PntsImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.PntsImgList.ImageSize = new System.Drawing.Size(16, 16);
+            this.PntsImgList.ImageSize = new System.Drawing.Size(64, 64);
             this.PntsImgList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // PckgeTab
@@ -896,7 +905,7 @@
             // MOTD
             // 
             this.MOTD.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.MOTD.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.MOTD.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.MOTD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MOTD.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MOTD.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -916,6 +925,48 @@
             this.BackgroundBox.Size = new System.Drawing.Size(763, 115);
             this.BackgroundBox.TabIndex = 3;
             this.BackgroundBox.TabStop = false;
+            // 
+            // TshrtImgList
+            // 
+            this.TshrtImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.TshrtImgList.ImageSize = new System.Drawing.Size(64, 64);
+            this.TshrtImgList.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // TshrtListView
+            // 
+            this.TshrtListView.HideSelection = false;
+            this.TshrtListView.LargeImageList = this.TshrtImgList;
+            this.TshrtListView.Location = new System.Drawing.Point(6, 6);
+            this.TshrtListView.Name = "TshrtListView";
+            this.TshrtListView.Size = new System.Drawing.Size(375, 192);
+            this.TshrtListView.TabIndex = 1;
+            this.TshrtListView.UseCompatibleStateImageBehavior = false;
+            this.TshrtListView.SelectedIndexChanged += new System.EventHandler(this.TshrtListView_SelectedIndexChanged);
+            // 
+            // TshrtInfoText
+            // 
+            this.TshrtInfoText.BackColor = System.Drawing.SystemColors.Control;
+            this.TshrtInfoText.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.TshrtInfoText.Location = new System.Drawing.Point(6, 204);
+            this.TshrtInfoText.Name = "TshrtInfoText";
+            this.TshrtInfoText.ReadOnly = true;
+            this.TshrtInfoText.Size = new System.Drawing.Size(375, 74);
+            this.TshrtInfoText.TabIndex = 4;
+            this.TshrtInfoText.Text = "No Item Selected!";
+            // 
+            // TshrtSlot1
+            // 
+            this.TshrtSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.TshrtSlot1.FlatAppearance.BorderSize = 2;
+            this.TshrtSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.TshrtSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TshrtSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.TshrtSlot1.Location = new System.Drawing.Point(399, 77);
+            this.TshrtSlot1.Name = "TshrtSlot1";
+            this.TshrtSlot1.Size = new System.Drawing.Size(60, 60);
+            this.TshrtSlot1.TabIndex = 5;
+            this.TshrtSlot1.UseVisualStyleBackColor = true;
+            this.TshrtSlot1.Click += new System.EventHandler(this.TShrtSlot1_Click);
             // 
             // AurNTBase
             // 
@@ -945,6 +996,7 @@
             this.CustmTab.PerformLayout();
             this.CatalogTabsOptions.ResumeLayout(false);
             this.HatTab.ResumeLayout(false);
+            this.TshrtTab.ResumeLayout(false);
             this.ShrtTab.ResumeLayout(false);
             this.PntTab.ResumeLayout(false);
             this.PacksTab.ResumeLayout(false);
@@ -1033,6 +1085,10 @@
         private System.Windows.Forms.CheckBox ShowWebserverBool;
         private System.Windows.Forms.Button PntsSlot1;
         private System.Windows.Forms.Label SelClientTest;
+        private System.Windows.Forms.Button TshrtSlot1;
+        private System.Windows.Forms.RichTextBox TshrtInfoText;
+        private System.Windows.Forms.ListView TshrtListView;
+        private System.Windows.Forms.ImageList TshrtImgList;
     }
 }
 

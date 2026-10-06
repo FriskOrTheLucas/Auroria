@@ -137,8 +137,9 @@ namespace Auroria.NT
             CookieBox.Text = File.ReadAllText(CookieDir);
 
             LoadPlayerInfo();
-            LoadCatalogListView(@"Data/Catalog/charshirts", ShirtsListView, ShrtsImgList);
             LoadCatalogListView(@"Data/Catalog/charhats", HatsListView, HatsImgList);
+            LoadCatalogListView(@"Data/Catalog/charshirts", ShirtsListView, ShrtsImgList);
+            LoadCatalogListView(@"Data/Catalog/chartshirt", TshrtListView, TshrtImgList);
             LoadCatalogListView(@"Data/Catalog/charpants", PantsListView, PntsImgList);
 
             //populate the maps tree view with the map stuff.
@@ -240,14 +241,19 @@ namespace Auroria.NT
             }
         }
 
+        private void HatsListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectedItemUpd(HatsInfoTxt, HatsListView, @"Data/Catalog/charhats");
+        }
+
         private void ShirtsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             SelectedItemUpd(ShrtInfoTxt, ShirtsListView, @"Data/Catalog/charshirts");
         }
 
-        private void HatsListView_SelectedIndexChanged(object sender, EventArgs e)
+        private void TshrtListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SelectedItemUpd(HatsInfoTxt, HatsListView, @"Data/Catalog/charhats");
+            SelectedItemUpd(TshrtInfoText, TshrtListView, @"Data/Catalog/chartshirt");
         }
 
         private void PantsListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -305,9 +311,12 @@ namespace Auroria.NT
             }
 
             // note for future lucas: Dummy, make sure you change the HatSlotButton, the name of the slot in the json, and the actual charfolder! 
+            // Lucas as of 10/5/2026: this code is dumb, messy, and unorganized i need to fix it in the future.
+            // maybe learn how get; set; works.
             LoadAvatarItm(HatsSlot1, "HatSlot1", "charhats");
             LoadAvatarItm(HatsSlot2, "HatSlot2", "charhats");
             LoadAvatarItm(HatsSlot3, "HatSlot3", "charhats");
+            LoadAvatarItm(TshrtSlot1, "TShirt", "chartshirt");
             LoadAvatarItm(ShrtSlot1, "Shirt", "charshirts");
             LoadAvatarItm(ShrtSlot1, "Pants", "charpants");
         }
@@ -604,6 +613,11 @@ namespace Auroria.NT
         private void HatsSlot3_Click(object sender, EventArgs e)
         {
             ItemChanged(HatsListView, HatsSlot3, "HatSlot3");
+        }
+
+        private void TShrtSlot1_Click(object sender, EventArgs e)
+        {
+            ItemChanged(TshrtListView, TshrtSlot1, "TShirt");
         }
 
         private void ShrtSlot1_Click(object sender, EventArgs e)

@@ -46,6 +46,7 @@ namespace AuroriaWebserver.Mains
                 try
                 {
                     byte[] buffer = File.ReadAllBytes(MapDirectory); // i think this is the way to do it?
+                    response.ContentType = "application/octet-stream";
                     response.ContentLength64 = buffer.Length;
                     response.OutputStream.Write(buffer, 0, buffer.Length);
                     response.OutputStream.Close();
@@ -59,7 +60,6 @@ namespace AuroriaWebserver.Mains
                     string jsonResponse = "{\"message\": \"An error has occurred while getting the map. We are sorry.\"}"; // fug
                     Console.WriteLine("Sent error code and message.");
                     byte[] buffer = Encoding.UTF8.GetBytes(jsonResponse);
-                    response.ContentType = "application/octet-stream";
                     response.ContentLength64 = buffer.Length;
                     response.OutputStream.Write(buffer, 0, buffer.Length);
                     response.OutputStream.Close();
