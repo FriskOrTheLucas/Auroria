@@ -58,6 +58,10 @@
             this.HeadsTab = new System.Windows.Forms.TabPage();
             this.FaceTab = new System.Windows.Forms.TabPage();
             this.TshrtTab = new System.Windows.Forms.TabPage();
+            this.TshrtSlot1 = new System.Windows.Forms.Button();
+            this.TshrtInfoText = new System.Windows.Forms.RichTextBox();
+            this.TshrtListView = new System.Windows.Forms.ListView();
+            this.TshrtImgList = new System.Windows.Forms.ImageList(this.components);
             this.ShrtTab = new System.Windows.Forms.TabPage();
             this.ShrtSlot1 = new System.Windows.Forms.Button();
             this.ShrtInfoTxt = new System.Windows.Forms.RichTextBox();
@@ -97,10 +101,6 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.MOTD = new System.Windows.Forms.Label();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
-            this.TshrtImgList = new System.Windows.Forms.ImageList(this.components);
-            this.TshrtListView = new System.Windows.Forms.ListView();
-            this.TshrtInfoText = new System.Windows.Forms.RichTextBox();
-            this.TshrtSlot1 = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -257,7 +257,6 @@
             // SrvrIPbox
             // 
             this.SrvrIPbox.BackColor = System.Drawing.Color.White;
-            this.SrvrIPbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SrvrIPbox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.SrvrIPbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SrvrIPbox.Location = new System.Drawing.Point(5, 267);
@@ -479,6 +478,48 @@
             this.TshrtTab.TabIndex = 3;
             this.TshrtTab.Text = "T-Shirts";
             this.TshrtTab.UseVisualStyleBackColor = true;
+            // 
+            // TshrtSlot1
+            // 
+            this.TshrtSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.TshrtSlot1.FlatAppearance.BorderSize = 2;
+            this.TshrtSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.TshrtSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TshrtSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.TshrtSlot1.Location = new System.Drawing.Point(399, 77);
+            this.TshrtSlot1.Name = "TshrtSlot1";
+            this.TshrtSlot1.Size = new System.Drawing.Size(60, 60);
+            this.TshrtSlot1.TabIndex = 5;
+            this.TshrtSlot1.UseVisualStyleBackColor = true;
+            this.TshrtSlot1.Click += new System.EventHandler(this.TShrtSlot1_Click);
+            // 
+            // TshrtInfoText
+            // 
+            this.TshrtInfoText.BackColor = System.Drawing.SystemColors.Control;
+            this.TshrtInfoText.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.TshrtInfoText.Location = new System.Drawing.Point(6, 204);
+            this.TshrtInfoText.Name = "TshrtInfoText";
+            this.TshrtInfoText.ReadOnly = true;
+            this.TshrtInfoText.Size = new System.Drawing.Size(375, 74);
+            this.TshrtInfoText.TabIndex = 4;
+            this.TshrtInfoText.Text = "No Item Selected!";
+            // 
+            // TshrtListView
+            // 
+            this.TshrtListView.HideSelection = false;
+            this.TshrtListView.LargeImageList = this.TshrtImgList;
+            this.TshrtListView.Location = new System.Drawing.Point(6, 6);
+            this.TshrtListView.Name = "TshrtListView";
+            this.TshrtListView.Size = new System.Drawing.Size(375, 192);
+            this.TshrtListView.TabIndex = 1;
+            this.TshrtListView.UseCompatibleStateImageBehavior = false;
+            this.TshrtListView.SelectedIndexChanged += new System.EventHandler(this.TshrtListView_SelectedIndexChanged);
+            // 
+            // TshrtImgList
+            // 
+            this.TshrtImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.TshrtImgList.ImageSize = new System.Drawing.Size(64, 64);
+            this.TshrtImgList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // ShrtTab
             // 
@@ -925,48 +966,6 @@
             this.BackgroundBox.Size = new System.Drawing.Size(763, 115);
             this.BackgroundBox.TabIndex = 3;
             this.BackgroundBox.TabStop = false;
-            // 
-            // TshrtImgList
-            // 
-            this.TshrtImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.TshrtImgList.ImageSize = new System.Drawing.Size(64, 64);
-            this.TshrtImgList.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // TshrtListView
-            // 
-            this.TshrtListView.HideSelection = false;
-            this.TshrtListView.LargeImageList = this.TshrtImgList;
-            this.TshrtListView.Location = new System.Drawing.Point(6, 6);
-            this.TshrtListView.Name = "TshrtListView";
-            this.TshrtListView.Size = new System.Drawing.Size(375, 192);
-            this.TshrtListView.TabIndex = 1;
-            this.TshrtListView.UseCompatibleStateImageBehavior = false;
-            this.TshrtListView.SelectedIndexChanged += new System.EventHandler(this.TshrtListView_SelectedIndexChanged);
-            // 
-            // TshrtInfoText
-            // 
-            this.TshrtInfoText.BackColor = System.Drawing.SystemColors.Control;
-            this.TshrtInfoText.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.TshrtInfoText.Location = new System.Drawing.Point(6, 204);
-            this.TshrtInfoText.Name = "TshrtInfoText";
-            this.TshrtInfoText.ReadOnly = true;
-            this.TshrtInfoText.Size = new System.Drawing.Size(375, 74);
-            this.TshrtInfoText.TabIndex = 4;
-            this.TshrtInfoText.Text = "No Item Selected!";
-            // 
-            // TshrtSlot1
-            // 
-            this.TshrtSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.TshrtSlot1.FlatAppearance.BorderSize = 2;
-            this.TshrtSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.TshrtSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.TshrtSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.TshrtSlot1.Location = new System.Drawing.Point(399, 77);
-            this.TshrtSlot1.Name = "TshrtSlot1";
-            this.TshrtSlot1.Size = new System.Drawing.Size(60, 60);
-            this.TshrtSlot1.TabIndex = 5;
-            this.TshrtSlot1.UseVisualStyleBackColor = true;
-            this.TshrtSlot1.Click += new System.EventHandler(this.TShrtSlot1_Click);
             // 
             // AurNTBase
             // 
