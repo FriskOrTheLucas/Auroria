@@ -8,7 +8,15 @@ namespace AuroriaWebserver.Mains
 {
     public static class BodyColor
     {
-        public static void DoThing(HttpListenerContext context) // im sorry i couldnt come up with a better name
+        private static string[] bodycolors = new string[]
+        {   "Head",
+            "LeftArm",
+            "LeftLeg",
+            "RightArm",
+            "RightLeg",
+            "Torso"
+        };
+    public static void DoThing(HttpListenerContext context) // im sorry i couldnt come up with a better name
         {
 
         }
