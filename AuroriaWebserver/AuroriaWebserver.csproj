@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mains\AssetDelivery.cs" />
+    <Compile Include="Mains\BodyColor.cs" />
     <Compile Include="Mains\ScriptsHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

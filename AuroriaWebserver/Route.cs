@@ -27,7 +27,12 @@ namespace AuroriaWebserver
                 ScriptsHandler.HandleGameserver(context);
             }
 
-            else if (AbsolutePath.Equals("/asset/"))
+            if (AbsolutePath.Equals("/asset/bodycolors.ashx"))
+            {
+                BodyColor.DoThing(context);
+            }
+
+            if (AbsolutePath.Equals("/asset/")) 
             {
                 AssetDelivery.HandleDelivery(context);
             }
