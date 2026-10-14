@@ -16,7 +16,7 @@ namespace AuroriaWebserver.Mains
             "RightLeg",
             "Torso"
         };
-    public static void DoThing(HttpListenerContext context) // im sorry i couldnt come up with a better name
+        public static void DoThing(HttpListenerContext context) // im sorry i couldnt come up with a better name
         {
 
         }
