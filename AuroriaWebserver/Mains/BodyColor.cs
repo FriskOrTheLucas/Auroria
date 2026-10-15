@@ -8,7 +8,7 @@ namespace AuroriaWebserver.Mains
 {
     public static class BodyColor
     {
-        private static string[] bodycolors = new string[]
+        private static string[] bodycolors = new string[6]
         {   "Head",
             "LeftArm",
             "LeftLeg",

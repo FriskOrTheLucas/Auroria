@@ -10,6 +10,6 @@ namespace AuroriaResources
 {
     public static class PathHelper
     {
-        public static string Client;
+        public static string PlayerInfoPath = "PlayerSettings.json";
     }
 }

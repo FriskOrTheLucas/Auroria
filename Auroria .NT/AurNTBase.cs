@@ -283,7 +283,13 @@ namespace Auroria.NT
                     { "Shirt", "" },
                     { "TShirt", "" },
                     { "Pants", "" },
-                    { "Package", "" }
+                    { "Package", "" },
+                    { "Headcolor", "" },
+                    { "LeftArmcolor", "" },
+                    { "LeftLegcolor", "" },
+                    { "RightArmcolor", "" },
+                    { "RightLegcolor", "" },
+                    { "Torsocolor", "" }
                 };
 
                 File.WriteAllText("PlayerSettings.json", objnw.ToString());
@@ -388,7 +394,13 @@ namespace Auroria.NT
                     { "Shirt", "" },
                     { "TShirt", "" },
                     { "Pants", "" },
-                    { "Package", "" }
+                    { "Package", "" },
+                    { "Headcolor", "" },
+                    { "LeftArmcolor", "" },
+                    { "LeftLegcolor", "" },
+                    { "RightArmcolor", "" },
+                    { "RightLegcolor", "" },
+                    { "Torsocolor", "" }
                 };
 
                 File.WriteAllText("PlayerSettings.json", objnw.ToString());
