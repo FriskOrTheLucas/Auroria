@@ -6,15 +6,16 @@ using System.IO;
 using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Net.Mime;
 
 namespace AuroriaWebserver.Mains
 {
     public static class AssetDelivery
     {
-        static string cookie = @"data\cookie.txt";
-        static string InfoFilePath = "PlayerSettings.json";
+        static readonly string cookie = @"data\cookie.txt";
+        static readonly string InfoFilePath = "PlayerSettings.json";
 
-        static string json = File.ReadAllText(InfoFilePath);
+        static readonly string json = File.ReadAllText(InfoFilePath);
         static JObject obj = JObject.Parse(json);
         static string AsstUrl = (string)obj["AssetURL"];
         private static string MapDirectory
@@ -85,33 +86,32 @@ namespace AuroriaWebserver.Mains
             {
                 try
                 {
-                    // i gotta add notes to this code so then JayJay can understand
-                    // + incase someone needs to read it and understand it
-
-                    string url = AsstUrl + id + "&version=" + version; //gets the asset url and id (version too for older stuff i think)
+                    string url = AsstUrl + id + "&version=" + version; 
                     Console.WriteLine("Requesting asset from: " + url); 
 
                     HttpWebRequest assetReq = (HttpWebRequest)WebRequest.Create(url);
-                    assetReq.Headers.Add(HttpRequestHeader.Cookie, ".ROBLOSECURITY=" + cookiecheck); // requests the asset url along with the cookie
+                    assetReq.Headers.Add(HttpRequestHeader.Cookie, ".ROBLOSECURITY=" + cookiecheck); 
                     Console.WriteLine("Requested URL with Cookie.");
 
-                    assetReq.AllowAutoRedirect = true; //dont know what this was i just got told to use it
-                    assetReq.Method = "GET"; //same here
-                    assetReq.UserAgent = "Roblox/WinInet"; //I learned that if youre requesting it from the actual roblox assetdelivery url then this is needed
-                    HttpWebResponse assetResponse = (HttpWebResponse)assetReq.GetResponse(); // Gets the response from the asset delivery url
+                    assetReq.AllowAutoRedirect = true; 
+                    assetReq.Method = "GET"; 
+                    assetReq.UserAgent = "Roblox/WinInet";
+                    HttpWebResponse assetResponse = (HttpWebResponse)assetReq.GetResponse(); 
                     Console.WriteLine("Received response from asset request.");
 
-                    Stream ResponseStream = assetResponse.GetResponseStream(); 
-                    ResponseStream.CopyTo(response.OutputStream); // Takes the respone from the asset url and copies it to the output
+                    Stream ResponseStream = assetResponse.GetResponseStream();
+                    
+
+                    ResponseStream.CopyTo(response.OutputStream); 
                     response.OutputStream.Close();
-                    Console.WriteLine("Asset delivery Finished!"); // yaaay
+                    Console.WriteLine("Asset delivery Finished!"); 
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error occurred while handling asset delivery: " + ex.Message); // frick.
-                    context.Response.StatusCode = (int)HttpStatusCode.InternalServerError; // returns 500 (im an idiot its code 500 not 404)
+                    Console.WriteLine("Error occurred while handling asset delivery: " + ex.Message); 
+                    context.Response.StatusCode = (int)HttpStatusCode.InternalServerError; 
 
-                    string jsonResponse = "{\"message\": \"An error has occurred and Auroria cannot deliver the asset. We are sorry.\"}"; // i cry
+                    string jsonResponse = "{\"message\": \"An error has occurred and Auroria cannot deliver the asset. We are sorry.\"}"; 
                     Console.WriteLine("Sent error code and message.");
                     byte[] buffer = Encoding.UTF8.GetBytes(jsonResponse);
                     response.ContentLength64 = buffer.Length;

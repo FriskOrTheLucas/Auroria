@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using AuroriaWebserver.Mains;
+using AuroriaWebserver.IDE;
 
 namespace AuroriaWebserver
 {
@@ -14,12 +15,19 @@ namespace AuroriaWebserver
             string AbsolutePath = context.Request.Url.AbsolutePath.ToLower();
             // I know thats kinda useless right now but that make the code looks more clean
             // -creds to rickkkkk for making this -Lucas
+            Console.WriteLine($"Request: {AbsolutePath}");
 
             if (AbsolutePath.Equals("/game/join.ashx"))
             {
                 ScriptsHandler.HandleJoin(context);
                 context.Response.StatusCode = (int)HttpStatusCode.OK;
                 context.Response.Close();
+            }
+
+            if (AbsolutePath.Equals("/ide/clienttoolbox.aspx"))
+            {
+                Console.WriteLine("Toolbox request sent");
+                Toolbox.HandleToolbox(context);
             }
 
             if (AbsolutePath.Equals("/game/gameserver.ashx"))
