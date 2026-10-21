@@ -88,6 +88,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\CreateURL.cs" />
     <Compile Include="Resources\ProcessTypes.cs" />
+    <Compile Include="Webserver.cs" />
     <EmbeddedResource Include="AurNTBase.resx">
       <DependentUpon>AurNTBase.cs</DependentUpon>
     </EmbeddedResource>
