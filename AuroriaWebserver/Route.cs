@@ -5,6 +5,7 @@ using System.Text;
 using System.Net;
 using AuroriaWebserver.Mains;
 using AuroriaWebserver.IDE;
+using AuroriaWebserver.staticHTML;
 
 namespace AuroriaWebserver
 {
@@ -28,6 +29,18 @@ namespace AuroriaWebserver
             {
                 Console.WriteLine("Toolbox request sent");
                 Toolbox.HandleToolbox(context);
+            }
+
+            if (AbsolutePath.Equals("/ide/landing.aspx") || AbsolutePath.Equals("/ide/start.aspx"))
+            {
+                Console.WriteLine("Landing Request sent");
+                Landing.HandleLanding(context);
+            }
+
+            if (AbsolutePath.Equals("/staticassets/auroria.png"))
+            {
+                Console.WriteLine("Logo request Sent");
+                StaticAssetsHandler.logo(context);
             }
 
             if (AbsolutePath.Equals("/game/gameserver.ashx"))

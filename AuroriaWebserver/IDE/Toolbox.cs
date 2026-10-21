@@ -14,7 +14,7 @@ namespace AuroriaWebserver.IDE
             Console.WriteLine("Toolbox request received");
             HttpListenerResponse response = context.Response;
 
-            string responseString = "<HTML><BODY> no.</BODY></HTML>";
+            string responseString = "<HTML><BODY align=\"center\"> <h1> Welcome to Auroria. </h1> <div> <h3>If you're seeing this it means youre probably doin crap with the toolbox.</h3> <p> Sadly, toolbox isnt ready yet. Comeback when it is! :P </p> </div></BODY></HTML>";
 
             byte[] buffer = Encoding.UTF8.GetBytes(responseString);
 
