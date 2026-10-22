@@ -75,6 +75,12 @@
     <Compile Include="AurNTBase.Designer.cs">
       <DependentUpon>AurNTBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="AvatarRendererWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AvatarRendererWindow.Designer.cs">
+      <DependentUpon>AvatarRendererWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="BodyColorsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     <Compile Include="Webserver.cs" />
     <EmbeddedResource Include="AurNTBase.resx">
       <DependentUpon>AurNTBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AvatarRendererWindow.resx">
+      <DependentUpon>AvatarRendererWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BodyColorsWindow.resx">
       <DependentUpon>BodyColorsWindow.cs</DependentUpon>
@@ -120,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AurLogo.ico" />
+    <None Include="Resources\ColorWhite.bmp" />
     <None Include="Launcher Assets\Banners\BannerFull.png" />
     <None Include="Launcher Assets\Buttons\AurPlayButtonClicked.png" />
     <None Include="Launcher Assets\Buttons\AurPlayButton.png" />
