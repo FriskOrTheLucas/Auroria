@@ -494,7 +494,7 @@ namespace Auroria.NT
                 return;
             }
 
-            if (SelectedClient == null)
+            if (string.IsNullOrWhiteSpace(SelectedClient))
             {
                 MessageBox.Show("Please select a client before hosting.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
