@@ -21,8 +21,6 @@ namespace AuroriaWebserver
             if (AbsolutePath.Equals("/game/join.ashx"))
             {
                 ScriptsHandler.HandleJoin(context);
-                context.Response.StatusCode = (int)HttpStatusCode.OK;
-                context.Response.Close();
             }
 
             if (AbsolutePath.Equals("/ide/clienttoolbox.aspx"))

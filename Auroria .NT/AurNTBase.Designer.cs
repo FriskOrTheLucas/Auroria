@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AurNTBase));
             this.AllTabs = new System.Windows.Forms.TabControl();
             this.PlayTab = new System.Windows.Forms.TabPage();
-            this.SelClientTest = new System.Windows.Forms.Label();
             this.HostButtonC = new System.Windows.Forms.PictureBox();
             this.PlayButtonC = new System.Windows.Forms.PictureBox();
             this.hostingtypelabel = new System.Windows.Forms.Label();
@@ -146,7 +145,6 @@
             // PlayTab
             // 
             this.PlayTab.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.PlayTab.Controls.Add(this.SelClientTest);
             this.PlayTab.Controls.Add(this.HostButtonC);
             this.PlayTab.Controls.Add(this.PlayButtonC);
             this.PlayTab.Controls.Add(this.hostingtypelabel);
@@ -164,15 +162,6 @@
             this.PlayTab.Text = "Play/Host";
             this.PlayTab.ToolTipText = "Contains the Play/Host options.";
             this.PlayTab.Click += new System.EventHandler(this.PlayPage_Click);
-            // 
-            // SelClientTest
-            // 
-            this.SelClientTest.AutoSize = true;
-            this.SelClientTest.Location = new System.Drawing.Point(6, 370);
-            this.SelClientTest.Name = "SelClientTest";
-            this.SelClientTest.Size = new System.Drawing.Size(159, 14);
-            this.SelClientTest.TabIndex = 19;
-            this.SelClientTest.Text = "test label no client speaking";
             // 
             // HostButtonC
             // 
@@ -199,8 +188,6 @@
             this.PlayButtonC.TabIndex = 17;
             this.PlayButtonC.TabStop = false;
             this.PlayButtonC.Click += new System.EventHandler(this.PlayButtonC_Click);
-            this.PlayButtonC.MouseLeave += new System.EventHandler(this.PlayButtonC_Leave);
-            this.PlayButtonC.MouseHover += new System.EventHandler(this.PlayButtonC_Hover);
             // 
             // hostingtypelabel
             // 
@@ -1083,7 +1070,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox ShowWebserverBool;
         private System.Windows.Forms.Button PntsSlot1;
-        private System.Windows.Forms.Label SelClientTest;
         private System.Windows.Forms.Button TshrtSlot1;
         private System.Windows.Forms.RichTextBox TshrtInfoText;
         private System.Windows.Forms.ListView TshrtListView;

@@ -10,7 +10,6 @@ namespace AuroriaWebserver
 {
     internal class Program
     {
-        static bool ShowConsole = false;
         static void Main()
         {
             HttpListener Server = new HttpListener();

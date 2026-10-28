@@ -11,7 +11,12 @@ namespace Auroria.NT.Resources
         {
             string url = "http://www.rbxweb.lol/game/gameserver.ashx?port=" + port;
             return url;
+        }
 
+        public static string CreateJoinUrl(string IP, string port, string username, string ID)
+        {
+            string url = $"http://www.rbxweb.lol/game/join.ashx?serverIP={IP}&serverPort={port}&userName={username}&userID={ID}";
+            return url;
         }
     }
 }

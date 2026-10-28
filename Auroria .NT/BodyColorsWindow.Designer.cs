@@ -29,7 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("White");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Black Color"}, -1, System.Drawing.SystemColors.ControlLightLight, System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(42)))), ((int)(((byte)(53))))), null);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Br. yellowish green"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(189)))), ((int)(((byte)(71))))), null);
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Br. yellowish orange"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(154)))), ((int)(((byte)(66))))), null);
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Bright blue"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(105)))), ((int)(((byte)(172))))), null);
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Bright yellow"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(205)))), ((int)(((byte)(48))))), null);
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Cool Yellow"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(234)))), ((int)(((byte)(141))))), null);
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            "White Color"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(243))))), null);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BodyColorsWindow));
             this.bodycolorListView = new System.Windows.Forms.ListView();
             this.colorList = new System.Windows.Forms.ImageList(this.components);
@@ -51,14 +64,29 @@
             // bodycolorListView
             // 
             this.bodycolorListView.HideSelection = false;
-            listViewItem1.ToolTipText = "Classic";
+            listViewItem1.Tag = "26";
+            listViewItem2.Tag = "119";
+            listViewItem3.Tag = "105";
+            listViewItem4.Tag = "23";
+            listViewItem5.Tag = "24";
+            listViewItem6.Tag = "226";
+            listViewItem7.Tag = "1";
+            listViewItem7.ToolTipText = "Classic";
             this.bodycolorListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6,
+            listViewItem7});
             this.bodycolorListView.Location = new System.Drawing.Point(12, 12);
             this.bodycolorListView.Name = "bodycolorListView";
             this.bodycolorListView.Size = new System.Drawing.Size(269, 352);
+            this.bodycolorListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.bodycolorListView.TabIndex = 0;
             this.bodycolorListView.UseCompatibleStateImageBehavior = false;
+            this.bodycolorListView.SelectedIndexChanged += new System.EventHandler(this.bodycolorListView_SelectedIndexChanged);
             // 
             // colorList
             // 
@@ -76,6 +104,7 @@
             this.LeftLegColorBox.Size = new System.Drawing.Size(46, 107);
             this.LeftLegColorBox.TabIndex = 6;
             this.LeftLegColorBox.TabStop = false;
+            this.LeftLegColorBox.Click += new System.EventHandler(this.LeftLegColorBox_Click);
             // 
             // RightLegColorBox
             // 
@@ -87,6 +116,7 @@
             this.RightLegColorBox.Size = new System.Drawing.Size(46, 107);
             this.RightLegColorBox.TabIndex = 5;
             this.RightLegColorBox.TabStop = false;
+            this.RightLegColorBox.Click += new System.EventHandler(this.RightLegColorBox_Click);
             // 
             // RightArmColorBox
             // 
@@ -98,6 +128,7 @@
             this.RightArmColorBox.Size = new System.Drawing.Size(46, 107);
             this.RightArmColorBox.TabIndex = 4;
             this.RightArmColorBox.TabStop = false;
+            this.RightArmColorBox.Click += new System.EventHandler(this.RightArmColorBox_Click);
             // 
             // LeftArmColorBox
             // 
@@ -109,6 +140,7 @@
             this.LeftArmColorBox.Size = new System.Drawing.Size(46, 107);
             this.LeftArmColorBox.TabIndex = 3;
             this.LeftArmColorBox.TabStop = false;
+            this.LeftArmColorBox.Click += new System.EventHandler(this.LeftArmColorBox_Click);
             // 
             // TorsoColorBox
             // 
@@ -120,6 +152,7 @@
             this.TorsoColorBox.Size = new System.Drawing.Size(100, 107);
             this.TorsoColorBox.TabIndex = 2;
             this.TorsoColorBox.TabStop = false;
+            this.TorsoColorBox.Click += new System.EventHandler(this.TorsoColorBox_Click);
             // 
             // HeadColorBox
             // 
@@ -131,6 +164,7 @@
             this.HeadColorBox.Size = new System.Drawing.Size(100, 50);
             this.HeadColorBox.TabIndex = 1;
             this.HeadColorBox.TabStop = false;
+            this.HeadColorBox.Click += new System.EventHandler(this.HeadColorBox_Click);
             // 
             // label1
             // 
@@ -159,9 +193,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "BodyColorsWindow";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Body Colors";
+            this.Load += new System.EventHandler(this.BodyColorsWindow_load);
             ((System.ComponentModel.ISupportInitialize)(this.LeftLegColorBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightLegColorBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightArmColorBox)).EndInit();
