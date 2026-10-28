@@ -429,7 +429,7 @@ namespace Auroria.NT
 
         private void PlayerNameBox_TextChanged(object sender, EventArgs e)
         {
-   
+
         }
 
         private void MapsTree_AfterSelect(object sender, TreeViewEventArgs e)
