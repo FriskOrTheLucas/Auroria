@@ -74,6 +74,8 @@ namespace Auroria.NT
 
             hostsfile.RemoveHosts();
             hostsfile.WriteHosts();
+
+            Webserver.StartWebserver();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -82,6 +84,7 @@ namespace Auroria.NT
             {
                 // do the thing
                 hostsfile.RemoveHosts();
+                Webserver.StopWebserver();
             }
             catch (Exception ex)
             {
@@ -271,7 +274,7 @@ namespace Auroria.NT
                 {
                     { "PlayerName", "Username" },
                     { "UserID", "123456789" },
-                    { "AssetURL", "" },
+                    { "AssetURL", "http://proxy.95.fyi/assetrequest.php?id=" },
                     { "ServerIP", "" },
                     { "Client", "" },
                     { "CurrentMap", "" },
@@ -382,7 +385,7 @@ namespace Auroria.NT
                 {
                     { "PlayerName", "Username" },
                     { "UserID", "123456789" },
-                    { "AssetURL", "" },
+                    { "AssetURL", "http://proxy.95.fyi/assetrequest.php?id=" },
                     { "ServerIP", "" },
                     { "Client", "" },
                     { "CurrentMap", "" },

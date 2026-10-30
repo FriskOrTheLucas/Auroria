@@ -243,7 +243,7 @@
             // 
             // SrvrIPbox
             // 
-            this.SrvrIPbox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.SrvrIPbox.BackColor = System.Drawing.Color.LightSteelBlue;
             this.SrvrIPbox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.SrvrIPbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SrvrIPbox.Location = new System.Drawing.Point(5, 267);
@@ -873,7 +873,7 @@
             this.AssetURLBox.Name = "AssetURLBox";
             this.AssetURLBox.Size = new System.Drawing.Size(305, 26);
             this.AssetURLBox.TabIndex = 1;
-            this.AssetURLBox.Text = "https://assetdelivery.roblox.com/v1/asset/";
+            this.AssetURLBox.Text = "http://proxy.95.fyi/assetrequest.php?id=";
             // 
             // CookieBox
             // 
@@ -933,7 +933,7 @@
             // MOTD
             // 
             this.MOTD.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.MOTD.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.MOTD.BackColor = System.Drawing.Color.LightSteelBlue;
             this.MOTD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MOTD.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MOTD.ForeColor = System.Drawing.SystemColors.ControlText;

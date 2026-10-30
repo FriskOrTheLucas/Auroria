@@ -86,7 +86,7 @@ namespace AuroriaWebserver.Mains
             {
                 try
                 {
-                    string url = AsstUrl + id + "&version=" + version; 
+                    string url = AsstUrl + "id=" + id + "&version=" + version; 
                     Console.WriteLine("Requesting asset from: " + url); 
 
                     HttpWebRequest assetReq = (HttpWebRequest)WebRequest.Create(url);
