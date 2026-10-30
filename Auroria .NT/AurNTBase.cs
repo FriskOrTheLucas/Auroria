@@ -274,7 +274,7 @@ namespace Auroria.NT
                 {
                     { "PlayerName", "Username" },
                     { "UserID", "123456789" },
-                    { "AssetURL", "http://proxy.95.fyi/assetrequest.php?id=" },
+                    { "AssetURL", "http://proxy.95.fyi/assetrequest.php?" },
                     { "ServerIP", "" },
                     { "Client", "" },
                     { "CurrentMap", "" },
@@ -385,7 +385,7 @@ namespace Auroria.NT
                 {
                     { "PlayerName", "Username" },
                     { "UserID", "123456789" },
-                    { "AssetURL", "http://proxy.95.fyi/assetrequest.php?id=" },
+                    { "AssetURL", "http://proxy.95.fyi/assetrequest.php?" },
                     { "ServerIP", "" },
                     { "Client", "" },
                     { "CurrentMap", "" },
