@@ -47,57 +47,28 @@ namespace AuroriaResources
             return response;
         }
 
-        public static string Description
-        {
-            get { string result = GetInfo("Description"); return result; }
-        }
+        public static string Description => GetInfo("Description");
 
+        // made code like a million times more readable 
         public class Player
         {
-            public static string Directory
-            {
-                get { string result = GetNestedInfo("Player", "Directory"); return result; }
-            }
-            public static string Client
-            {
-                get { string result = GetNestedInfo("Player", "Name"); return result; }
-            }
-            public static string Arguments
-            {
-                get { string result = GetNestedInfo("Player", "Arguments"); return result; }
-            }
+            public static string Directory => GetNestedInfo("Player", "Directory");
+            public static string Client => GetNestedInfo("Player", "Name");
+            public static string Arguments => GetNestedInfo("Player", "Arguments");
         }
 
         public class Host
         {
-            public static string Directory
-            {
-                get { string result = GetNestedInfo("Host", "Directory"); return result; }
-            }
-            public static string Client
-            {
-                get { string result = GetNestedInfo("Host", "Name"); return result; }
-            }
-            public static string Arguments
-            {
-                get { string result = GetNestedInfo("Host", "Arguments"); return result; }
-            }
+            public static string Directory => GetNestedInfo("Host", "Directory");
+            public static string Client => GetNestedInfo("Host", "Name");
+            public static string Arguments => GetNestedInfo("Host", "Arguments");
         }
 
         public class Studio
         {
-            public static string Directory
-            {
-                get { string result = GetNestedInfo("Studio", "Directory"); return result; }
-            }
-            public static string Client
-            {
-                get { string result = GetNestedInfo("Studio", "Name"); return result; }
-            }
-            public static string Arguments
-            {
-                get { string result = GetNestedInfo("Studio", "Arguments"); return result; }
-            }
+            public static string Directory => GetNestedInfo("Studio", "Directory");
+            public static string Client => GetNestedInfo("Studio", "Name");
+            public static string Arguments => GetNestedInfo("Studio", "Arguments");
         }
     }
 }

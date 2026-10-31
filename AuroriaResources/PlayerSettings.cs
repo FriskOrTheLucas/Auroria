@@ -23,5 +23,9 @@ namespace AuroriaResources
         public static string Name => GetInfo("PlayerName");
 
         public static string ID => GetInfo("UserID");
+
+        public static string AssetURL => GetInfo("AssetURL");
+
+        public static string GetMap => GetInfo("CurrentMap");
     }
 }
