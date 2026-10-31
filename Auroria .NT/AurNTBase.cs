@@ -146,8 +146,9 @@ namespace Auroria.NT
             {
                 AddClient(ClientList.Items, folder);
             }
-        }
 
+            
+        }
 
         public void LoadCatalogListView(string directoryPath, ListView listview, ImageList imglist)
         {
