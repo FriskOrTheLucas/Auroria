@@ -16,6 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AuroriaResources;
+using Auroria.NT.ClientStuff;
 
 namespace Auroria.NT
 {
@@ -443,21 +444,14 @@ namespace Auroria.NT
 
         private void PlayButtonC_Click(object sender, EventArgs e)
         {
-            string IpAndPort = SrvrIPbox.Text;
-            string[] parts = IpAndPort.Split(':');
-            string serverip = parts[0];
-            string serverport = parts[1];
-
-            string createdurl = CreateURL.CreateJoinUrl(serverip, serverport, PlayerNameBox.Text, PlayerIDBox.Text);
 
             if (string.IsNullOrWhiteSpace(SelectedClient))
             {
                 MessageBox.Show("Please select a client before joining.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            string ClientApp = "Clients\\" + SelectedClient + "\\Player\\Roblox.exe";
 
-            Process.Start(ClientApp, "-script \"" + createdurl + "\"");
+            ProcessLauncher.LaunchClient(ProcessTypes.Play);
         }
 
 
