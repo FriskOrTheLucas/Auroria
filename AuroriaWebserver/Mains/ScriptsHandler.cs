@@ -1,53 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Net;
 using System.IO;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Xml;
+using AuroriaResources;
 
 namespace AuroriaWebserver.Mains
 {
     public static class ScriptsHandler
     {
-        public static string InfoFilePath = "PlayerSettings.json";
-
-        public static string GameServScript
-        {
-            get
-            {
-                string json = File.ReadAllText(InfoFilePath);
-                JObject obj = JObject.Parse(json);
-                string client = (string)obj["Client"];
-
-                if (string.IsNullOrWhiteSpace(client))
-                {
-                    throw new Exception("client is null or empty.");
-                }
-
-                return Path.Combine("Clients", client, "Scripts", "gameserver.lua");
-            }
-        }
-
-        public static string JoinScript
-        {
-            get
-            {
-                string json = File.ReadAllText(InfoFilePath);
-                JObject obj = JObject.Parse(json);
-                string client = (string)obj["Client"];
-
-                if (string.IsNullOrWhiteSpace(client))
-                {
-                    throw new Exception("client is null or empty.");
-                }
-
-                return Path.Combine("Clients", client, "Scripts", "join.lua");
-            }
-        }
-
         public static void HandleJoin(HttpListenerContext context)
         {
             try
@@ -62,10 +22,8 @@ namespace AuroriaWebserver.Mains
                 string bodycolorurl = AuroriaResources.PathHelper.GenerateBodyColorAshxURL;
 
                 Console.WriteLine("Join URL was called!");
-                string CurJsonDir = Path.Combine(Directory.GetCurrentDirectory(), InfoFilePath);
-                Console.WriteLine("Getting Player Json.. " + CurJsonDir);
-                Console.WriteLine("Getting Client Script: " + JoinScript);
-                string ReadWriteJoinscript = File.ReadAllText(JoinScript);
+                Console.WriteLine("Getting Client Script: " + ClientSettings.JoinScript);
+                string ReadWriteJoinscript = File.ReadAllText(ClientSettings.JoinScript);
                 ReadWriteJoinscript = ReadWriteJoinscript.Replace("{userid}", playerid);
                 ReadWriteJoinscript = ReadWriteJoinscript.Replace("{username}", playername);
                 ReadWriteJoinscript = ReadWriteJoinscript.Replace("{charapp}", bodycolorurl);
@@ -105,10 +63,8 @@ namespace AuroriaWebserver.Mains
                 string port = request.QueryString["port"] ?? "53640";
 
                 Console.WriteLine("Host URL was called!");
-                string CurJsonDir = Path.Combine(Directory.GetCurrentDirectory(), InfoFilePath);
-                Console.WriteLine("Getting Player Json.. " + CurJsonDir);
-                Console.WriteLine("Getting Client Script: " + GameServScript);
-                string ReadWriteGameServscript = File.ReadAllText(GameServScript);
+                Console.WriteLine("Getting Client Script: " + ClientSettings.GameserverScript);
+                string ReadWriteGameServscript = File.ReadAllText(ClientSettings.GameserverScript);
                 ReadWriteGameServscript = ReadWriteGameServscript.Replace("{port}", port);
                 Console.WriteLine("Rewriting script port..");
                 Console.WriteLine("Script port rewritten to: " + port);

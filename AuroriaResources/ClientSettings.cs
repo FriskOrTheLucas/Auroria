@@ -30,6 +30,8 @@ namespace AuroriaResources
         public static string thumbnail => Path.Combine("Clients", Client, "thumbnail.png");
         public static string config => Path.Combine("Clients", Client, "ClientInfo.json");
         public static string scripts => Path.Combine("Clients", Client, "Scripts");
+        public static string JoinScript => Path.Combine("Clients", Client, "Scripts", "join.lua");
+        public static string GameserverScript => Path.Combine("Clients", Client, "Scripts", "gameserver.lua");
 
         public static string GetInfo(string info)
         {
