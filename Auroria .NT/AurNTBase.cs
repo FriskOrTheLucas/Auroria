@@ -645,6 +645,8 @@ namespace Auroria.NT
             {
                 ShowWebserver = false;
             }
+
+            MessageBox.Show("In order for this change to have effect, you need to restart the launcher.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void SrvrIPbox_TextChanged(object sender, EventArgs e)
