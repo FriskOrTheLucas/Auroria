@@ -59,7 +59,6 @@
     </Compile>
     <Compile Include="Route.cs" />
     <Compile Include="staticHTML\StaticAssetsHandler.cs" />
-    <Compile Include="Webserver\Paths.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Auroria .NT\Auroria .NT.csproj">

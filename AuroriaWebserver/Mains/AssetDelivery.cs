@@ -7,31 +7,13 @@ using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Mime;
+using AuroriaResources;
 
 namespace AuroriaWebserver.Mains
 {
     public static class AssetDelivery
     {
         static readonly string cookie = @"data\cookie.txt";
-        static readonly string InfoFilePath = "PlayerSettings.json";
-
-        static readonly string json = File.ReadAllText(InfoFilePath);
-        static JObject obj = JObject.Parse(json);
-        static string AsstUrl = (string)obj["AssetURL"];
-        private static string MapDirectory
-        {
-            get
-            {
-                string json = File.ReadAllText(InfoFilePath);
-                JObject obj = JObject.Parse(json);
-                string map = (string)obj["CurrentMap"];
-                if (string.IsNullOrWhiteSpace(map))
-                {
-                    throw new Exception("map is either folder or empty");
-                }
-                return map;
-            }
-        }
         public static void HandleDelivery(HttpListenerContext context)
         {
             string cookiecheck = File.ReadAllText(cookie);
@@ -46,7 +28,7 @@ namespace AuroriaWebserver.Mains
                 Console.WriteLine("Map Asset 1818 has been called!");
                 try
                 {
-                    byte[] buffer = File.ReadAllBytes(MapDirectory); // i think this is the way to do it?
+                    byte[] buffer = File.ReadAllBytes(PlayerSettings.GetMap); // i think this is the way to do it?
                     response.ContentType = "application/octet-stream";
                     response.ContentLength64 = buffer.Length;
                     response.OutputStream.Write(buffer, 0, buffer.Length);
@@ -86,7 +68,7 @@ namespace AuroriaWebserver.Mains
             {
                 try
                 {
-                    string url = AsstUrl + "id=" + id + "&version=" + version; 
+                    string url = PlayerSettings.AssetURL + "id=" + id + "&version=" + version; 
                     Console.WriteLine("Requesting asset from: " + url); 
 
                     HttpWebRequest assetReq = (HttpWebRequest)WebRequest.Create(url);
