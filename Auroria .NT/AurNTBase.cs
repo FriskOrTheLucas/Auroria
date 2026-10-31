@@ -532,45 +532,36 @@ namespace Auroria.NT
 
         private void ClientList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string errThumbnail = "Data\\ClientThmbnl\\ErrOrCstm\\ClientErCstm.png";
-
-            if (ClientList.SelectedItem == null)
+            if (ClientList.SelectedItems.Count == 0)
             {
-                ClientPictureBox.ImageLocation = errThumbnail;
                 return;
             }
-
             string clientSelectedlst = ClientList.SelectedItem.ToString();
             SelectedClient = clientSelectedlst;
 
-            string clientThumbDir = "Clients\\" + clientSelectedlst + "\\" + "thumbnail.png";
-            string clientJsonDir = "Clients\\" + clientSelectedlst + "\\ClientInfo.json";
-
             string json = File.ReadAllText(InfoFilePath);
             JObject obj = JObject.Parse(json);
-            obj["Client"] = SelectedClient;
+            obj["Client"] = ClientList.SelectedItem.ToString();
             File.WriteAllText(InfoFilePath, obj.ToString());
 
-            if (!File.Exists(clientThumbDir))
+            string errThumbnail = "Data\\ClientThmbnl\\ErrOrCstm\\ClientErCstm.png";
+
+            if (!File.Exists(ClientSettings.thumbnail))
             {
                 ClientPictureBox.ImageLocation = errThumbnail; //the crap works
             }
             else
             {
-                ClientPictureBox.ImageLocation = clientThumbDir;
+                ClientPictureBox.ImageLocation = ClientSettings.thumbnail;
             }
 
-            if (!File.Exists(clientJsonDir))
+            if (!File.Exists(ClientSettings.config))
             {
                 ClientInfoBox.Text = "Error, ClientInfo.Json doesn't exist! Which is needed in order for Auroria to launch the client properly, and to display client info! This can be caused by the Client folder itself being missing!"; // or maybe you forgot to add ClientInfo.json. ez fix!
             }
             else
             {
-                string clientjson = File.ReadAllText(clientJsonDir);
-                JObject obj2 = JObject.Parse(clientjson);
-
-                string clientds = (string)obj2["ClientDesc"];
-                ClientInfoBox.Text = clientds;
+                ClientInfoBox.Text = ClientSettings.Description;
             }
 
         }
