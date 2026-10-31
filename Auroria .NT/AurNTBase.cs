@@ -17,24 +17,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AuroriaResources;
 
-// Jay Jay if youre reading this then here is the checklist.
-
-//TODO LIST: 
-// 1.- Add all needed tabs to the launcher [done but most tabs r empty]
-// 2.- Add a loading screen [havent even started, oof]
-// 3.- Tidy up the UI and MAYBE optimize the code? [semi optimized?]
-
-// 4.- Figure out how to do a Json to catalog. [DONE]
-
-// 5.- Add live banner. Basically it grabs the text from https://sites.google.com/view/auroriainfopnl/home?authuser=1 and
-// converts it to the Banner text. [havent even started]
-
-// 6.- Do make the entire webserver (uhesruighaIEUoaegtuiodtyh)
-
-// thats just all the stuff we need to do for now, if you have any questions about anything then just ask me on discord. -Lucas
-// Oh and if you struggle on something thats aye okay just let me do it dont worry about it :D
-
-// note to lucas- NEVER TRY TO "organize" THE UI, EVER, AGAIN.
 namespace Auroria.NT
 {
     public partial class AurNTBase : Form
@@ -45,9 +27,7 @@ namespace Auroria.NT
         public bool ShowWebserver = false;
 
         public AurNTBase()
-        {   // Gonna be adding a loading screen soon. Which means we may need a bit of a delay here? I will explain
-            // if needed. -Lucas
-            // future lucas here: this is dumb
+        {   
 
             InitializeComponent();
 
