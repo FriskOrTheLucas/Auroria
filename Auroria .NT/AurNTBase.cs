@@ -295,7 +295,7 @@ namespace Auroria.NT
 
             if (AssetURLBox.Text == "")
             {
-                string RevertToDefault = "https://assetdelivery.roblox.com/v1/asset/";
+                string RevertToDefault = "http://proxy.95.fyi/assetrequest.php?";
                 AssetURLBox.Text = RevertToDefault;
             }
 

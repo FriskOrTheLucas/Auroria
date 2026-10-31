@@ -17,5 +17,11 @@ namespace AuroriaResources
 
             return response;
         }
+
+        public static string ServerAddress => GetInfo("ServerIP");
+
+        public static string Name => GetInfo("PlayerName");
+
+        public static string ID => GetInfo("UserID");
     }
 }
