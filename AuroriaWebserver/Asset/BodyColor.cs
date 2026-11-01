@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Text;
 
-namespace AuroriaWebserver.Mains
+namespace AuroriaWebserver.Asset
 {
     public static class BodyColor
     {

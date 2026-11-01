@@ -4,7 +4,7 @@ using System.IO;
 using System.Net;
 using AuroriaResources;
 
-namespace AuroriaWebserver.Mains
+namespace AuroriaWebserver.Asset
 {
     public static class AssetDelivery
     {

@@ -4,7 +4,7 @@ using System.Net;
 using System.IO;
 using AuroriaResources;
 
-namespace AuroriaWebserver.Mains
+namespace AuroriaWebserver.Game
 {
     public static class ScriptsHandler
     {
