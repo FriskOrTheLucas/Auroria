@@ -87,6 +87,7 @@
     <Compile Include="BodyColorsWindow.Designer.cs">
       <DependentUpon>BodyColorsWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Certs.cs" />
     <Compile Include="CheckPorts.cs" />
     <Compile Include="ClientStuff\ProcessLauncher.cs" />
     <Compile Include="hostsfile.cs" />

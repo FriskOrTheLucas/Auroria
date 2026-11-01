@@ -20,13 +20,15 @@ namespace AuroriaWebserver.Game
                 string playername = request.QueryString["userName"] ?? "Player";
                 string playerid = request.QueryString["userID"] ?? "1";
                 string bodycolorurl = AuroriaResources.PathHelper.GenerateBodyColorAshxURL;
+                string accesoryurl = AuroriaResources.PathHelper.GenerateCharacterAccesoryURL;
 
                 Console.WriteLine("Join URL was called!");
                 Console.WriteLine("Getting Client Script: " + ClientSettings.JoinScript);
                 string ReadWriteJoinscript = File.ReadAllText(ClientSettings.JoinScript);
                 ReadWriteJoinscript = ReadWriteJoinscript.Replace("{userid}", playerid);
                 ReadWriteJoinscript = ReadWriteJoinscript.Replace("{username}", playername);
-                ReadWriteJoinscript = ReadWriteJoinscript.Replace("{charapp}", bodycolorurl);
+                ReadWriteJoinscript = ReadWriteJoinscript.Replace("{charapp}", bodycolorurl + accesoryurl);
+                Console.WriteLine("Recevied Charapp URL: " + bodycolorurl + accesoryurl);
                 ReadWriteJoinscript = ReadWriteJoinscript.Replace("{ip}", ip);
                 ReadWriteJoinscript = ReadWriteJoinscript.Replace("{port}", port);
                 Console.WriteLine("Rewriting script values..");

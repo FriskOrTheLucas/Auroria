@@ -50,6 +50,14 @@ namespace AuroriaResources
             return response;
         }
 
+        public static bool GetNestedBool(string parent, string child)
+        {
+            string settingsjson = File.ReadAllText(config);
+            JObject obj = JObject.Parse(settingsjson);
+            bool response = (bool)obj[parent]?[child];
+            return response;
+        }
+
         public static string Description => GetInfo("Description");
 
         // made code like a million times more readable 
@@ -72,6 +80,16 @@ namespace AuroriaResources
             public static string Directory => GetNestedInfo("Studio", "Directory");
             public static string Client => GetNestedInfo("Studio", "Name");
             public static string Arguments => GetNestedInfo("Studio", "Arguments");
+        }
+
+        public class Appearance
+        {
+            public static bool SupportsAccesory => GetNestedBool("Appearance", "Accesory");
+            public static bool SupportsFace => GetNestedBool("Appearance", "Face");
+            public static bool SupportsHeads => GetNestedBool("Appearance", "Heads");
+            public static bool SupportsShirts => GetNestedBool("Appearance", "Shirts");
+            public static bool SupportsPants => GetNestedBool("Appearance", "Pants");
+            public static bool SupportsPackages => GetNestedBool("Appearance", "Packages");
         }
     }
 }

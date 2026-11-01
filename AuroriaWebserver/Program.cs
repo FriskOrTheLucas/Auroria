@@ -9,10 +9,10 @@ namespace AuroriaWebserver
         {
             HttpListener Server = new HttpListener();
 
-            Server.Prefixes.Add("http://rbxweb.lol/");
-            Server.Prefixes.Add("http://www.rbxweb.lol/");
-            Server.Prefixes.Add("http://api.rbxweb.lol/");
-            Server.Prefixes.Add("http://versioncompatibility.api.rbxweb.lol/");
+            Server.Prefixes.Add("http://roblox.com/");
+            Server.Prefixes.Add("http://www.roblox.com/");
+            Server.Prefixes.Add("http://api.roblox.com/");
+            Server.Prefixes.Add("http://versioncompatibility.api.roblox.com/");
 
             Server.Start();
 

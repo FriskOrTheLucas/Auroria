@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using AuroriaResources;
 
 namespace Auroria.NT
 {
@@ -14,12 +15,19 @@ namespace Auroria.NT
 
         public static void StartWebserver()
         {
+            bool showWebserver = PlayerSettings.ShowWebserver;
             ProcessStartInfo StartInfo = new ProcessStartInfo();
 
             StartInfo.FileName = Path.Combine("AuroriaWebserver.exe");
             StartInfo.UseShellExecute = true;
-            StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-
+            if (showWebserver == true)
+            {
+                StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+            }
+            else
+            {
+                StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            }
             WebserverProcess = Process.Start(StartInfo);
         }
 

@@ -18,7 +18,6 @@ namespace Auroria.NT
         public string InfoFilePath = "PlayerSettings.json";
         public string SelectedClient = "";
         public string CookieDir = @"data\cookie.txt";
-        public bool ShowWebserver = false;
 
         public AurNTBase()
         {   
@@ -267,6 +266,7 @@ namespace Auroria.NT
 
                 JObject objnw = new JObject
                 {
+                    { "ShowWebserver", "false" },
                     { "PlayerName", "Username" },
                     { "UserID", "123456789" },
                     { "AssetURL", "http://proxy.95.fyi/assetrequest.php?" },
@@ -323,6 +323,8 @@ namespace Auroria.NT
             LoadAvatarItm(TshrtSlot1, "TShirt", "chartshirt");
             LoadAvatarItm(ShrtSlot1, "Shirt", "charshirts");
             LoadAvatarItm(ShrtSlot1, "Pants", "charpants");
+
+            ShowWebserverBool.Checked = PlayerSettings.ShowWebserver;
         }
 
         public void SaveLoadedItm(string itemname, string id)
@@ -378,6 +380,7 @@ namespace Auroria.NT
 
                 JObject objnw = new JObject
                 {
+                    { "ShowWebserver", "false" },
                     { "PlayerName", "Username" },
                     { "UserID", "123456789" },
                     { "AssetURL", "http://proxy.95.fyi/assetrequest.php?" },
@@ -656,14 +659,20 @@ namespace Auroria.NT
         {
             if (ShowWebserverBool.Checked == true)
             {
-                ShowWebserver = true;
+                string json = File.ReadAllText(InfoFilePath);
+                JObject obj = JObject.Parse(json);
+
+                obj["ShowWebserver"] = ShowWebserverBool.Checked;
+                File.WriteAllText(InfoFilePath, obj.ToString());
             }
             else
             {
-                ShowWebserver = false;
-            }
+                string json = File.ReadAllText(InfoFilePath);
+                JObject obj = JObject.Parse(json);
 
-            MessageBox.Show("In order for this change to have effect, you need to restart the launcher.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                obj["ShowWebserver"] = ShowWebserverBool.Checked; 
+                File.WriteAllText(InfoFilePath, obj.ToString());
+            }
         }
 
         private void SrvrIPbox_TextChanged(object sender, EventArgs e)

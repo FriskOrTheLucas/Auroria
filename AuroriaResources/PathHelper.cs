@@ -87,10 +87,18 @@ namespace AuroriaResources
         {
             get
             {
-                string result = $"http://www.rbxweb.lol/asset/BodyColors.ashx?userID={HeadColor}-{LeftArmcolor}-{LeftLegcolor}-{RightArmcolor}-{RightLegcolor}-{TorsoColor}";
+                string result = $"http://www.roblox.com/asset/BodyColors.ashx?userID={HeadColor}-{LeftArmcolor}-{LeftLegcolor}-{RightArmcolor}-{RightLegcolor}-{TorsoColor}";
                 return result;
             }
         }
 
+        public static string GenerateCharacterAccesoryURL
+        {
+            get
+            {
+                string result = CustomizationHelper.AvatarHat1 + CustomizationHelper.AvatarHat2 + CustomizationHelper.AvatarHat3;
+                return result;
+            }
+        }
     }
 }
