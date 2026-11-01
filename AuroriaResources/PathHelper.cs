@@ -96,7 +96,11 @@ namespace AuroriaResources
         {
             get
             {
-                string result = CustomizationHelper.AvatarHat1 + CustomizationHelper.AvatarHat2 + CustomizationHelper.AvatarHat3;
+                string result = CustomizationHelper.AvatarHat1 + CustomizationHelper.AvatarHat2 + CustomizationHelper.AvatarHat3 + CustomizationHelper.Shirt + CustomizationHelper.Tshirt + CustomizationHelper.Pants;
+                if (string.IsNullOrWhiteSpace(result))
+                {
+                    return "";
+                }
                 return result;
             }
         }

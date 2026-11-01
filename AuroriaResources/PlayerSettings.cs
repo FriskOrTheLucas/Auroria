@@ -38,6 +38,7 @@ namespace AuroriaResources
         public static string GetHat3 => GetInfo("HatSlot3");
         public static string GetHead => GetInfo("Head"); //ayo
         public static string GetFace => GetInfo("Face");
+        public static string GetTShirt => GetInfo("TShirt");
         public static string GetShirt => GetInfo("Shirt");
         public static string GetPants => GetInfo("Pants");
         public static string GetPackage => GetInfo("Package");

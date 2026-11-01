@@ -84,9 +84,10 @@ namespace AuroriaResources
 
         public class Appearance
         {
-            public static bool SupportsAccesory => GetNestedBool("Appearance", "Accesory");
+            public static bool SupportsAccessory => GetNestedBool("Appearance", "Accessory");
             public static bool SupportsFace => GetNestedBool("Appearance", "Face");
             public static bool SupportsHeads => GetNestedBool("Appearance", "Heads");
+            public static bool SupportsTShirts => GetNestedBool("Appearance", "Tshirts"); // have to add this BS just for 2007E.
             public static bool SupportsShirts => GetNestedBool("Appearance", "Shirts");
             public static bool SupportsPants => GetNestedBool("Appearance", "Pants");
             public static bool SupportsPackages => GetNestedBool("Appearance", "Packages");

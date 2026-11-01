@@ -11,7 +11,7 @@ namespace AuroriaResources
         {
             get
             {
-                if (string.IsNullOrWhiteSpace(PlayerSettings.GetHat1))
+                if (string.IsNullOrWhiteSpace(PlayerSettings.GetHat1) || ClientSettings.Appearance.SupportsAccessory == false)
                 {
                     return "";
                 }
@@ -26,7 +26,7 @@ namespace AuroriaResources
         {
             get
             {
-                if (string.IsNullOrWhiteSpace(PlayerSettings.GetHat2))
+                if (string.IsNullOrWhiteSpace(PlayerSettings.GetHat2) || ClientSettings.Appearance.SupportsAccessory == false)
                 {
                     return "";
                 }
@@ -41,13 +41,58 @@ namespace AuroriaResources
         {
             get
             {
-                if (string.IsNullOrWhiteSpace(PlayerSettings.GetHat3))
+                if (string.IsNullOrWhiteSpace(PlayerSettings.GetHat3) || ClientSettings.Appearance.SupportsAccessory == false)
                 {
                     return "";
                 }
                 else
                 {
                     return $";http://www.roblox.com/asset/?id={PlayerSettings.GetHat3}";
+                }
+            }
+        }
+
+        public static string Shirt
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(PlayerSettings.GetShirt) || ClientSettings.Appearance.SupportsShirts == false)
+                {
+                    return "";
+                }
+                else
+                {
+                    return $";http://www.roblox.com/asset/?id={PlayerSettings.GetShirt}";
+                }
+            }
+        }
+
+        public static string Tshirt
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(PlayerSettings.GetTShirt) || ClientSettings.Appearance.SupportsTShirts == false)
+                {
+                    return "";
+                }
+                else
+                {
+                    return $";http://www.roblox.com/asset/?id={PlayerSettings.GetTShirt}";
+                }
+            }
+        }
+
+        public static string Pants
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(PlayerSettings.GetPants) || ClientSettings.Appearance.SupportsPants == false)
+                {
+                    return "";
+                }
+                else
+                {
+                    return $";http://www.roblox.com/asset/?id={PlayerSettings.GetPants}";
                 }
             }
         }
