@@ -8,6 +8,8 @@ using System.IO;
 using System.Windows.Forms;
 using AuroriaResources;
 using Auroria.NT.ClientStuff;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Auroria.NT
 {
@@ -135,8 +137,6 @@ namespace Auroria.NT
             {
                 AddClient(ClientList.Items, folder);
             }
-
-            
         }
 
         public void LoadCatalogListView(string directoryPath, ListView listview, ImageList imglist)
