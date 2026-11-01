@@ -90,9 +90,36 @@ namespace Auroria.NT
             }
         }
 
-        private void AddClient(ListBox.ObjectCollection @object, string folderpath)
+        // massive credits to ReBlox for this code, i could NOT figure this out.
+        private void AddClient(ListBox clientbox)
         {
-            @object.Add(Path.GetFileName(folderpath));
+            string[] clientdirectories;
+
+            if (Directory.Exists("Clients"))
+            {
+                clientdirectories = Directory.GetDirectories("Clients");
+
+                for (int thing = 0; thing < clientdirectories.Length; thing++)
+                {
+                    if (clientdirectories[thing].EndsWith("L") && (thing + 1) < clientdirectories.Length)
+                    {
+                        if (clientdirectories[thing + 1].EndsWith("M"))
+                        {
+                            clientbox.Items.Add(Path.GetFileName(clientdirectories[thing + 1]));
+                            clientbox.Items.Add(Path.GetFileName(clientdirectories[thing]));
+                            thing++;
+                        }
+                        else
+                        {
+                            clientbox.Items.Add(Path.GetFileName(clientdirectories[thing]));
+                        }
+                    }
+                    else
+                    {
+                        clientbox.Items.Add(Path.GetFileName(clientdirectories[thing]));
+                    }
+                }
+            }
         }
 
         private void PlayPage_Click(object sender, EventArgs e)
@@ -106,7 +133,6 @@ namespace Auroria.NT
             ClientPictureBox.ImageLocation = errThumbnail;
 
             string mapsFolder = "Maps";
-            string ClientsDirectory = "Clients";
 
             BackgroundBox.Image = Properties.Resources.BannerFull;
             CookieBox.Text = File.ReadAllText(CookieDir);
@@ -133,10 +159,8 @@ namespace Auroria.NT
                 AddFolder(folderNode, folder);
             }
 
-            foreach (string folder in Directory.GetDirectories(ClientsDirectory))
-            {
-                AddClient(ClientList.Items, folder);
-            }
+            AddClient(ClientList);
+
         }
 
         public void LoadCatalogListView(string directoryPath, ListView listview, ImageList imglist)
