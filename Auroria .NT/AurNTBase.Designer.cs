@@ -100,6 +100,7 @@
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.MOTD = new System.Windows.Forms.Label();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
+            this.StudioButton = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -873,7 +874,7 @@
             this.AssetURLBox.Name = "AssetURLBox";
             this.AssetURLBox.Size = new System.Drawing.Size(305, 26);
             this.AssetURLBox.TabIndex = 1;
-            this.AssetURLBox.Text = "http://proxy.95.fyi/assetrequest.php?id=";
+            this.AssetURLBox.Text = "http://proxy.95.fyi/assetrequest.php?";
             // 
             // CookieBox
             // 
@@ -899,8 +900,9 @@
             // DCButton
             // 
             this.DCButton.BackColor = System.Drawing.Color.SlateBlue;
+            this.DCButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DCButton.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DCButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DCButton.ForeColor = System.Drawing.Color.Black;
             this.DCButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DCButton.Location = new System.Drawing.Point(16, 15);
             this.DCButton.Name = "DCButton";
@@ -914,7 +916,7 @@
             // 
             this.ClientsLabel.AutoSize = true;
             this.ClientsLabel.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientsLabel.Location = new System.Drawing.Point(586, 175);
+            this.ClientsLabel.Location = new System.Drawing.Point(547, 175);
             this.ClientsLabel.Name = "ClientsLabel";
             this.ClientsLabel.Size = new System.Drawing.Size(99, 45);
             this.ClientsLabel.TabIndex = 1;
@@ -954,11 +956,23 @@
             this.BackgroundBox.TabIndex = 3;
             this.BackgroundBox.TabStop = false;
             // 
+            // StudioButton
+            // 
+            this.StudioButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.StudioButton.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StudioButton.Location = new System.Drawing.Point(639, 182);
+            this.StudioButton.Name = "StudioButton";
+            this.StudioButton.Size = new System.Drawing.Size(94, 35);
+            this.StudioButton.TabIndex = 19;
+            this.StudioButton.Text = "Studio";
+            this.StudioButton.UseVisualStyleBackColor = false;
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(762, 626);
+            this.Controls.Add(this.StudioButton);
             this.Controls.Add(this.MOTD);
             this.Controls.Add(this.BackgroundBox);
             this.Controls.Add(this.MapsTree);
@@ -1074,6 +1088,7 @@
         private System.Windows.Forms.RichTextBox TshrtInfoText;
         private System.Windows.Forms.ListView TshrtListView;
         private System.Windows.Forms.ImageList TshrtImgList;
+        private System.Windows.Forms.Button StudioButton;
     }
 }
 

@@ -38,10 +38,24 @@
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "Bright blue"}, -1, System.Drawing.SystemColors.Window, System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(105)))), ((int)(((byte)(172))))), null);
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Bright yellow"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(205)))), ((int)(((byte)(48))))), null);
+            "Bright green"}, -1, System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(151)))), ((int)(((byte)(75))))), null);
             System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Cool Yellow"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(234)))), ((int)(((byte)(141))))), null);
+            "Bright orange"}, -1, System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(125)))), ((int)(((byte)(63))))), null);
             System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Bright violet"}, -1, System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(50)))), ((int)(((byte)(124))))), null);
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Bright yellow"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(205)))), ((int)(((byte)(48))))), null);
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Cool Yellow"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(234)))), ((int)(((byte)(141))))), null);
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Earth green"}, -1, System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(65)))), ((int)(((byte)(43))))), null);
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Light stone grey"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(228)))), ((int)(((byte)(223))))), null);
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Medium stone grey"}, -1, System.Drawing.Color.Black, System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(162)))), ((int)(((byte)(165))))), null);
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Sand blue"}, -1, System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(157))))), null);
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
             "White Color"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(243))))), null);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BodyColorsWindow));
             this.bodycolorListView = new System.Windows.Forms.ListView();
@@ -68,10 +82,17 @@
             listViewItem2.Tag = "119";
             listViewItem3.Tag = "105";
             listViewItem4.Tag = "23";
-            listViewItem5.Tag = "24";
-            listViewItem6.Tag = "226";
-            listViewItem7.Tag = "1";
-            listViewItem7.ToolTipText = "Classic";
+            listViewItem5.Tag = "37";
+            listViewItem6.Tag = "106";
+            listViewItem7.Tag = "104";
+            listViewItem8.Tag = "24";
+            listViewItem9.Tag = "226";
+            listViewItem10.Tag = "141";
+            listViewItem11.Tag = "208";
+            listViewItem12.Tag = "194";
+            listViewItem13.Tag = "135";
+            listViewItem14.Tag = "1";
+            listViewItem14.ToolTipText = "Classic";
             this.bodycolorListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2,
@@ -79,7 +100,14 @@
             listViewItem4,
             listViewItem5,
             listViewItem6,
-            listViewItem7});
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10,
+            listViewItem11,
+            listViewItem12,
+            listViewItem13,
+            listViewItem14});
             this.bodycolorListView.Location = new System.Drawing.Point(12, 12);
             this.bodycolorListView.Name = "bodycolorListView";
             this.bodycolorListView.Size = new System.Drawing.Size(269, 352);
