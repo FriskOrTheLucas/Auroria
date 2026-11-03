@@ -42,5 +42,11 @@ namespace AuroriaResources
         public static string GetShirt => GetInfo("Shirt");
         public static string GetPants => GetInfo("Pants");
         public static string GetPackage => GetInfo("Package");
+        public static string HeadColor => GetInfo("Headcolor");
+        public static string LeftArmcolor => GetInfo("LeftArmcolor");
+        public static string LeftLegcolor => GetInfo("LeftLegcolor");
+        public static string RightArmcolor => GetInfo("RightArmcolor");
+        public static string RightLegcolor => GetInfo("RightLegcolor");
+        public static string TorsoColor => GetInfo("Torsocolor");
     }
 }

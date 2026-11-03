@@ -1,14 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using AuroriaResources;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Windows.Forms;
-using System.IO;
 
 namespace Auroria.NT
 {
@@ -22,47 +24,97 @@ namespace Auroria.NT
 
         public void BodyColorsWindow_load(object sender, EventArgs e)
         {
-            BodyColorLoad(bodycolorListView, HeadColorBox, "Headcolor");
-            BodyColorLoad(bodycolorListView, LeftArmColorBox, "LeftArmcolor");
-            BodyColorLoad(bodycolorListView, TorsoColorBox, "Torsocolor");
-            BodyColorLoad(bodycolorListView, RightArmColorBox, "RightArmcolor");
-            BodyColorLoad(bodycolorListView, RightLegColorBox, "RightLegcolor");
-            BodyColorLoad(bodycolorListView, LeftLegColorBox, "LeftLegcolor");
+            GetAndAddBodyColrs(bodycolorListView, colorList);
+
+            BodyColorLoad(HeadColorBox, PlayerSettings.HeadColor);
+            BodyColorLoad(LeftArmColorBox, PlayerSettings.LeftArmcolor);
+            BodyColorLoad(LeftLegColorBox, PlayerSettings.LeftLegcolor);
+            BodyColorLoad(RightArmColorBox, PlayerSettings.RightArmcolor);
+            BodyColorLoad(RightLegColorBox, PlayerSettings.RightLegcolor);
+            BodyColorLoad(TorsoColorBox, PlayerSettings.TorsoColor);    
         }
         private void bodycolorListView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void BodyColorButton(ListView colorsview, PictureBox colorslot, string value)
+        private void GetAndAddBodyColrs(ListView colorsview, ImageList Colorlist)
         {
-            if (colorsview.SelectedItems.Count == 0)
+            string BodyColorInfo = File.ReadAllText("Data\\BodyColors.json");
+            JObject obj = JObject.Parse(BodyColorInfo);
+
+            foreach (var color in obj.Properties())
             {
-                MessageBox.Show("Please select a color.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                JObject value = (JObject)color.Value;
+                ListViewItem Item = new ListViewItem((string)value["Name"]);
+                Item.Tag = color.Name;
+                Colorlist.Images.Add(color.Name, GenerateColorImage((string)value["Color"]));
+                Item.ImageKey = color.Name;
+
+                colorsview.Items.Add(Item);
             }
-            colorslot.BackColor = colorsview.SelectedItems[0].BackColor;
-            colorslot.Tag = colorsview.SelectedItems[0].Tag;
-
-            string json = File.ReadAllText(InfoFile);
-            JObject obj = JObject.Parse(json);
-
-            obj[value] = colorslot.Tag.ToString();
-            File.WriteAllText(InfoFile, obj.ToString());
         }
 
-        private void BodyColorLoad(ListView colorsview, PictureBox colorslot, string value)
+        private Bitmap GenerateColorImage(string value)
         {
-            string json = File.ReadAllText(InfoFile);
-            JObject obj = JObject.Parse(json);
+            string[] array = value.Split(',');
+            int red = int.Parse(array[0]);
+            int green = int.Parse(array[1]);
+            int blue = int.Parse(array[2]);
 
-            string ColorTag = (string)obj[value];
-
-            foreach (ListViewItem item in colorsview.Items)
+            Bitmap bitmap = new Bitmap(32, 32);
+            using (Graphics rgb = Graphics.FromImage(bitmap))
             {
-                if (item.Tag.ToString() == ColorTag)
+                rgb.FillRectangle(new SolidBrush(Color.FromArgb(red, green, blue)), 0, 0, 32, 32);
+            }
+            return bitmap;
+        }
+
+        private void BodyColorButton(ListView colorsview, PictureBox colorslot, string value)
+        {
+            if (colorsview.SelectedItems == null)
+            {
+                return;
+            }
+
+            string BodyColorInfo = File.ReadAllText("Data\\BodyColors.json");
+            JObject obj = JObject.Parse(BodyColorInfo);
+
+            foreach (var color in obj.Properties())
+            {
+                if (color.Name == colorsview.SelectedItems[0].Tag.ToString())
                 {
-                    colorslot.BackColor = item.BackColor;
+                    string rgb = (string)color.Value["Color"];
+                    string[] array = rgb.Split(',');
+                    int red = int.Parse(array[0]);
+                    int green = int.Parse(array[1]);
+                    int blue = int.Parse(array[2]);
+
+                    colorslot.BackColor = Color.FromArgb(red, green, blue);
+                }
+            }
+
+            JObject obj2 = JObject.Parse(File.ReadAllText(InfoFile));
+            obj2[value] = colorsview.SelectedItems[0].Tag.ToString();
+            File.WriteAllText(InfoFile, obj2.ToString());
+        }
+
+        private void BodyColorLoad(PictureBox colorslot, string value)
+        {
+            string BodyColorInfo = File.ReadAllText("Data\\BodyColors.json");
+            JObject obj = JObject.Parse(BodyColorInfo);
+
+            foreach (var color in obj.Properties())
+            {
+                if (color.Name == value)
+                {
+                    string rgb = (string)color.Value["Color"];
+                    string[] array = rgb.Split(',');
+                    int red = int.Parse(array[0]);
+                    int green = int.Parse(array[1]);
+                    int blue = int.Parse(array[2]);
+
+                    colorslot.BackColor = Color.FromArgb(red, green, blue);
                 }
             }
         }
