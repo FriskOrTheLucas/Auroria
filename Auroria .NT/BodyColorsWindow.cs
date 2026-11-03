@@ -72,7 +72,7 @@ namespace Auroria.NT
 
         private void BodyColorButton(ListView colorsview, PictureBox colorslot, string value)
         {
-            if (colorsview.SelectedItems == null)
+            if (colorsview.SelectedItems.Count == 0)
             {
                 return;
             }
