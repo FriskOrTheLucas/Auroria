@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Asset\CharacterFetch.cs" />
     <Compile Include="IDE\Landing.cs" />
     <Compile Include="IDE\Toolbox.cs" />
     <Compile Include="Asset\AssetDelivery.cs" />

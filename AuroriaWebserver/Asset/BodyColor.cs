@@ -6,7 +6,7 @@ namespace AuroriaWebserver.Asset
     public static class BodyColor
     {
 
-        public static void DoThing(HttpListenerContext context) // im sorry i couldnt come up with a better name
+        public static void HandleBodyColor(HttpListenerContext context) // im sorry i couldnt come up with a better name
         {
             HttpListenerRequest request = context.Request;
             HttpListenerResponse response = context.Response;

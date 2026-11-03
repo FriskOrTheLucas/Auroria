@@ -47,7 +47,12 @@ namespace AuroriaWebserver
 
             if (AbsolutePath.Equals("/asset/bodycolors.ashx"))
             {
-                BodyColor.DoThing(context);
+                BodyColor.HandleBodyColor(context);
+            }
+
+            if (AbsolutePath.Equals("/asset/characterfetch.ashx"))
+            {
+                //add character fetch handler here
             }
 
             if (AbsolutePath.Equals("/asset/")) 
