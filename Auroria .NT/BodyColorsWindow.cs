@@ -43,15 +43,23 @@ namespace Auroria.NT
             string BodyColorInfo = File.ReadAllText("Data\\BodyColors.json");
             JObject obj = JObject.Parse(BodyColorInfo);
 
-            foreach (var color in obj.Properties())
+            try
             {
-                JObject value = (JObject)color.Value;
-                ListViewItem Item = new ListViewItem((string)value["Name"]);
-                Item.Tag = color.Name;
-                Colorlist.Images.Add(color.Name, GenerateColorImage((string)value["Color"]));
-                Item.ImageKey = color.Name;
+                foreach (var color in obj.Properties())
+                {
+                    JObject value = (JObject)color.Value;
+                    ListViewItem Item = new ListViewItem((string)value["Name"]);
+                    Item.Tag = color.Name;
+                    Colorlist.Images.Add(color.Name, GenerateColorImage((string)value["Color"]));
+                    Item.ImageKey = color.Name;
 
-                colorsview.Items.Add(Item);
+                    colorsview.Items.Add(Item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occured while trying to load bodycolors: {ex.Message}", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
@@ -77,26 +85,34 @@ namespace Auroria.NT
                 return;
             }
 
-            string BodyColorInfo = File.ReadAllText("Data\\BodyColors.json");
-            JObject obj = JObject.Parse(BodyColorInfo);
-
-            foreach (var color in obj.Properties())
+            try
             {
-                if (color.Name == colorsview.SelectedItems[0].Tag.ToString())
+                string BodyColorInfo = File.ReadAllText("Data\\BodyColors.json");
+                JObject obj = JObject.Parse(BodyColorInfo);
+
+                foreach (var color in obj.Properties())
                 {
-                    string rgb = (string)color.Value["Color"];
-                    string[] array = rgb.Split(',');
-                    int red = int.Parse(array[0]);
-                    int green = int.Parse(array[1]);
-                    int blue = int.Parse(array[2]);
+                    if (color.Name == colorsview.SelectedItems[0].Tag.ToString())
+                    {
+                        string rgb = (string)color.Value["Color"];
+                        string[] array = rgb.Split(',');
+                        int red = int.Parse(array[0]);
+                        int green = int.Parse(array[1]);
+                        int blue = int.Parse(array[2]);
 
-                    colorslot.BackColor = Color.FromArgb(red, green, blue);
+                        colorslot.BackColor = Color.FromArgb(red, green, blue);
+                    }
                 }
-            }
 
-            JObject obj2 = JObject.Parse(File.ReadAllText(InfoFile));
-            obj2[value] = colorsview.SelectedItems[0].Tag.ToString();
-            File.WriteAllText(InfoFile, obj2.ToString());
+                JObject obj2 = JObject.Parse(File.ReadAllText(InfoFile));
+                obj2[value] = colorsview.SelectedItems[0].Tag.ToString();
+                File.WriteAllText(InfoFile, obj2.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occured while trying to select bodycolors: {ex.Message}", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         private void BodyColorLoad(PictureBox colorslot, string value)
