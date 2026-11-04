@@ -1,9 +1,10 @@
-﻿using System;
-using System.Net;
+﻿using AuroriaWebserver.Asset;
 using AuroriaWebserver.Game;
-using AuroriaWebserver.Asset;
 using AuroriaWebserver.IDE;
 using AuroriaWebserver.staticHTML;
+using System;
+using System.Net;
+using System.Text;
 
 
 namespace AuroriaWebserver
@@ -53,6 +54,20 @@ namespace AuroriaWebserver
             if (AbsolutePath.Equals("/asset/characterfetch.ashx"))
             {
                 //add character fetch handler here
+            }
+
+            if (AbsolutePath.Equals("/error/reportdialog.aspx"))
+            {
+                Console.WriteLine("report dialog recieved.");
+                HttpListenerResponse response = context.Response;
+
+                string responseString = "just close out of this lol";
+
+                byte[] buffer = Encoding.UTF8.GetBytes(responseString);
+
+                response.ContentLength64 = buffer.Length;
+                response.OutputStream.Write(buffer, 0, buffer.Length);
+                response.OutputStream.Close();
             }
 
             if (AbsolutePath.Equals("/asset/")) 

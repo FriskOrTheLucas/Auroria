@@ -277,6 +277,7 @@
             // 
             // RndrBtn
             // 
+            this.RndrBtn.Enabled = false;
             this.RndrBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RndrBtn.Location = new System.Drawing.Point(409, 12);
             this.RndrBtn.Name = "RndrBtn";
