@@ -60,6 +60,55 @@ namespace AuroriaWebserver.Game
             }
         }
 
+        public static void HandleVisit(HttpListenerContext context)
+        {
+            try
+            {
+                HttpListenerRequest request = context.Request;
+                HttpListenerResponse response = context.Response;
+
+                string playername = request.QueryString["userName"] ?? "Player";
+                string playerid = request.QueryString["userID"] ?? "1";
+
+                Console.WriteLine("Join URL was called!");
+                Console.WriteLine("Getting Client Script: " + ClientSettings.VisitScript);
+                string ReadWriteVisitscript = File.ReadAllText(ClientSettings.VisitScript);
+                ReadWriteVisitscript = ReadWriteVisitscript.Replace("{userid}", playerid);
+                ReadWriteVisitscript = ReadWriteVisitscript.Replace("{username}", playername);
+                if (string.IsNullOrWhiteSpace(PathHelper.GenerateCharacterAccesoryURL))
+                {
+                    ReadWriteVisitscript = ReadWriteVisitscript.Replace("{charapp}", PathHelper.GenerateBodyColorAshxURL);
+                    Console.WriteLine("Rewrote script bodycolors");
+                }
+                else
+                {
+                    ReadWriteVisitscript = ReadWriteVisitscript.Replace("{charapp}", PathHelper.GenerateBodyColorAshxURL + PathHelper.GenerateCharacterAccesoryURL);
+                    Console.WriteLine("Rewrote script charapp");
+                }
+                Console.WriteLine("Recevied Charapp URL: " + PathHelper.GenerateBodyColorAshxURL + PathHelper.GenerateCharacterAccesoryURL);
+
+                string responseString = ReadWriteVisitscript;
+
+                byte[] buffer = Encoding.UTF8.GetBytes(responseString);
+
+                response.ContentLength64 = buffer.Length;
+                response.OutputStream.Write(buffer, 0, buffer.Length);
+                response.OutputStream.Close();
+                response.Close();
+                Console.WriteLine("Done!");
+            }
+            catch (Exception ex)
+            {
+                HttpListenerResponse response = context.Response;
+                Console.WriteLine("Error in HandleJoin: " + ex.Message);
+                byte[] buffer = Encoding.UTF8.GetBytes("An unexpected error occured when getting the gameserver script: " + ex.Message);
+                response.ContentLength64 = buffer.Length;
+                response.OutputStream.Write(buffer, 0, buffer.Length);
+                response.OutputStream.Close();
+                response.Close();
+            }
+        }
+
         public static void HandleGameserver(HttpListenerContext context)
         {
             try
