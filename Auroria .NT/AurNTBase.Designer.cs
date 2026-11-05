@@ -101,6 +101,7 @@
             this.MOTD = new System.Windows.Forms.Label();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.StudioButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -112,6 +113,7 @@
             this.TshrtTab.SuspendLayout();
             this.ShrtTab.SuspendLayout();
             this.PntTab.SuspendLayout();
+            this.PckgeTab.SuspendLayout();
             this.PacksTab.SuspendLayout();
             this.SettingTab.SuspendLayout();
             this.SettingsTabs.SuspendLayout();
@@ -622,6 +624,7 @@
             // 
             // PckgeTab
             // 
+            this.PckgeTab.Controls.Add(this.label2);
             this.PckgeTab.Location = new System.Drawing.Point(4, 34);
             this.PckgeTab.Name = "PckgeTab";
             this.PckgeTab.Size = new System.Drawing.Size(475, 284);
@@ -968,6 +971,18 @@
             this.StudioButton.Text = "Studio";
             this.StudioButton.UseVisualStyleBackColor = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(5, 107);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(466, 76);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Packages will be added in 0.2 \r\nwhen I have it figured out.";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1000,6 +1015,8 @@
             this.TshrtTab.ResumeLayout(false);
             this.ShrtTab.ResumeLayout(false);
             this.PntTab.ResumeLayout(false);
+            this.PckgeTab.ResumeLayout(false);
+            this.PckgeTab.PerformLayout();
             this.PacksTab.ResumeLayout(false);
             this.PacksTab.PerformLayout();
             this.SettingTab.ResumeLayout(false);
@@ -1090,6 +1107,7 @@
         private System.Windows.Forms.ListView TshrtListView;
         private System.Windows.Forms.ImageList TshrtImgList;
         private System.Windows.Forms.Button StudioButton;
+        private System.Windows.Forms.Label label2;
     }
 }
 
