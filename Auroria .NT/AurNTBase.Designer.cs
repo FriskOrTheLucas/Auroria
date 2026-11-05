@@ -72,13 +72,18 @@
             this.PantsListView = new System.Windows.Forms.ListView();
             this.PntsImgList = new System.Windows.Forms.ImageList(this.components);
             this.PckgeTab = new System.Windows.Forms.TabPage();
+            this.packageLabel = new System.Windows.Forms.Label();
             this.PlayerNameBox = new System.Windows.Forms.TextBox();
             this.PlayerIDBox = new System.Windows.Forms.TextBox();
             this.InfoTab = new System.Windows.Forms.TabPage();
             this.PacksTab = new System.Windows.Forms.TabPage();
+            this.DisableClientPack = new System.Windows.Forms.Button();
+            this.DisableAssetPack = new System.Windows.Forms.Button();
             this.PacksLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ClientPackBox = new System.Windows.Forms.ListBox();
             this.AssetPacksBox = new System.Windows.Forms.GroupBox();
+            this.AssetPackBox = new System.Windows.Forms.ListBox();
             this.SettingTab = new System.Windows.Forms.TabPage();
             this.SettingsTabs = new System.Windows.Forms.TabControl();
             this.LauncherSettings = new System.Windows.Forms.TabPage();
@@ -115,6 +120,8 @@
             this.PntTab.SuspendLayout();
             this.PckgeTab.SuspendLayout();
             this.PacksTab.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.AssetPacksBox.SuspendLayout();
             this.SettingTab.SuspendLayout();
             this.SettingsTabs.SuspendLayout();
             this.LauncherSettings.SuspendLayout();
@@ -352,7 +359,7 @@
             this.CatalogTabsOptions.Location = new System.Drawing.Point(6, 59);
             this.CatalogTabsOptions.Name = "CatalogTabsOptions";
             this.CatalogTabsOptions.SelectedIndex = 0;
-            this.CatalogTabsOptions.Size = new System.Drawing.Size(483, 322);
+            this.CatalogTabsOptions.Size = new System.Drawing.Size(483, 315);
             this.CatalogTabsOptions.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.CatalogTabsOptions.TabIndex = 0;
             // 
@@ -366,7 +373,7 @@
             this.HatTab.Location = new System.Drawing.Point(4, 34);
             this.HatTab.Name = "HatTab";
             this.HatTab.Padding = new System.Windows.Forms.Padding(3);
-            this.HatTab.Size = new System.Drawing.Size(475, 284);
+            this.HatTab.Size = new System.Drawing.Size(475, 277);
             this.HatTab.TabIndex = 0;
             this.HatTab.Text = "Hats";
             this.HatTab.UseVisualStyleBackColor = true;
@@ -624,13 +631,25 @@
             // 
             // PckgeTab
             // 
-            this.PckgeTab.Controls.Add(this.label2);
+            this.PckgeTab.Controls.Add(this.packageLabel);
             this.PckgeTab.Location = new System.Drawing.Point(4, 34);
             this.PckgeTab.Name = "PckgeTab";
             this.PckgeTab.Size = new System.Drawing.Size(475, 284);
             this.PckgeTab.TabIndex = 6;
             this.PckgeTab.Text = "Packages";
             this.PckgeTab.UseVisualStyleBackColor = true;
+            // 
+            // packageLabel
+            // 
+            this.packageLabel.AutoSize = true;
+            this.packageLabel.Font = new System.Drawing.Font("Arial Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.packageLabel.ForeColor = System.Drawing.Color.Red;
+            this.packageLabel.Location = new System.Drawing.Point(5, 107);
+            this.packageLabel.Name = "packageLabel";
+            this.packageLabel.Size = new System.Drawing.Size(466, 76);
+            this.packageLabel.TabIndex = 0;
+            this.packageLabel.Text = "Packages will be added in 0.2 \r\nwhen I have it figured out.";
+            this.packageLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // PlayerNameBox
             // 
@@ -670,6 +689,8 @@
             // PacksTab
             // 
             this.PacksTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PacksTab.Controls.Add(this.DisableClientPack);
+            this.PacksTab.Controls.Add(this.DisableAssetPack);
             this.PacksTab.Controls.Add(this.PacksLabel);
             this.PacksTab.Controls.Add(this.groupBox1);
             this.PacksTab.Controls.Add(this.AssetPacksBox);
@@ -679,6 +700,26 @@
             this.PacksTab.TabIndex = 6;
             this.PacksTab.Text = "Packs";
             this.PacksTab.ToolTipText = "Includes Assetpacks and Clientpacks. Both will be explained in the tab.";
+            // 
+            // DisableClientPack
+            // 
+            this.DisableClientPack.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DisableClientPack.Location = new System.Drawing.Point(256, 92);
+            this.DisableClientPack.Name = "DisableClientPack";
+            this.DisableClientPack.Size = new System.Drawing.Size(95, 29);
+            this.DisableClientPack.TabIndex = 4;
+            this.DisableClientPack.Text = "Disable";
+            this.DisableClientPack.UseVisualStyleBackColor = true;
+            // 
+            // DisableAssetPack
+            // 
+            this.DisableAssetPack.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DisableAssetPack.Location = new System.Drawing.Point(12, 92);
+            this.DisableAssetPack.Name = "DisableAssetPack";
+            this.DisableAssetPack.Size = new System.Drawing.Size(95, 29);
+            this.DisableAssetPack.TabIndex = 3;
+            this.DisableAssetPack.Text = "Disable";
+            this.DisableAssetPack.UseVisualStyleBackColor = true;
             // 
             // PacksLabel
             // 
@@ -695,6 +736,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ClientPackBox);
             this.groupBox1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(256, 121);
             this.groupBox1.Name = "groupBox1";
@@ -703,8 +745,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Client Packs";
             // 
+            // ClientPackBox
+            // 
+            this.ClientPackBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientPackBox.FormattingEnabled = true;
+            this.ClientPackBox.ItemHeight = 16;
+            this.ClientPackBox.Location = new System.Drawing.Point(6, 29);
+            this.ClientPackBox.Name = "ClientPackBox";
+            this.ClientPackBox.Size = new System.Drawing.Size(214, 212);
+            this.ClientPackBox.TabIndex = 6;
+            // 
             // AssetPacksBox
             // 
+            this.AssetPacksBox.Controls.Add(this.AssetPackBox);
             this.AssetPacksBox.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AssetPacksBox.Location = new System.Drawing.Point(12, 121);
             this.AssetPacksBox.Name = "AssetPacksBox";
@@ -712,6 +765,16 @@
             this.AssetPacksBox.TabIndex = 0;
             this.AssetPacksBox.TabStop = false;
             this.AssetPacksBox.Text = "Asset Packs";
+            // 
+            // AssetPackBox
+            // 
+            this.AssetPackBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AssetPackBox.FormattingEnabled = true;
+            this.AssetPackBox.ItemHeight = 16;
+            this.AssetPackBox.Location = new System.Drawing.Point(6, 29);
+            this.AssetPackBox.Name = "AssetPackBox";
+            this.AssetPackBox.Size = new System.Drawing.Size(214, 212);
+            this.AssetPackBox.TabIndex = 5;
             // 
             // SettingTab
             // 
@@ -751,6 +814,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.ShowWebserverBool);
             this.groupBox2.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
@@ -906,7 +970,7 @@
             this.DCButton.BackColor = System.Drawing.Color.SlateBlue;
             this.DCButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DCButton.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DCButton.ForeColor = System.Drawing.Color.Black;
+            this.DCButton.ForeColor = System.Drawing.Color.White;
             this.DCButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DCButton.Location = new System.Drawing.Point(16, 15);
             this.DCButton.Name = "DCButton";
@@ -974,14 +1038,13 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(5, 107);
+            this.label2.Location = new System.Drawing.Point(13, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(466, 76);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Packages will be added in 0.2 \r\nwhen I have it figured out.";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Size = new System.Drawing.Size(344, 18);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "You\'ll need to restart the launcher after changing this*";
             // 
             // AurNTBase
             // 
@@ -1019,6 +1082,8 @@
             this.PckgeTab.PerformLayout();
             this.PacksTab.ResumeLayout(false);
             this.PacksTab.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.AssetPacksBox.ResumeLayout(false);
             this.SettingTab.ResumeLayout(false);
             this.SettingsTabs.ResumeLayout(false);
             this.LauncherSettings.ResumeLayout(false);
@@ -1107,6 +1172,11 @@
         private System.Windows.Forms.ListView TshrtListView;
         private System.Windows.Forms.ImageList TshrtImgList;
         private System.Windows.Forms.Button StudioButton;
+        private System.Windows.Forms.Label packageLabel;
+        private System.Windows.Forms.Button DisableClientPack;
+        private System.Windows.Forms.Button DisableAssetPack;
+        private System.Windows.Forms.ListBox ClientPackBox;
+        private System.Windows.Forms.ListBox AssetPackBox;
         private System.Windows.Forms.Label label2;
     }
 }
