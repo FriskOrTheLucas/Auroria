@@ -75,12 +75,19 @@ namespace AuroriaWebserver
                 response.OutputStream.Close();
             }
 
-            if (AbsolutePath.Equals("/asset/")) 
+            if (AbsolutePath.Equals("/asset/"))
             {
                 AssetDelivery.HandleDelivery(context);
             }
 
             if (AbsolutePath.Equals("/game/machineconfiguration.ashx"))
+            {
+                context.Response.StatusCode = 200;
+                context.Response.ContentLength64 = 0;
+                context.Response.OutputStream.Close();
+            }
+
+            if (AbsolutePath.Equals("/game/keepalivepinger.ashx"))
             {
                 context.Response.StatusCode = 200;
                 context.Response.ContentLength64 = 0;
