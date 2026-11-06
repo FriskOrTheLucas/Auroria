@@ -15,9 +15,13 @@ namespace AuroriaResources
                 {
                     return "";
                 }
-                else
+                else if (ClientSettings.Ability.WillDieOnRedirect)
                 {
                     return $";http://www.roblox.com/asset/?id={PlayerSettings.GetHat1}";
+                }
+                else
+                {
+                    return PlayerSettings.GetHat1;
                 }
             }
         }
@@ -30,9 +34,13 @@ namespace AuroriaResources
                 {
                     return "";
                 }
-                else
+                else if (ClientSettings.Ability.WillDieOnRedirect)
                 {
                     return $";http://www.roblox.com/asset/?id={PlayerSettings.GetHat2}";
+                }
+                else
+                {
+                    return PlayerSettings.GetHat2;
                 }
             }
         }
@@ -45,9 +53,13 @@ namespace AuroriaResources
                 {
                     return "";
                 }
-                else
+                else if (ClientSettings.Ability.WillDieOnRedirect)
                 {
                     return $";http://www.roblox.com/asset/?id={PlayerSettings.GetHat3}";
+                }
+                else
+                {
+                    return PlayerSettings.GetHat3;
                 }
             }
         }
@@ -60,9 +72,13 @@ namespace AuroriaResources
                 {
                     return "";
                 }
-                else
+                else if (ClientSettings.Ability.WillDieOnRedirect)
                 {
                     return $";http://www.roblox.com/asset/?id={PlayerSettings.GetShirt}";
+                }
+                else
+                {
+                    return PlayerSettings.GetShirt;
                 }
             }
         }
@@ -75,9 +91,13 @@ namespace AuroriaResources
                 {
                     return "";
                 }
-                else
+                else if (ClientSettings.Ability.WillDieOnRedirect)
                 {
                     return $";http://www.roblox.com/asset/?id={PlayerSettings.GetTShirt}";
+                }
+                else
+                {
+                    return PlayerSettings.GetTShirt;
                 }
             }
         }
@@ -90,9 +110,13 @@ namespace AuroriaResources
                 {
                     return "";
                 }
-                else
+                else if (ClientSettings.Ability.WillDieOnRedirect)
                 {
                     return $";http://www.roblox.com/asset/?id={PlayerSettings.GetPants}";
+                }
+                else
+                {
+                    return PlayerSettings.GetPants;
                 }
             }
         }
