@@ -58,14 +58,13 @@ namespace AuroriaResources
             return response;
         }
 
-        public static bool GetClientAbility(string ability)
+        public static bool GetClientAbility(string value)
         {
             string settingsjson = File.ReadAllText(config);
             JObject obj = JObject.Parse(settingsjson);
 
-            JArray abilities = (JArray)obj["ClientAbilities"];
-
-            return abilities.Any(x => x.ToString() == ability);
+            string[] ability = obj["ClientAbilities"].ToObject<string[]>();
+            return ability.Contains(value);
         }
 
         public static string Description => GetInfo("Description");
