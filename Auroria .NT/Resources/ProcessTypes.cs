@@ -4,6 +4,8 @@
     {
         Play,
         Host,
+        RCCService,
+        Render,
         Studio
     }
 }

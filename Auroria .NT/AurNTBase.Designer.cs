@@ -35,7 +35,7 @@
             this.HostButtonC = new System.Windows.Forms.PictureBox();
             this.PlayButtonC = new System.Windows.Forms.PictureBox();
             this.hostingtypelabel = new System.Windows.Forms.Label();
-            this.HostingBox = new System.Windows.Forms.ComboBox();
+            this.HostingTypeBox = new System.Windows.Forms.ComboBox();
             this.ClientInfoBox = new System.Windows.Forms.RichTextBox();
             this.ClientPictureBox = new System.Windows.Forms.PictureBox();
             this.ClientList = new System.Windows.Forms.ListBox();
@@ -88,6 +88,7 @@
             this.SettingsTabs = new System.Windows.Forms.TabControl();
             this.LauncherSettings = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.ShowWebserverBool = new System.Windows.Forms.CheckBox();
             this.AssetSettings = new System.Windows.Forms.TabPage();
             this.AsDelGB = new System.Windows.Forms.GroupBox();
@@ -106,7 +107,6 @@
             this.MOTD = new System.Windows.Forms.Label();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.StudioButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -158,7 +158,7 @@
             this.PlayTab.Controls.Add(this.HostButtonC);
             this.PlayTab.Controls.Add(this.PlayButtonC);
             this.PlayTab.Controls.Add(this.hostingtypelabel);
-            this.PlayTab.Controls.Add(this.HostingBox);
+            this.PlayTab.Controls.Add(this.HostingTypeBox);
             this.PlayTab.Controls.Add(this.ClientInfoBox);
             this.PlayTab.Controls.Add(this.ClientPictureBox);
             this.PlayTab.Controls.Add(this.ClientList);
@@ -209,14 +209,13 @@
             this.hostingtypelabel.TabIndex = 16;
             this.hostingtypelabel.Text = "Hosting Type";
             // 
-            // HostingBox
+            // HostingTypeBox
             // 
-            this.HostingBox.FormattingEnabled = true;
-            this.HostingBox.Location = new System.Drawing.Point(286, 344);
-            this.HostingBox.Name = "HostingBox";
-            this.HostingBox.Size = new System.Drawing.Size(202, 22);
-            this.HostingBox.TabIndex = 15;
-            this.HostingBox.MouseHover += new System.EventHandler(this.HostingBox_Click);
+            this.HostingTypeBox.FormattingEnabled = true;
+            this.HostingTypeBox.Location = new System.Drawing.Point(286, 344);
+            this.HostingTypeBox.Name = "HostingTypeBox";
+            this.HostingTypeBox.Size = new System.Drawing.Size(202, 22);
+            this.HostingTypeBox.TabIndex = 15;
             // 
             // ClientInfoBox
             // 
@@ -451,7 +450,7 @@
             // 
             this.HeadsTab.Location = new System.Drawing.Point(4, 34);
             this.HeadsTab.Name = "HeadsTab";
-            this.HeadsTab.Size = new System.Drawing.Size(475, 284);
+            this.HeadsTab.Size = new System.Drawing.Size(475, 277);
             this.HeadsTab.TabIndex = 4;
             this.HeadsTab.Text = "Heads";
             this.HeadsTab.UseVisualStyleBackColor = true;
@@ -460,7 +459,7 @@
             // 
             this.FaceTab.Location = new System.Drawing.Point(4, 34);
             this.FaceTab.Name = "FaceTab";
-            this.FaceTab.Size = new System.Drawing.Size(475, 284);
+            this.FaceTab.Size = new System.Drawing.Size(475, 277);
             this.FaceTab.TabIndex = 5;
             this.FaceTab.Text = "Faces";
             this.FaceTab.UseVisualStyleBackColor = true;
@@ -472,7 +471,7 @@
             this.TshrtTab.Controls.Add(this.TshrtListView);
             this.TshrtTab.Location = new System.Drawing.Point(4, 34);
             this.TshrtTab.Name = "TshrtTab";
-            this.TshrtTab.Size = new System.Drawing.Size(475, 284);
+            this.TshrtTab.Size = new System.Drawing.Size(475, 277);
             this.TshrtTab.TabIndex = 3;
             this.TshrtTab.Text = "T-Shirts";
             this.TshrtTab.UseVisualStyleBackColor = true;
@@ -527,7 +526,7 @@
             this.ShrtTab.Location = new System.Drawing.Point(4, 34);
             this.ShrtTab.Name = "ShrtTab";
             this.ShrtTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ShrtTab.Size = new System.Drawing.Size(475, 284);
+            this.ShrtTab.Size = new System.Drawing.Size(475, 277);
             this.ShrtTab.TabIndex = 1;
             this.ShrtTab.Text = "Shirts";
             this.ShrtTab.UseVisualStyleBackColor = true;
@@ -582,7 +581,7 @@
             this.PntTab.Controls.Add(this.PantsListView);
             this.PntTab.Location = new System.Drawing.Point(4, 34);
             this.PntTab.Name = "PntTab";
-            this.PntTab.Size = new System.Drawing.Size(475, 284);
+            this.PntTab.Size = new System.Drawing.Size(475, 277);
             this.PntTab.TabIndex = 2;
             this.PntTab.Text = "Pants";
             this.PntTab.UseVisualStyleBackColor = true;
@@ -634,7 +633,7 @@
             this.PckgeTab.Controls.Add(this.packageLabel);
             this.PckgeTab.Location = new System.Drawing.Point(4, 34);
             this.PckgeTab.Name = "PckgeTab";
-            this.PckgeTab.Size = new System.Drawing.Size(475, 284);
+            this.PckgeTab.Size = new System.Drawing.Size(475, 277);
             this.PckgeTab.TabIndex = 6;
             this.PckgeTab.Text = "Packages";
             this.PckgeTab.UseVisualStyleBackColor = true;
@@ -824,6 +823,17 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Webserver";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(13, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(344, 18);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "You\'ll need to restart the launcher after changing this*";
             // 
             // ShowWebserverBool
             // 
@@ -1035,17 +1045,6 @@
             this.StudioButton.Text = "Studio";
             this.StudioButton.UseVisualStyleBackColor = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(13, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(344, 18);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "You\'ll need to restart the launcher after changing this*";
-            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1146,7 +1145,7 @@
         private System.Windows.Forms.Button HatsSlot3;
         private System.Windows.Forms.Button HatsSlot2;
         private System.Windows.Forms.Label hostingtypelabel;
-        private System.Windows.Forms.ComboBox HostingBox;
+        private System.Windows.Forms.ComboBox HostingTypeBox;
         private System.Windows.Forms.PictureBox PlayButtonC;
         private System.Windows.Forms.PictureBox HostButtonC;
         private System.Windows.Forms.GroupBox groupBox1;

@@ -58,6 +58,16 @@ namespace AuroriaResources
             return response;
         }
 
+        public static bool GetClientAbility(string ability)
+        {
+            string settingsjson = File.ReadAllText(config);
+            JObject obj = JObject.Parse(settingsjson);
+
+            JArray abilities = (JArray)obj["ClientAbilities"];
+
+            return abilities.Any(x => x.ToString() == ability);
+        }
+
         public static string Description => GetInfo("Description");
 
         // made code like a million times more readable 
@@ -82,7 +92,14 @@ namespace AuroriaResources
             public static string Arguments => GetNestedInfo("Studio", "Arguments");
         }
 
-        public class Appearance
+        public class Ability
+        {
+            public static bool WillDieOnRedirect => GetClientAbility("WillDieOnRedirect");
+            public static bool threedHosting => GetClientAbility("3DNo3D");
+
+    }
+
+    public class Appearance
         {
             public static bool SupportsAccessory => GetNestedBool("Appearance", "Accessory");
             public static bool SupportsFace => GetNestedBool("Appearance", "Face");

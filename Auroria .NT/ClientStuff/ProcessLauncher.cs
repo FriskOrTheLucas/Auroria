@@ -12,7 +12,7 @@ namespace Auroria.NT.ClientStuff
 {
     internal static class ProcessLauncher
     {
-        public static void LaunchClient(ProcessTypes LaunchType)
+        public static void LaunchClient(ProcessTypes LaunchType, bool Is3dhosting = false)
         {
             string IpAndPort = PlayerSettings.ServerAddress;
             string[] parts = IpAndPort.Split(':');
@@ -88,7 +88,14 @@ namespace Auroria.NT.ClientStuff
                     Process LaunchedProcess = new Process();
                     LaunchedProcess.StartInfo.FileName = fullclientdir;
                     LaunchedProcess.StartInfo.WorkingDirectory = text2;
-                    LaunchedProcess.StartInfo.Arguments = string.Format(ClientSettings.Host.Arguments, args);
+                    if (Is3dhosting)
+                    {
+                        LaunchedProcess.StartInfo.Arguments = string.Format("-no3d " + ClientSettings.Host.Arguments, args);
+                    }
+                    else
+                    {
+                        LaunchedProcess.StartInfo.Arguments = string.Format(ClientSettings.Host.Arguments, args);
+                    }
                     LaunchedProcess.Start();
                 }
                 catch (Exception ex)
