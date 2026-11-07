@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Text;
+using System.IO;
 
 namespace AuroriaWebserver.IDE
 {
@@ -9,9 +10,9 @@ namespace AuroriaWebserver.IDE
         {
             HttpListenerResponse response = context.Response;
 
-            string responseString = "<HTML><BODY align=\"center\"> <h1> Auroria Launcher </h1> <div> <p> If you see this then congrats! It means the webserver hasnt crapped itself! </p> <h2> I will put more here soon. Just gimmeh some retro gubby time </h2> </div> <div> <img src=\"http://www.roblox.com/staticassets/?filename=AuroriaLogo\" alt=\"Auroria\"> </div></BODY></HTML>";
+            string indexpath = @"Data\Static\Landing\index.html";
 
-            byte[] buffer = Encoding.UTF8.GetBytes(responseString);
+            byte[] buffer = File.ReadAllBytes(indexpath);
 
             response.ContentLength64 = buffer.Length;
             response.OutputStream.Write(buffer, 0, buffer.Length);

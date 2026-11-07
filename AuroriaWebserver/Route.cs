@@ -5,6 +5,7 @@ using AuroriaWebserver.staticHTML;
 using System;
 using System.Net;
 using System.Text;
+using System.IO;
 
 
 namespace AuroriaWebserver
@@ -16,7 +17,7 @@ namespace AuroriaWebserver
             string AbsolutePath = context.Request.Url.AbsolutePath.ToLower();
             // I know thats kinda useless right now but that make the code looks more clean
             // -creds to rickkkkk for making this -Lucas
-            Console.WriteLine($"Request: {AbsolutePath}");
+            Console.WriteLine($"Request: {context.Request.RawUrl}");
 
             if (AbsolutePath.Equals("/game/join.ashx"))
             {
@@ -33,6 +34,17 @@ namespace AuroriaWebserver
             {
                 Console.WriteLine("Landing Request sent");
                 Landing.HandleLanding(context);
+            }
+
+            if (AbsolutePath.Equals("/ide/style.css"))
+            {
+                Console.WriteLine("Style Request sent");
+                HttpListenerResponse response = context.Response;
+
+                byte[] buffer = File.ReadAllBytes(@"Data\Static\Landing\style.css");
+                response.ContentLength64 = buffer.Length;
+                response.OutputStream.Write(buffer, 0, buffer.Length);
+                response.OutputStream.Close();
             }
 
             if (AbsolutePath.Equals("/staticassets/"))

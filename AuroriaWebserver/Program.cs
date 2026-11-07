@@ -12,7 +12,7 @@ namespace AuroriaWebserver
             Server.Prefixes.Add("http://roblox.com/");
             Server.Prefixes.Add("http://www.roblox.com/");
             Server.Prefixes.Add("http://rbxdbg.com/");
-            Server.Prefixes.Add("http://www.rbxdgb.com/");
+            Server.Prefixes.Add("http://www.rbxdbg.com/");
             Server.Prefixes.Add("http://api.roblox.com/");
             Server.Prefixes.Add("http://versioncompatibility.api.roblox.com/");
 
