@@ -97,7 +97,7 @@ namespace AuroriaResources
                 }
                 else
                 {
-                    return PlayerSettings.GetTShirt;
+                    return "_" + PlayerSettings.GetTShirt;
                 }
             }
         }
@@ -116,7 +116,7 @@ namespace AuroriaResources
                 }
                 else
                 {
-                    return PlayerSettings.GetPants;
+                    return "_" + PlayerSettings.GetPants;
                 }
             }
         }
