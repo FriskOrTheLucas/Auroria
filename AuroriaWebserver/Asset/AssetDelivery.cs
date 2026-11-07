@@ -10,11 +10,6 @@ namespace AuroriaWebserver.Asset
     {
         static readonly string cookie = @"data\cookie.txt";
 
-        static readonly string[] LocalAssetDirectory = new string[]
-        {
-            PathHelper.CoreScriptPath,
-        };
-
         public static void HandleDelivery(HttpListenerContext context)
         {
             string cookiecheck = File.ReadAllText(cookie);
@@ -24,7 +19,7 @@ namespace AuroriaWebserver.Asset
             string id = request.QueryString["id"] ?? "1818";
             string version = request.QueryString["version"] ?? "1";
 
-            foreach (var file in LocalAssetDirectory)
+            foreach (var file in Directory.GetFiles(PathHelper.CoreScriptPath))
             {
                 Console.WriteLine("Getting Local Asset Directory: " + file);
                 if (Directory.Exists(file))
