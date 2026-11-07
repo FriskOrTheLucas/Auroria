@@ -21,7 +21,7 @@ namespace AuroriaResources
                 }
                 else
                 {
-                    return PlayerSettings.GetHat1;
+                    return "_" + PlayerSettings.GetHat1;
                 }
             }
         }
@@ -40,7 +40,7 @@ namespace AuroriaResources
                 }
                 else
                 {
-                    return PlayerSettings.GetHat2;
+                    return "_" + PlayerSettings.GetHat2;
                 }
             }
         }
@@ -59,7 +59,7 @@ namespace AuroriaResources
                 }
                 else
                 {
-                    return PlayerSettings.GetHat3;
+                    return "_" + PlayerSettings.GetHat3;
                 }
             }
         }
@@ -78,7 +78,7 @@ namespace AuroriaResources
                 }
                 else
                 {
-                    return PlayerSettings.GetShirt;
+                    return "_" + PlayerSettings.GetShirt;
                 }
             }
         }

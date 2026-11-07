@@ -25,15 +25,8 @@ namespace AuroriaWebserver.Game
                 string ReadWriteJoinscript = File.ReadAllText(ClientSettings.JoinScript);
                 ReadWriteJoinscript = ReadWriteJoinscript.Replace("{userid}", playerid);
                 ReadWriteJoinscript = ReadWriteJoinscript.Replace("{username}", playername);
-                if (string.IsNullOrWhiteSpace(PathHelper.GenerateCharacterAccesoryURL))
-                {
-                    ReadWriteJoinscript = ReadWriteJoinscript.Replace("{charapp}", PathHelper.GenerateBodyColorAshxURL);
-                }
-                else
-                {
-                    ReadWriteJoinscript = ReadWriteJoinscript.Replace("{charapp}", PathHelper.GenerateBodyColorAshxURL + PathHelper.GenerateCharacterAccesoryURL);
-                }
-                Console.WriteLine("Recevied Charapp URL: " + PathHelper.GenerateBodyColorAshxURL + PathHelper.GenerateCharacterAccesoryURL);
+                ReadWriteJoinscript = ReadWriteJoinscript.Replace("{charapp}", PathHelper.GenerateCharacterAppearance);
+                Console.WriteLine("Recevied Charapp URL: " + PathHelper.GenerateCharacterAppearance);
                 ReadWriteJoinscript = ReadWriteJoinscript.Replace("{ip}", ip);
                 ReadWriteJoinscript = ReadWriteJoinscript.Replace("{port}", port);
                 Console.WriteLine("Rewriting script values..");
@@ -75,17 +68,8 @@ namespace AuroriaWebserver.Game
                 string ReadWriteVisitscript = File.ReadAllText(ClientSettings.VisitScript);
                 ReadWriteVisitscript = ReadWriteVisitscript.Replace("{userid}", playerid);
                 ReadWriteVisitscript = ReadWriteVisitscript.Replace("{username}", playername);
-                if (string.IsNullOrWhiteSpace(PathHelper.GenerateCharacterAccesoryURL))
-                {
-                    ReadWriteVisitscript = ReadWriteVisitscript.Replace("{charapp}", PathHelper.GenerateBodyColorAshxURL);
-                    Console.WriteLine("Rewrote script bodycolors");
-                }
-                else
-                {
-                    ReadWriteVisitscript = ReadWriteVisitscript.Replace("{charapp}", PathHelper.GenerateBodyColorAshxURL + PathHelper.GenerateCharacterAccesoryURL);
-                    Console.WriteLine("Rewrote script charapp");
-                }
-                Console.WriteLine("Recevied Charapp URL: " + PathHelper.GenerateBodyColorAshxURL + PathHelper.GenerateCharacterAccesoryURL);
+                ReadWriteVisitscript = ReadWriteVisitscript.Replace("{charapp}", PathHelper.GenerateCharacterAppearance);
+                Console.WriteLine("Recevied Charapp URL: " + PathHelper.GenerateCharacterAppearance);
 
                 string responseString = ReadWriteVisitscript;
 

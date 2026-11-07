@@ -18,6 +18,8 @@ namespace Auroria.NT
                 "127.0.0.1\troblox.com",
                 "127.0.0.1\twww.roblox.com",
                 "127.0.0.1\tapi.roblox.com",
+                "127.0.0.1\trbxdbg.com",
+                "127.0.0.1\twww.rbxdbg.com",
                 "127.0.0.1\tversioncompatibility.api.roblox.com",
             };
 
@@ -41,6 +43,26 @@ namespace Auroria.NT
 
                 var newLines = lines
                     .Where(line => line.IndexOf("roblox.com", StringComparison.OrdinalIgnoreCase) < 0)
+                    .ToList();
+
+                File.WriteAllLines(HostFile, newLines);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occured with the remove hosts: {ex.Message}");
+            }
+        }
+
+        public static void RemoveDebugHosts()
+        {
+            try
+            {
+                if (!File.Exists(HostFile)) return;
+
+                string[] lines = File.ReadAllLines(HostFile);
+
+                var newLines = lines
+                    .Where(line => line.IndexOf("rbxdbg.com", StringComparison.OrdinalIgnoreCase) < 0)
                     .ToList();
 
                 File.WriteAllLines(HostFile, newLines);

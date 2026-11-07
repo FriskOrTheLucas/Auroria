@@ -84,7 +84,7 @@ namespace AuroriaResources
             }
         }
 
-        public static string GenerateBodyColorAshxURL
+        public static string BodyColors
         {
             get
             {
@@ -93,7 +93,16 @@ namespace AuroriaResources
             }
         }
 
-        public static string GenerateCharacterAccesoryURL
+        public static string CharacterFetchBodyColors
+        {
+            get
+            {
+                string result = $"http://www.roblox.com/asset/CharacterFetch.ashx?userID={HeadColor}-{LeftArmcolor}-{LeftLegcolor}-{RightArmcolor}-{RightLegcolor}-{TorsoColor}";
+                return result;
+            }
+        }
+
+        public static string CharacterAccesory
         {
             get
             {
@@ -103,6 +112,21 @@ namespace AuroriaResources
                     return "";
                 }
                 return result;
+            }
+        }
+
+        public static string GenerateCharacterAppearance
+        {
+            get
+            {
+                if (ClientSettings.Ability.WillDieOnRedirect)
+                {
+                    return BodyColors + CharacterAccesory; 
+                }
+                else
+                {
+                    return CharacterFetchBodyColors + CharacterAccesory;
+                }
             }
         }
     }

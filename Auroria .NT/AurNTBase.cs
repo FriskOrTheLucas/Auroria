@@ -46,6 +46,7 @@ namespace Auroria.NT
             }
 
             hostsfile.RemoveHosts();
+            hostsfile.RemoveDebugHosts();
             hostsfile.WriteHosts();
 
             Webserver.StartWebserver();
@@ -57,6 +58,7 @@ namespace Auroria.NT
             {
                 // do the thing
                 hostsfile.RemoveHosts();
+                hostsfile.RemoveDebugHosts();
                 Webserver.StopWebserver();
             }
             catch (Exception ex)
