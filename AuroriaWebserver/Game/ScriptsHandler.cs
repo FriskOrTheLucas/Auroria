@@ -45,7 +45,7 @@ namespace AuroriaWebserver.Game
             {
                 HttpListenerResponse response = context.Response;
                 Console.WriteLine("Error in HandleJoin: " + ex.Message);
-                byte[] buffer = Encoding.UTF8.GetBytes("An unexpected error occured when getting the gameserver script: " + ex.Message);
+                byte[] buffer = Encoding.UTF8.GetBytes("An unexpected error occured when getting the join script: " + ex.Message);
                 response.ContentLength64 = buffer.Length;
                 response.OutputStream.Write(buffer, 0, buffer.Length);
                 response.OutputStream.Close();
@@ -85,7 +85,7 @@ namespace AuroriaWebserver.Game
             {
                 HttpListenerResponse response = context.Response;
                 Console.WriteLine("Error in HandleJoin: " + ex.Message);
-                byte[] buffer = Encoding.UTF8.GetBytes("An unexpected error occured when getting the gameserver script: " + ex.Message);
+                byte[] buffer = Encoding.UTF8.GetBytes("An unexpected error occured when getting the visit script: " + ex.Message);
                 response.ContentLength64 = buffer.Length;
                 response.OutputStream.Write(buffer, 0, buffer.Length);
                 response.OutputStream.Close();
