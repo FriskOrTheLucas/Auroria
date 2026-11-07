@@ -64,15 +64,16 @@ namespace AuroriaWebserver.Asset
                 try
                 {
                     string url = PlayerSettings.AssetURL + "id=" + id + "&version=" + version; 
-                    Console.WriteLine("Requesting asset from: " + url); 
+                    Console.WriteLine("Requesting asset from: " + url);
 
                     HttpWebRequest assetReq = (HttpWebRequest)WebRequest.Create(url);
-                    assetReq.Headers.Add(HttpRequestHeader.Cookie, ".ROBLOSECURITY=" + cookiecheck); 
+                    var cookie = new Cookie(".ROBLOSECURITY", cookiecheck, "/", ".roblox.com");
+                    assetReq.AllowAutoRedirect = true;
+                    assetReq.Method = "GET";
+                    assetReq.UserAgent = "Roblox/WinInet";
+                    assetReq.Headers.Add("Cookie", cookie.ToString()); 
                     Console.WriteLine("Requested URL with Cookie.");
 
-                    assetReq.AllowAutoRedirect = true; 
-                    assetReq.Method = "GET"; 
-                    assetReq.UserAgent = "Roblox/WinInet";
                     HttpWebResponse assetResponse = (HttpWebResponse)assetReq.GetResponse(); 
                     Console.WriteLine("Received response from asset request.");
 
