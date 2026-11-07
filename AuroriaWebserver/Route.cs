@@ -38,7 +38,7 @@ namespace AuroriaWebserver
             if (AbsolutePath.Equals("/staticassets/auroria.png"))
             {
                 Console.WriteLine("Logo request Sent");
-                StaticAssetsHandler.logo(context);
+                StaticAssetsHandler.HandleStatic(context);
             }
 
             if (AbsolutePath.Equals("/game/gameserver.ashx"))

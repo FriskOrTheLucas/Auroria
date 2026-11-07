@@ -14,6 +14,7 @@ namespace AuroriaWebserver.Asset
         {
             PathHelper.CoreScriptPath,
         };
+
         public static void HandleDelivery(HttpListenerContext context)
         {
             string cookiecheck = File.ReadAllText(cookie);
