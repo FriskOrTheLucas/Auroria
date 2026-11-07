@@ -38,6 +38,11 @@ namespace AuroriaResources
 
         public static string GetInfo(string info)
         {
+            if (!File.Exists(config))
+            {
+                return null;
+            }
+
             string settingsjson = File.ReadAllText(config);
             JObject obj = JObject.Parse(settingsjson);
             string response = (string)obj[info];
@@ -46,6 +51,11 @@ namespace AuroriaResources
 
         public static string GetNestedInfo(string parent, string child)
         {
+            if (!File.Exists(config))
+            {
+                return null;
+            }
+
             string settingsjson = File.ReadAllText(config);
             JObject obj = JObject.Parse(settingsjson);
             string response = (string)obj[parent]?[child];
@@ -54,6 +64,11 @@ namespace AuroriaResources
 
         public static bool GetNestedBool(string parent, string child)
         {
+            if (!File.Exists(config))
+            {
+                return false;
+            }
+
             string settingsjson = File.ReadAllText(config);
             JObject obj = JObject.Parse(settingsjson);
             bool response = (bool)obj[parent]?[child];
@@ -62,6 +77,11 @@ namespace AuroriaResources
 
         public static bool GetClientAbility(string value)
         {
+            if (!File.Exists(config))
+            {
+                return false;
+            }
+
             string settingsjson = File.ReadAllText(config);
             JObject obj = JObject.Parse(settingsjson);
 
