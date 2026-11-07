@@ -25,6 +25,7 @@ namespace AuroriaWebserver.Asset
 
             foreach (var file in LocalAssetDirectory)
             {
+                Console.WriteLine("Getting Local Asset Directory: " + file);
                 if (Directory.Exists(file))
                 {
                     return;
@@ -34,6 +35,7 @@ namespace AuroriaWebserver.Asset
                 {
                     try
                     {
+                        Console.WriteLine("Local Asset Found: " + id);
                         byte[] buffer = File.ReadAllBytes(file);
                         response.ContentType = "application/octet-stream";
                         response.ContentLength64 = buffer.Length;
