@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using AuroriaResources.Signing;
 
 namespace AuroriaResources
 {
@@ -96,10 +97,28 @@ namespace AuroriaResources
         {
             public static bool WillDieOnRedirect => GetClientAbility("WillDieOnRedirect");
             public static bool threedHosting => GetClientAbility("3DNo3D");
+        }
 
-    }
+        public static SignatureType ClientSignature()
+        {
+            if (!GetClientAbility("LegacySig") && !GetClientAbility("rbxSig"))
+            {
+                return SignatureType.None;
+            }
 
-    public class Appearance
+            if (GetClientAbility("LegacySig"))
+            {
+                return SignatureType.Legacy;
+            }
+
+            if (GetClientAbility("rbxSig"))
+            {
+                return SignatureType.Rbxsig;
+            }
+            return SignatureType.None;
+        }
+
+        public class Appearance
         {
             public static bool SupportsAccessory => GetNestedBool("Appearance", "Accessory");
             public static bool SupportsFace => GetNestedBool("Appearance", "Face");

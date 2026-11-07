@@ -48,6 +48,7 @@
     <Compile Include="PathHelper.cs" />
     <Compile Include="PlayerSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Signing\SignatureType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
