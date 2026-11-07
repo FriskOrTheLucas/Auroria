@@ -9,6 +9,11 @@ namespace AuroriaWebserver.Asset
     public static class AssetDelivery
     {
         static readonly string cookie = @"data\cookie.txt";
+
+        static readonly string[] LocalAssetDirectory = new string[]
+        {
+            PathHelper.CoreScriptPath,
+        };
         public static void HandleDelivery(HttpListenerContext context)
         {
             string cookiecheck = File.ReadAllText(cookie);
@@ -17,6 +22,38 @@ namespace AuroriaWebserver.Asset
 
             string id = request.QueryString["id"] ?? "1818";
             string version = request.QueryString["version"] ?? "1";
+
+            foreach (var file in LocalAssetDirectory)
+            {
+                if (Directory.Exists(file))
+                {
+                    return;
+                }
+
+                if (file.Contains(id))
+                {
+                    try
+                    {
+                        byte[] buffer = File.ReadAllBytes(file);
+                        response.ContentType = "application/octet-stream";
+                        response.ContentLength64 = buffer.Length;
+                        response.OutputStream.Write(buffer, 0, buffer.Length);
+                        response.OutputStream.Close();
+                        return;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error occurred while getting Local Asset: " + ex.Message);
+                        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                        string jsonResponse = "{\"message\": \"An error has occurred while getting the asset. We are sorry.\"}";
+                        Console.WriteLine("Sent error code and message.");
+                        byte[] buffer = Encoding.UTF8.GetBytes(jsonResponse);
+                        response.ContentLength64 = buffer.Length;
+                        response.OutputStream.Write(buffer, 0, buffer.Length);
+                        response.OutputStream.Close();
+                    }
+                }
+            }
 
             if (id == "1818")
             {

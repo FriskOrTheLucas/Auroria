@@ -11,6 +11,7 @@ namespace AuroriaResources
     public static class PathHelper
     {
         public static string PlayerInfoPath = "PlayerSettings.json";
+        public static string CoreScriptPath => ClientSettings.CoreScriptDirectory;
         public static string HeadColor
         {
             get

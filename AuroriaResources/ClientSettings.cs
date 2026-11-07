@@ -33,6 +33,7 @@ namespace AuroriaResources
         public static string JoinScript => Path.Combine("Clients", Client, "Scripts", "join.lua");
         public static string GameserverScript => Path.Combine("Clients", Client, "Scripts", "gameserver.lua");
         public static string VisitScript => Path.Combine("Clients", Client, "Scripts", "visit.lua");
+        public static string CoreScriptDirectory => Path.Combine("Clients", Client, "Assets");
 
         public static string GetInfo(string info)
         {
