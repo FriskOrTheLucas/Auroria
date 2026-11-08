@@ -19,36 +19,39 @@ namespace AuroriaWebserver.Asset
             string id = request.QueryString["id"] ?? "1818";
             string version = request.QueryString["version"] ?? "1";
 
-            foreach (var file in Directory.GetFiles(PathHelper.CoreScriptPath))
+            if (File.Exists(PathHelper.CoreScriptPath))
             {
-                Console.WriteLine("Getting Local Asset Directory: " + file);
-                if (Directory.Exists(file))
+                foreach (var file in Directory.GetFiles(PathHelper.CoreScriptPath))
                 {
-                    return;
-                }
-
-                if (file.Contains(id))
-                {
-                    try
+                    Console.WriteLine("Getting Local Asset Directory: " + file);
+                    if (Directory.Exists(file))
                     {
-                        Console.WriteLine("Local Asset Found: " + id);
-                        byte[] buffer = File.ReadAllBytes(file);
-                        response.ContentType = "application/octet-stream";
-                        response.ContentLength64 = buffer.Length;
-                        response.OutputStream.Write(buffer, 0, buffer.Length);
-                        response.OutputStream.Close();
                         return;
                     }
-                    catch (Exception ex)
+
+                    if (file.Contains(id))
                     {
-                        Console.WriteLine("Error occurred while getting Local Asset: " + ex.Message);
-                        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                        string jsonResponse = "{\"message\": \"An error has occurred while getting the asset. We are sorry.\"}";
-                        Console.WriteLine("Sent error code and message.");
-                        byte[] buffer = Encoding.UTF8.GetBytes(jsonResponse);
-                        response.ContentLength64 = buffer.Length;
-                        response.OutputStream.Write(buffer, 0, buffer.Length);
-                        response.OutputStream.Close();
+                        try
+                        {
+                            Console.WriteLine("Local Asset Found: " + id);
+                            byte[] buffer = File.ReadAllBytes(file);
+                            response.ContentType = "application/octet-stream";
+                            response.ContentLength64 = buffer.Length;
+                            response.OutputStream.Write(buffer, 0, buffer.Length);
+                            response.OutputStream.Close();
+                            return;
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Error occurred while getting Local Asset: " + ex.Message);
+                            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                            string jsonResponse = "{\"message\": \"An error has occurred while getting the asset. We are sorry.\"}";
+                            Console.WriteLine("Sent error code and message.");
+                            byte[] buffer = Encoding.UTF8.GetBytes(jsonResponse);
+                            response.ContentLength64 = buffer.Length;
+                            response.OutputStream.Write(buffer, 0, buffer.Length);
+                            response.OutputStream.Close();
+                        }
                     }
                 }
             }
