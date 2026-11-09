@@ -701,5 +701,11 @@ namespace Auroria.NT
             obj["ServerIP"] = SrvrIPbox.Text;
             File.WriteAllText(InfoFilePath, obj.ToString());
         }
+
+        private void CreateAssetMetadata_Click(object sender, EventArgs e)
+        {
+            ItemMetadataCreator Window = new ItemMetadataCreator();
+            Window.Show();
+        }
     }
 }

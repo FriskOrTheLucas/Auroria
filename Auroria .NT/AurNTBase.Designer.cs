@@ -107,6 +107,9 @@
             this.MOTD = new System.Windows.Forms.Label();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.StudioButton = new System.Windows.Forms.Button();
+            this.ExtraPage = new System.Windows.Forms.TabPage();
+            this.CatalogETCGroupbox = new System.Windows.Forms.GroupBox();
+            this.CreateAssetMetadata = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -130,6 +133,8 @@
             this.AsDelGB.SuspendLayout();
             this.CrditTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).BeginInit();
+            this.ExtraPage.SuspendLayout();
+            this.CatalogETCGroupbox.SuspendLayout();
             this.SuspendLayout();
             // 
             // AllTabs
@@ -792,6 +797,7 @@
             // 
             this.SettingsTabs.Controls.Add(this.LauncherSettings);
             this.SettingsTabs.Controls.Add(this.AssetSettings);
+            this.SettingsTabs.Controls.Add(this.ExtraPage);
             this.SettingsTabs.ItemSize = new System.Drawing.Size(79, 25);
             this.SettingsTabs.Location = new System.Drawing.Point(6, 6);
             this.SettingsTabs.Name = "SettingsTabs";
@@ -1045,6 +1051,39 @@
             this.StudioButton.Text = "Studio";
             this.StudioButton.UseVisualStyleBackColor = false;
             // 
+            // ExtraPage
+            // 
+            this.ExtraPage.Controls.Add(this.CatalogETCGroupbox);
+            this.ExtraPage.Location = new System.Drawing.Point(4, 29);
+            this.ExtraPage.Name = "ExtraPage";
+            this.ExtraPage.Size = new System.Drawing.Size(475, 345);
+            this.ExtraPage.TabIndex = 2;
+            this.ExtraPage.Text = "Extra";
+            this.ExtraPage.UseVisualStyleBackColor = true;
+            // 
+            // CatalogETCGroupbox
+            // 
+            this.CatalogETCGroupbox.Controls.Add(this.CreateAssetMetadata);
+            this.CatalogETCGroupbox.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CatalogETCGroupbox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.CatalogETCGroupbox.Location = new System.Drawing.Point(6, 6);
+            this.CatalogETCGroupbox.Name = "CatalogETCGroupbox";
+            this.CatalogETCGroupbox.Size = new System.Drawing.Size(463, 59);
+            this.CatalogETCGroupbox.TabIndex = 1;
+            this.CatalogETCGroupbox.TabStop = false;
+            this.CatalogETCGroupbox.Text = "Catalog";
+            // 
+            // CreateAssetMetadata
+            // 
+            this.CreateAssetMetadata.ForeColor = System.Drawing.Color.Black;
+            this.CreateAssetMetadata.Location = new System.Drawing.Point(6, 23);
+            this.CreateAssetMetadata.Name = "CreateAssetMetadata";
+            this.CreateAssetMetadata.Size = new System.Drawing.Size(153, 26);
+            this.CreateAssetMetadata.TabIndex = 3;
+            this.CreateAssetMetadata.Text = "Create Asset Metadata";
+            this.CreateAssetMetadata.UseVisualStyleBackColor = true;
+            this.CreateAssetMetadata.Click += new System.EventHandler(this.CreateAssetMetadata_Click);
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1093,6 +1132,8 @@
             this.AsDelGB.PerformLayout();
             this.CrditTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).EndInit();
+            this.ExtraPage.ResumeLayout(false);
+            this.CatalogETCGroupbox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1177,6 +1218,9 @@
         private System.Windows.Forms.ListBox ClientPackBox;
         private System.Windows.Forms.ListBox AssetPackBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabPage ExtraPage;
+        private System.Windows.Forms.GroupBox CatalogETCGroupbox;
+        private System.Windows.Forms.Button CreateAssetMetadata;
     }
 }
 

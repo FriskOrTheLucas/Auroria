@@ -160,7 +160,7 @@
             this.Controls.Add(this.TorsoColorBox);
             this.Controls.Add(this.HeadColorBox);
             this.Controls.Add(this.bodycolorListView);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "BodyColorsWindow";
