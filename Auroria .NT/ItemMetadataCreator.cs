@@ -32,8 +32,10 @@ namespace Auroria.NT
                     { "AssetID", "" }
                 };
 
+                string GeneratedDescription = "Description: " + DescriptionBox.Text + " Date Created: " + DateBox.Text + " Creator: " + CreatorBox.Text;
+
                 obj["Name"] = NameBox.Text;
-                obj["Desc"] = DescriptionBox.Text;
+                obj["Desc"] = GeneratedDescription;
                 obj["AssetID"] = IDBox.Text;
 
                 if (CreateNewAsset.Checked)

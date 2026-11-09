@@ -29,20 +29,28 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.NameBox = new System.Windows.Forms.TextBox();
-            this.DescriptionBox = new System.Windows.Forms.TextBox();
-            this.IDBox = new System.Windows.Forms.TextBox();
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.DescriptionLabel = new System.Windows.Forms.Label();
-            this.IDLabel = new System.Windows.Forms.Label();
-            this.CreateMetadata = new System.Windows.Forms.Button();
-            this.ItemType = new System.Windows.Forms.ListBox();
             this.CreateNewAsset = new System.Windows.Forms.CheckBox();
+            this.ItemType = new System.Windows.Forms.ListBox();
+            this.CreateMetadata = new System.Windows.Forms.Button();
+            this.IDLabel = new System.Windows.Forms.Label();
+            this.DescriptionLabel = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.IDBox = new System.Windows.Forms.TextBox();
+            this.DescriptionBox = new System.Windows.Forms.TextBox();
+            this.NameBox = new System.Windows.Forms.TextBox();
+            this.DateLabel = new System.Windows.Forms.Label();
+            this.DateBox = new System.Windows.Forms.TextBox();
+            this.CreatorBox = new System.Windows.Forms.TextBox();
+            this.CreatorLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CreatorLabel);
+            this.groupBox1.Controls.Add(this.CreatorBox);
+            this.groupBox1.Controls.Add(this.DateBox);
+            this.groupBox1.Controls.Add(this.DateLabel);
             this.groupBox1.Controls.Add(this.CreateNewAsset);
             this.groupBox1.Controls.Add(this.ItemType);
             this.groupBox1.Controls.Add(this.CreateMetadata);
@@ -56,78 +64,20 @@
             this.groupBox1.ForeColor = System.Drawing.Color.LightSteelBlue;
             this.groupBox1.Location = new System.Drawing.Point(12, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(329, 293);
+            this.groupBox1.Size = new System.Drawing.Size(354, 417);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create";
             // 
-            // NameBox
+            // CreateNewAsset
             // 
-            this.NameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NameBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameBox.Location = new System.Drawing.Point(15, 59);
-            this.NameBox.Name = "NameBox";
-            this.NameBox.Size = new System.Drawing.Size(265, 26);
-            this.NameBox.TabIndex = 1;
-            // 
-            // DescriptionBox
-            // 
-            this.DescriptionBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DescriptionBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescriptionBox.Location = new System.Drawing.Point(15, 132);
-            this.DescriptionBox.Name = "DescriptionBox";
-            this.DescriptionBox.Size = new System.Drawing.Size(265, 26);
-            this.DescriptionBox.TabIndex = 2;
-            this.DescriptionBox.Text = "\r\n";
-            // 
-            // IDBox
-            // 
-            this.IDBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IDBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDBox.Location = new System.Drawing.Point(15, 206);
-            this.IDBox.Name = "IDBox";
-            this.IDBox.Size = new System.Drawing.Size(169, 26);
-            this.IDBox.TabIndex = 3;
-            this.IDBox.Text = "\r\n";
-            // 
-            // NameLabel
-            // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(12, 39);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(83, 17);
-            this.NameLabel.TabIndex = 4;
-            this.NameLabel.Text = "Item Name";
-            // 
-            // DescriptionLabel
-            // 
-            this.DescriptionLabel.AutoSize = true;
-            this.DescriptionLabel.Location = new System.Drawing.Point(12, 112);
-            this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(89, 17);
-            this.DescriptionLabel.TabIndex = 5;
-            this.DescriptionLabel.Text = "Description";
-            // 
-            // IDLabel
-            // 
-            this.IDLabel.AutoSize = true;
-            this.IDLabel.Location = new System.Drawing.Point(12, 186);
-            this.IDLabel.Name = "IDLabel";
-            this.IDLabel.Size = new System.Drawing.Size(56, 17);
-            this.IDLabel.TabIndex = 6;
-            this.IDLabel.Text = "Item ID";
-            // 
-            // CreateMetadata
-            // 
-            this.CreateMetadata.BackColor = System.Drawing.Color.White;
-            this.CreateMetadata.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.CreateMetadata.Location = new System.Drawing.Point(192, 207);
-            this.CreateMetadata.Name = "CreateMetadata";
-            this.CreateMetadata.Size = new System.Drawing.Size(88, 25);
-            this.CreateMetadata.TabIndex = 7;
-            this.CreateMetadata.Text = "Create";
-            this.CreateMetadata.UseVisualStyleBackColor = false;
-            this.CreateMetadata.Click += new System.EventHandler(this.CreateMetadata_Click);
+            this.CreateNewAsset.AutoSize = true;
+            this.CreateNewAsset.Location = new System.Drawing.Point(184, 386);
+            this.CreateNewAsset.Name = "CreateNewAsset";
+            this.CreateNewAsset.Size = new System.Drawing.Size(139, 21);
+            this.CreateNewAsset.TabIndex = 9;
+            this.CreateNewAsset.Text = "Save Seperately";
+            this.CreateNewAsset.UseVisualStyleBackColor = true;
             // 
             // ItemType
             // 
@@ -138,26 +88,122 @@
             "charpants",
             "charshirts",
             "chartshirt"});
-            this.ItemType.Location = new System.Drawing.Point(15, 259);
+            this.ItemType.Location = new System.Drawing.Point(15, 386);
             this.ItemType.Name = "ItemType";
             this.ItemType.Size = new System.Drawing.Size(163, 21);
             this.ItemType.TabIndex = 8;
             // 
-            // CreateNewAsset
+            // CreateMetadata
             // 
-            this.CreateNewAsset.AutoSize = true;
-            this.CreateNewAsset.Location = new System.Drawing.Point(184, 259);
-            this.CreateNewAsset.Name = "CreateNewAsset";
-            this.CreateNewAsset.Size = new System.Drawing.Size(139, 21);
-            this.CreateNewAsset.TabIndex = 9;
-            this.CreateNewAsset.Text = "Save Seperately";
-            this.CreateNewAsset.UseVisualStyleBackColor = true;
+            this.CreateMetadata.BackColor = System.Drawing.Color.White;
+            this.CreateMetadata.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CreateMetadata.Location = new System.Drawing.Point(192, 334);
+            this.CreateMetadata.Name = "CreateMetadata";
+            this.CreateMetadata.Size = new System.Drawing.Size(88, 25);
+            this.CreateMetadata.TabIndex = 7;
+            this.CreateMetadata.Text = "Create";
+            this.CreateMetadata.UseVisualStyleBackColor = false;
+            this.CreateMetadata.Click += new System.EventHandler(this.CreateMetadata_Click);
+            // 
+            // IDLabel
+            // 
+            this.IDLabel.AutoSize = true;
+            this.IDLabel.Location = new System.Drawing.Point(12, 313);
+            this.IDLabel.Name = "IDLabel";
+            this.IDLabel.Size = new System.Drawing.Size(56, 17);
+            this.IDLabel.TabIndex = 6;
+            this.IDLabel.Text = "Item ID";
+            // 
+            // DescriptionLabel
+            // 
+            this.DescriptionLabel.AutoSize = true;
+            this.DescriptionLabel.Location = new System.Drawing.Point(12, 104);
+            this.DescriptionLabel.Name = "DescriptionLabel";
+            this.DescriptionLabel.Size = new System.Drawing.Size(89, 17);
+            this.DescriptionLabel.TabIndex = 5;
+            this.DescriptionLabel.Text = "Description";
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(12, 39);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(83, 17);
+            this.NameLabel.TabIndex = 4;
+            this.NameLabel.Text = "Item Name";
+            // 
+            // IDBox
+            // 
+            this.IDBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IDBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDBox.Location = new System.Drawing.Point(15, 333);
+            this.IDBox.Name = "IDBox";
+            this.IDBox.Size = new System.Drawing.Size(169, 26);
+            this.IDBox.TabIndex = 3;
+            this.IDBox.Text = "\r\n";
+            // 
+            // DescriptionBox
+            // 
+            this.DescriptionBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DescriptionBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescriptionBox.Location = new System.Drawing.Point(15, 124);
+            this.DescriptionBox.Name = "DescriptionBox";
+            this.DescriptionBox.Size = new System.Drawing.Size(265, 26);
+            this.DescriptionBox.TabIndex = 2;
+            this.DescriptionBox.Text = "\r\n";
+            // 
+            // NameBox
+            // 
+            this.NameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.NameBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameBox.Location = new System.Drawing.Point(15, 59);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(265, 26);
+            this.NameBox.TabIndex = 1;
+            // 
+            // DateLabel
+            // 
+            this.DateLabel.AutoSize = true;
+            this.DateLabel.Location = new System.Drawing.Point(12, 169);
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(99, 17);
+            this.DateLabel.TabIndex = 10;
+            this.DateLabel.Text = "Date Created";
+            // 
+            // DateBox
+            // 
+            this.DateBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DateBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateBox.Location = new System.Drawing.Point(15, 189);
+            this.DateBox.Name = "DateBox";
+            this.DateBox.Size = new System.Drawing.Size(265, 26);
+            this.DateBox.TabIndex = 11;
+            this.DateBox.Text = "\r\n";
+            // 
+            // CreatorBox
+            // 
+            this.CreatorBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CreatorBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreatorBox.Location = new System.Drawing.Point(15, 255);
+            this.CreatorBox.Name = "CreatorBox";
+            this.CreatorBox.Size = new System.Drawing.Size(265, 26);
+            this.CreatorBox.TabIndex = 12;
+            this.CreatorBox.Text = "\r\n";
+            // 
+            // CreatorLabel
+            // 
+            this.CreatorLabel.AutoSize = true;
+            this.CreatorLabel.Location = new System.Drawing.Point(12, 235);
+            this.CreatorLabel.Name = "CreatorLabel";
+            this.CreatorLabel.Size = new System.Drawing.Size(61, 17);
+            this.CreatorLabel.TabIndex = 13;
+            this.CreatorLabel.Text = "Creator";
             // 
             // ItemMetadataCreator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 318);
+            this.ClientSize = new System.Drawing.Size(378, 442);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ItemMetadataCreator";
@@ -181,5 +227,9 @@
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.ListBox ItemType;
         private System.Windows.Forms.CheckBox CreateNewAsset;
+        private System.Windows.Forms.Label CreatorLabel;
+        private System.Windows.Forms.TextBox CreatorBox;
+        private System.Windows.Forms.TextBox DateBox;
+        private System.Windows.Forms.Label DateLabel;
     }
 }
