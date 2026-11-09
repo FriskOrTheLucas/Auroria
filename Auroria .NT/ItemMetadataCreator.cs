@@ -23,7 +23,9 @@ namespace Auroria.NT
             try
             {
                 string SelectedDirectory = ItemType.SelectedItem.ToString();
-                string CreatedNewDirectory = $"Data\\Catalog\\{SelectedDirectory}";
+                string WriteDirectlyDirectory = $"Data\\Catalog\\{SelectedDirectory}";
+                string CreateNewAssetDirectory = "CreatedAssets";
+
                 JObject obj = new JObject
                 {
                     { "Name", "" },
@@ -35,9 +37,16 @@ namespace Auroria.NT
                 obj["Desc"] = DescriptionBox.Text;
                 obj["AssetID"] = IDBox.Text;
 
-                File.WriteAllText(Path.Combine(CreatedNewDirectory, IDBox.Text + ".json"), obj.ToString());
+                if (CreateNewAsset.Checked)
+                {
+                    File.WriteAllText(Path.Combine(CreateNewAssetDirectory, IDBox.Text + ".json"), obj.ToString());
+                }
+                else
+                {
+                    File.WriteAllText(Path.Combine(WriteDirectlyDirectory, IDBox.Text + ".json"), obj.ToString());
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"Failed to create asset metadata: {ex}", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

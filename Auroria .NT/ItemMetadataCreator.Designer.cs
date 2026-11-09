@@ -37,11 +37,13 @@
             this.IDLabel = new System.Windows.Forms.Label();
             this.CreateMetadata = new System.Windows.Forms.Button();
             this.ItemType = new System.Windows.Forms.ListBox();
+            this.CreateNewAsset = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CreateNewAsset);
             this.groupBox1.Controls.Add(this.ItemType);
             this.groupBox1.Controls.Add(this.CreateMetadata);
             this.groupBox1.Controls.Add(this.IDLabel);
@@ -138,8 +140,18 @@
             "chartshirt"});
             this.ItemType.Location = new System.Drawing.Point(15, 259);
             this.ItemType.Name = "ItemType";
-            this.ItemType.Size = new System.Drawing.Size(169, 21);
+            this.ItemType.Size = new System.Drawing.Size(163, 21);
             this.ItemType.TabIndex = 8;
+            // 
+            // CreateNewAsset
+            // 
+            this.CreateNewAsset.AutoSize = true;
+            this.CreateNewAsset.Location = new System.Drawing.Point(184, 259);
+            this.CreateNewAsset.Name = "CreateNewAsset";
+            this.CreateNewAsset.Size = new System.Drawing.Size(139, 21);
+            this.CreateNewAsset.TabIndex = 9;
+            this.CreateNewAsset.Text = "Save Seperately";
+            this.CreateNewAsset.UseVisualStyleBackColor = true;
             // 
             // ItemMetadataCreator
             // 
@@ -168,5 +180,6 @@
         private System.Windows.Forms.Label DescriptionLabel;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.ListBox ItemType;
+        private System.Windows.Forms.CheckBox CreateNewAsset;
     }
 }
