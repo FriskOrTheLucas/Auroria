@@ -22,8 +22,7 @@ namespace Auroria.NT
         {
             try
             {
-                string SelectedDirectory = ItemType.SelectedItem.ToString();
-                string WriteDirectlyDirectory = $"Data\\Catalog\\{SelectedDirectory}";
+                string WriteDirectlyDirectory = $"Data\\Catalog\\{ItemType.SelectedItem.ToString()}";
                 string CreateNewAssetDirectory = "CreatedAssets";
 
                 JObject obj = new JObject
@@ -43,6 +42,11 @@ namespace Auroria.NT
                 }
                 else
                 {
+                    if (ItemType.SelectedItem == null)
+                    {
+                        MessageBox.Show($"Please make sure to select where to save the asset!", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     File.WriteAllText(Path.Combine(WriteDirectlyDirectory, IDBox.Text + ".info.json"), obj.ToString());
                 }
             }
