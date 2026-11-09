@@ -39,11 +39,11 @@ namespace Auroria.NT
 
                 if (CreateNewAsset.Checked)
                 {
-                    File.WriteAllText(Path.Combine(CreateNewAssetDirectory, IDBox.Text + ".json"), obj.ToString());
+                    File.WriteAllText(Path.Combine(CreateNewAssetDirectory, IDBox.Text + ".info.json"), obj.ToString());
                 }
                 else
                 {
-                    File.WriteAllText(Path.Combine(WriteDirectlyDirectory, IDBox.Text + ".json"), obj.ToString());
+                    File.WriteAllText(Path.Combine(WriteDirectlyDirectory, IDBox.Text + ".info.json"), obj.ToString());
                 }
             }
             catch (Exception ex)
