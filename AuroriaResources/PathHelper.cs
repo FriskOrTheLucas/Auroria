@@ -94,6 +94,15 @@ namespace AuroriaResources
             }
         }
 
+        public static string BodyColorsNoUrl
+        {
+            get
+            {
+                string result = $"{HeadColor}-{LeftArmcolor}-{LeftLegcolor}-{RightArmcolor}-{RightLegcolor}-{TorsoColor}";
+                return result;
+            }
+        }
+
         public static string CharacterFetchBodyColors
         {
             get
