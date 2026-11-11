@@ -105,6 +105,14 @@ namespace AuroriaWebserver
                 context.Response.ContentLength64 = 0;
                 context.Response.OutputStream.Close();
             }
+
+            if (AbsolutePath.Equals("/analytics/measurement.ashx"))
+            {
+                context.Response.StatusCode = 200;
+                context.Response.ContentLength64 = 0;
+                context.Response.OutputStream.Close();
+                Console.WriteLine("Responded /analytics/measurement.ashx correctly");
+            }
         }
     }
 }
