@@ -32,7 +32,7 @@ namespace AuroriaWebserver.Asset
             string finalUrl = $"http://www.roblox.com/asset/bodycolors.ashx?userid={PathHelper.BodyColors}" + AllItems();
             Console.WriteLine("CharacterFetch Redirect = " + finalUrl);
             response.Redirect(finalUrl);
-            Console.WriteLine("Redirected to BodyColors";
+            Console.WriteLine("Redirected to BodyColors");
         }
     }
 }
