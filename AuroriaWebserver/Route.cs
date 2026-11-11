@@ -74,6 +74,11 @@ namespace AuroriaWebserver
                 CharacterFetch.HandleFetch(context);
             }
 
+            if (AbsolutePath.Equals("/asset/getscriptstate.ashx"))
+            {
+                GetScriptState.DoThing(context);
+            }
+
             if (AbsolutePath.Equals("/error/reportdialog.aspx"))
             {
                 Console.WriteLine("report dialog recieved.");

@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Asset\CharacterFetch.cs" />
+    <Compile Include="Asset\GetScriptState.cs" />
     <Compile Include="IDE\Landing.cs" />
     <Compile Include="IDE\Toolbox.cs" />
     <Compile Include="Asset\AssetDelivery.cs" />
