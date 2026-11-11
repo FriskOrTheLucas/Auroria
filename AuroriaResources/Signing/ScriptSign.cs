@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.OpenSsl;
+using Org.BouncyCastle.Security;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.OpenSsl;
 
 namespace AuroriaResources.Signing
 {
@@ -56,20 +57,20 @@ namespace AuroriaResources.Signing
                 throw new Exception("Signature not recognized");
             }
         }
-
-        private static AsymmetricKeyParameter ReadPrivateKey()
+        private static byte[] Sign(byte[] data)
         {
             using (var reader = File.OpenText(PathHelper.PrivateKey))
             {
-                var pemreader = new PemReader(reader);
-                object Obj = pemreader.ReadObject();
+                PemReader pemReader = new PemReader(reader);
+                AsymmetricCipherKeyPair keyPair =
+                    (AsymmetricCipherKeyPair)pemReader.ReadObject();
 
-                if (Obj is AsymmetricCipherKeyPair keyPair)
-                {
-                    return keyPair.Private;
-                }
+                ISigner signer = SignerUtilities.GetSigner("SHA1withRSA");
 
-                throw new InvalidDataException("Failed to get private key, format not recognized.");
+                signer.Init(true, keyPair.Private);
+                signer.BlockUpdate(data, 0, data.Length);
+
+                return signer.GenerateSignature();
             }
         }
 
@@ -83,8 +84,9 @@ namespace AuroriaResources.Signing
             string sigformat = GetSignFormat(sig);
             string sigPre = GetPreFormat(sig, string.IsNullOrWhiteSpace(AssetID));
             Script = string.Format(sigPre, Script, AssetID);
-
-            return Script; //temporary so i can push without build errors
+            byte[] data = Encoding.Default.GetBytes(Script);
+            byte[] inArray = Sign(data);
+            return string.Format(sigformat, Convert.ToBase64String(inArray)) + Script;
         }
     }
 }
