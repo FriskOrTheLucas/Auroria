@@ -16,23 +16,32 @@ namespace AuroriaWebserver.Asset
 
         public static void HandleFetch(HttpListenerContext context)
         {
-            HttpListenerRequest request = context.Request;
-            HttpListenerResponse response = context.Response;
-
-            string userID = request.QueryString["userID"] ?? "24-24-119-24-119-23";
-            string[] array = userID.Split('_');
-            string AllItems()
+            try
             {
-                foreach (var item in array)
+                HttpListenerRequest request = context.Request;
+                HttpListenerResponse response = context.Response;
+
+
+                string userID = request.QueryString["userID"] ?? "24-24-119-24-119-23";
+                string[] array = userID.Split('_');
+                Console.WriteLine("Recieved and split userID");
+                string AllItems()
                 {
-                    return CombineAssetUrl(item);
+                    foreach (var item in array)
+                    {
+                        return CombineAssetUrl(item);
+                    }
+                    return "";
                 }
-                return "";
+                string finalUrl = $"http://www.roblox.com/asset/bodycolors.ashx?userid={PathHelper.BodyColors}" + AllItems();
+                Console.WriteLine("CharacterFetch Redirect = " + finalUrl);
+                response.Redirect(finalUrl);
+                Console.WriteLine("Redirected to BodyColors");
             }
-            string finalUrl = $"http://www.roblox.com/asset/bodycolors.ashx?userid={PathHelper.BodyColors}" + AllItems();
-            Console.WriteLine("CharacterFetch Redirect = " + finalUrl);
-            response.Redirect(finalUrl);
-            Console.WriteLine("Redirected to BodyColors");
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed to get CharacterFetch: " + ex);
+            }
         }
     }
 }
