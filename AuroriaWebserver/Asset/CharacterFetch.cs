@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using AuroriaResources;
-using System.Reflection.Emit;
 
 namespace AuroriaWebserver.Asset
 {
