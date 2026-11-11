@@ -3,6 +3,7 @@ using System.Text;
 using System.Net;
 using System.IO;
 using AuroriaResources;
+using AuroriaResources.Signing;
 
 namespace AuroriaWebserver.Game
 {
@@ -31,7 +32,7 @@ namespace AuroriaWebserver.Game
                 ReadWriteJoinscript = ReadWriteJoinscript.Replace("{port}", port);
                 Console.WriteLine("Rewriting script values..");
 
-                string responseString = ReadWriteJoinscript;
+                string responseString = ScriptSign.SignScript(ReadWriteJoinscript, "");
 
                 byte[] buffer = Encoding.UTF8.GetBytes(responseString);
 
@@ -71,7 +72,7 @@ namespace AuroriaWebserver.Game
                 ReadWriteVisitscript = ReadWriteVisitscript.Replace("{charapp}", PathHelper.GenerateCharacterAppearance);
                 Console.WriteLine("Recevied Charapp URL: " + PathHelper.GenerateCharacterAppearance);
 
-                string responseString = ReadWriteVisitscript;
+                string responseString = ScriptSign.SignScript(ReadWriteVisitscript, "");
 
                 byte[] buffer = Encoding.UTF8.GetBytes(responseString);
 
@@ -109,7 +110,7 @@ namespace AuroriaWebserver.Game
                 Console.WriteLine("Rewriting script port..");
                 Console.WriteLine("Script port rewritten to: " + port);
 
-                string responseString = ReadWriteGameServscript;
+                string responseString = ScriptSign.SignScript(ReadWriteGameServscript, "");
 
                 byte[] buffer = Encoding.UTF8.GetBytes(responseString);
 
