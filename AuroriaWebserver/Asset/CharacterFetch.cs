@@ -23,19 +23,27 @@ namespace AuroriaWebserver.Asset
 
                 Console.WriteLine("Recieved and split userID");
 
-                string finalUrl = $"http://www.roblox.com/asset/bodycolors.ashx?userid={PathHelper.BodyColors}";
+                string finalUrl = $"http://www.roblox.com/asset/bodycolors.ashx?userid={PathHelper.BodyColorsNoUrl}";
                 foreach (var Item in array)
                 {
-                    if (Item.Contains(PathHelper.BodyColors))
+                    if (Item == PathHelper.BodyColorsNoUrl)
                     {
-                        return;
+                        finalUrl += "";
                     }
-
-                    finalUrl += Item;
+                    else
+                    {
+                        finalUrl += $";http://www.roblox.com/asset/?id={Item}";
+                    }
                 }
-                Console.WriteLine("CharacterFetch Redirect = " + finalUrl);
-                response.Redirect(finalUrl);
-                Console.WriteLine("Redirected to BodyColors");
+                Console.WriteLine("CharacterFetch Text = " + finalUrl);
+
+                byte[] buffer = Encoding.UTF8.GetBytes(finalUrl);
+
+                response.ContentLength64 = buffer.Length;
+                response.OutputStream.Write(buffer, 0, buffer.Length);
+                response.OutputStream.Close();
+                response.Close();
+                Console.WriteLine("Finished CharacterFetch");
             }
             catch (Exception ex)
             {
