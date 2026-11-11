@@ -82,7 +82,7 @@ namespace AuroriaResources.Signing
             }
 
             string sigformat = GetSignFormat(sig);
-            string sigPre = GetPreFormat(sig, string.IsNullOrWhiteSpace(AssetID));
+            string sigPre = GetPreFormat(sig, !string.IsNullOrWhiteSpace(AssetID));
             Script = string.Format(sigPre, Script, AssetID);
             byte[] data = Encoding.Default.GetBytes(Script);
             byte[] inArray = Sign(data);
