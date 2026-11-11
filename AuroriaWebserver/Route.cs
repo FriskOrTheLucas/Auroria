@@ -70,8 +70,8 @@ namespace AuroriaWebserver
 
             if (AbsolutePath.Equals("/asset/characterfetch.ashx"))
             {
-                CharacterFetch.HandleFetch(context);
                 Console.WriteLine("Character Fetch recieved.");
+                CharacterFetch.HandleFetch(context);
             }
 
             if (AbsolutePath.Equals("/error/reportdialog.aspx"))
