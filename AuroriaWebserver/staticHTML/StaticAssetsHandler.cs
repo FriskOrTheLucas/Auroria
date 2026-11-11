@@ -30,7 +30,7 @@ namespace AuroriaWebserver.staticHTML
                 {
                     try
                     {
-                        Console.WriteLine("Static Asset Found: " + asset);
+                        Console.WriteLine("Static Asset Found.");
                         byte[] buffer = File.ReadAllBytes(file);
                         response.ContentType = "application/octet-stream";
                         response.ContentLength64 = buffer.Length;
