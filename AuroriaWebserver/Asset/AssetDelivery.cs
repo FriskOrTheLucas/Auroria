@@ -19,16 +19,10 @@ namespace AuroriaWebserver.Asset
             string id = request.QueryString["id"] ?? "1818";
             string version = request.QueryString["version"] ?? "1";
 
-            if (File.Exists(PathHelper.CoreScriptPath))
+            if (Directory.Exists(PathHelper.CoreScriptPath))
             {
                 foreach (var file in Directory.GetFiles(PathHelper.CoreScriptPath))
                 {
-                    Console.WriteLine("Getting Local Asset Directory: " + file);
-                    if (Directory.Exists(file))
-                    {
-                        return;
-                    }
-
                     if (file.Contains(id))
                     {
                         try
@@ -51,10 +45,11 @@ namespace AuroriaWebserver.Asset
                             response.ContentLength64 = buffer.Length;
                             response.OutputStream.Write(buffer, 0, buffer.Length);
                             response.OutputStream.Close();
+                            return;
                         }
                     }
                 }
-            }
+            } 
 
             if (id == "1818")
             {
