@@ -129,6 +129,22 @@
   <metadata name="PntsImgList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>251, 17</value>
   </metadata>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>LAUNCHER CREDITS (Temporary until I feel like making a UI)
+
+--MAIN--
+FriskOrTheLucas (Launcher Creator/Main Dev)
+Alexis (Made the Discord Server)
+
+--DEVELOPMENT/TESTING--
+Auroria Tester Team (Helped Test Auroria)
+McLabs.exe (Helped with old client patching and webserver information./Helped Test Auroria)
+Jack (Helped with old client information)
+rickkkkk (Helped with webserver stuff)
+Aerowrap (motivation ? )
+
+And with the help of community members like you. Thank you!</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

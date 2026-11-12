@@ -77,11 +77,8 @@
             this.PlayerIDBox = new System.Windows.Forms.TextBox();
             this.InfoTab = new System.Windows.Forms.TabPage();
             this.PacksTab = new System.Windows.Forms.TabPage();
-            this.DisableClientPack = new System.Windows.Forms.Button();
             this.DisableAssetPack = new System.Windows.Forms.Button();
             this.PacksLabel = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ClientPackBox = new System.Windows.Forms.ListBox();
             this.AssetPacksBox = new System.Windows.Forms.GroupBox();
             this.AssetPackBox = new System.Windows.Forms.ListBox();
             this.SettingTab = new System.Windows.Forms.TabPage();
@@ -100,6 +97,9 @@
             this.CookieIMPRT = new System.Windows.Forms.Button();
             this.AssetURLBox = new System.Windows.Forms.TextBox();
             this.CookieBox = new System.Windows.Forms.TextBox();
+            this.ExtraPage = new System.Windows.Forms.TabPage();
+            this.CatalogETCGroupbox = new System.Windows.Forms.GroupBox();
+            this.CreateAssetMetadata = new System.Windows.Forms.Button();
             this.CrditTab = new System.Windows.Forms.TabPage();
             this.DCButton = new System.Windows.Forms.Button();
             this.ClientsLabel = new System.Windows.Forms.Label();
@@ -107,9 +107,7 @@
             this.MOTD = new System.Windows.Forms.Label();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.StudioButton = new System.Windows.Forms.Button();
-            this.ExtraPage = new System.Windows.Forms.TabPage();
-            this.CatalogETCGroupbox = new System.Windows.Forms.GroupBox();
-            this.CreateAssetMetadata = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -123,7 +121,6 @@
             this.PntTab.SuspendLayout();
             this.PckgeTab.SuspendLayout();
             this.PacksTab.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.AssetPacksBox.SuspendLayout();
             this.SettingTab.SuspendLayout();
             this.SettingsTabs.SuspendLayout();
@@ -131,10 +128,10 @@
             this.groupBox2.SuspendLayout();
             this.AssetSettings.SuspendLayout();
             this.AsDelGB.SuspendLayout();
-            this.CrditTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).BeginInit();
             this.ExtraPage.SuspendLayout();
             this.CatalogETCGroupbox.SuspendLayout();
+            this.CrditTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).BeginInit();
             this.SuspendLayout();
             // 
             // AllTabs
@@ -693,10 +690,8 @@
             // PacksTab
             // 
             this.PacksTab.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.PacksTab.Controls.Add(this.DisableClientPack);
             this.PacksTab.Controls.Add(this.DisableAssetPack);
             this.PacksTab.Controls.Add(this.PacksLabel);
-            this.PacksTab.Controls.Add(this.groupBox1);
             this.PacksTab.Controls.Add(this.AssetPacksBox);
             this.PacksTab.Location = new System.Drawing.Point(4, 34);
             this.PacksTab.Name = "PacksTab";
@@ -705,20 +700,10 @@
             this.PacksTab.Text = "Packs";
             this.PacksTab.ToolTipText = "Includes Assetpacks and Clientpacks. Both will be explained in the tab.";
             // 
-            // DisableClientPack
-            // 
-            this.DisableClientPack.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DisableClientPack.Location = new System.Drawing.Point(256, 92);
-            this.DisableClientPack.Name = "DisableClientPack";
-            this.DisableClientPack.Size = new System.Drawing.Size(95, 29);
-            this.DisableClientPack.TabIndex = 4;
-            this.DisableClientPack.Text = "Disable";
-            this.DisableClientPack.UseVisualStyleBackColor = true;
-            // 
             // DisableAssetPack
             // 
             this.DisableAssetPack.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DisableAssetPack.Location = new System.Drawing.Point(12, 92);
+            this.DisableAssetPack.Location = new System.Drawing.Point(132, 92);
             this.DisableAssetPack.Name = "DisableAssetPack";
             this.DisableAssetPack.Size = new System.Drawing.Size(95, 29);
             this.DisableAssetPack.TabIndex = 3;
@@ -730,42 +715,20 @@
             this.PacksLabel.AutoSize = true;
             this.PacksLabel.BackColor = System.Drawing.Color.Transparent;
             this.PacksLabel.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PacksLabel.Location = new System.Drawing.Point(8, 9);
+            this.PacksLabel.Location = new System.Drawing.Point(3, 16);
             this.PacksLabel.Name = "PacksLabel";
-            this.PacksLabel.Size = new System.Drawing.Size(437, 80);
+            this.PacksLabel.Size = new System.Drawing.Size(431, 60);
             this.PacksLabel.TabIndex = 2;
             this.PacksLabel.Text = "-Asset packs are a feature that allow you to load assets that\r\nare unavailable an" +
-    "ymore. \r\n-Client Packs on the other hand are basically client extensions\r\nthat a" +
-    "llow you to add more clients.";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.ClientPackBox);
-            this.groupBox1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(256, 121);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(226, 250);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Client Packs";
-            // 
-            // ClientPackBox
-            // 
-            this.ClientPackBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientPackBox.FormattingEnabled = true;
-            this.ClientPackBox.ItemHeight = 16;
-            this.ClientPackBox.Location = new System.Drawing.Point(6, 29);
-            this.ClientPackBox.Name = "ClientPackBox";
-            this.ClientPackBox.Size = new System.Drawing.Size(214, 212);
-            this.ClientPackBox.TabIndex = 6;
+    "ymore. \r\n\r\n";
             // 
             // AssetPacksBox
             // 
             this.AssetPacksBox.Controls.Add(this.AssetPackBox);
             this.AssetPacksBox.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AssetPacksBox.Location = new System.Drawing.Point(12, 121);
+            this.AssetPacksBox.Location = new System.Drawing.Point(132, 121);
             this.AssetPacksBox.Name = "AssetPacksBox";
-            this.AssetPacksBox.Size = new System.Drawing.Size(226, 250);
+            this.AssetPacksBox.Size = new System.Drawing.Size(228, 250);
             this.AssetPacksBox.TabIndex = 0;
             this.AssetPacksBox.TabStop = false;
             this.AssetPacksBox.Text = "Asset Packs";
@@ -970,9 +933,43 @@
             this.CookieBox.Size = new System.Drawing.Size(357, 26);
             this.CookieBox.TabIndex = 0;
             // 
+            // ExtraPage
+            // 
+            this.ExtraPage.Controls.Add(this.CatalogETCGroupbox);
+            this.ExtraPage.Location = new System.Drawing.Point(4, 29);
+            this.ExtraPage.Name = "ExtraPage";
+            this.ExtraPage.Size = new System.Drawing.Size(475, 345);
+            this.ExtraPage.TabIndex = 2;
+            this.ExtraPage.Text = "Extra";
+            this.ExtraPage.UseVisualStyleBackColor = true;
+            // 
+            // CatalogETCGroupbox
+            // 
+            this.CatalogETCGroupbox.Controls.Add(this.CreateAssetMetadata);
+            this.CatalogETCGroupbox.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CatalogETCGroupbox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.CatalogETCGroupbox.Location = new System.Drawing.Point(6, 6);
+            this.CatalogETCGroupbox.Name = "CatalogETCGroupbox";
+            this.CatalogETCGroupbox.Size = new System.Drawing.Size(463, 59);
+            this.CatalogETCGroupbox.TabIndex = 1;
+            this.CatalogETCGroupbox.TabStop = false;
+            this.CatalogETCGroupbox.Text = "Catalog";
+            // 
+            // CreateAssetMetadata
+            // 
+            this.CreateAssetMetadata.ForeColor = System.Drawing.Color.Black;
+            this.CreateAssetMetadata.Location = new System.Drawing.Point(6, 23);
+            this.CreateAssetMetadata.Name = "CreateAssetMetadata";
+            this.CreateAssetMetadata.Size = new System.Drawing.Size(153, 26);
+            this.CreateAssetMetadata.TabIndex = 3;
+            this.CreateAssetMetadata.Text = "Create Asset Metadata";
+            this.CreateAssetMetadata.UseVisualStyleBackColor = true;
+            this.CreateAssetMetadata.Click += new System.EventHandler(this.CreateAssetMetadata_Click);
+            // 
             // CrditTab
             // 
             this.CrditTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CrditTab.Controls.Add(this.richTextBox1);
             this.CrditTab.Controls.Add(this.DCButton);
             this.CrditTab.Location = new System.Drawing.Point(4, 34);
             this.CrditTab.Name = "CrditTab";
@@ -984,11 +981,10 @@
             // DCButton
             // 
             this.DCButton.BackColor = System.Drawing.Color.SlateBlue;
-            this.DCButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DCButton.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DCButton.ForeColor = System.Drawing.Color.White;
             this.DCButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DCButton.Location = new System.Drawing.Point(16, 15);
+            this.DCButton.Location = new System.Drawing.Point(16, 24);
             this.DCButton.Name = "DCButton";
             this.DCButton.Size = new System.Drawing.Size(153, 40);
             this.DCButton.TabIndex = 0;
@@ -1051,38 +1047,16 @@
             this.StudioButton.Text = "Studio";
             this.StudioButton.UseVisualStyleBackColor = false;
             // 
-            // ExtraPage
+            // richTextBox1
             // 
-            this.ExtraPage.Controls.Add(this.CatalogETCGroupbox);
-            this.ExtraPage.Location = new System.Drawing.Point(4, 29);
-            this.ExtraPage.Name = "ExtraPage";
-            this.ExtraPage.Size = new System.Drawing.Size(475, 345);
-            this.ExtraPage.TabIndex = 2;
-            this.ExtraPage.Text = "Extra";
-            this.ExtraPage.UseVisualStyleBackColor = true;
-            // 
-            // CatalogETCGroupbox
-            // 
-            this.CatalogETCGroupbox.Controls.Add(this.CreateAssetMetadata);
-            this.CatalogETCGroupbox.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CatalogETCGroupbox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.CatalogETCGroupbox.Location = new System.Drawing.Point(6, 6);
-            this.CatalogETCGroupbox.Name = "CatalogETCGroupbox";
-            this.CatalogETCGroupbox.Size = new System.Drawing.Size(463, 59);
-            this.CatalogETCGroupbox.TabIndex = 1;
-            this.CatalogETCGroupbox.TabStop = false;
-            this.CatalogETCGroupbox.Text = "Catalog";
-            // 
-            // CreateAssetMetadata
-            // 
-            this.CreateAssetMetadata.ForeColor = System.Drawing.Color.Black;
-            this.CreateAssetMetadata.Location = new System.Drawing.Point(6, 23);
-            this.CreateAssetMetadata.Name = "CreateAssetMetadata";
-            this.CreateAssetMetadata.Size = new System.Drawing.Size(153, 26);
-            this.CreateAssetMetadata.TabIndex = 3;
-            this.CreateAssetMetadata.Text = "Create Asset Metadata";
-            this.CreateAssetMetadata.UseVisualStyleBackColor = true;
-            this.CreateAssetMetadata.Click += new System.EventHandler(this.CreateAssetMetadata_Click);
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(16, 83);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(461, 290);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // AurNTBase
             // 
@@ -1120,7 +1094,6 @@
             this.PckgeTab.PerformLayout();
             this.PacksTab.ResumeLayout(false);
             this.PacksTab.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             this.AssetPacksBox.ResumeLayout(false);
             this.SettingTab.ResumeLayout(false);
             this.SettingsTabs.ResumeLayout(false);
@@ -1130,10 +1103,10 @@
             this.AssetSettings.ResumeLayout(false);
             this.AsDelGB.ResumeLayout(false);
             this.AsDelGB.PerformLayout();
-            this.CrditTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).EndInit();
             this.ExtraPage.ResumeLayout(false);
             this.CatalogETCGroupbox.ResumeLayout(false);
+            this.CrditTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BackgroundBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1189,7 +1162,6 @@
         private System.Windows.Forms.ComboBox HostingTypeBox;
         private System.Windows.Forms.PictureBox PlayButtonC;
         private System.Windows.Forms.PictureBox HostButtonC;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox AssetPacksBox;
         private System.Windows.Forms.Label PacksLabel;
         private System.Windows.Forms.TabControl SettingsTabs;
@@ -1213,14 +1185,13 @@
         private System.Windows.Forms.ImageList TshrtImgList;
         private System.Windows.Forms.Button StudioButton;
         private System.Windows.Forms.Label packageLabel;
-        private System.Windows.Forms.Button DisableClientPack;
         private System.Windows.Forms.Button DisableAssetPack;
-        private System.Windows.Forms.ListBox ClientPackBox;
         private System.Windows.Forms.ListBox AssetPackBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage ExtraPage;
         private System.Windows.Forms.GroupBox CatalogETCGroupbox;
         private System.Windows.Forms.Button CreateAssetMetadata;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
