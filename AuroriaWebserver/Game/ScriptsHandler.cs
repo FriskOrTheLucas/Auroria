@@ -94,6 +94,37 @@ namespace AuroriaWebserver.Game
             }
         }
 
+        public static void HandleStudio(HttpListenerContext context)
+        {
+            try
+            {
+                HttpListenerRequest request = context.Request;
+                HttpListenerResponse response = context.Response;
+
+                Console.WriteLine("Join URL was called!");
+                Console.WriteLine("Getting Client Script: " + ClientSettings.StudioScript);
+                string ReadStudio = File.ReadAllText(ClientSettings.StudioScript);
+                string script = ScriptSign.SignScript(ReadStudio, "");
+
+                byte[] buffer = Encoding.UTF8.GetBytes(script);
+                response.ContentLength64 = buffer.Length;
+                response.OutputStream.Write(buffer, 0, buffer.Length);
+                response.OutputStream.Close();
+                response.Close();
+                Console.WriteLine("Done!");
+            }
+            catch (Exception ex)
+            {
+                HttpListenerResponse response = context.Response;
+                Console.WriteLine("Error in HandleJoin: " + ex.Message);
+                byte[] buffer = Encoding.UTF8.GetBytes("An unexpected error occured when getting the visit script: " + ex.Message);
+                response.ContentLength64 = buffer.Length;
+                response.OutputStream.Write(buffer, 0, buffer.Length);
+                response.OutputStream.Close();
+                response.Close();
+            }
+        }
+
         public static void HandleGameserver(HttpListenerContext context)
         {
             try

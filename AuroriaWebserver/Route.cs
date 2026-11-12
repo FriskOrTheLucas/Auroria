@@ -63,6 +63,11 @@ namespace AuroriaWebserver
                 ScriptsHandler.HandleVisit(context);
             }
 
+            if (AbsolutePath.Equals("/game/studio.ashx"))
+            {
+                ScriptsHandler.HandleStudio(context);
+            }
+
             if (AbsolutePath.Equals("/asset/bodycolors.ashx"))
             {
                 BodyColor.HandleBodyColor(context);

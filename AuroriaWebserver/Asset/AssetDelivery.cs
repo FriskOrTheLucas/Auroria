@@ -1,8 +1,9 @@
-﻿using System;
-using System.Text;
+﻿using AuroriaResources;
+using AuroriaResources.Signing;
+using System;
 using System.IO;
 using System.Net;
-using AuroriaResources;
+using System.Text;
 
 namespace AuroriaWebserver.Asset
 {
@@ -23,7 +24,7 @@ namespace AuroriaWebserver.Asset
             {
                 foreach (var file in Directory.GetFiles(PathHelper.CoreScriptPath))
                 {
-                    if (file.Contains(id))
+                    if (file.Contains(id + ".rbxm"))
                     {
                         try
                         {
@@ -48,8 +49,35 @@ namespace AuroriaWebserver.Asset
                             return;
                         }
                     }
+                    else if (file.Contains(id + ".lua"))
+                    {
+                        try
+                        {
+                            Console.WriteLine("Local corescript Found: " + id);
+                            string readcorescript = File.ReadAllText(file);
+                            string script = ScriptSign.SignScript(readcorescript, id);
+                            byte[] buffer = Encoding.UTF8.GetBytes(script);
+                            response.ContentType = "application/octet-stream";
+                            response.ContentLength64 = buffer.Length;
+                            response.OutputStream.Write(buffer, 0, buffer.Length);
+                            response.OutputStream.Close();
+                            return;
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Error occurred while getting Local corescript: " + ex);
+                            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                            string jsonResponse = "{\"message\": \"An error has occurred while getting the asset. We are sorry.\"}";
+                            Console.WriteLine("Sent error code and message.");
+                            byte[] buffer = Encoding.UTF8.GetBytes(jsonResponse);
+                            response.ContentLength64 = buffer.Length;
+                            response.OutputStream.Write(buffer, 0, buffer.Length);
+                            response.OutputStream.Close();
+                            return;
+                        }
+                    }
                 }
-            } 
+            }
 
             if (id == "1818")
             {
