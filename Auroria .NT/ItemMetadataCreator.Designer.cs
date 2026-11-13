@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemMetadataCreator));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CreatorLabel = new System.Windows.Forms.Label();
+            this.CreatorBox = new System.Windows.Forms.TextBox();
+            this.DateBox = new System.Windows.Forms.TextBox();
+            this.DateLabel = new System.Windows.Forms.Label();
             this.CreateNewAsset = new System.Windows.Forms.CheckBox();
             this.ItemType = new System.Windows.Forms.ListBox();
             this.CreateMetadata = new System.Windows.Forms.Button();
@@ -38,10 +43,6 @@
             this.IDBox = new System.Windows.Forms.TextBox();
             this.DescriptionBox = new System.Windows.Forms.TextBox();
             this.NameBox = new System.Windows.Forms.TextBox();
-            this.DateLabel = new System.Windows.Forms.Label();
-            this.DateBox = new System.Windows.Forms.TextBox();
-            this.CreatorBox = new System.Windows.Forms.TextBox();
-            this.CreatorLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +69,42 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create";
+            // 
+            // CreatorLabel
+            // 
+            this.CreatorLabel.AutoSize = true;
+            this.CreatorLabel.Location = new System.Drawing.Point(12, 235);
+            this.CreatorLabel.Name = "CreatorLabel";
+            this.CreatorLabel.Size = new System.Drawing.Size(61, 17);
+            this.CreatorLabel.TabIndex = 13;
+            this.CreatorLabel.Text = "Creator";
+            // 
+            // CreatorBox
+            // 
+            this.CreatorBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CreatorBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreatorBox.Location = new System.Drawing.Point(15, 255);
+            this.CreatorBox.Name = "CreatorBox";
+            this.CreatorBox.Size = new System.Drawing.Size(265, 26);
+            this.CreatorBox.TabIndex = 12;
+            // 
+            // DateBox
+            // 
+            this.DateBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DateBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateBox.Location = new System.Drawing.Point(15, 189);
+            this.DateBox.Name = "DateBox";
+            this.DateBox.Size = new System.Drawing.Size(265, 26);
+            this.DateBox.TabIndex = 11;
+            // 
+            // DateLabel
+            // 
+            this.DateLabel.AutoSize = true;
+            this.DateLabel.Location = new System.Drawing.Point(12, 169);
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(99, 17);
+            this.DateLabel.TabIndex = 10;
+            this.DateLabel.Text = "Date Created";
             // 
             // CreateNewAsset
             // 
@@ -140,7 +177,6 @@
             this.IDBox.Name = "IDBox";
             this.IDBox.Size = new System.Drawing.Size(169, 26);
             this.IDBox.TabIndex = 3;
-            this.IDBox.Text = "\r\n";
             // 
             // DescriptionBox
             // 
@@ -150,7 +186,6 @@
             this.DescriptionBox.Name = "DescriptionBox";
             this.DescriptionBox.Size = new System.Drawing.Size(265, 26);
             this.DescriptionBox.TabIndex = 2;
-            this.DescriptionBox.Text = "\r\n";
             // 
             // NameBox
             // 
@@ -161,44 +196,6 @@
             this.NameBox.Size = new System.Drawing.Size(265, 26);
             this.NameBox.TabIndex = 1;
             // 
-            // DateLabel
-            // 
-            this.DateLabel.AutoSize = true;
-            this.DateLabel.Location = new System.Drawing.Point(12, 169);
-            this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(99, 17);
-            this.DateLabel.TabIndex = 10;
-            this.DateLabel.Text = "Date Created";
-            // 
-            // DateBox
-            // 
-            this.DateBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DateBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateBox.Location = new System.Drawing.Point(15, 189);
-            this.DateBox.Name = "DateBox";
-            this.DateBox.Size = new System.Drawing.Size(265, 26);
-            this.DateBox.TabIndex = 11;
-            this.DateBox.Text = "\r\n";
-            // 
-            // CreatorBox
-            // 
-            this.CreatorBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CreatorBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreatorBox.Location = new System.Drawing.Point(15, 255);
-            this.CreatorBox.Name = "CreatorBox";
-            this.CreatorBox.Size = new System.Drawing.Size(265, 26);
-            this.CreatorBox.TabIndex = 12;
-            this.CreatorBox.Text = "\r\n";
-            // 
-            // CreatorLabel
-            // 
-            this.CreatorLabel.AutoSize = true;
-            this.CreatorLabel.Location = new System.Drawing.Point(12, 235);
-            this.CreatorLabel.Name = "CreatorLabel";
-            this.CreatorLabel.Size = new System.Drawing.Size(61, 17);
-            this.CreatorLabel.TabIndex = 13;
-            this.CreatorLabel.Text = "Creator";
-            // 
             // ItemMetadataCreator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,7 +203,9 @@
             this.ClientSize = new System.Drawing.Size(378, 442);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ItemMetadataCreator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metadata Creator";
             this.Load += new System.EventHandler(this.ItemMetadataCreator_Load);
             this.groupBox1.ResumeLayout(false);
