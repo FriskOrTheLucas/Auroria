@@ -101,13 +101,14 @@
             this.CatalogETCGroupbox = new System.Windows.Forms.GroupBox();
             this.CreateAssetMetadata = new System.Windows.Forms.Button();
             this.CrditTab = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.DCButton = new System.Windows.Forms.Button();
             this.ClientsLabel = new System.Windows.Forms.Label();
             this.MapsTree = new System.Windows.Forms.TreeView();
             this.MOTD = new System.Windows.Forms.Label();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.StudioButton = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -120,6 +121,7 @@
             this.ShrtTab.SuspendLayout();
             this.PntTab.SuspendLayout();
             this.PckgeTab.SuspendLayout();
+            this.InfoTab.SuspendLayout();
             this.PacksTab.SuspendLayout();
             this.AssetPacksBox.SuspendLayout();
             this.SettingTab.SuspendLayout();
@@ -680,6 +682,7 @@
             // InfoTab
             // 
             this.InfoTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.InfoTab.Controls.Add(this.richTextBox2);
             this.InfoTab.Location = new System.Drawing.Point(4, 34);
             this.InfoTab.Name = "InfoTab";
             this.InfoTab.Size = new System.Drawing.Size(495, 387);
@@ -703,7 +706,7 @@
             // DisableAssetPack
             // 
             this.DisableAssetPack.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DisableAssetPack.Location = new System.Drawing.Point(132, 92);
+            this.DisableAssetPack.Location = new System.Drawing.Point(83, 92);
             this.DisableAssetPack.Name = "DisableAssetPack";
             this.DisableAssetPack.Size = new System.Drawing.Size(95, 29);
             this.DisableAssetPack.TabIndex = 3;
@@ -726,9 +729,9 @@
             // 
             this.AssetPacksBox.Controls.Add(this.AssetPackBox);
             this.AssetPacksBox.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AssetPacksBox.Location = new System.Drawing.Point(132, 121);
+            this.AssetPacksBox.Location = new System.Drawing.Point(77, 127);
             this.AssetPacksBox.Name = "AssetPacksBox";
-            this.AssetPacksBox.Size = new System.Drawing.Size(228, 250);
+            this.AssetPacksBox.Size = new System.Drawing.Size(302, 250);
             this.AssetPacksBox.TabIndex = 0;
             this.AssetPacksBox.TabStop = false;
             this.AssetPacksBox.Text = "Asset Packs";
@@ -740,7 +743,7 @@
             this.AssetPackBox.ItemHeight = 16;
             this.AssetPackBox.Location = new System.Drawing.Point(6, 29);
             this.AssetPackBox.Name = "AssetPackBox";
-            this.AssetPackBox.Size = new System.Drawing.Size(214, 212);
+            this.AssetPackBox.Size = new System.Drawing.Size(290, 212);
             this.AssetPackBox.TabIndex = 5;
             // 
             // SettingTab
@@ -978,6 +981,17 @@
             this.CrditTab.Text = "Credits";
             this.CrditTab.ToolTipText = "Credits for all the cool people who made Auroria possible.";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(16, 83);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(461, 290);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
             // DCButton
             // 
             this.DCButton.BackColor = System.Drawing.Color.SlateBlue;
@@ -1047,16 +1061,16 @@
             this.StudioButton.Text = "Studio";
             this.StudioButton.UseVisualStyleBackColor = false;
             // 
-            // richTextBox1
+            // richTextBox2
             // 
-            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(16, 83);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(461, 290);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.richTextBox2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox2.Location = new System.Drawing.Point(3, 188);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.Size = new System.Drawing.Size(489, 196);
+            this.richTextBox2.TabIndex = 2;
+            this.richTextBox2.Text = "insert documentation stuff here\n";
             // 
             // AurNTBase
             // 
@@ -1092,6 +1106,7 @@
             this.PntTab.ResumeLayout(false);
             this.PckgeTab.ResumeLayout(false);
             this.PckgeTab.PerformLayout();
+            this.InfoTab.ResumeLayout(false);
             this.PacksTab.ResumeLayout(false);
             this.PacksTab.PerformLayout();
             this.AssetPacksBox.ResumeLayout(false);
@@ -1192,6 +1207,7 @@
         private System.Windows.Forms.GroupBox CatalogETCGroupbox;
         private System.Windows.Forms.Button CreateAssetMetadata;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox2;
     }
 }
 
