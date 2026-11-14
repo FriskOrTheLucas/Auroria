@@ -117,6 +117,8 @@
             this.HeadsListView = new System.Windows.Forms.ListView();
             this.HeadsInfoText = new System.Windows.Forms.RichTextBox();
             this.HeadSlot1 = new System.Windows.Forms.Button();
+            this.OSverText = new System.Windows.Forms.Label();
+            this.AuroriaBuildNumber = new System.Windows.Forms.Label();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -740,6 +742,8 @@
             // InfoTab
             // 
             this.InfoTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.InfoTab.Controls.Add(this.AuroriaBuildNumber);
+            this.InfoTab.Controls.Add(this.OSverText);
             this.InfoTab.Controls.Add(this.documentationbox);
             this.InfoTab.Location = new System.Drawing.Point(4, 34);
             this.InfoTab.Name = "InfoTab";
@@ -1172,6 +1176,28 @@
             this.HeadSlot1.UseVisualStyleBackColor = true;
             this.HeadSlot1.Click += new System.EventHandler(this.HeadSlot1_Click);
             // 
+            // OSverText
+            // 
+            this.OSverText.AutoSize = true;
+            this.OSverText.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OSverText.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.OSverText.Location = new System.Drawing.Point(12, 42);
+            this.OSverText.Name = "OSverText";
+            this.OSverText.Size = new System.Drawing.Size(149, 22);
+            this.OSverText.TabIndex = 3;
+            this.OSverText.Text = "OSVersionText";
+            // 
+            // AuroriaBuildNumber
+            // 
+            this.AuroriaBuildNumber.AutoSize = true;
+            this.AuroriaBuildNumber.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AuroriaBuildNumber.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AuroriaBuildNumber.Location = new System.Drawing.Point(12, 74);
+            this.AuroriaBuildNumber.Name = "AuroriaBuildNumber";
+            this.AuroriaBuildNumber.Size = new System.Drawing.Size(194, 22);
+            this.AuroriaBuildNumber.TabIndex = 4;
+            this.AuroriaBuildNumber.Text = "Auroria Version: 0.1";
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1209,6 +1235,7 @@
             this.PckgeTab.ResumeLayout(false);
             this.PckgeTab.PerformLayout();
             this.InfoTab.ResumeLayout(false);
+            this.InfoTab.PerformLayout();
             this.PacksTab.ResumeLayout(false);
             this.PacksTab.PerformLayout();
             this.AssetPacksBox.ResumeLayout(false);
@@ -1318,6 +1345,8 @@
         private System.Windows.Forms.Button HeadSlot1;
         private System.Windows.Forms.RichTextBox HeadsInfoText;
         private System.Windows.Forms.ListView HeadsListView;
+        private System.Windows.Forms.Label AuroriaBuildNumber;
+        private System.Windows.Forms.Label OSverText;
     }
 }
 

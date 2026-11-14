@@ -164,6 +164,7 @@ namespace Auroria.NT
 
             AddClient(ClientList);
             documentationbox.Text = File.ReadAllText(PathHelper.DocumentationTxt);
+            OSverText.Text = $"OS: {System.Environment.OSVersion}";
         }
 
         public void LoadCatalogListView(string directoryPath, ListView listview, ImageList imglist)
