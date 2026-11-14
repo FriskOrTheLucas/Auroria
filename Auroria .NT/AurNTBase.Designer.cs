@@ -80,7 +80,7 @@
             this.PlayerNameBox = new System.Windows.Forms.TextBox();
             this.PlayerIDBox = new System.Windows.Forms.TextBox();
             this.InfoTab = new System.Windows.Forms.TabPage();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.documentationbox = new System.Windows.Forms.RichTextBox();
             this.PacksTab = new System.Windows.Forms.TabPage();
             this.DisableAssetPack = new System.Windows.Forms.Button();
             this.PacksLabel = new System.Windows.Forms.Label();
@@ -733,7 +733,7 @@
             // InfoTab
             // 
             this.InfoTab.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.InfoTab.Controls.Add(this.richTextBox2);
+            this.InfoTab.Controls.Add(this.documentationbox);
             this.InfoTab.Location = new System.Drawing.Point(4, 34);
             this.InfoTab.Name = "InfoTab";
             this.InfoTab.Size = new System.Drawing.Size(495, 387);
@@ -741,16 +741,16 @@
             this.InfoTab.Text = "Info";
             this.InfoTab.ToolTipText = "Shows you System Info and Documentation!";
             // 
-            // richTextBox2
+            // documentationbox
             // 
-            this.richTextBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(3, 188);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(489, 196);
-            this.richTextBox2.TabIndex = 2;
-            this.richTextBox2.Text = "insert documentation stuff here\n";
+            this.documentationbox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.documentationbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.documentationbox.Location = new System.Drawing.Point(3, 188);
+            this.documentationbox.Name = "documentationbox";
+            this.documentationbox.ReadOnly = true;
+            this.documentationbox.Size = new System.Drawing.Size(489, 196);
+            this.documentationbox.TabIndex = 2;
+            this.documentationbox.Text = "insert documentation stuff here\n";
             // 
             // PacksTab
             // 
@@ -1265,7 +1265,7 @@
         private System.Windows.Forms.GroupBox CatalogETCGroupbox;
         private System.Windows.Forms.Button CreateAssetMetadata;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox documentationbox;
         private System.Windows.Forms.RichTextBox FaceInfoText;
         private System.Windows.Forms.Button FaceSlot1;
         private System.Windows.Forms.ListView FaceListView;

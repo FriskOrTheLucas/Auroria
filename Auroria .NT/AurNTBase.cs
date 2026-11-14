@@ -162,7 +162,7 @@ namespace Auroria.NT
             }
 
             AddClient(ClientList);
-
+            documentationbox.Text = File.ReadAllText(PathHelper.DocumentationTxt);
         }
 
         public void LoadCatalogListView(string directoryPath, ListView listview, ImageList imglist)
@@ -330,7 +330,7 @@ namespace Auroria.NT
             LoadAvatarItm(HatsSlot3, "HatSlot3", "charhats");
             LoadAvatarItm(TshrtSlot1, "TShirt", "chartshirt");
             LoadAvatarItm(ShrtSlot1, "Shirt", "charshirts");
-            LoadAvatarItm(ShrtSlot1, "Pants", "charpants");
+            LoadAvatarItm(PntsSlot1, "Pants", "charpants");
             LoadAvatarItm(FaceSlot1, "Face", "charface");
 
             ShowWebserverBool.Checked = PlayerSettings.ShowWebserver;

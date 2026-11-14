@@ -12,6 +12,7 @@ namespace AuroriaResources
     {
         public static string PlayerInfoPath = "PlayerSettings.json";
         public static string PrivateKey = @"Data\PrivateKey.pem";
+        public static string DocumentationTxt = @"Data\documentationinfo.txt";
         public static string CoreScriptPath => ClientSettings.CoreScriptDirectory;
         public static string LocalGameAssetHelper = @"Data\isset\Game";
         public static string HeadColor
