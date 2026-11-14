@@ -166,16 +166,13 @@ namespace AuroriaWebserver.Asset
                     assetReq.UserAgent = "Roblox/WinInet";
                     assetReq.Headers.Add("Cookie", cookie.ToString()); 
                     Console.WriteLine("Requested URL with Cookie.");
-
                     HttpWebResponse assetResponse = (HttpWebResponse)assetReq.GetResponse(); 
                     Console.WriteLine("Received response from asset request.");
-
                     Stream ResponseStream = assetResponse.GetResponseStream();
-                    
-
-                    ResponseStream.CopyTo(response.OutputStream); 
+                    ResponseStream.CopyTo(response.OutputStream);
                     response.OutputStream.Close();
-                    Console.WriteLine("Asset delivery Finished!"); 
+                    Console.WriteLine("Asset delivery Finished!");
+                    ResponseStream.Close();
                 }
                 catch (Exception ex)
                 {
