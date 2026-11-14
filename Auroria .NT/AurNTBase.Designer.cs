@@ -56,6 +56,10 @@
             this.HatsImgList = new System.Windows.Forms.ImageList(this.components);
             this.HeadsTab = new System.Windows.Forms.TabPage();
             this.FaceTab = new System.Windows.Forms.TabPage();
+            this.FaceInfoText = new System.Windows.Forms.RichTextBox();
+            this.FaceSlot1 = new System.Windows.Forms.Button();
+            this.FaceListView = new System.Windows.Forms.ListView();
+            this.FaceImgList = new System.Windows.Forms.ImageList(this.components);
             this.TshrtTab = new System.Windows.Forms.TabPage();
             this.TshrtSlot1 = new System.Windows.Forms.Button();
             this.TshrtInfoText = new System.Windows.Forms.RichTextBox();
@@ -76,6 +80,7 @@
             this.PlayerNameBox = new System.Windows.Forms.TextBox();
             this.PlayerIDBox = new System.Windows.Forms.TextBox();
             this.InfoTab = new System.Windows.Forms.TabPage();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.PacksTab = new System.Windows.Forms.TabPage();
             this.DisableAssetPack = new System.Windows.Forms.Button();
             this.PacksLabel = new System.Windows.Forms.Label();
@@ -108,7 +113,7 @@
             this.MOTD = new System.Windows.Forms.Label();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.StudioButton = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.HeadsImgList = new System.Windows.Forms.ImageList(this.components);
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -117,6 +122,7 @@
             this.CustmTab.SuspendLayout();
             this.CatalogTabsOptions.SuspendLayout();
             this.HatTab.SuspendLayout();
+            this.FaceTab.SuspendLayout();
             this.TshrtTab.SuspendLayout();
             this.ShrtTab.SuspendLayout();
             this.PntTab.SuspendLayout();
@@ -426,7 +432,7 @@
             // HatsInfoTxt
             // 
             this.HatsInfoTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.HatsInfoTxt.Location = new System.Drawing.Point(6, 204);
+            this.HatsInfoTxt.Location = new System.Drawing.Point(6, 200);
             this.HatsInfoTxt.Name = "HatsInfoTxt";
             this.HatsInfoTxt.ReadOnly = true;
             this.HatsInfoTxt.Size = new System.Drawing.Size(375, 74);
@@ -461,12 +467,57 @@
             // 
             // FaceTab
             // 
+            this.FaceTab.Controls.Add(this.FaceInfoText);
+            this.FaceTab.Controls.Add(this.FaceSlot1);
+            this.FaceTab.Controls.Add(this.FaceListView);
             this.FaceTab.Location = new System.Drawing.Point(4, 34);
             this.FaceTab.Name = "FaceTab";
             this.FaceTab.Size = new System.Drawing.Size(475, 277);
             this.FaceTab.TabIndex = 5;
             this.FaceTab.Text = "Faces";
             this.FaceTab.UseVisualStyleBackColor = true;
+            // 
+            // FaceInfoText
+            // 
+            this.FaceInfoText.BackColor = System.Drawing.SystemColors.Control;
+            this.FaceInfoText.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.FaceInfoText.Location = new System.Drawing.Point(6, 200);
+            this.FaceInfoText.Name = "FaceInfoText";
+            this.FaceInfoText.ReadOnly = true;
+            this.FaceInfoText.Size = new System.Drawing.Size(375, 74);
+            this.FaceInfoText.TabIndex = 7;
+            this.FaceInfoText.Text = "No Item Selected!";
+            // 
+            // FaceSlot1
+            // 
+            this.FaceSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.FaceSlot1.FlatAppearance.BorderSize = 2;
+            this.FaceSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.FaceSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.FaceSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.FaceSlot1.Location = new System.Drawing.Point(399, 77);
+            this.FaceSlot1.Name = "FaceSlot1";
+            this.FaceSlot1.Size = new System.Drawing.Size(60, 60);
+            this.FaceSlot1.TabIndex = 6;
+            this.FaceSlot1.UseVisualStyleBackColor = true;
+            this.FaceSlot1.Click += new System.EventHandler(this.FaceSlot1_Click);
+            // 
+            // FaceListView
+            // 
+            this.FaceListView.HideSelection = false;
+            this.FaceListView.LargeImageList = this.FaceImgList;
+            this.FaceListView.Location = new System.Drawing.Point(6, 6);
+            this.FaceListView.Name = "FaceListView";
+            this.FaceListView.Size = new System.Drawing.Size(375, 192);
+            this.FaceListView.TabIndex = 1;
+            this.FaceListView.UseCompatibleStateImageBehavior = false;
+            this.FaceListView.SelectedIndexChanged += new System.EventHandler(this.FaceListView_SelectedIndexChanged);
+            // 
+            // FaceImgList
+            // 
+            this.FaceImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.FaceImgList.ImageSize = new System.Drawing.Size(64, 64);
+            this.FaceImgList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // TshrtTab
             // 
@@ -498,7 +549,7 @@
             // 
             this.TshrtInfoText.BackColor = System.Drawing.SystemColors.Control;
             this.TshrtInfoText.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.TshrtInfoText.Location = new System.Drawing.Point(6, 204);
+            this.TshrtInfoText.Location = new System.Drawing.Point(6, 200);
             this.TshrtInfoText.Name = "TshrtInfoText";
             this.TshrtInfoText.ReadOnly = true;
             this.TshrtInfoText.Size = new System.Drawing.Size(375, 74);
@@ -553,7 +604,7 @@
             // 
             this.ShrtInfoTxt.BackColor = System.Drawing.SystemColors.Control;
             this.ShrtInfoTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.ShrtInfoTxt.Location = new System.Drawing.Point(6, 204);
+            this.ShrtInfoTxt.Location = new System.Drawing.Point(6, 200);
             this.ShrtInfoTxt.Name = "ShrtInfoTxt";
             this.ShrtInfoTxt.ReadOnly = true;
             this.ShrtInfoTxt.Size = new System.Drawing.Size(375, 74);
@@ -608,7 +659,7 @@
             // 
             this.PntsInfoTxt.BackColor = System.Drawing.SystemColors.Control;
             this.PntsInfoTxt.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.PntsInfoTxt.Location = new System.Drawing.Point(6, 204);
+            this.PntsInfoTxt.Location = new System.Drawing.Point(6, 200);
             this.PntsInfoTxt.Name = "PntsInfoTxt";
             this.PntsInfoTxt.ReadOnly = true;
             this.PntsInfoTxt.Size = new System.Drawing.Size(375, 74);
@@ -689,6 +740,17 @@
             this.InfoTab.TabIndex = 4;
             this.InfoTab.Text = "Info";
             this.InfoTab.ToolTipText = "Shows you System Info and Documentation!";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox2.Location = new System.Drawing.Point(3, 188);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.Size = new System.Drawing.Size(489, 196);
+            this.richTextBox2.TabIndex = 2;
+            this.richTextBox2.Text = "insert documentation stuff here\n";
             // 
             // PacksTab
             // 
@@ -1061,16 +1123,11 @@
             this.StudioButton.Text = "Studio";
             this.StudioButton.UseVisualStyleBackColor = false;
             // 
-            // richTextBox2
+            // HeadsImgList
             // 
-            this.richTextBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(3, 188);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(489, 196);
-            this.richTextBox2.TabIndex = 2;
-            this.richTextBox2.Text = "insert documentation stuff here\n";
+            this.HeadsImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.HeadsImgList.ImageSize = new System.Drawing.Size(64, 64);
+            this.HeadsImgList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // AurNTBase
             // 
@@ -1101,6 +1158,7 @@
             this.CustmTab.PerformLayout();
             this.CatalogTabsOptions.ResumeLayout(false);
             this.HatTab.ResumeLayout(false);
+            this.FaceTab.ResumeLayout(false);
             this.TshrtTab.ResumeLayout(false);
             this.ShrtTab.ResumeLayout(false);
             this.PntTab.ResumeLayout(false);
@@ -1208,6 +1266,11 @@
         private System.Windows.Forms.Button CreateAssetMetadata;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox FaceInfoText;
+        private System.Windows.Forms.Button FaceSlot1;
+        private System.Windows.Forms.ListView FaceListView;
+        private System.Windows.Forms.ImageList FaceImgList;
+        private System.Windows.Forms.ImageList HeadsImgList;
     }
 }
 

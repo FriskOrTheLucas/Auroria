@@ -13,6 +13,7 @@ namespace AuroriaResources
         public static string PlayerInfoPath = "PlayerSettings.json";
         public static string PrivateKey = @"Data\PrivateKey.pem";
         public static string CoreScriptPath => ClientSettings.CoreScriptDirectory;
+        public static string LocalGameAssetHelper = @"Data\isset\Game";
         public static string HeadColor
         {
             get
@@ -116,7 +117,7 @@ namespace AuroriaResources
         {
             get
             {
-                string result = CustomizationHelper.AvatarHat1 + CustomizationHelper.AvatarHat2 + CustomizationHelper.AvatarHat3 + CustomizationHelper.Shirt + CustomizationHelper.Tshirt + CustomizationHelper.Pants;
+                string result = CustomizationHelper.AvatarHat1 + CustomizationHelper.AvatarHat2 + CustomizationHelper.AvatarHat3 + CustomizationHelper.Face + CustomizationHelper.Shirt + CustomizationHelper.Tshirt + CustomizationHelper.Pants;
                 if (string.IsNullOrWhiteSpace(result))
                 {
                     return "";

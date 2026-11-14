@@ -20,6 +20,38 @@ namespace AuroriaWebserver.Asset
             string id = request.QueryString["id"] ?? "1818";
             string version = request.QueryString["version"] ?? "1";
 
+            if (Directory.Exists(PathHelper.LocalGameAssetHelper))
+            {
+                foreach (var file in Directory.GetFiles(PathHelper.LocalGameAssetHelper))
+                {
+                    if (file.Contains(id + ".png"))
+                    {
+                        try
+                        {
+                            Console.WriteLine("Local Game Asset Found: " + id);
+                            byte[] buffer = File.ReadAllBytes(file);
+                            response.ContentType = "application/octet-stream";
+                            response.ContentLength64 = buffer.Length;
+                            response.OutputStream.Write(buffer, 0, buffer.Length);
+                            response.OutputStream.Close();
+                            return;
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Error occurred while getting Local Asset: " + ex.Message);
+                            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                            string jsonResponse = "{\"message\": \"An error has occurred while getting the asset. We are sorry.\"}";
+                            Console.WriteLine("Sent error code and message.");
+                            byte[] buffer = Encoding.UTF8.GetBytes(jsonResponse);
+                            response.ContentLength64 = buffer.Length;
+                            response.OutputStream.Write(buffer, 0, buffer.Length);
+                            response.OutputStream.Close();
+                            return;
+                        }
+                    }
+                }
+            }
+
             if (Directory.Exists(PathHelper.CoreScriptPath))
             {
                 foreach (var file in Directory.GetFiles(PathHelper.CoreScriptPath))

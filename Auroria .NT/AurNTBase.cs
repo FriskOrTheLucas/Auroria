@@ -143,6 +143,7 @@ namespace Auroria.NT
             LoadCatalogListView(@"Data/Catalog/charshirts", ShirtsListView, ShrtsImgList);
             LoadCatalogListView(@"Data/Catalog/chartshirt", TshrtListView, TshrtImgList);
             LoadCatalogListView(@"Data/Catalog/charpants", PantsListView, PntsImgList);
+            LoadCatalogListView(@"Data/Catalog/charface", FaceListView, FaceImgList);
 
             //populate the maps tree view with the map stuff.
             if (!Directory.Exists(mapsFolder))
@@ -245,6 +246,11 @@ namespace Auroria.NT
             SelectedItemUpd(HatsInfoTxt, HatsListView, @"Data/Catalog/charhats");
         }
 
+        private void FaceListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectedItemUpd(FaceInfoText, FaceListView, @"Data/Catalog/charface");
+        }
+
         private void ShirtsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             SelectedItemUpd(ShrtInfoTxt, ShirtsListView, @"Data/Catalog/charshirts");
@@ -325,6 +331,7 @@ namespace Auroria.NT
             LoadAvatarItm(TshrtSlot1, "TShirt", "chartshirt");
             LoadAvatarItm(ShrtSlot1, "Shirt", "charshirts");
             LoadAvatarItm(ShrtSlot1, "Pants", "charpants");
+            LoadAvatarItm(FaceSlot1, "Face", "charface");
 
             ShowWebserverBool.Checked = PlayerSettings.ShowWebserver;
         }
@@ -641,6 +648,11 @@ namespace Auroria.NT
         private void HatsSlot3_Click(object sender, EventArgs e)
         {
             ItemChanged(HatsListView, HatsSlot3, "HatSlot3");
+        }
+
+        private void FaceSlot1_Click(object sender, EventArgs e)
+        {
+            ItemChanged(FaceListView, FaceSlot1, "Face");
         }
 
         private void TShrtSlot1_Click(object sender, EventArgs e)
