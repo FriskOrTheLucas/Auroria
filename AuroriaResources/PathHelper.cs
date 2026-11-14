@@ -15,6 +15,7 @@ namespace AuroriaResources
         public static string DocumentationTxt = @"Data\documentationinfo.txt";
         public static string CoreScriptPath => ClientSettings.CoreScriptDirectory;
         public static string LocalGameAssetHelper = @"Data\isset\Game";
+        public static string AssetCacheFolder = @"Data\assetcache";
         public static string HeadColor
         {
             get

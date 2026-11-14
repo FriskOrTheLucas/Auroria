@@ -282,6 +282,7 @@ namespace Auroria.NT
                 JObject objnw = new JObject
                 {
                     { "ShowWebserver", "false" },
+                    { "CacheAssets", "false" },
                     { "PlayerName", "Username" },
                     { "UserID", "123456789" },
                     { "AssetURL", "http://proxy.95.fyi/assetrequest.php?" },
@@ -398,6 +399,7 @@ namespace Auroria.NT
                 JObject objnw = new JObject
                 {
                     { "ShowWebserver", "false" },
+                    { "CacheAssets", "false" },
                     { "PlayerName", "Username" },
                     { "UserID", "123456789" },
                     { "AssetURL", "http://proxy.95.fyi/assetrequest.php?" },
