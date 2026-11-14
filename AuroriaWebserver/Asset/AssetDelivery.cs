@@ -24,7 +24,7 @@ namespace AuroriaWebserver.Asset
             {
                 foreach (var file in Directory.GetFiles(PathHelper.LocalGameAssetHelper))
                 {
-                    if (file.Contains(id + ".png"))
+                    if (file.Contains(id + ".png") || file.Contains(id + ".rbxm") || file.Contains(id + ".mesh"))
                     {
                         try
                         {
