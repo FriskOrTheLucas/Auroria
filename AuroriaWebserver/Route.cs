@@ -117,6 +117,20 @@ namespace AuroriaWebserver
                 context.Response.OutputStream.Close();
             }
 
+            if (AbsolutePath.Equals("/error/dmp.ashx"))
+            {
+                context.Response.StatusCode = 200;
+                context.Response.ContentLength64 = 0;
+                context.Response.OutputStream.Close();
+            }
+
+            if (AbsolutePath.Equals("/error/lua.ashx"))
+            {
+                context.Response.StatusCode = 200;
+                context.Response.ContentLength64 = 0;
+                context.Response.OutputStream.Close();
+            }
+
             if (AbsolutePath.Equals("/analytics/measurement.ashx"))
             {
                 context.Response.StatusCode = 200;
