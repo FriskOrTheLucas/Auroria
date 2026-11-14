@@ -114,6 +114,9 @@
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.StudioButton = new System.Windows.Forms.Button();
             this.HeadsImgList = new System.Windows.Forms.ImageList(this.components);
+            this.HeadsListView = new System.Windows.Forms.ListView();
+            this.HeadsInfoText = new System.Windows.Forms.RichTextBox();
+            this.HeadSlot1 = new System.Windows.Forms.Button();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -122,6 +125,7 @@
             this.CustmTab.SuspendLayout();
             this.CatalogTabsOptions.SuspendLayout();
             this.HatTab.SuspendLayout();
+            this.HeadsTab.SuspendLayout();
             this.FaceTab.SuspendLayout();
             this.TshrtTab.SuspendLayout();
             this.ShrtTab.SuspendLayout();
@@ -458,6 +462,9 @@
             // 
             // HeadsTab
             // 
+            this.HeadsTab.Controls.Add(this.HeadSlot1);
+            this.HeadsTab.Controls.Add(this.HeadsInfoText);
+            this.HeadsTab.Controls.Add(this.HeadsListView);
             this.HeadsTab.Location = new System.Drawing.Point(4, 34);
             this.HeadsTab.Name = "HeadsTab";
             this.HeadsTab.Size = new System.Drawing.Size(475, 277);
@@ -1129,6 +1136,42 @@
             this.HeadsImgList.ImageSize = new System.Drawing.Size(64, 64);
             this.HeadsImgList.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // HeadsListView
+            // 
+            this.HeadsListView.HideSelection = false;
+            this.HeadsListView.LargeImageList = this.HeadsImgList;
+            this.HeadsListView.Location = new System.Drawing.Point(6, 6);
+            this.HeadsListView.Name = "HeadsListView";
+            this.HeadsListView.Size = new System.Drawing.Size(375, 192);
+            this.HeadsListView.TabIndex = 2;
+            this.HeadsListView.UseCompatibleStateImageBehavior = false;
+            this.HeadsListView.SelectedIndexChanged += new System.EventHandler(this.HeadsListView_SelectedIndexChanged);
+            // 
+            // HeadsInfoText
+            // 
+            this.HeadsInfoText.BackColor = System.Drawing.SystemColors.Control;
+            this.HeadsInfoText.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.HeadsInfoText.Location = new System.Drawing.Point(6, 200);
+            this.HeadsInfoText.Name = "HeadsInfoText";
+            this.HeadsInfoText.ReadOnly = true;
+            this.HeadsInfoText.Size = new System.Drawing.Size(375, 74);
+            this.HeadsInfoText.TabIndex = 8;
+            this.HeadsInfoText.Text = "No Item Selected!";
+            // 
+            // HeadSlot1
+            // 
+            this.HeadSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.HeadSlot1.FlatAppearance.BorderSize = 2;
+            this.HeadSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.HeadSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.HeadSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.HeadSlot1.Location = new System.Drawing.Point(399, 77);
+            this.HeadSlot1.Name = "HeadSlot1";
+            this.HeadSlot1.Size = new System.Drawing.Size(60, 60);
+            this.HeadSlot1.TabIndex = 9;
+            this.HeadSlot1.UseVisualStyleBackColor = true;
+            this.HeadSlot1.Click += new System.EventHandler(this.HeadSlot1_Click);
+            // 
             // AurNTBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1158,6 +1201,7 @@
             this.CustmTab.PerformLayout();
             this.CatalogTabsOptions.ResumeLayout(false);
             this.HatTab.ResumeLayout(false);
+            this.HeadsTab.ResumeLayout(false);
             this.FaceTab.ResumeLayout(false);
             this.TshrtTab.ResumeLayout(false);
             this.ShrtTab.ResumeLayout(false);
@@ -1271,6 +1315,9 @@
         private System.Windows.Forms.ListView FaceListView;
         private System.Windows.Forms.ImageList FaceImgList;
         private System.Windows.Forms.ImageList HeadsImgList;
+        private System.Windows.Forms.Button HeadSlot1;
+        private System.Windows.Forms.RichTextBox HeadsInfoText;
+        private System.Windows.Forms.ListView HeadsListView;
     }
 }
 

@@ -118,7 +118,7 @@ namespace AuroriaResources
         {
             get
             {
-                string result = CustomizationHelper.AvatarHat1 + CustomizationHelper.AvatarHat2 + CustomizationHelper.AvatarHat3 + CustomizationHelper.Face + CustomizationHelper.Shirt + CustomizationHelper.Tshirt + CustomizationHelper.Pants;
+                string result = CustomizationHelper.AvatarHat1 + CustomizationHelper.AvatarHat2 + CustomizationHelper.AvatarHat3 + CustomizationHelper.Head +CustomizationHelper.Face + CustomizationHelper.Shirt + CustomizationHelper.Tshirt + CustomizationHelper.Pants;
                 if (string.IsNullOrWhiteSpace(result))
                 {
                     return "";

@@ -83,6 +83,25 @@ namespace AuroriaResources
             }
         }
 
+        public static string Head
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(PlayerSettings.GetHead) || ClientSettings.Appearance.SupportsHeads == false)
+                {
+                    return "";
+                }
+                else if (ClientSettings.Ability.WillDieOnRedirect)
+                {
+                    return $";http://www.roblox.com/asset/?id={PlayerSettings.GetHead}";
+                }
+                else
+                {
+                    return "_" + PlayerSettings.GetHead;
+                }
+            }
+        }
+
         public static string Shirt
         {
             get
