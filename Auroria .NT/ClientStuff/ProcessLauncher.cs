@@ -104,9 +104,36 @@ namespace Auroria.NT.ClientStuff
                 }
             }
 
-            if (LaunchType != ProcessTypes.Studio)
+            if (LaunchType == ProcessTypes.Studio)
             {
+                if (string.IsNullOrEmpty(ClientSettings.Studio.Client))
+                {
+                    MessageBox.Show("The selected client does not have a studio client.");
+                    return;
+                }
 
+                string text1 = Path.Combine(Directory.GetCurrentDirectory(), "Clients", ClientSettings.Client);
+                string text2 = Path.Combine(text1, ClientSettings.Studio.Directory);
+                if (!Directory.Exists(text2))
+                {
+                    MessageBox.Show($"Failed to get client studio folder {text2}, Directory does not exist.");
+                }
+                string fullclientdir = Path.Combine(text2, ClientSettings.Studio.Client);
+                if (!File.Exists(fullclientdir))
+                {
+                    MessageBox.Show($"Failed to get client executable {fullclientdir}, Directory does not exist.");
+                }
+                try
+                {
+                    Process LaunchedProcess = new Process();
+                    LaunchedProcess.StartInfo.FileName = fullclientdir;
+                    LaunchedProcess.StartInfo.WorkingDirectory = text2;
+                    LaunchedProcess.Start();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Failed to launch client, error: {ex}");
+                }
             }
         }
     }

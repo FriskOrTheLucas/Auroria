@@ -162,6 +162,13 @@ namespace Auroria.NT
                 AddFolder(folderNode, folder);
             }
 
+            foreach (string folder in Directory.GetDirectories(PathHelper.AssetPacksDir))
+            {
+                string AssetPackName = Path.GetFileName(folder);
+
+                AssetPackBox.Items.Add(AssetPackName);
+            }
+
             AddClient(ClientList);
             documentationbox.Text = File.ReadAllText(PathHelper.DocumentationTxt);
             OSverText.Text = $"OS: {System.Environment.OSVersion}";
@@ -733,6 +740,23 @@ namespace Auroria.NT
         {
             ItemMetadataCreator Window = new ItemMetadataCreator();
             Window.Show();
+        }
+
+        private void StudioButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(SelectedClient))
+            {
+                MessageBox.Show("Please select a client before opening studio.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (!File.Exists(ClientSettings.config))
+            {
+                MessageBox.Show("ClientInfo.json file not found! Please make sure the client you selected has a ClientInfo.json file in its folder.", "Auroria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ProcessLauncher.LaunchClient(ProcessTypes.Studio, false);
         }
     }
 }

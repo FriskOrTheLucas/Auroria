@@ -55,6 +55,10 @@
             this.HatsListView = new System.Windows.Forms.ListView();
             this.HatsImgList = new System.Windows.Forms.ImageList(this.components);
             this.HeadsTab = new System.Windows.Forms.TabPage();
+            this.HeadSlot1 = new System.Windows.Forms.Button();
+            this.HeadsInfoText = new System.Windows.Forms.RichTextBox();
+            this.HeadsListView = new System.Windows.Forms.ListView();
+            this.HeadsImgList = new System.Windows.Forms.ImageList(this.components);
             this.FaceTab = new System.Windows.Forms.TabPage();
             this.FaceInfoText = new System.Windows.Forms.RichTextBox();
             this.FaceSlot1 = new System.Windows.Forms.Button();
@@ -80,6 +84,8 @@
             this.PlayerNameBox = new System.Windows.Forms.TextBox();
             this.PlayerIDBox = new System.Windows.Forms.TextBox();
             this.InfoTab = new System.Windows.Forms.TabPage();
+            this.AuroriaBuildNumber = new System.Windows.Forms.Label();
+            this.OSverText = new System.Windows.Forms.Label();
             this.documentationbox = new System.Windows.Forms.RichTextBox();
             this.PacksTab = new System.Windows.Forms.TabPage();
             this.DisableAssetPack = new System.Windows.Forms.Button();
@@ -113,12 +119,6 @@
             this.MOTD = new System.Windows.Forms.Label();
             this.BackgroundBox = new System.Windows.Forms.PictureBox();
             this.StudioButton = new System.Windows.Forms.Button();
-            this.HeadsImgList = new System.Windows.Forms.ImageList(this.components);
-            this.HeadsListView = new System.Windows.Forms.ListView();
-            this.HeadsInfoText = new System.Windows.Forms.RichTextBox();
-            this.HeadSlot1 = new System.Windows.Forms.Button();
-            this.OSverText = new System.Windows.Forms.Label();
-            this.AuroriaBuildNumber = new System.Windows.Forms.Label();
             this.AllTabs.SuspendLayout();
             this.PlayTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HostButtonC)).BeginInit();
@@ -474,6 +474,48 @@
             this.HeadsTab.Text = "Heads";
             this.HeadsTab.UseVisualStyleBackColor = true;
             // 
+            // HeadSlot1
+            // 
+            this.HeadSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.HeadSlot1.FlatAppearance.BorderSize = 2;
+            this.HeadSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.HeadSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.HeadSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.HeadSlot1.Location = new System.Drawing.Point(399, 77);
+            this.HeadSlot1.Name = "HeadSlot1";
+            this.HeadSlot1.Size = new System.Drawing.Size(60, 60);
+            this.HeadSlot1.TabIndex = 9;
+            this.HeadSlot1.UseVisualStyleBackColor = true;
+            this.HeadSlot1.Click += new System.EventHandler(this.HeadSlot1_Click);
+            // 
+            // HeadsInfoText
+            // 
+            this.HeadsInfoText.BackColor = System.Drawing.SystemColors.Control;
+            this.HeadsInfoText.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.HeadsInfoText.Location = new System.Drawing.Point(6, 200);
+            this.HeadsInfoText.Name = "HeadsInfoText";
+            this.HeadsInfoText.ReadOnly = true;
+            this.HeadsInfoText.Size = new System.Drawing.Size(375, 74);
+            this.HeadsInfoText.TabIndex = 8;
+            this.HeadsInfoText.Text = "No Item Selected!";
+            // 
+            // HeadsListView
+            // 
+            this.HeadsListView.HideSelection = false;
+            this.HeadsListView.LargeImageList = this.HeadsImgList;
+            this.HeadsListView.Location = new System.Drawing.Point(6, 6);
+            this.HeadsListView.Name = "HeadsListView";
+            this.HeadsListView.Size = new System.Drawing.Size(375, 192);
+            this.HeadsListView.TabIndex = 2;
+            this.HeadsListView.UseCompatibleStateImageBehavior = false;
+            this.HeadsListView.SelectedIndexChanged += new System.EventHandler(this.HeadsListView_SelectedIndexChanged);
+            // 
+            // HeadsImgList
+            // 
+            this.HeadsImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.HeadsImgList.ImageSize = new System.Drawing.Size(64, 64);
+            this.HeadsImgList.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // FaceTab
             // 
             this.FaceTab.Controls.Add(this.FaceInfoText);
@@ -752,6 +794,28 @@
             this.InfoTab.Text = "Info";
             this.InfoTab.ToolTipText = "Shows you System Info and Documentation!";
             // 
+            // AuroriaBuildNumber
+            // 
+            this.AuroriaBuildNumber.AutoSize = true;
+            this.AuroriaBuildNumber.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AuroriaBuildNumber.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AuroriaBuildNumber.Location = new System.Drawing.Point(12, 74);
+            this.AuroriaBuildNumber.Name = "AuroriaBuildNumber";
+            this.AuroriaBuildNumber.Size = new System.Drawing.Size(194, 22);
+            this.AuroriaBuildNumber.TabIndex = 4;
+            this.AuroriaBuildNumber.Text = "Auroria Version: 0.1";
+            // 
+            // OSverText
+            // 
+            this.OSverText.AutoSize = true;
+            this.OSverText.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OSverText.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.OSverText.Location = new System.Drawing.Point(12, 42);
+            this.OSverText.Name = "OSverText";
+            this.OSverText.Size = new System.Drawing.Size(149, 22);
+            this.OSverText.TabIndex = 3;
+            this.OSverText.Text = "OSVersionText";
+            // 
             // documentationbox
             // 
             this.documentationbox.Cursor = System.Windows.Forms.Cursors.Default;
@@ -774,7 +838,7 @@
             this.PacksTab.Size = new System.Drawing.Size(495, 387);
             this.PacksTab.TabIndex = 6;
             this.PacksTab.Text = "Packs";
-            this.PacksTab.ToolTipText = "Includes Assetpacks and Clientpacks. Both will be explained in the tab.";
+            this.PacksTab.ToolTipText = "Includes Assetpacks which are explained in the tab";
             // 
             // DisableAssetPack
             // 
@@ -1133,70 +1197,7 @@
             this.StudioButton.TabIndex = 19;
             this.StudioButton.Text = "Studio";
             this.StudioButton.UseVisualStyleBackColor = false;
-            // 
-            // HeadsImgList
-            // 
-            this.HeadsImgList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.HeadsImgList.ImageSize = new System.Drawing.Size(64, 64);
-            this.HeadsImgList.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // HeadsListView
-            // 
-            this.HeadsListView.HideSelection = false;
-            this.HeadsListView.LargeImageList = this.HeadsImgList;
-            this.HeadsListView.Location = new System.Drawing.Point(6, 6);
-            this.HeadsListView.Name = "HeadsListView";
-            this.HeadsListView.Size = new System.Drawing.Size(375, 192);
-            this.HeadsListView.TabIndex = 2;
-            this.HeadsListView.UseCompatibleStateImageBehavior = false;
-            this.HeadsListView.SelectedIndexChanged += new System.EventHandler(this.HeadsListView_SelectedIndexChanged);
-            // 
-            // HeadsInfoText
-            // 
-            this.HeadsInfoText.BackColor = System.Drawing.SystemColors.Control;
-            this.HeadsInfoText.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.HeadsInfoText.Location = new System.Drawing.Point(6, 200);
-            this.HeadsInfoText.Name = "HeadsInfoText";
-            this.HeadsInfoText.ReadOnly = true;
-            this.HeadsInfoText.Size = new System.Drawing.Size(375, 74);
-            this.HeadsInfoText.TabIndex = 8;
-            this.HeadsInfoText.Text = "No Item Selected!";
-            // 
-            // HeadSlot1
-            // 
-            this.HeadSlot1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.HeadSlot1.FlatAppearance.BorderSize = 2;
-            this.HeadSlot1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.HeadSlot1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.HeadSlot1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.HeadSlot1.Location = new System.Drawing.Point(399, 77);
-            this.HeadSlot1.Name = "HeadSlot1";
-            this.HeadSlot1.Size = new System.Drawing.Size(60, 60);
-            this.HeadSlot1.TabIndex = 9;
-            this.HeadSlot1.UseVisualStyleBackColor = true;
-            this.HeadSlot1.Click += new System.EventHandler(this.HeadSlot1_Click);
-            // 
-            // OSverText
-            // 
-            this.OSverText.AutoSize = true;
-            this.OSverText.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OSverText.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.OSverText.Location = new System.Drawing.Point(12, 42);
-            this.OSverText.Name = "OSverText";
-            this.OSverText.Size = new System.Drawing.Size(149, 22);
-            this.OSverText.TabIndex = 3;
-            this.OSverText.Text = "OSVersionText";
-            // 
-            // AuroriaBuildNumber
-            // 
-            this.AuroriaBuildNumber.AutoSize = true;
-            this.AuroriaBuildNumber.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AuroriaBuildNumber.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.AuroriaBuildNumber.Location = new System.Drawing.Point(12, 74);
-            this.AuroriaBuildNumber.Name = "AuroriaBuildNumber";
-            this.AuroriaBuildNumber.Size = new System.Drawing.Size(194, 22);
-            this.AuroriaBuildNumber.TabIndex = 4;
-            this.AuroriaBuildNumber.Text = "Auroria Version: 0.1";
+            this.StudioButton.Click += new System.EventHandler(this.StudioButton_Click);
             // 
             // AurNTBase
             // 

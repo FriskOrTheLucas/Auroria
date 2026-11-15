@@ -20,6 +20,44 @@ namespace AuroriaWebserver.Asset
             string id = request.QueryString["id"] ?? "1818";
             string version = request.QueryString["version"] ?? "1";
 
+            if (Directory.Exists(PathHelper.AssetPacksDir))
+            {
+                foreach (var Directories in Directory.GetDirectories(PathHelper.AssetPacksDir))
+                {
+                    if (!Directories.Contains("_disabled")) //this is hella jank but it works for now
+                    {
+                        foreach (var file in Directory.GetFiles(Directories))
+                        {
+                            if (file.Contains(id + ".png") || file.Contains(id + ".rbxm") || file.Contains(id + ".mesh"))
+                            {
+                                try
+                                {
+                                    Console.WriteLine("Local Assetpack Asset Found: " + id);
+                                    byte[] buffer = File.ReadAllBytes(file);
+                                    response.ContentType = "application/octet-stream";
+                                    response.ContentLength64 = buffer.Length;
+                                    response.OutputStream.Write(buffer, 0, buffer.Length);
+                                    response.OutputStream.Close();
+                                    return;
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine("Error occurred while getting Assetpack Asset: " + ex.Message);
+                                    context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                                    string jsonResponse = "{\"message\": \"An error has occurred while getting the asset. We are sorry.\"}";
+                                    Console.WriteLine("Sent error code and message.");
+                                    byte[] buffer = Encoding.UTF8.GetBytes(jsonResponse);
+                                    response.ContentLength64 = buffer.Length;
+                                    response.OutputStream.Write(buffer, 0, buffer.Length);
+                                    response.OutputStream.Close();
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             if (Directory.Exists(PathHelper.LocalGameAssetHelper))
             {
                 foreach (var file in Directory.GetFiles(PathHelper.LocalGameAssetHelper))
