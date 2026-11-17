@@ -138,6 +138,13 @@ namespace AuroriaWebserver
                 context.Response.OutputStream.Close();
                 Console.WriteLine("Responded /analytics/measurement.ashx correctly");
             }
+
+            if (AbsolutePath.Equals("/login/negotiate.ashx"))
+            {
+                context.Response.StatusCode = 200;
+                context.Response.ContentLength64 = 0;
+                context.Response.OutputStream.Close();
+            }
         }
     }
 }
