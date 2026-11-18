@@ -145,6 +145,16 @@ namespace AuroriaWebserver
                 context.Response.ContentLength64 = 0;
                 context.Response.OutputStream.Close();
             }
+
+            if (AbsolutePath.Equals("/game/validate-machine"))
+            {
+                string jsonResponse = "{\"success\":true}";
+                Console.WriteLine("Sent error code and message.");
+                byte[] buffer = Encoding.UTF8.GetBytes(jsonResponse);
+                context.Response.ContentLength64 = buffer.Length;
+                context.Response.OutputStream.Write(buffer, 0, buffer.Length);
+                context.Response.OutputStream.Close();
+            }
         }
     }
 }
