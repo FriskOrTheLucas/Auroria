@@ -151,6 +151,7 @@ namespace AuroriaWebserver
                 string jsonResponse = "{\"success\":true}";
                 Console.WriteLine("Sent error code and message.");
                 byte[] buffer = Encoding.UTF8.GetBytes(jsonResponse);
+                context.Response.ContentType = "application/json";
                 context.Response.ContentLength64 = buffer.Length;
                 context.Response.OutputStream.Write(buffer, 0, buffer.Length);
                 context.Response.OutputStream.Close();
