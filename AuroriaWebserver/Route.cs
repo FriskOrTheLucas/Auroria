@@ -149,7 +149,7 @@ namespace AuroriaWebserver
             if (AbsolutePath.Equals("/game/validate-machine"))
             {
                 string jsonResponse = "{\"success\":true}";
-                Console.WriteLine("Sent error code and message.");
+                Console.WriteLine("Validate Machine Request");
                 byte[] buffer = Encoding.UTF8.GetBytes(jsonResponse);
                 context.Response.ContentType = "application/json";
                 context.Response.ContentLength64 = buffer.Length;

@@ -14,6 +14,7 @@ namespace Auroria.NT.ClientStuff
     {
         public static void LaunchClient(ProcessTypes LaunchType, bool Is3dhosting = false)
         {
+            // wakeyj was here
             string IpAndPort = PlayerSettings.ServerAddress;
             string[] parts = IpAndPort.Split(':');
             string serverip = parts[0];
