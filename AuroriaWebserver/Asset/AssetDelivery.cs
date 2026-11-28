@@ -103,6 +103,7 @@ namespace AuroriaWebserver.Asset
                             response.ContentType = "application/octet-stream";
                             response.ContentLength64 = buffer.Length;
                             response.OutputStream.Write(buffer, 0, buffer.Length);
+                            Console.WriteLine("Finished Corescript Request");
                             response.OutputStream.Close();
                             return;
                         }
